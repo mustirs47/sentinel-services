@@ -82,10 +82,10 @@ const Index = () => {
 
           <div
             ref={setRef(1)}
-            className="mt-8 max-w-lg text-center opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+            className="mt-5 sm:mt-8 max-w-md sm:max-w-lg text-center opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{ transitionDelay: "450ms" }}
           >
-            <p className="text-base leading-relaxed text-muted-foreground md:text-lg" style={{ textWrap: "pretty" }}>
+            <p className="text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg" style={{ textWrap: "pretty" }}>
               Professionelle Dienstleistungen. Maßgeschneiderte Lösungen.
               Wir arbeiten hinter den Kulissen daran, Ihnen einen erstklassigen Service zu bieten.
             </p>
