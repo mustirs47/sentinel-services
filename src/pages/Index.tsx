@@ -94,7 +94,7 @@ const Index = () => {
           {/* Pulsing status indicator */}
           <div
             ref={setRef(2)}
-            className="mt-10 flex items-center gap-3 opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+            className="mt-7 sm:mt-10 flex items-center gap-3 opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{ transitionDelay: "700ms" }}
           >
             <span className="relative flex h-3 w-3">
