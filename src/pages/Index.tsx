@@ -101,7 +101,7 @@ const Index = () => {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
               <span className="relative inline-flex h-3 w-3 rounded-full bg-primary" />
             </span>
-            <span className="text-sm font-medium tracking-wide uppercase text-primary">
+            <span className="text-xs sm:text-sm font-medium tracking-wide uppercase text-primary">
               In Arbeit
             </span>
           </div>
