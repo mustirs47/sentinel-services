@@ -112,7 +112,7 @@ const Index = () => {
           {/* Teaser cards */}
           <div
             ref={setRef(3)}
-            className="mt-10 sm:mt-16 grid w-full max-w-xl gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-3 opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+            className="mt-10 sm:mt-16 grid w-full max-w-xl gap-3 sm:gap-4 grid-cols-3 opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{ transitionDelay: "950ms" }}
           >
             {[
@@ -122,7 +122,7 @@ const Index = () => {
             ].map((item, i) => (
               <div
                 key={item.label}
-                className="group rounded-xl border border-border/60 bg-card/50 px-5 py-5 sm:py-6 text-center backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_24px_-6px_hsl(205_90%_55%_/_0.15)]"
+                className="group rounded-xl border border-border/60 bg-card/50 px-3 py-4 sm:px-5 sm:py-6 text-center backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_24px_-6px_hsl(205_90%_55%_/_0.15)]"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <p className="text-sm font-semibold text-foreground">{item.label}</p>
