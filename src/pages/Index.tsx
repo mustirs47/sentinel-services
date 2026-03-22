@@ -64,15 +64,15 @@ const Index = () => {
         </header>
 
         {/* Hero */}
-        <main className="flex flex-1 flex-col items-center justify-center px-6 pb-24">
+        <main className="flex flex-1 flex-col items-center justify-center px-5 pb-16 sm:px-6 sm:pb-24">
           <div
             ref={setRef(0)}
-            className="max-w-2xl text-center opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+            className="mt-6 sm:mt-10 md:mt-14 max-w-2xl text-center opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{ transitionDelay: "200ms" }}
           >
             <h1
-              className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
-              style={{ lineHeight: "1.05", color: "hsl(210 20% 95%)" }}
+              className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-7xl"
+              style={{ lineHeight: "1.08", color: "hsl(210 20% 95%)" }}
             >
               Etwas Großes
               <br />
