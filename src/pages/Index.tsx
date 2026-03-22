@@ -67,7 +67,7 @@ const Index = () => {
         </header>
 
         {/* Hero */}
-        <main className="flex flex-1 flex-col items-center justify-center px-5 pb-16 sm:px-6 sm:pb-24">
+        <main className="flex flex-1 flex-col items-center justify-center px-5 pb-6 sm:px-6 sm:pb-8">
           <div
             ref={setRef(0)}
             className="mt-6 sm:mt-10 md:mt-14 max-w-2xl text-center opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
