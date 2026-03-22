@@ -131,17 +131,17 @@ const Index = () => {
           {/* Contact hint */}
           <div
             ref={setRef(4)}
-            className="mt-16 flex flex-col items-center gap-3 opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+            className="mt-10 sm:mt-16 flex flex-col items-center gap-2.5 sm:gap-3 opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{ transitionDelay: "1200ms" }}
           >
-            <p className="text-sm text-muted-foreground">Interesse geweckt?</p>
+            <p className="text-xs sm:text-sm text-muted-foreground">Interesse geweckt?</p>
             <a
               href="mailto:info@sentinel-services.de"
-              className="group inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-5 py-2.5 text-sm font-medium text-primary transition-all duration-200 hover:bg-primary/20 hover:border-primary/60 active:scale-[0.97]"
+              className="group inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-medium text-primary transition-all duration-200 hover:bg-primary/20 hover:border-primary/60 active:scale-[0.97]"
             >
-              <Mail className="h-4 w-4" />
+              <Mail className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               Kontakt aufnehmen
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+              <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </a>
           </div>
         </main>
