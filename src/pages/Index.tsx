@@ -50,14 +50,14 @@ const Index = () => {
 
       <div className="relative z-10 flex min-h-screen flex-col">
         {/* Nav hint */}
-        <header className="flex items-center justify-center px-6 pt-10 md:pt-14">
+        <header className="flex items-center justify-center px-5 pt-8 sm:px-6 sm:pt-10 md:pt-14">
           <div
-            className={`flex items-center gap-3 transition-all duration-700 ease-out ${
+            className={`flex items-center gap-2.5 sm:gap-3 transition-all duration-700 ease-out ${
               visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
             }`}
           >
-            <Shield className="h-7 w-7 text-primary" strokeWidth={1.5} />
-            <span className="text-sm font-medium tracking-[0.25em] uppercase text-muted-foreground">
+            <Shield className="h-6 w-6 sm:h-7 sm:w-7 text-primary" strokeWidth={1.5} />
+            <span className="text-xs sm:text-sm font-medium tracking-[0.25em] uppercase text-muted-foreground">
               Sentinel Services
             </span>
           </div>
