@@ -109,7 +109,7 @@ const Index = () => {
           {/* Teaser cards */}
           <div
             ref={setRef(3)}
-            className="mt-16 grid max-w-xl gap-4 sm:grid-cols-3 opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+            className="mt-10 sm:mt-16 grid w-full max-w-xl gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-3 opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{ transitionDelay: "950ms" }}
           >
             {[
