@@ -122,11 +122,11 @@ const Index = () => {
             ].map((item, i) => (
               <div
                 key={item.label}
-                className="group rounded-xl border border-border/60 bg-card/50 px-3 py-4 sm:px-5 sm:py-6 text-center backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_24px_-6px_hsl(205_90%_55%_/_0.15)]"
+                className="group rounded-xl border border-border/60 bg-card/50 px-2 py-4 sm:px-5 sm:py-6 text-center backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_24px_-6px_hsl(205_90%_55%_/_0.15)] overflow-hidden"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <p className="text-sm font-semibold text-foreground">{item.label}</p>
-                <p className="mt-1 sm:mt-1.5 text-xs text-muted-foreground">{item.desc}</p>
+                <p className="text-xs sm:text-sm font-semibold text-foreground break-words hyphens-auto" lang="de">{item.label}</p>
+                <p className="mt-1 sm:mt-1.5 text-[10px] sm:text-xs text-muted-foreground break-words hyphens-auto" lang="de">{item.desc}</p>
               </div>
             ))}
           </div>
