@@ -133,8 +133,9 @@ const Index = () => {
 
           {/* Contact hint */}
           <div
-            ref={setRef(4)}
-            className="mt-10 sm:mt-16 flex flex-col items-center gap-2.5 sm:gap-3 opacity-0 translate-y-6 blur-sm transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+            className={`mt-10 sm:mt-16 flex flex-col items-center gap-2.5 sm:gap-3 transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              visible ? "opacity-100 translate-y-0 blur-0" : "opacity-0 translate-y-6 blur-sm"
+            }`}
             style={{ transitionDelay: "1200ms" }}
           >
             <p className="text-xs sm:text-sm text-muted-foreground">Interesse geweckt?</p>
