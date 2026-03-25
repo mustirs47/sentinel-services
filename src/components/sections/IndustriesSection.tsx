@@ -1,16 +1,7 @@
-import { Building, Factory, HardHat, ShoppingBag, PartyPopper, Hotel, Home, Landmark } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
-const industries = [
-  { icon: Building, title: "Gewerbe & Büro", detail: "Zugangskontrollen, Schließdienste, Alarmverfolgung in Mehrmieter-Objekten." },
-  { icon: Factory, title: "Industrie & Logistik", detail: "Schichtbegleitend, Torkontrolle, Schutz sensibler Produktions- und Lagerflächen." },
-  { icon: HardHat, title: "Baustellen", detail: "Nacht-/Wochenendlage, Materialschutz, Zugangskontrolle außerhalb der Bauzeiten." },
-  { icon: ShoppingBag, title: "Einzelhandel", detail: "Store-Detektive, Präsenzdienste, Zugangssteuerung in Verkaufsflächen." },
-  { icon: PartyPopper, title: "Veranstaltungen", detail: "Einlassmanagement, Besucherlenkung, Abstimmung mit Ordnungsamt und Veranstalter." },
-  { icon: Hotel, title: "Hotels & Gastronomie", detail: "Diskreter Empfangsdienst, Nachtportier, Gästekontakt auf hohem Niveau." },
-  { icon: Home, title: "Wohnanlagen", detail: "Revierfahrten, Schließdienste, Ansprechpartner für Eigentümergemeinschaften." },
-  { icon: Landmark, title: "Öffentliche Einrichtungen", detail: "Objektschutz für sensible Gebäude, Zugangssicherung, Besuchersteuerung." },
-];
+import { industries } from "@/data/industries";
 
 const IndustriesSection = () => {
   const ref = useScrollAnimation();
@@ -38,6 +29,15 @@ const IndustriesSection = () => {
               <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{detail}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            to="/branchen"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+          >
+            Alle Branchen & Lösungen <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
       </div>
     </section>

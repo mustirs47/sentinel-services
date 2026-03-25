@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Mail, Clock, MapPin, Send } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Mail, Clock, MapPin, Send, Phone, Shield, FileCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -26,13 +27,22 @@ const ContactSection = () => {
         </div>
 
         <div className="grid gap-10 lg:grid-cols-5">
-          {/* Contact info */}
           <div className="lg:col-span-2 space-y-6">
             <div>
               <h3 className="text-sm font-semibold mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
                 Kontaktinformationen
               </h3>
               <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <Phone className="h-5 w-5 shrink-0 text-primary mt-0.5" />
+                  <div>
+                    <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>Telefon</p>
+                    <a href="tel:+4920893579970" className="text-sm text-muted-fg hover:text-primary transition-colors">
+                      +49 (0) 208 935 799 70
+                    </a>
+                    <p className="text-xs text-muted-fg mt-0.5">Mo–Fr 10–18 Uhr</p>
+                  </div>
+                </li>
                 <li className="flex items-start gap-3">
                   <Mail className="h-5 w-5 shrink-0 text-primary mt-0.5" />
                   <div>
@@ -46,7 +56,7 @@ const ContactSection = () => {
                   <Clock className="h-5 w-5 shrink-0 text-primary mt-0.5" />
                   <div>
                     <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>Erreichbarkeit</p>
-                    <p className="text-sm text-muted-fg">24/7 per E-Mail, telefonische Erreichbarkeit von 10-18 Uhr</p>
+                    <p className="text-sm text-muted-fg">24/7 per E-Mail, telefonisch Mo–Fr 10–18 Uhr</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -58,9 +68,24 @@ const ContactSection = () => {
                 </li>
               </ul>
             </div>
+
+            {/* Trust signals near form */}
+            <div className="rounded-xl p-4" style={{ background: "hsl(205 90% 55% / 0.05)" }}>
+              <p className="text-xs font-semibold text-primary mb-3">Darauf können Sie sich verlassen</p>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-xs text-muted-fg">
+                  <Shield className="h-3.5 w-3.5 text-primary shrink-0" /> §34a GewO – geprüftes Personal
+                </li>
+                <li className="flex items-center gap-2 text-xs text-muted-fg">
+                  <Users className="h-3.5 w-3.5 text-primary shrink-0" /> Feste Ansprechpartner
+                </li>
+                <li className="flex items-center gap-2 text-xs text-muted-fg">
+                  <FileCheck className="h-3.5 w-3.5 text-primary shrink-0" /> Rückmeldung innerhalb von 24 h
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* Form */}
           <div className="lg:col-span-3">
             {submitted ? (
               <div className="rounded-xl p-8 text-center" style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}>
@@ -118,10 +143,18 @@ const ContactSection = () => {
                     Kurzfristiger Einsatzbedarf
                   </label>
                 </div>
-                <Button type="submit" size="lg" className="w-full sm:w-auto">
-                  Anfrage absenden
-                  <Send className="ml-2 h-4 w-4" />
-                </Button>
+                <div className="flex flex-wrap gap-3">
+                  <Button type="submit" size="lg">
+                    Anfrage absenden
+                    <Send className="ml-2 h-4 w-4" />
+                  </Button>
+                  <Button type="button" variant="outline" size="lg" asChild>
+                    <a href="tel:+4920893579970">
+                      <Phone className="mr-2 h-4 w-4" />
+                      Sofort anrufen
+                    </a>
+                  </Button>
+                </div>
               </form>
             )}
           </div>

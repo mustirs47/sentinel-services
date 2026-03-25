@@ -1,4 +1,5 @@
-import { Search, UserCheck, Radio, ClipboardCheck } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Search, UserCheck, Radio, ClipboardCheck, ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const phases = [
@@ -46,7 +47,6 @@ const WhyUsSection = () => {
         <div className="grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
           {phases.map(({ icon: Icon, step, title, desc }, i) => (
             <div key={step} className="relative p-6 lg:p-8">
-              {/* Connector line */}
               {i < phases.length - 1 && (
                 <div className="hidden lg:block absolute top-12 right-0 w-px h-8 bg-primary/20" style={{ right: 0, top: "2.5rem", height: "calc(100% - 5rem)" }}>
                   <div className="absolute top-1/2 -right-3 w-6 h-px bg-primary/30" />
@@ -62,6 +62,15 @@ const WhyUsSection = () => {
               <p className="text-sm leading-relaxed text-muted-fg">{desc}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            to="/arbeitsweise"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+          >
+            Mehr über unsere Arbeitsweise <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
       </div>
     </section>

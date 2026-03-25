@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Sheet,
   SheetContent,
@@ -24,20 +25,23 @@ const MobileMenu = ({ open, onClose, items }: MobileMenuProps) => (
 
       <nav className="flex flex-col gap-1">
         {items.map((item) => (
-          <a
+          <Link
             key={item.href}
-            href={item.href}
+            to={item.href}
             onClick={onClose}
             className="rounded-md px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
           >
             {item.label}
-          </a>
+          </Link>
         ))}
       </nav>
 
-      <div className="mt-8 px-3">
+      <div className="mt-8 px-3 space-y-3">
         <Button asChild className="w-full">
-          <a href="#kontakt" onClick={onClose}>Anfrage stellen</a>
+          <Link to="/kontakt" onClick={onClose}>Anfrage stellen</Link>
+        </Button>
+        <Button asChild variant="outline" className="w-full">
+          <a href="tel:+4920893579970" onClick={onClose}>Jetzt anrufen</a>
         </Button>
       </div>
     </SheetContent>
