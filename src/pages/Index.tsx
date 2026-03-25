@@ -1,5 +1,6 @@
 import PageLayout from "@/components/layout/PageLayout";
 import SEOHead from "@/components/SEOHead";
+import { LocalBusinessJsonLd } from "@/components/StructuredData";
 import HeroSection from "@/components/sections/HeroSection";
 import TrustBar from "@/components/sections/TrustBar";
 import ServicesSection from "@/components/sections/ServicesSection";
