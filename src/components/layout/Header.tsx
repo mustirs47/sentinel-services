@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MobileMenu from "./MobileMenu";
-import logoColor from "@/assets/logo-color.png";
+import logoColor from "@/assets/logo-color.svg";
 
 const navItems = [
   { label: "Leistungen", href: "/leistungen" },

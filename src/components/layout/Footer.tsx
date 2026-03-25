@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoGrayscale from "@/assets/logo-grayscale.png";
+import logoGrayscale from "@/assets/logo-grayscale.svg";
 
 const footerNav = [
   { label: "Leistungen", href: "/leistungen" },
