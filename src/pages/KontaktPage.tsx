@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Mail, Clock, MapPin, Send, Phone, Shield, FileCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import PageLayout from "@/components/layout/PageLayout";
+import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const KontaktPage = () => {
   const [submitted, setSubmitted] = useState(false);
+  const ref = useScrollAnimation();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,17 +23,14 @@ const KontaktPage = () => {
         description="Kontaktieren Sie Sentinel Services für eine kostenlose Erstberatung. Rückmeldung innerhalb von 24 Stunden. Telefon, E-Mail oder Kontaktformular."
       />
 
-      <section className="section-light">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-          <div className="text-center mb-12">
-            <h1 className="text-3xl font-bold sm:text-4xl" style={{ color: "hsl(var(--section-light-fg))" }}>
-              Anfrage stellen
-            </h1>
-            <p className="mt-4 text-muted-fg max-w-2xl mx-auto">
-              Beschreiben Sie Ihren Bedarf – wir melden uns innerhalb von 24 Stunden mit einem konkreten Vorschlag.
-            </p>
-          </div>
+      <PageHero
+        badge="Kontakt"
+        title="Anfrage stellen"
+        subtitle="Beschreiben Sie Ihren Bedarf – wir melden uns innerhalb von 24 Stunden mit einem konkreten Vorschlag."
+      />
 
+      <section className="section-light">
+        <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="grid gap-10 lg:grid-cols-5">
             <div className="lg:col-span-2 space-y-6">
               <div>
@@ -75,7 +74,6 @@ const KontaktPage = () => {
                 </ul>
               </div>
 
-              {/* Trust signals near form */}
               <div className="rounded-xl p-4" style={{ background: "hsl(205 90% 55% / 0.05)" }}>
                 <p className="text-xs font-semibold text-primary mb-3">Darauf können Sie sich verlassen</p>
                 <ul className="space-y-2">
