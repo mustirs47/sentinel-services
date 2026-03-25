@@ -1,5 +1,6 @@
-import { Shield, CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const trustFacts = [
   "Qualifiziertes Team",
@@ -10,26 +11,21 @@ const trustFacts = [
 
 const HeroSection = () => (
   <section className="relative overflow-hidden bg-background">
-    {/* Subtle gradient overlay */}
-    <div
-      className="pointer-events-none absolute inset-0"
-      style={{
-        background:
-          "radial-gradient(ellipse 80% 60% at 50% 20%, hsl(205 90% 55% / 0.08), transparent 70%), radial-gradient(ellipse 60% 50% at 80% 80%, hsl(205 90% 55% / 0.04), transparent 60%)",
-      }}
-    />
+    {/* Background image */}
+    <div className="absolute inset-0">
+      <img src={heroBg} alt="" className="h-full w-full object-cover" width={1920} height={1080} />
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(to right, hsl(220 20% 10% / 0.95) 40%, hsl(220 20% 10% / 0.6) 100%)",
+        }}
+      />
+    </div>
 
     <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:py-36">
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-        {/* Text */}
         <div>
-          <div className="flex items-center gap-2 mb-6">
-            <Shield className="h-5 w-5 text-primary" strokeWidth={1.5} />
-            <span className="text-xs font-medium tracking-[0.2em] uppercase text-primary">
-              Sentinel Services
-            </span>
-          </div>
-
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl" style={{ lineHeight: 1.15 }}>
             Sicherheitsdienstleistungen mit Struktur, Verlässlichkeit und{" "}
             <span className="text-primary">qualifiziertem Personal</span>
@@ -53,7 +49,6 @@ const HeroSection = () => (
           </div>
         </div>
 
-        {/* Trust Facts */}
         <div className="rounded-2xl border border-border/60 bg-card/50 p-6 sm:p-8 backdrop-blur-sm">
           <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-5">
             Darauf können Sie sich verlassen

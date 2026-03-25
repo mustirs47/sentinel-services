@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Shield, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MobileMenu from "./MobileMenu";
+import logoColor from "@/assets/logo-color.png";
 
 const navItems = [
   { label: "Leistungen", href: "#leistungen" },
@@ -32,11 +33,8 @@ const Header = () => {
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
-          <a href="#" className="flex items-center gap-2.5">
-            <Shield className="h-7 w-7 text-primary" strokeWidth={1.5} />
-            <span className="text-sm font-semibold tracking-[0.15em] uppercase text-foreground">
-              Sentinel Services
-            </span>
+          <a href="#" className="flex items-center">
+            <img src={logoColor} alt="Sentinel Services" className="h-7 sm:h-8 w-auto" />
           </a>
 
           <nav className="hidden items-center gap-1 lg:flex">

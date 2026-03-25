@@ -1,5 +1,6 @@
 import { User, ShieldCheck, BookOpen, HeartHandshake } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import teamPhoto from "@/assets/team-photo.jpg";
 
 const roles = [
   { icon: User, title: "Einsatzleitung", desc: "Koordination und Führung vor Ort" },
@@ -8,35 +9,23 @@ const roles = [
   { icon: BookOpen, title: "Fachliche Verantwortung", desc: "Qualitätssicherung und Weiterbildung" },
 ];
 
-const competencies = [
-  "Qualifizierte Fachkräfte",
-  "Praxisnahe Einsatzerfahrung",
-  "Dokumentierte Schulungen",
-  "Verantwortliche Ansprechpartner",
-];
-
 const TeamSection = () => {
   const ref = useScrollAnimation();
 
   return (
     <section id="team" className="bg-background">
       <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-2 items-start">
-          {/* Left – Visual placeholder */}
-          <div className="rounded-2xl border border-border/60 bg-card/50 p-8 sm:p-10">
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-6">
-              Kompetenzfelder
-            </h3>
-            <div className="grid grid-cols-2 gap-4">
-              {competencies.map((c) => (
-                <div key={c} className="rounded-lg bg-secondary/50 p-4 text-center">
-                  <p className="text-sm font-medium text-foreground">{c}</p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-6 text-xs text-muted-foreground italic">
-              * Platzhalter – hier können echte Teamfotos eingesetzt werden.
-            </p>
+        <div className="grid gap-12 lg:grid-cols-2 items-center">
+          {/* Left – Team photo */}
+          <div className="rounded-2xl overflow-hidden border border-border/60">
+            <img
+              src={teamPhoto}
+              alt="Sentinel Services Team bei einer Einsatzbesprechung"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+              width={1024}
+              height={1024}
+            />
           </div>
 
           {/* Right – Text */}

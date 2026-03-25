@@ -4,8 +4,8 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoColor from "@/assets/logo-color.png";
 
 interface MobileMenuProps {
   open: boolean;
@@ -17,9 +17,8 @@ const MobileMenu = ({ open, onClose, items }: MobileMenuProps) => (
   <Sheet open={open} onOpenChange={(v) => !v && onClose()}>
     <SheetContent side="left" className="w-72 bg-background border-border">
       <SheetHeader className="mb-6">
-        <SheetTitle className="flex items-center gap-2">
-          <Shield className="h-5 w-5 text-primary" strokeWidth={1.5} />
-          <span className="text-sm tracking-[0.15em] uppercase">Sentinel Services</span>
+        <SheetTitle>
+          <img src={logoColor} alt="Sentinel Services" className="h-6 w-auto" />
         </SheetTitle>
       </SheetHeader>
 
