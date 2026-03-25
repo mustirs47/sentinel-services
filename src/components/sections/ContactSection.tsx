@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Mail, Clock, MapPin, Send } from "lucide-react";
+import { Mail, Clock, MapPin, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -21,7 +21,7 @@ const ContactSection = () => {
             Anfrage stellen
           </h2>
           <p className="mt-3 text-muted-fg max-w-2xl mx-auto">
-            Beschreiben Sie Ihren Bedarf – wir melden uns zeitnah mit einem konkreten Vorschlag.
+            Beschreiben Sie Ihren Bedarf – wir melden uns innerhalb von 24 Stunden mit einem konkreten Vorschlag.
           </p>
         </div>
 
@@ -34,31 +34,26 @@ const ContactSection = () => {
               </h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <Phone className="h-5 w-5 shrink-0 text-primary mt-0.5" />
-                  <div>
-                    <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>Telefon</p>
-                    <p className="text-sm text-muted-fg">+49 (0) 000 000 000</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
                   <Mail className="h-5 w-5 shrink-0 text-primary mt-0.5" />
                   <div>
                     <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>E-Mail</p>
-                    <p className="text-sm text-muted-fg">info@sentinel-services.de</p>
+                    <a href="mailto:info@sentinel-services.de" className="text-sm text-muted-fg hover:text-primary transition-colors">
+                      info@sentinel-services.de
+                    </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <Clock className="h-5 w-5 shrink-0 text-primary mt-0.5" />
                   <div>
                     <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>Erreichbarkeit</p>
-                    <p className="text-sm text-muted-fg">24/7 für Anfragen</p>
+                    <p className="text-sm text-muted-fg">24/7 per E-Mail, telefonische Erreichbarkeit auf Anfrage</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 shrink-0 text-primary mt-0.5" />
                   <div>
                     <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>Einsatzgebiet</p>
-                    <p className="text-sm text-muted-fg">Regional und überregional</p>
+                    <p className="text-sm text-muted-fg">Nordrhein-Westfalen und angrenzende Regionen</p>
                   </div>
                 </li>
               </ul>
@@ -73,7 +68,7 @@ const ContactSection = () => {
                   <Send className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold" style={{ color: "hsl(var(--section-light-fg))" }}>Vielen Dank für Ihre Anfrage</h3>
-                <p className="mt-2 text-sm text-muted-fg">Wir melden uns schnellstmöglich bei Ihnen.</p>
+                <p className="mt-2 text-sm text-muted-fg">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="rounded-xl p-6 sm:p-8 space-y-4" style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}>
