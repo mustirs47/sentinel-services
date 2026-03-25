@@ -20,6 +20,7 @@ const Index = () => (
       title="Sentinel Services – Professioneller Sicherheitsdienst | Objektschutz, Veranstaltungsschutz & Baustellenbewachung"
       description="Sentinel Services – Ihr professioneller Sicherheitsdienst. Objektschutz, Veranstaltungsschutz, Baustellenbewachung & individuelle Sicherheitskonzepte. §34a-zugelassen, bundesweit einsatzbereit."
     />
+    <LocalBusinessJsonLd />
     <HeroSection />
     <TrustBar />
     <ServicesSection />
