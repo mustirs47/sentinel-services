@@ -1,9 +1,12 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowRight, ArrowLeft, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
+import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/sections/FAQSection";
+import { ServiceJsonLd, FAQPageJsonLd } from "@/components/StructuredData";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { getServiceBySlug, services } from "@/data/services";
 
 const LeistungDetail = () => {
@@ -13,35 +16,34 @@ const LeistungDetail = () => {
   if (!service) return <Navigate to="/leistungen" replace />;
 
   const { icon: Icon, title, h1, metaTitle, metaDescription, longDesc, typicalClients, points, context, faqs } = service;
+  const ref = useScrollAnimation();
 
   return (
     <PageLayout>
       <SEOHead title={metaTitle} description={metaDescription} />
+      <ServiceJsonLd
+        name={title}
+        description={metaDescription}
+        url={`https://sentinel-services.lovable.app/leistungen/${slug}`}
+      />
+      <FAQPageJsonLd faqs={faqs} />
+
+      <PageHero
+        backLink={{ label: "Alle Leistungen", href: "/leistungen" }}
+        title={h1}
+        subtitle={context}
+      >
+        <div className="flex items-center gap-3 mt-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+            <Icon className="h-5 w-5 text-primary" />
+          </div>
+          <span className="text-sm font-medium text-primary">{title}</span>
+        </div>
+      </PageHero>
 
       <section className="section-light">
-        <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24">
-          <Link
-            to="/leistungen"
-            className="inline-flex items-center gap-1.5 text-sm text-muted-fg hover:text-primary transition-colors mb-8"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Alle Leistungen
-          </Link>
-
-          <div className="flex items-center gap-4 mb-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
-              <Icon className="h-6 w-6 text-primary" />
-            </div>
-            <div>
-              <p className="text-xs font-medium text-primary">{context}</p>
-            </div>
-          </div>
-
-          <h1 className="text-2xl font-bold sm:text-3xl lg:text-4xl mb-6" style={{ color: "hsl(var(--section-light-fg))" }}>
-            {h1}
-          </h1>
-
-          <p className="text-base leading-relaxed text-muted-fg mb-8 max-w-3xl">
+        <div ref={ref} className="fade-in-section mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24">
+          <p className="text-base leading-relaxed text-muted-fg mb-10 max-w-3xl">
             {longDesc}
           </p>
 
@@ -92,7 +94,10 @@ const LeistungDetail = () => {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <a href="tel:+4920893579970">Kurzfristigen Einsatz anfragen</a>
+              <a href="tel:+4920893579970">
+                <Phone className="mr-2 h-4 w-4" />
+                Kurzfristigen Einsatz anfragen
+              </a>
             </Button>
           </div>
         </div>
@@ -109,7 +114,7 @@ const LeistungDetail = () => {
           <div className="flex flex-wrap gap-3">
             {services
               .filter((s) => s.slug !== slug)
-              .slice(0, 3)
+              .slice(0, 4)
               .map((s) => (
                 <Link
                   key={s.slug}
