@@ -46,7 +46,7 @@ const ContactSection = () => {
                   <Clock className="h-5 w-5 shrink-0 text-primary mt-0.5" />
                   <div>
                     <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>Erreichbarkeit</p>
-                    <p className="text-sm text-muted-fg">24/7 per E-Mail, telefonische Erreichbarkeit auf Anfrage</p>
+                    <p className="text-sm text-muted-fg">24/7 per E-Mail, telefonische Erreichbarkeit von 10-18 Uhr</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
