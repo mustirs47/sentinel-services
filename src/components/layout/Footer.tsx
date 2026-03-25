@@ -1,4 +1,4 @@
-import { Shield } from "lucide-react";
+import logoGrayscale from "@/assets/logo-grayscale.png";
 
 const footerNav = [
   { label: "Leistungen", href: "#leistungen" },
@@ -13,20 +13,13 @@ const Footer = () => (
   <footer className="bg-background border-t border-border/50">
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {/* Brand */}
         <div className="sm:col-span-2 lg:col-span-1">
-          <div className="flex items-center gap-2.5 mb-4">
-            <Shield className="h-6 w-6 text-primary" strokeWidth={1.5} />
-            <span className="text-sm font-semibold tracking-[0.15em] uppercase text-foreground">
-              Sentinel Services
-            </span>
-          </div>
+          <img src={logoGrayscale} alt="Sentinel Services" className="h-7 w-auto mb-4 opacity-70" />
           <p className="text-sm leading-relaxed text-muted-foreground max-w-xs">
             Sicherheitsdienstleistungen mit Struktur, Verlässlichkeit und qualifiziertem Personal.
           </p>
         </div>
 
-        {/* Navigation */}
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Navigation</h4>
           <ul className="space-y-2">
@@ -40,7 +33,6 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* Contact */}
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Kontakt</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
@@ -50,7 +42,6 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* Managed by */}
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Partner</h4>
           <p className="text-sm text-muted-foreground">
