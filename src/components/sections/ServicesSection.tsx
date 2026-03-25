@@ -5,38 +5,44 @@ const services = [
   {
     icon: Building2,
     title: "Objektschutz",
-    desc: "Schutz von Gewerbeobjekten, Immobilien und Betriebsstätten – zuverlässig und abgestimmt auf Ihre Anforderungen.",
-    points: ["Zugangskontrollen", "Präsenz vor Ort", "Schichtbetrieb nach Bedarf"],
+    context: "Für Betriebsstätten mit Publikumsverkehr oder erhöhtem Schutzbedarf außerhalb der Geschäftszeiten.",
+    desc: "Zugangskontrollen, Schichtbetrieb und sichtbare Präsenz – abgestimmt auf Objekt und Risikoprofil.",
+    points: ["Zugangs- und Zutrittskontrolle", "Schließ- und Kontrolldienste", "Dokumentierte Rundgänge"],
   },
   {
     icon: PartyPopper,
     title: "Veranstaltungsschutz",
-    desc: "Zugangskontrolle, Besucherlenkung und sichtbare Präsenz bei Events jeder Größenordnung.",
-    points: ["Einlassmanagement", "Deeskalation", "Koordination mit Veranstalter"],
+    context: "Für Events mit Besucherströmen, VIP-Bereichen oder erhöhtem Koordinationsbedarf.",
+    desc: "Einlassmanagement, Besucherlenkung und Deeskalation – in direkter Abstimmung mit dem Veranstalter.",
+    points: ["Personalisiertes Einlassmanagement", "Deeskalation und Intervention", "Abstimmung mit Ordnungsbehörden"],
   },
   {
     icon: HardHat,
     title: "Baustellenbewachung",
-    desc: "Prävention von Diebstahl, Vandalismus und unbefugtem Zutritt auf Baustellen und Projektflächen.",
-    points: ["Nacht- und Wochenendbewachung", "Dokumentierte Kontrollgänge", "Zugangskontrolle"],
+    context: "Für Projektflächen mit hohem Materialwert oder Zugang außerhalb der Bauzeiten.",
+    desc: "Nacht- und Wochenendbewachung mit dokumentierten Kontrollgängen und Zugangssicherung.",
+    points: ["Nacht-/Wochenendpräsenz", "Materialschutz und Zufahrtskontrolle", "Sofortmeldung bei Vorfällen"],
   },
   {
     icon: DoorOpen,
     title: "Empfangs- und Pfortendienste",
-    desc: "Repräsentativ, kontrolliert und serviceorientiert – der erste Eindruck zählt.",
-    points: ["Besucherempfang", "Schlüsselverwaltung", "Telefonzentrale"],
+    context: "Für repräsentative Eingangsbereiche, die Sicherheitsfunktion und Servicequalität verbinden.",
+    desc: "Professioneller Besucherempfang, Schlüsselverwaltung und Telefonzentrale.",
+    points: ["Besucherregistrierung", "Schlüssel- und Zutrittsverwaltung", "Repräsentativer erster Eindruck"],
   },
   {
     icon: Route,
     title: "Kontroll- und Streifendienste",
-    desc: "Regelmäßige Kontrollgänge und dokumentierte Prüfungen für maximale Sicherheit.",
-    points: ["Revierdienst", "Alarmverfolgung", "Schließdienste"],
+    context: "Für Areale, die regelmäßige Überprüfung erfordern – ohne permanente Besetzung.",
+    desc: "Revierdienst, Alarmverfolgung und Schließdienste nach festgelegtem Kontrollplan.",
+    points: ["Revierfahrten nach Einsatzplan", "Alarm- und Störungsverfolgung", "Protokollierte Schließrunden"],
   },
   {
     icon: Settings,
     title: "Individuelle Sicherheitskonzepte",
-    desc: "Abgestimmt auf Objekt, Risiko und Betriebsablauf – keine Lösung von der Stange.",
-    points: ["Risikoanalyse", "Maßnahmenplanung", "Laufende Optimierung"],
+    context: "Für komplexe Anforderungen, die keine Standardlösung abdeckt.",
+    desc: "Risikoanalyse, Maßnahmenplanung und laufende Optimierung – zugeschnitten auf Ihr Objekt.",
+    points: ["Objektspezifische Risikoanalyse", "Maßnahmen- und Einsatzplanung", "Regelmäßige Konzeptüberprüfung"],
   },
 ];
 
@@ -48,15 +54,15 @@ const ServicesSection = () => {
       <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="text-center mb-12">
           <h2 className="text-2xl font-bold sm:text-3xl" style={{ color: "hsl(var(--section-light-fg))" }}>
-            Sicherheitslösungen für unterschiedliche Einsatzbereiche
+            Unsere Sicherheitsdienstleistungen
           </h2>
           <p className="mt-3 text-muted-fg max-w-2xl mx-auto">
-            Von Objektschutz bis zum individuellen Sicherheitskonzept – wir decken ein breites Spektrum ab.
+            Jede Leistung wird auf Objekt, Einsatzlage und Kundenanforderung abgestimmt – keine Standardpakete.
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ icon: Icon, title, desc, points }) => (
+          {services.map(({ icon: Icon, title, context, desc, points }) => (
             <div
               key={title}
               className="group rounded-xl border p-6 transition-all duration-300 hover:shadow-lg hover:border-primary/30"
@@ -69,7 +75,8 @@ const ServicesSection = () => {
                 <Icon className="h-5 w-5 text-primary" />
               </div>
               <h3 className="text-lg font-semibold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-fg">{desc}</p>
+              <p className="mt-1 text-xs font-medium text-primary">{context}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-fg">{desc}</p>
               <ul className="mt-4 space-y-1.5">
                 {points.map((p) => (
                   <li key={p} className="flex items-center gap-2 text-sm text-muted-fg">
@@ -79,7 +86,7 @@ const ServicesSection = () => {
                 ))}
               </ul>
               <a href="#kontakt" className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:underline">
-                Mehr erfahren <ArrowRight className="h-3.5 w-3.5" />
+                Anfrage stellen <ArrowRight className="h-3.5 w-3.5" />
               </a>
             </div>
           ))}

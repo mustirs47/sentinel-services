@@ -28,13 +28,13 @@ const Header = () => {
       <header
         className={`sticky top-0 z-50 border-b transition-all duration-300 ${
           scrolled
-            ? "border-border/60 bg-background/90 backdrop-blur-lg shadow-lg shadow-black/10"
-            : "border-transparent bg-background/70 backdrop-blur-sm"
+            ? "border-border/60 bg-background/95 backdrop-blur-lg shadow-lg shadow-black/20"
+            : "border-transparent bg-background/80 backdrop-blur-sm"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
           <a href="#" className="flex items-center">
-            <img src={logoColor} alt="Sentinel Services" className="h-7 sm:h-8 w-auto" />
+            <img src={logoColor} alt="Sentinel Services" className="h-9 sm:h-10 w-auto" />
           </a>
 
           <nav className="hidden items-center gap-1 lg:flex">
@@ -42,7 +42,7 @@ const Header = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
                 {item.label}
               </a>
