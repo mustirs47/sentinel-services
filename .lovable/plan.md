@@ -1,115 +1,156 @@
 
 
-# Umfassende Überarbeitung – Sentinel Services Website
+# Umfassende Überarbeitung V3 – SEO, Conversion, Crawlability & Vertrauenshärte
 
-Basierend auf der ChatGPT-Analyse wird die gesamte Seite inhaltlich und visuell überarbeitet. Kernproblem: Die Seite ist strukturell solide, aber zu generisch, zu kartenlastig und in den Vertrauensbereichen zu schwach.
-
----
-
-## Priorität A – Sofort
-
-### 1. Hero komplett neu gewichten
-- Navigation als klare, kompakte Kopfzeile (Logo größer/sichtbarer, weniger dominant im Hero-Bereich)
-- Hero kompakter: weniger leere Fläche, Headline + Subline + **ein** klarer Primär-CTA dominant, Sekundär-CTA zurückgenommen
-- Trust-Facts nicht als schwerer Nebenblock, sondern als flache Zeile **unter** der Hero-Botschaft
-- Höherer Kontrast auf allen Texten (blasse `muted-foreground` Stufen überarbeiten)
-
-### 2. Team-Sektion komplett neu konzipieren
-- Weg vom generischen KI-Teamfoto + abstrakter Rollenliste
-- Stattdessen: **Kompetenz-Profil-Block** mit konkreten Führungsrollen, Fachschwerpunkten, Erfahrungshintergründen und Haltung
-- Rollen wie "Einsatzleitung", "Kundenverantwortung", "Qualitätssicherung" mit je 2-3 Sätzen echtem Profil statt einer Zeile
-- Wenn keine echten Fotos: sachlicher Kompetenzaufbau ohne künstliche Szenerie (Icon-basiert statt Fake-Teamfoto)
-
-### 3. Qualifikationen von vage auf belastbar
-- Strukturierte Darstellung in **Nachweisgruppen** (nicht eine flache Liste):
-  - Gewerberechtliche Grundlage (§34a GewO, Gewerbeerlaubnis)
-  - Fachliche Qualifikation (Sachkundeprüfung, Unterrichtungsverfahren)
-  - Zusatzqualifikationen (Erste Hilfe, Brandschutz, Deeskalation)
-  - Betriebliche Standards (Einsatzdokumentation, Qualitätsmanagement)
-- Jede Gruppe mit Erklärung, **warum das für den Kunden relevant ist**
-- Downloads: entweder echte PDFs oder den ganzen Download-Block entfernen (kein "in Kürze verfügbar")
-
-### 4. Alle Platzhalter entfernen
-- Telefonnummer `+49 (0) 000 000 000` → echte Nummer oder komplett ausblenden, nur E-Mail zeigen
-- "Managed by Ovarna" im Footer: entfernen oder als dezentes "Webdesign: Ovarna" ganz unten
-- "in Kürze verfügbar" Downloads: entfernen
-- Insights: auf 2 echte Beiträge reduzieren oder Sektion vorerst ausblenden
-
-### 5. Kartengleichförmigkeit aufbrechen
-- Nicht jede Sektion darf das gleiche Muster haben (Überschrift → Karten-Grid → Link)
-- **Leistungen**: Karten bleiben, aber mit Einsatzkontext-Satz ("Für laufende Betriebsumgebungen", "Für temporär erhöhte Risiken")
-- **Branchen**: Kompakter als Kacheln mit je 1 operativer Besonderheit statt generischer Beschreibung
-- **Warum wir**: Komplett umbauen von Wiederholung der Trust-Bar zu **Betriebsmodell** (Analyse → Personal-Briefing → Einsatzführung → Dokumentation/Reporting)
-- **Szenarien**: Nüchterner formulieren, kein "auf null reduziert", stattdessen operative Beschreibung
+Basierend auf der zweiten ChatGPT-Analyse. Kernproblem: Die Seite ist inhaltlich besser, aber architektonisch noch ein One-Pager, conversion-schwach und nicht indexierbar.
 
 ---
 
-## Priorität B – Direkt danach
+## P0 – Muss vor Launch gelöst werden
 
-### 6. Leistungstexte schärfen
-- Jede Karte bekommt einen Einsatzkontext-Satz: für wen, in welcher Lage, operativer Mehrwert
-- Beispiel Objektschutz: "Für Betriebsstätten mit regelmäßigem Publikumsverkehr oder erhöhtem Schutzbedarf außerhalb der Geschäftszeiten"
+### 1. Multi-Page-Architektur aufbauen
+Die wichtigste strukturelle Änderung. Der One-Pager wird zu einer echten Seitenstruktur mit eigenen URLs, eigenem H1 und eigenem Meta-Title/Description pro Seite.
 
-### 7. Branchenkarten verdichten
-- Pro Branche 1 konkrete operative Besonderheit statt generischer Beschreibung:
-  - Baustellen: "Nacht-/Wochenendlage, Materialschutz, Zugang außerhalb Bauzeiten"
-  - Hotels: "Diskreter Dienst, Gästekontakt, Nachtportierlogik"
-  - Industrie: "Sensible Flächen, Schichtlogik, Tor-/Zutrittskontrolle"
+**Neue Routen in `App.tsx`:**
+- `/leistungen` – Übersicht aller Leistungen
+- `/leistungen/objektschutz`, `/leistungen/veranstaltungsschutz`, `/leistungen/baustellenbewachung`, `/leistungen/empfangs-und-pfortendienst`, `/leistungen/kontroll-und-streifendienst`, `/leistungen/sicherheitskonzepte`
+- `/branchen` – Übersicht
+- `/qualifikationen` – eigene Seite
+- `/arbeitsweise` – Betriebsmodell
+- `/karriere` – eigene Seite
+- `/kontakt` – eigene Seite
 
-### 8. Prozess-Sektion mit operativen Details
-- Wer meldet sich? (persönlicher Ansprechpartner)
-- In welchem Zeitraum? (z.B. "Rückmeldung innerhalb von 24h")
-- Vor-Ort-Termin oder digitale Erstaufnahme?
-- Welche Infos braucht Sentinel vorab?
+**Neue Dateien:**
+- `src/pages/Leistungen.tsx` (Übersicht)
+- `src/pages/LeistungDetail.tsx` (Template für Einzelleistungen mit FAQ)
+- `src/pages/Branchen.tsx`
+- `src/pages/Qualifikationen.tsx`
+- `src/pages/Arbeitsweise.tsx`
+- `src/pages/Karriere.tsx`
+- `src/pages/Kontakt.tsx`
+- `src/components/layout/PageLayout.tsx` (Wrapper: Topbar + Header + Footer)
+- `src/components/SEOHead.tsx` (React Helmet für Title/Meta pro Seite)
+- `src/data/services.ts` (Leistungsdaten ausgelagert, wiederverwendbar)
+- `src/data/industries.ts` (Branchendaten ausgelagert)
 
-### 9. Karriere ausbauen
-- Anforderungen konkreter (Mindestalter, §34a, Führungszeugnis, Deutschkenntnisse)
-- Einsatzfelder nennen
-- Bewerbungsablauf skizzieren
-- Weiterbildungsmöglichkeiten
-- CTA für Initiativbewerbung
+**Homepage bleibt bestehen** als kompakte Übersicht mit Teasern + Links zu den Unterseiten.
 
-### 10. Kontakt/Footer vertriebsreif machen
-- Echte Kontaktdaten oder E-Mail-only mit Hinweis "Telefonnummer auf Anfrage"
-- Klares Einsatzgebiet nennen (z.B. "Raum NRW" oder "Bundesweit")
-- Footer: vollständige Unternehmensangaben, "Managed by Ovarna" entfernen oder in Impressum verschieben
+### 2. Hero search- und conversion-stärker machen
+- H1 mit Primär-Keyword: z.B. "Professioneller Sicherheitsdienst – Objektschutz, Veranstaltungsschutz, Baustellenbewachung"
+- Subline mit konkretem Nutzen statt nur Markenclaim
+- Sekundär-CTA "Kurzfristigen Einsatz anfragen" für Dringlichkeitsfälle
+- Topbar: Telefonnummer sichtbar machen (echte Nummer oder Platzhalter mit klarem Hinweis)
+
+**Dateien:** `HeroSection.tsx`, `Topbar.tsx`, `Header.tsx`
+
+### 3. Telefonnummer sichtbar machen
+- In Topbar, Header (Desktop), Hero-Bereich und Kontaktsektion
+- Mobil: Sticky Call-Button am unteren Bildschirmrand
+- `src/components/layout/StickyCallButton.tsx` (neu)
+- Wenn keine echte Nummer vorhanden: "Telefonisch erreichbar: 10–18 Uhr" mit Nummer, oder "Telefonnummer auf Anfrage" entfernen und durch echte ersetzen
+
+### 4. Einsatzgebiet konsistent machen
+- Footer zeigt aktuell "NRW und angrenzende Regionen", Kontaktsektion sagt "Bundesweit"
+- **Entscheidung:** Einheitlich "Bundesweit" oder einheitlich "NRW + angrenzende Regionen"
+- In Footer, Kontaktsektion und ggf. Hero konsistent setzen
+
+**Dateien:** `Footer.tsx`, `ContactSection.tsx`
+
+### 5. index.html SEO-Grundlagen
+- Title: "Sentinel Services – Sicherheitsdienst für Objektschutz, Veranstaltungsschutz & Baustellenbewachung"
+- Meta Description: keywordreich, mit Handlungsaufforderung
+- OG-Tags aktualisieren (aktuell steht noch "Demnächst verfügbar")
+- Canonical-Tag setzen
+
+**Datei:** `index.html`
+
+### 6. Kontaktbereich conversion-stark machen
+- Trust-Signale direkt neben dem Formular: §34a, Rückmeldung < 24h, fester Ansprechpartner
+- Zwei CTA-Pfade: "Planbare Anfrage" vs. "Kurzfristiger Einsatzbedarf" (prominenter Hinweis)
+- Telefonnummer sichtbar im Kontaktblock
+
+**Datei:** `ContactSection.tsx`
 
 ---
 
-## Priorität C – Nächste Ausbaustufe (nicht in diesem Durchgang)
-- Echte Fachbeiträge statt Platzhalter-Insights
-- Detailseiten für Leistungen und Branchen
-- Unternehmensprofil als echtes PDF
-- Reale Bildwelt
+## P1 – Direkt nach P0
+
+### 7. FAQ-Bereich für SEO + Einwandbehandlung
+- Neue Komponente `src/components/sections/FAQSection.tsx`
+- Auf Homepage und auf Leistungs-Detailseiten (je mit leistungsspezifischen Fragen)
+- Typische Fragen: Zulassung, Reaktionszeit, Einsatzgebiet, Kosten, Mindestlaufzeit, Nacht-/Wochenenddienste
+
+### 8. Leistungs-Detailseiten mit eigenem SEO-Fokus
+Jede Leistung bekommt eine eigene Seite mit:
+- Eigenem H1 (z.B. "Baustellenbewachung – Nacht- und Wochenendschutz für Projektflächen")
+- Ausführliche Beschreibung, Einsatzkontext, typische Kunden
+- 3-5 FAQ pro Leistung
+- CTA mit leistungsspezifischer Ansprache
+- Interne Links zu verwandten Branchen und Qualifikationen
+
+### 9. Team-/Expertise-Bereich weiter schärfen
+- Konkretere Erfahrungsangaben (z.B. "Über X Jahre operative Erfahrung in...")
+- Klarere Verantwortungsprofile
+- Optional: "Geschäftsführung" als eigenen Profilblock
+
+**Datei:** `TeamSection.tsx`
+
+### 10. Interne Verlinkung
+- Leistungskarten auf Homepage verlinken auf `/leistungen/[slug]` statt nur `#kontakt`
+- Branchenkarten verlinken auf Branchenseiten oder relevante Leistungen
+- Footer-Navigation auf echte Seiten statt nur Anker
+- Qualifikationen und Betriebsmodell verlinken auf eigene Seiten
+
+**Dateien:** `ServicesSection.tsx`, `IndustriesSection.tsx`, `Footer.tsx`, `Header.tsx`
+
+### 11. Insights reaktivieren (optional, nur mit echtem Content)
+- Wenn 2-3 echte Fachbeiträge vorhanden: wieder einblenden
+- Sonst weiterhin ausgeblendet lassen
 
 ---
 
 ## Technische Umsetzung
 
-### Dateien die überarbeitet werden:
+### Neue Dateien (ca. 15)
 
-| Datei | Änderungsumfang |
+| Datei | Zweck |
 |---|---|
-| `HeroSection.tsx` | Komplett neu: kompakter, höherer Kontrast, Trust-Facts als flache Zeile |
-| `Header.tsx` | Logo größer, Navigation klarer abgetrennt vom Hero |
-| `TeamSection.tsx` | Komplett neu: Kompetenz-Profile statt Foto+Rollenliste |
-| `QualificationsSection.tsx` | Komplett neu: Nachweisgruppen mit Kundenrelevanz, keine Platzhalter-Downloads |
-| `WhyUsSection.tsx` | Umbau zu Betriebsmodell (4 Phasen statt 6 generische Punkte) |
-| `ServicesSection.tsx` | Einsatzkontext-Sätze ergänzen, Differenzierung |
-| `IndustriesSection.tsx` | Operative Besonderheiten pro Branche |
-| `ReferencesSection.tsx` | Nüchternere Formulierung, weniger werblich |
-| `InsightsSection.tsx` | Auf 2 Beiträge reduzieren oder vorerst ausblenden |
-| `CareerSection.tsx` | Stark ausbauen: Anforderungen, Einsatzfelder, Bewerbungsprozess |
-| `ProcessSection.tsx` | Operative Details ergänzen |
-| `ContactSection.tsx` | Platzhalter-Telefon bereinigen, Einsatzgebiet konkretisieren |
-| `Footer.tsx` | "Managed by Ovarna" entfernen/verschieben, Unternehmensangaben |
-| `Topbar.tsx` | Platzhalter-Telefon bereinigen |
-| `TrustBar.tsx` | Semantische Überschneidung mit "Warum wir" auflösen |
-| `index.css` | Kontrast-Verbesserungen bei muted-Farben |
+| `src/components/layout/PageLayout.tsx` | Wrapper mit Topbar, Header, Footer |
+| `src/components/SEOHead.tsx` | react-helmet-async für Meta-Tags pro Seite |
+| `src/components/sections/FAQSection.tsx` | Accordion-FAQ mit strukturierten Daten |
+| `src/components/layout/StickyCallButton.tsx` | Mobiler Sticky-Anruf-Button |
+| `src/data/services.ts` | Leistungsdaten zentral |
+| `src/data/industries.ts` | Branchendaten zentral |
+| `src/pages/Leistungen.tsx` | Leistungsübersicht |
+| `src/pages/LeistungDetail.tsx` | Einzelleistung mit FAQ |
+| `src/pages/Branchen.tsx` | Branchenübersicht |
+| `src/pages/Qualifikationen.tsx` | Qualifikationen eigene Seite |
+| `src/pages/Arbeitsweise.tsx` | Betriebsmodell eigene Seite |
+| `src/pages/Karriere.tsx` | Karriere eigene Seite |
+| `src/pages/Kontakt.tsx` | Kontakt eigene Seite |
 
-### Design-Änderungen:
-- `--muted-foreground` heller setzen für besseren Kontrast
-- Hero: stärkerer Gradient-Overlay, kompaktere vertikale Proportion
-- Logo in Header: `h-8 sm:h-9` statt `h-7 sm:h-8`
-- Sektionen: unterschiedliche Layouts statt einheitliches Karten-Grid (z.B. WhyUs als horizontale Timeline, Team als Profil-Blöcke)
+### Bestehende Dateien die geändert werden
+
+| Datei | Änderung |
+|---|---|
+| `App.tsx` | Alle neuen Routen registrieren |
+| `index.html` | Title, Meta, OG-Tags, Canonical |
+| `HeroSection.tsx` | Keyword-H1, Dringlichkeits-CTA |
+| `Topbar.tsx` | Telefonnummer einbauen |
+| `Header.tsx` | Navigation auf echte Seiten umstellen, Telefonnummer Desktop |
+| `Footer.tsx` | Einsatzgebiet konsistent, Navigation auf echte URLs |
+| `ContactSection.tsx` | Trust-Signale am Formular, Dringlichkeits-CTA |
+| `ServicesSection.tsx` | Links auf Leistungs-Detailseiten |
+| `IndustriesSection.tsx` | Links auf Branchenseiten |
+| `Index.tsx` | FAQ-Sektion einbinden, Insights ggf. reaktivieren |
+| `MobileMenu.tsx` | Navigation auf echte Seiten |
+
+### Dependency
+- `react-helmet-async` für SEO-Meta-Tags pro Route
+
+### Design-Prinzipien
+- Homepage wird kompakter: Sektionen als Teaser mit "Mehr erfahren"-Links
+- Unterseiten bekommen vollständige Inhalte
+- Jede Seite hat eigenen Title, Description, H1
+- FAQ nutzt bestehende Accordion-Komponente
 
