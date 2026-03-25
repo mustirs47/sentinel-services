@@ -1,6 +1,5 @@
-import Topbar from "@/components/layout/Topbar";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import PageLayout from "@/components/layout/PageLayout";
+import SEOHead from "@/components/SEOHead";
 import HeroSection from "@/components/sections/HeroSection";
 import TrustBar from "@/components/sections/TrustBar";
 import ServicesSection from "@/components/sections/ServicesSection";
@@ -12,11 +11,14 @@ import ProcessSection from "@/components/sections/ProcessSection";
 import ReferencesSection from "@/components/sections/ReferencesSection";
 import CareerSection from "@/components/sections/CareerSection";
 import ContactSection from "@/components/sections/ContactSection";
+import FAQSection from "@/components/sections/FAQSection";
 
 const Index = () => (
-  <div className="min-h-screen bg-background">
-    <Topbar />
-    <Header />
+  <PageLayout>
+    <SEOHead
+      title="Sentinel Services – Professioneller Sicherheitsdienst | Objektschutz, Veranstaltungsschutz & Baustellenbewachung"
+      description="Sentinel Services – Ihr professioneller Sicherheitsdienst. Objektschutz, Veranstaltungsschutz, Baustellenbewachung & individuelle Sicherheitskonzepte. §34a-zugelassen, bundesweit einsatzbereit."
+    />
     <HeroSection />
     <TrustBar />
     <ServicesSection />
@@ -28,8 +30,8 @@ const Index = () => (
     <ReferencesSection />
     <CareerSection />
     <ContactSection />
-    <Footer />
-  </div>
+    <FAQSection light />
+  </PageLayout>
 );
 
 export default Index;

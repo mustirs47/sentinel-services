@@ -1,21 +1,23 @@
 import { useState, useEffect } from "react";
-import { Menu } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MobileMenu from "./MobileMenu";
 import logoColor from "@/assets/logo-color.png";
 
 const navItems = [
-  { label: "Leistungen", href: "#leistungen" },
-  { label: "Branchen", href: "#branchen" },
-  { label: "Über uns", href: "#team" },
-  { label: "Qualifikationen", href: "#qualifikationen" },
-  { label: "Karriere", href: "#karriere" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Leistungen", href: "/leistungen" },
+  { label: "Branchen", href: "/branchen" },
+  { label: "Arbeitsweise", href: "/arbeitsweise" },
+  { label: "Qualifikationen", href: "/qualifikationen" },
+  { label: "Karriere", href: "/karriere" },
+  { label: "Kontakt", href: "/kontakt" },
 ];
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -33,25 +35,34 @@ const Header = () => {
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
-          <a href="#" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src={logoColor} alt="Sentinel Services" className="h-9 sm:h-10 w-auto" />
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
-                href={item.href}
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                to={item.href}
+                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                  location.pathname.startsWith(item.href) ? "text-primary" : "text-muted-foreground"
+                }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           <div className="flex items-center gap-3">
+            <a
+              href="tel:+4920893579970"
+              className="hidden lg:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Phone className="h-4 w-4" />
+              <span className="hidden xl:inline">+49 (0) 208 935 799 70</span>
+            </a>
             <Button asChild size="sm" className="hidden sm:inline-flex">
-              <a href="#kontakt">Anfrage stellen</a>
+              <Link to="/kontakt">Anfrage stellen</Link>
             </Button>
             <button
               onClick={() => setMobileOpen(true)}

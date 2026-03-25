@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
 import logoGrayscale from "@/assets/logo-grayscale.png";
 
 const footerNav = [
-  { label: "Leistungen", href: "#leistungen" },
-  { label: "Branchen", href: "#branchen" },
-  { label: "Über uns", href: "#team" },
-  { label: "Karriere", href: "#karriere" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Leistungen", href: "/leistungen" },
+  { label: "Branchen", href: "/branchen" },
+  { label: "Arbeitsweise", href: "/arbeitsweise" },
+  { label: "Qualifikationen", href: "/qualifikationen" },
+  { label: "Karriere", href: "/karriere" },
+  { label: "Kontakt", href: "/kontakt" },
 ];
 
 const legalNav = [
@@ -18,12 +20,14 @@ const Footer = () => (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <div>
-          <img src={logoGrayscale} alt="Sentinel Services" className="h-8 w-auto mb-4 opacity-80" />
+          <Link to="/">
+            <img src={logoGrayscale} alt="Sentinel Services" className="h-8 w-auto mb-4 opacity-80" />
+          </Link>
           <p className="text-sm leading-relaxed text-muted-foreground max-w-xs">
-            Sicherheitsdienstleistungen mit Struktur, Verlässlichkeit und qualifiziertem Personal.
+            Professioneller Sicherheitsdienst mit Struktur, Verlässlichkeit und qualifiziertem Personal.
           </p>
           <p className="mt-3 text-xs text-muted-foreground/60">
-            Einsatzgebiet: Nordrhein-Westfalen und angrenzende Regionen
+            Einsatzgebiet: Bundesweit
           </p>
         </div>
 
@@ -32,9 +36,9 @@ const Footer = () => (
           <ul className="space-y-2">
             {footerNav.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                <Link to={item.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -44,20 +48,25 @@ const Footer = () => (
           <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Kontakt</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
+              <a href="tel:+4920893579970" className="hover:text-primary transition-colors">
+                +49 (0) 208 935 799 70
+              </a>
+            </li>
+            <li>
               <a href="mailto:info@sentinel-services.de" className="hover:text-primary transition-colors">
                 info@sentinel-services.de
               </a>
             </li>
-            <li>24/7 erreichbar per E-Mail</li>
+            <li>Mo–Fr 10–18 Uhr, E-Mail 24/7</li>
           </ul>
           <div className="mt-6">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Rechtliches</h4>
             <ul className="space-y-2">
               {legalNav.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                  <Link to={item.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
