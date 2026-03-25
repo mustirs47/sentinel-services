@@ -14,7 +14,7 @@
     --popover-foreground: 210 20% 90%;
 
     --primary: 205 90% 55%;
-    --primary-foreground: 220 20% 6%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 220 15% 20%;
     --secondary-foreground: 210 20% 85%;
@@ -33,6 +33,13 @@
     --ring: 205 90% 55%;
 
     --radius: 0.5rem;
+
+    /* Light section tokens */
+    --section-light-bg: 220 20% 97%;
+    --section-light-fg: 220 20% 15%;
+    --section-light-muted: 220 10% 45%;
+    --section-light-border: 220 15% 88%;
+    --section-light-card: 0 0% 100%;
 
     --sidebar-background: 220 20% 8%;
     --sidebar-foreground: 210 20% 90%;
@@ -53,4 +60,30 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Light section utility */
+.section-light {
+  background: hsl(var(--section-light-bg));
+  color: hsl(var(--section-light-fg));
+}
+
+.section-light .text-muted-fg {
+  color: hsl(var(--section-light-muted));
+}
+
+/* Fade-in animation for scroll */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
