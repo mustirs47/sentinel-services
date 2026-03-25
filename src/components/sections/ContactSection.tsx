@@ -53,7 +53,7 @@ const ContactSection = () => {
                   <MapPin className="h-5 w-5 shrink-0 text-primary mt-0.5" />
                   <div>
                     <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>Einsatzgebiet</p>
-                    <p className="text-sm text-muted-fg">Nordrhein-Westfalen und angrenzende Regionen</p>
+                    <p className="text-sm text-muted-fg">Bundesweit</p>
                   </div>
                 </li>
               </ul>
