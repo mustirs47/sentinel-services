@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Scale, GraduationCap, HeartPulse, Settings, ArrowRight, Award } from "lucide-react";
+import { Scale, GraduationCap, HeartPulse, Settings, ArrowRight, Award, Shield, Users, BookOpen, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
@@ -11,41 +11,67 @@ const groups = [
   {
     icon: Scale,
     title: "Gewerberechtliche Grundlage",
-    items: ["Gewerbeerlaubnis nach §34a GewO", "Sachkundeprüfung nach §34a GewO (IHK)", "Unterrichtungsverfahren nach §34a GewO"],
-    relevance: "Gesetzliche Voraussetzung für gewerbliche Sicherheitstätigkeit.",
-    count: 3,
+    items: [
+      { name: "Gewerbeerlaubnis nach §34a GewO", detail: "Offizielle Zulassung für gewerbliche Bewachung" },
+      { name: "Sachkundeprüfung nach §34a GewO (IHK)", detail: "Umfassende Fachprüfung bei der Industrie- und Handelskammer" },
+      { name: "Unterrichtungsverfahren nach §34a GewO", detail: "40-stündige Grundschulung für Sicherheitsmitarbeiter" },
+    ],
+    relevance: "Gesetzliche Voraussetzung für gewerbliche Sicherheitstätigkeit. Ohne diese Nachweise darf in Deutschland kein Sicherheitsdienst betrieben werden.",
+    color: "205 90% 55%",
   },
   {
     icon: GraduationCap,
     title: "Fachliche Qualifikation",
-    items: ["Geprüfte Schutz- und Sicherheitskräfte", "Schulung in Rechtsgrundlagen und Eingriffsrecht", "Regelmäßige Auffrischungslehrgänge"],
-    relevance: "Rechtssicheres Handeln und korrekte Reaktion in kritischen Situationen.",
-    count: 3,
+    items: [
+      { name: "Geprüfte Schutz- und Sicherheitskräfte", detail: "IHK-zertifizierte Weiterbildung mit Abschlussprüfung" },
+      { name: "Schulung in Rechtsgrundlagen und Eingriffsrecht", detail: "Kenntnisse in Notwehr, Jedermannsrecht, Hausrecht" },
+      { name: "Regelmäßige Auffrischungslehrgänge", detail: "Jährliche Updates zu Rechtsänderungen und Best Practices" },
+    ],
+    relevance: "Rechtssicheres Handeln und korrekte Reaktion in kritischen Situationen – minimiert Ihr Haftungsrisiko als Auftraggeber.",
+    color: "42 80% 55%",
   },
   {
     icon: HeartPulse,
     title: "Zusatzqualifikationen",
-    items: ["Erste-Hilfe-Ausbildung (regelmäßig aufgefrischt)", "Brandschutzhelfer-Ausbildung", "Deeskalationstraining"],
-    relevance: "Schnelles Handeln bei Notfällen, reduziertes Eskalationsrisiko.",
-    count: 3,
+    items: [
+      { name: "Erste-Hilfe-Ausbildung", detail: "16-stündige Ausbildung, alle 2 Jahre aufgefrischt" },
+      { name: "Brandschutzhelfer-Ausbildung", detail: "Theoretische und praktische Schulung inkl. Feuerlöschübung" },
+      { name: "Deeskalationstraining", detail: "Techniken zur Konfliktvermeidung und -bewältigung" },
+    ],
+    relevance: "Schnelles Handeln bei Notfällen und reduziertes Eskalationsrisiko – Ihre Mitarbeiter und Gäste sind in sicheren Händen.",
+    color: "145 60% 45%",
   },
   {
     icon: Settings,
     title: "Betriebliche Standards",
-    items: ["Lückenlose Einsatzdokumentation", "Standardisierte Übergabe- und Meldeprotokolle", "Interne Qualitätskontrollen und Audits"],
-    relevance: "Transparenz und Nachvollziehbarkeit jedes Einsatzes.",
-    count: 3,
+    items: [
+      { name: "Lückenlose Einsatzdokumentation", detail: "Digitale Protokollierung aller Vorfälle und Kontrollgänge" },
+      { name: "Standardisierte Übergabe- und Meldeprotokolle", detail: "Einheitliche Formulare für reibungslose Schichtwechsel" },
+      { name: "Interne Qualitätskontrollen und Audits", detail: "Regelmäßige Überprüfung durch Einsatzleitung und Geschäftsführung" },
+    ],
+    relevance: "Transparenz und Nachvollziehbarkeit jedes Einsatzes – Sie wissen immer, was auf Ihrem Objekt passiert.",
+    color: "270 60% 55%",
   },
 ];
 
 const qualFaqs = [
-  { question: "Sind alle Mitarbeiter §34a-geprüft?", answer: "Ja, alle unsere Einsatzkräfte verfügen über die Sachkundeprüfung nach §34a GewO (IHK)." },
-  { question: "Wie stellen Sie die Qualität sicher?", answer: "Durch regelmäßige interne Audits, Auffrischungsschulungen und standardisierte Einsatzdokumentation." },
-  { question: "Welche Zusatzausbildungen hat Ihr Personal?", answer: "Erste-Hilfe, Brandschutzhelfer und Deeskalationstraining – regelmäßig aufgefrischt." },
+  { question: "Sind alle Mitarbeiter §34a-geprüft?", answer: "Ja, alle unsere Einsatzkräfte verfügen über die Sachkundeprüfung nach §34a GewO (IHK). Dies ist bei uns eine zwingende Einstellungsvoraussetzung." },
+  { question: "Wie stellen Sie die Qualität dauerhaft sicher?", answer: "Durch regelmäßige interne Audits, verpflichtende Auffrischungsschulungen und standardisierte Einsatzdokumentation. Zusätzlich führen wir Kundenzufriedenheitsbefragungen durch." },
+  { question: "Welche Zusatzausbildungen hat Ihr Personal?", answer: "Erste-Hilfe, Brandschutzhelfer und Deeskalationstraining – alles regelmäßig aufgefrischt. Je nach Einsatz kommen weitere Qualifikationen hinzu." },
+  { question: "Wie oft werden Schulungen durchgeführt?", answer: "Wir schulen unser Personal mindestens zweimal jährlich in den Kernbereichen. Zusätzlich gibt es objektspezifische Einweisungen vor jedem neuen Einsatz." },
+];
+
+const certProcess = [
+  { icon: BookOpen, title: "Grundausbildung", desc: "Sachkundeprüfung §34a GewO bei der IHK" },
+  { icon: GraduationCap, title: "Fachschulung", desc: "Spezialisierung nach Einsatzbereich" },
+  { icon: RefreshCw, title: "Auffrischung", desc: "Regelmäßige Weiterbildung und Re-Zertifizierung" },
+  { icon: Shield, title: "Qualitätskontrolle", desc: "Interne Audits und Leistungsbewertung" },
 ];
 
 const QualifikationenPage = () => {
   const ref = useScrollAnimation();
+  const ref2 = useScrollAnimation();
+  const ref3 = useScrollAnimation();
 
   return (
     <PageLayout>
@@ -77,17 +103,35 @@ const QualifikationenPage = () => {
               <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>§34a-geprüft</p>
             </div>
             <div>
-              <p className="stat-number">∞</p>
-              <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>Regelmäßige Schulungen</p>
+              <p className="stat-number">2×</p>
+              <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>Schulungen pro Jahr</p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Intro */}
       <section className="section-light">
-        <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-12">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl font-bold sm:text-3xl mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+              Warum Qualifikation zählt
+            </h2>
+            <p className="text-base leading-relaxed text-muted-fg">
+              Im Sicherheitsgewerbe entscheidet die Qualifikation des Personals über die Qualität der Leistung – und über 
+              Ihr Haftungsrisiko als Auftraggeber. Wir investieren kontinuierlich in die Aus- und Weiterbildung unserer 
+              Einsatzkräfte und setzen ausschließlich §34a-geprüftes Personal ein. Jeder Nachweis ist dokumentiert, 
+              jede Schulung wird regelmäßig aufgefrischt.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Qualification groups */}
+      <section className="section-light">
+        <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24">
           <div className="stagger-children grid gap-6 sm:grid-cols-2">
-            {groups.map(({ icon: Icon, title, items, relevance, count }) => (
+            {groups.map(({ icon: Icon, title, items, relevance }) => (
               <div
                 key={title}
                 className="card-accent rounded-xl p-6 sm:p-8 transition-all duration-300 hover:shadow-lg"
@@ -101,24 +145,93 @@ const QualifikationenPage = () => {
                     <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h2>
                   </div>
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
-                    {count}
+                    {items.length}
                   </span>
                 </div>
-                <ul className="space-y-2.5 mb-5">
+                <ul className="space-y-4 mb-5">
                   {items.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm" style={{ color: "hsl(var(--section-light-fg))" }}>
+                    <li key={item.name} className="flex items-start gap-2.5">
                       <Award className="h-4 w-4 shrink-0 text-primary mt-0.5" />
-                      {item}
+                      <div>
+                        <p className="text-sm font-semibold" style={{ color: "hsl(var(--section-light-fg))" }}>{item.name}</p>
+                        <p className="text-xs text-muted-fg mt-0.5">{item.detail}</p>
+                      </div>
                     </li>
                   ))}
                 </ul>
                 <div className="rounded-lg p-3" style={{ background: "hsl(205 90% 55% / 0.05)" }}>
                   <p className="text-xs leading-relaxed text-muted-fg">
-                    <span className="font-bold text-primary">Relevanz:</span> {relevance}
+                    <span className="font-bold text-primary">Relevanz für Sie:</span> {relevance}
                   </p>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certification process */}
+      <section className="bg-background border-t border-border/50">
+        <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Unser Qualifizierungsprozess</p>
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+              Vom Nachwuchs zur zertifizierten Einsatzkraft
+            </h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+              Jede Einsatzkraft durchläuft einen strukturierten Qualifizierungsprozess – von der Grundausbildung bis zur laufenden Weiterbildung.
+            </p>
+          </div>
+          <div className="stagger-children grid gap-6 sm:grid-cols-4">
+            {certProcess.map(({ icon: StepIcon, title, desc }, i) => (
+              <div key={title} className="text-center relative">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 mb-4 relative">
+                  <StepIcon className="h-6 w-6 text-primary" />
+                  <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+                    {i + 1}
+                  </span>
+                </div>
+                <h3 className="text-sm font-bold text-foreground mb-1">{title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Relevance for clients */}
+      <section ref={ref3} className="fade-in-section section-light border-t" style={{ borderColor: "hsl(var(--section-light-border))" }}>
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+          <div className="rounded-xl p-8 sm:p-10" style={{ background: "hsl(205 90% 55% / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}>
+            <div className="flex items-start gap-4 mb-6">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 shrink-0">
+                <Users className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h2 className="text-xl font-bold mb-2" style={{ color: "hsl(var(--section-light-fg))" }}>
+                  Was bedeutet das für Sie als Auftraggeber?
+                </h2>
+                <p className="text-base leading-relaxed text-muted-fg">
+                  Qualifiziertes Personal bedeutet nicht nur besseren Schutz – es reduziert auch Ihr Haftungsrisiko erheblich. 
+                  Als Auftraggeber profitieren Sie von:
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 pl-0 sm:pl-16">
+              {[
+                "Rechtssichere Einsätze durch geschultes Personal",
+                "Reduziertes Haftungsrisiko bei Vorfällen",
+                "Professionelles Auftreten gegenüber Ihren Kunden und Mitarbeitern",
+                "Nachweisbare Qualifikationen für Audits und Versicherungen",
+                "Sofortige Handlungsfähigkeit bei Notfällen",
+                "Dokumentierte Prozesse für volle Transparenz",
+              ].map((point) => (
+                <div key={point} className="flex items-start gap-2.5">
+                  <Award className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                  <span className="text-sm" style={{ color: "hsl(var(--section-light-fg))" }}>{point}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
