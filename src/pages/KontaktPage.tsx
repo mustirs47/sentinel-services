@@ -1,11 +1,18 @@
 import { useState } from "react";
-import { Mail, Clock, MapPin, Send, Phone, Shield, FileCheck, Users } from "lucide-react";
+import { Mail, Clock, MapPin, Send, Phone, Shield, FileCheck, Users, Search, UserCheck, Radio, ClipboardCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
+const processSteps = [
+  { icon: Search, title: "Analyse" },
+  { icon: UserCheck, title: "Personal" },
+  { icon: Radio, title: "Einsatz" },
+  { icon: ClipboardCheck, title: "Reporting" },
+];
 
 const KontaktPage = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -29,12 +36,32 @@ const KontaktPage = () => {
         subtitle="Beschreiben Sie Ihren Bedarf – wir melden uns innerhalb von 24 Stunden mit einem konkreten Vorschlag."
       />
 
+      {/* Process steps row */}
+      <section className="section-light border-b" style={{ borderColor: "hsl(var(--section-light-border))" }}>
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-primary text-center mb-5">So läuft es ab</p>
+          <div className="grid grid-cols-4 gap-4">
+            {processSteps.map(({ icon: Icon, title }, i) => (
+              <div key={title} className="text-center relative">
+                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 mb-2">
+                  <Icon className="h-5 w-5 text-primary" />
+                  <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[9px] font-bold text-primary-foreground">
+                    {i + 1}
+                  </span>
+                </div>
+                <p className="text-xs font-semibold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section-light">
         <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="grid gap-10 lg:grid-cols-5">
             <div className="lg:col-span-2 space-y-6">
               <div>
-                <h2 className="text-sm font-semibold mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+                <h2 className="text-sm font-bold mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
                   Kontaktinformationen
                 </h2>
                 <ul className="space-y-4">
@@ -74,17 +101,17 @@ const KontaktPage = () => {
                 </ul>
               </div>
 
-              <div className="rounded-xl p-4" style={{ background: "hsl(205 90% 55% / 0.05)" }}>
-                <p className="text-xs font-semibold text-primary mb-3">Darauf können Sie sich verlassen</p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2 text-xs text-muted-fg">
-                    <Shield className="h-3.5 w-3.5 text-primary shrink-0" /> §34a GewO – geprüftes Personal
+              <div className="rounded-xl p-5" style={{ background: "hsl(205 90% 55% / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}>
+                <p className="text-xs font-bold text-primary mb-3 uppercase tracking-wider">Darauf können Sie sich verlassen</p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2.5 text-sm text-muted-fg">
+                    <Shield className="h-4 w-4 text-primary shrink-0" /> §34a GewO – geprüftes Personal
                   </li>
-                  <li className="flex items-center gap-2 text-xs text-muted-fg">
-                    <Users className="h-3.5 w-3.5 text-primary shrink-0" /> Feste Ansprechpartner
+                  <li className="flex items-center gap-2.5 text-sm text-muted-fg">
+                    <Users className="h-4 w-4 text-primary shrink-0" /> Feste Ansprechpartner
                   </li>
-                  <li className="flex items-center gap-2 text-xs text-muted-fg">
-                    <FileCheck className="h-3.5 w-3.5 text-primary shrink-0" /> Rückmeldung innerhalb von 24 h
+                  <li className="flex items-center gap-2.5 text-sm text-muted-fg">
+                    <FileCheck className="h-4 w-4 text-primary shrink-0" /> Rückmeldung innerhalb von 24 h
                   </li>
                 </ul>
               </div>
@@ -96,11 +123,11 @@ const KontaktPage = () => {
                   <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                     <Send className="h-5 w-5 text-primary" />
                   </div>
-                  <h2 className="text-lg font-semibold" style={{ color: "hsl(var(--section-light-fg))" }}>Vielen Dank für Ihre Anfrage</h2>
+                  <h2 className="text-lg font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>Vielen Dank für Ihre Anfrage</h2>
                   <p className="mt-2 text-sm text-muted-fg">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="rounded-xl p-6 sm:p-8 space-y-4" style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}>
+                <form onSubmit={handleSubmit} className="card-accent rounded-xl p-6 sm:p-8 space-y-4" style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Name *</label>

@@ -21,48 +21,53 @@ const BranchenPage = () => {
       <PageHero
         badge="Branchen"
         title="Branchen, die wir absichern"
-        subtitle="Jede Branche hat eigene Risiken, Abläufe und Erwartungen. Wir kennen die operativen Besonderheiten und passen unsere Sicherheitslösungen gezielt an."
+        subtitle="Jede Branche hat eigene Risiken, Abläufe und Erwartungen. Wir passen unsere Sicherheitslösungen gezielt an."
       />
 
       <section className="section-light">
         <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="stagger-children grid gap-6 sm:grid-cols-2">
             {industries.map(({ icon: Icon, title, detail, relatedServices, slug }) => (
               <div
                 key={slug}
-                className="rounded-xl p-6 sm:p-8 transition-all duration-300 hover:shadow-lg"
+                className="group relative rounded-xl p-6 sm:p-8 transition-all duration-300 hover:shadow-lg overflow-hidden"
                 style={{
                   background: "hsl(var(--section-light-card))",
                   border: "1px solid hsl(var(--section-light-border))",
                 }}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
-                    <Icon className="h-5 w-5 text-primary" />
+                {/* Left accent stripe */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-xl bg-gradient-to-b from-primary to-accent" />
+
+                <div className="pl-3">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h2>
                   </div>
-                  <h2 className="text-base font-semibold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h2>
-                </div>
-                <p className="text-sm leading-relaxed text-muted-fg mb-4">{detail}</p>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">Relevante Leistungen</p>
-                  <div className="flex flex-wrap gap-2">
-                    {relatedServices.map((rs) => {
-                      const svc = services.find((s) => s.slug === rs);
-                      if (!svc) return null;
-                      return (
-                        <Link
-                          key={rs}
-                          to={`/leistungen/${rs}`}
-                          className="rounded-md px-2.5 py-1 text-xs font-medium transition-colors hover:text-primary"
-                          style={{
-                            border: "1px solid hsl(var(--section-light-border))",
-                            color: "hsl(var(--section-light-fg))",
-                          }}
-                        >
-                          {svc.title}
-                        </Link>
-                      );
-                    })}
+                  <p className="text-sm leading-relaxed text-muted-fg mb-5">{detail}</p>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Relevante Leistungen</p>
+                    <div className="flex flex-wrap gap-2">
+                      {relatedServices.map((rs) => {
+                        const svc = services.find((s) => s.slug === rs);
+                        if (!svc) return null;
+                        return (
+                          <Link
+                            key={rs}
+                            to={`/leistungen/${rs}`}
+                            className="rounded-md px-2.5 py-1 text-xs font-medium transition-colors hover:text-primary hover:border-primary/40"
+                            style={{
+                              border: "1px solid hsl(var(--section-light-border))",
+                              color: "hsl(var(--section-light-fg))",
+                            }}
+                          >
+                            {svc.title}
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>

@@ -6,11 +6,7 @@ import TrustBar from "@/components/sections/TrustBar";
 import ServicesSection from "@/components/sections/ServicesSection";
 import IndustriesSection from "@/components/sections/IndustriesSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
-import TeamSection from "@/components/sections/TeamSection";
-import QualificationsSection from "@/components/sections/QualificationsSection";
-import ProcessSection from "@/components/sections/ProcessSection";
 import ReferencesSection from "@/components/sections/ReferencesSection";
-import CareerSection from "@/components/sections/CareerSection";
 import ContactSection from "@/components/sections/ContactSection";
 import FAQSection from "@/components/sections/FAQSection";
 
@@ -24,13 +20,9 @@ const Index = () => (
     <HeroSection />
     <TrustBar />
     <ServicesSection />
-    <IndustriesSection />
     <WhyUsSection />
-    <TeamSection />
-    <QualificationsSection />
-    <ProcessSection />
+    <IndustriesSection />
     <ReferencesSection />
-    <CareerSection />
     <ContactSection />
     <FAQSection light />
   </PageLayout>

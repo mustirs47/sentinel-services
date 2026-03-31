@@ -1,21 +1,24 @@
-import { Shield } from "lucide-react";
+import { Shield, HardHat, PartyPopper, DoorOpen } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const scenarios = [
   {
+    icon: HardHat,
     title: "Baustellensicherung – Nachtbewachung",
-    situation: "Großbaustelle mit hochwertigem Baumaterial, kein Zaun, offener Zugang nach Baustellenschluss.",
-    einsatz: "Feste Nachtwache ab 18 Uhr, dokumentierte Kontrollrundgänge alle 90 Minuten, Zugangskontrolle und Sofortmeldung an den Bauleiter bei Unregelmäßigkeiten.",
+    situation: "Großbaustelle mit hochwertigem Material, offener Zugang nach Baustellenschluss.",
+    einsatz: "Feste Nachtwache, dokumentierte Kontrollgänge alle 90 Min., Sofortmeldung bei Unregelmäßigkeiten.",
   },
   {
+    icon: PartyPopper,
     title: "Firmenevent – 500 Gäste, VIP-Bereich",
-    situation: "Sommerfest mit offener Gästeliste, separatem VIP-Bereich und Cateringflächen im Außenbereich.",
-    einsatz: "Einlasssteuerung mit Gästelistenabgleich, diskrete Präsenz im VIP-Bereich, Koordination mit dem Veranstaltungsteam über Funk, Deeskalationsbereitschaft.",
+    situation: "Sommerfest mit offener Gästeliste und separatem VIP-Bereich.",
+    einsatz: "Einlasssteuerung, diskrete VIP-Präsenz, Funk-Koordination, Deeskalationsbereitschaft.",
   },
   {
+    icon: DoorOpen,
     title: "Empfangsservice – Bürokomplex",
     situation: "Mehrmieterobjekt mit täglichem Besucheraufkommen, keine einheitliche Zugangskontrolle.",
-    einsatz: "Feste Empfangskraft mit Besucherregistrierung, Schlüsselverwaltung und Abstimmung mit den Mietern. Professionelles Auftreten als Teil des Gebäudemanagements.",
+    einsatz: "Feste Empfangskraft mit Registrierung, Schlüsselverwaltung und professionellem Auftreten.",
   },
 ];
 
@@ -23,36 +26,43 @@ const ReferencesSection = () => {
   const ref = useScrollAnimation();
 
   return (
-    <section className="section-light">
+    <section className="bg-background">
       <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold sm:text-3xl" style={{ color: "hsl(var(--section-light-fg))" }}>
+        <div className="text-center mb-14">
+          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Praxis</p>
+          <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl">
             Typische Einsatzbilder
           </h2>
-          <p className="mt-3 text-muted-fg max-w-2xl mx-auto">
-            Keine erfundenen Referenzen – drei realistische Szenarien, für die wir aufgestellt sind.
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base">
+            Drei realistische Szenarien, für die wir aufgestellt sind.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-3">
-          {scenarios.map(({ title, situation, einsatz }) => (
+        <div className="stagger-children grid gap-6 sm:grid-cols-3">
+          {scenarios.map(({ icon: Icon, title, situation, einsatz }) => (
             <div
               key={title}
-              className="rounded-xl p-6 flex flex-col"
-              style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
+              className="group relative rounded-xl border border-border/60 bg-card/50 p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-lg overflow-hidden"
             >
-              <div className="flex items-center gap-2 mb-4">
-                <Shield className="h-5 w-5 text-primary" />
-                <h3 className="text-sm font-semibold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h3>
-              </div>
-              <div className="space-y-4 flex-1">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">Ausgangslage</p>
-                  <p className="text-sm text-muted-fg">{situation}</p>
+              {/* Left accent stripe */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-xl bg-gradient-to-b from-primary to-accent" />
+
+              <div className="pl-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <Icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="text-sm font-bold text-foreground">{title}</h3>
                 </div>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">Unser Einsatz</p>
-                  <p className="text-sm text-muted-fg">{einsatz}</p>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">Ausgangslage</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{situation}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">Unser Einsatz</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{einsatz}</p>
+                  </div>
                 </div>
               </div>
             </div>

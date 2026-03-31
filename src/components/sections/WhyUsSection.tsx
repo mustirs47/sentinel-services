@@ -7,25 +7,25 @@ const phases = [
     icon: Search,
     step: "01",
     title: "Analyse vor Einsatz",
-    desc: "Jeder Auftrag beginnt mit einer Bestandsaufnahme: Objekt, Risikoprofil, betriebliche Abläufe, Kundenerwartung. Kein Einsatz ohne fundierte Grundlage.",
+    desc: "Bestandsaufnahme von Objekt, Risikoprofil und Kundenerwartung.",
   },
   {
     icon: UserCheck,
     step: "02",
-    title: "Auswahl & Briefing Personal",
-    desc: "Wir setzen gezielt Personal ein, das zum Einsatz passt – nach Qualifikation, Erfahrung und Auftreten. Jede Einsatzkraft wird vorab eingewiesen.",
+    title: "Personal & Briefing",
+    desc: "Gezielte Personalauswahl nach Qualifikation und objektspezifische Einweisung.",
   },
   {
     icon: Radio,
     step: "03",
     title: "Führung im Einsatz",
-    desc: "Feste Einsatzleitung, direkte Kommunikationswege und definierte Eskalationsstufen. Kein Einsatz ohne klare Verantwortung vor Ort.",
+    desc: "Feste Einsatzleitung, direkte Kommunikation und definierte Eskalationsstufen.",
   },
   {
     icon: ClipboardCheck,
     step: "04",
-    title: "Dokumentation & Reporting",
-    desc: "Lückenlose Einsatzdokumentation, regelmäßige Berichte und Nachsteuerung bei Abweichungen. Volle Transparenz für den Auftraggeber.",
+    title: "Dokumentation",
+    desc: "Lückenlose Protokolle, Berichte und Nachsteuerung. Volle Transparenz.",
   },
 ];
 
@@ -33,33 +33,34 @@ const WhyUsSection = () => {
   const ref = useScrollAnimation();
 
   return (
-    <section className="section-light">
+    <section className="bg-background">
       <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold sm:text-3xl" style={{ color: "hsl(var(--section-light-fg))" }}>
-            So arbeiten wir – unser Betriebsmodell
+        <div className="text-center mb-14">
+          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">4 Phasen</p>
+          <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl">
+            So arbeiten wir
           </h2>
-          <p className="mt-3 text-muted-fg max-w-2xl mx-auto">
-            Sicherheit ist kein Produkt, sondern ein Prozess. Vier Phasen, die jeden Einsatz tragen.
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base">
+            Sicherheit ist kein Produkt, sondern ein Prozess – vier Phasen, die jeden Einsatz tragen.
           </p>
         </div>
 
-        <div className="grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
-          {phases.map(({ icon: Icon, step, title, desc }, i) => (
-            <div key={step} className="relative p-6 lg:p-8">
-              {i < phases.length - 1 && (
-                <div className="hidden lg:block absolute top-12 right-0 w-px h-8 bg-primary/20" style={{ right: 0, top: "2.5rem", height: "calc(100% - 5rem)" }}>
-                  <div className="absolute top-1/2 -right-3 w-6 h-px bg-primary/30" />
-                </div>
-              )}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
-                  <Icon className="h-5 w-5 text-primary" />
-                </div>
-                <span className="text-xs font-bold text-primary tracking-wider">{step}</span>
+        {/* Timeline */}
+        <div className="relative grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Horizontal connector line (desktop) */}
+          <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-primary/40 via-primary/20 to-primary/40" />
+
+          {phases.map(({ icon: Icon, step, title, desc }) => (
+            <div key={step} className="relative flex flex-col items-center text-center p-6 lg:p-8">
+              {/* Step circle */}
+              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-primary/30 bg-background mb-5">
+                <Icon className="h-7 w-7 text-primary" />
+                <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+                  {step}
+                </span>
               </div>
-              <h3 className="text-base font-semibold mb-2" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h3>
-              <p className="text-sm leading-relaxed text-muted-fg">{desc}</p>
+              <h3 className="text-base font-bold text-foreground mb-2">{title}</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">{desc}</p>
             </div>
           ))}
         </div>
@@ -67,7 +68,7 @@ const WhyUsSection = () => {
         <div className="mt-10 text-center">
           <Link
             to="/arbeitsweise"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
           >
             Mehr über unsere Arbeitsweise <ArrowRight className="h-3.5 w-3.5" />
           </Link>
