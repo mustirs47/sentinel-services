@@ -19,7 +19,7 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const ScrollToTop = () => { useScrollToTop(); return null; };
+function ScrollToTop() { useScrollToTop(); return null; }
 
 const App = () => (
   <HelmetProvider>
