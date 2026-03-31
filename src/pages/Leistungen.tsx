@@ -55,6 +55,7 @@ const LeistungenPage = () => {
         badge="Leistungen"
         title="Unsere Sicherheitsdienstleistungen"
         subtitle="Jede Leistung wird auf Objekt, Einsatzlage und Kundenanforderung abgestimmt – maßgeschneiderte Sicherheitslösungen."
+        illustration={heroIllustration}
       />
 
       {/* Stats bar */}
