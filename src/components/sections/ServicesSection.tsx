@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { services } from "@/data/services";
+import { serviceIllustrations } from "@/data/serviceIllustrations";
 
 const ServicesSection = () => {
   const ref = useScrollAnimation();
