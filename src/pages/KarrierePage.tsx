@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Phone } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone, Briefcase, Gift, MapPin, Send, FileText, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
@@ -23,6 +23,20 @@ const benefits = [
   "Langfristige Einsatzplanung statt kurzfristiger Abrufarbeit",
 ];
 
+const fields = [
+  "Objektschutz & Gebäudebewachung",
+  "Veranstaltungsschutz & Einlass",
+  "Baustellenbewachung",
+  "Empfangs- & Pfortendienste",
+  "Kontroll- & Streifendienste",
+];
+
+const steps = [
+  { icon: Send, title: "Bewerbung senden", desc: "Per E-Mail mit Lebenslauf und Qualifikationen" },
+  { icon: Users, title: "Kennenlernen", desc: "Persönliches Gespräch und Eignungsprüfung" },
+  { icon: FileText, title: "Einsatzstart", desc: "Strukturierte Einarbeitung und Briefing" },
+];
+
 const careerFaqs = [
   { question: "Brauche ich die §34a-Sachkundeprüfung, um mich zu bewerben?", answer: "Die Sachkundeprüfung ist Voraussetzung für viele Einsätze. Wenn Sie sie noch nicht haben, aber bereit sind, sie zu absolvieren, können Sie sich trotzdem bewerben – wir unterstützen Sie dabei." },
   { question: "In welchen Regionen setzen Sie Personal ein?", answer: "Wir sind bundesweit tätig. Die konkreten Einsatzorte werden im Bewerbungsgespräch besprochen." },
@@ -43,18 +57,45 @@ const KarrierePage = () => {
 
       <PageHero
         badge="Karriere"
-        title="Arbeiten bei Sentinel Services"
-        subtitle="Wir suchen Menschen, die Verantwortung übernehmen – nicht nur einen Job suchen. Werden Sie Teil unseres Teams."
+        title="Werden Sie Teil unseres Teams"
+        subtitle="Wir suchen Menschen, die Verantwortung übernehmen – nicht nur einen Job suchen."
       />
 
+      {/* 3-step application process */}
+      <section className="section-light border-b" style={{ borderColor: "hsl(var(--section-light-border))" }}>
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+          <div className="grid grid-cols-3 gap-4 sm:gap-8">
+            {steps.map(({ icon: Icon, title, desc }, i) => (
+              <div key={title} className="text-center relative">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 mb-3">
+                  <Icon className="h-6 w-6 text-primary" />
+                  <span className="absolute -top-1 -right-1 sm:right-auto sm:-top-2 sm:-right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+                    {i + 1}
+                  </span>
+                </div>
+                <h3 className="text-sm font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h3>
+                <p className="text-xs text-muted-fg mt-1 hidden sm:block">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Three-column layout */}
       <section className="section-light">
         <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="stagger-children grid gap-6 lg:grid-cols-3">
+            {/* Requirements */}
             <div
-              className="rounded-xl p-6 sm:p-8"
+              className="card-accent rounded-xl p-6 sm:p-8"
               style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
             >
-              <h2 className="text-base font-semibold mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>Was wir erwarten</h2>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                  <Briefcase className="h-5 w-5 text-primary" />
+                </div>
+                <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>Was wir erwarten</h2>
+              </div>
               <ul className="space-y-3">
                 {requirements.map((r) => (
                   <li key={r} className="flex items-start gap-3">
@@ -65,11 +106,17 @@ const KarrierePage = () => {
               </ul>
             </div>
 
+            {/* Benefits */}
             <div
-              className="rounded-xl p-6 sm:p-8"
+              className="card-accent rounded-xl p-6 sm:p-8"
               style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
             >
-              <h2 className="text-base font-semibold mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>Was wir bieten</h2>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                  <Gift className="h-5 w-5 text-primary" />
+                </div>
+                <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>Was wir bieten</h2>
+              </div>
               <ul className="space-y-3">
                 {benefits.map((b) => (
                   <li key={b} className="flex items-start gap-3">
@@ -79,22 +126,43 @@ const KarrierePage = () => {
                 ))}
               </ul>
             </div>
+
+            {/* Fields */}
+            <div
+              className="card-accent rounded-xl p-6 sm:p-8"
+              style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                  <MapPin className="h-5 w-5 text-primary" />
+                </div>
+                <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>Einsatzfelder</h2>
+              </div>
+              <ul className="space-y-3">
+                {fields.map((f) => (
+                  <li key={f} className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 shrink-0 text-primary mt-0.5" />
+                    <span className="text-sm text-muted-fg">{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
+          {/* CTA */}
           <div
-            className="mt-8 rounded-xl p-6 sm:p-8"
-            style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
+            className="mt-10 rounded-xl p-6 sm:p-8 text-center"
+            style={{ background: "hsl(205 90% 55% / 0.05)" }}
           >
-            <h2 className="text-base font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>So bewerben Sie sich</h2>
-            <p className="text-sm text-muted-fg leading-relaxed mb-4">
-              Senden Sie Ihre Bewerbung per E-Mail an{" "}
-              <a href="mailto:karriere@sentinel-services.de" className="text-primary hover:underline font-medium">
+            <h2 className="text-lg font-bold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>Interesse geweckt?</h2>
+            <p className="text-sm text-muted-fg mb-5 max-w-lg mx-auto">
+              Senden Sie Ihre Bewerbung an{" "}
+              <a href="mailto:karriere@sentinel-services.de" className="text-primary hover:underline font-semibold">
                 karriere@sentinel-services.de
               </a>{" "}
-              – mit kurzem Lebenslauf, Angabe Ihrer Qualifikationen und gewünschtem Einsatzbereich.
-              Auch Initiativbewerbungen sind willkommen.
+              – mit Lebenslauf, Qualifikationen und gewünschtem Einsatzbereich.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 justify-center">
               <Button asChild size="lg">
                 <a href="mailto:karriere@sentinel-services.de">
                   Jetzt bewerben
