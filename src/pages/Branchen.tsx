@@ -8,6 +8,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { industries } from "@/data/industries";
 import { services } from "@/data/services";
+import branchenIllustration from "@/assets/illustrations/branchen.png";
 
 const risks: Record<string, string[]> = {
   "gewerbe-und-buero": ["Einbruch außerhalb der Geschäftszeiten", "Unbefugter Zutritt", "Vandalismus"],
@@ -41,6 +42,7 @@ const BranchenPage = () => {
         badge="Branchen"
         title="Branchen, die wir absichern"
         subtitle="Jede Branche hat eigene Risiken, Abläufe und Erwartungen. Wir passen unsere Sicherheitslösungen gezielt an."
+        illustration={branchenIllustration}
       />
 
       {/* Stats */}

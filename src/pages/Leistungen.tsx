@@ -8,6 +8,8 @@ import FAQSection from "@/components/sections/FAQSection";
 import { FAQPageJsonLd } from "@/components/StructuredData";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { services } from "@/data/services";
+import { serviceIllustrations } from "@/data/serviceIllustrations";
+import heroIllustration from "@/assets/illustrations/hero-security.png";
 
 const defaultFaqs = [
   { question: "Welche Zulassungen hat Sentinel Services?", answer: "Wir verfügen über die Gewerbeerlaubnis nach §34a GewO. Alle Einsatzkräfte haben die Sachkundeprüfung nach §34a GewO (IHK) abgelegt." },
@@ -53,6 +55,7 @@ const LeistungenPage = () => {
         badge="Leistungen"
         title="Unsere Sicherheitsdienstleistungen"
         subtitle="Jede Leistung wird auf Objekt, Einsatzlage und Kundenanforderung abgestimmt – maßgeschneiderte Sicherheitslösungen."
+        illustration={heroIllustration}
       />
 
       {/* Stats bar */}
@@ -100,9 +103,20 @@ const LeistungenPage = () => {
                   borderColor: "hsl(var(--section-light-border))",
                 }}
               >
+              {serviceIllustrations[slug] ? (
+                <img
+                  src={serviceIllustrations[slug]}
+                  alt={title}
+                  className="h-28 w-auto object-contain mb-4 -ml-2"
+                  loading="lazy"
+                  width={112}
+                  height={112}
+                />
+              ) : (
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
                   <Icon className="h-6 w-6 text-primary" />
                 </div>
+              )}
                 <h2 className="text-lg font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h2>
                 <p className="mt-1 text-xs font-semibold text-primary">{context}</p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-fg flex-1">{desc}</p>

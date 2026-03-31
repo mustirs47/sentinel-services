@@ -7,6 +7,7 @@ import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/sections/FAQSection";
 import { FAQPageJsonLd } from "@/components/StructuredData";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import teamIllustration from "@/assets/illustrations/team-qualifikationen.png";
 
 const requirements = [
   "Mindestalter 18 Jahre",
@@ -72,6 +73,7 @@ const KarrierePage = () => {
         badge="Karriere"
         title="Werden Sie Teil unseres Teams"
         subtitle="Wir suchen Menschen, die Verantwortung übernehmen – nicht nur einen Job suchen."
+        illustration={teamIllustration}
       />
 
       {/* 3-step application process */}

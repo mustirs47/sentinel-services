@@ -6,6 +6,7 @@ import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/sections/FAQSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import teamIllustration from "@/assets/illustrations/team-qualifikationen.png";
 
 const groups = [
   {
@@ -84,6 +85,7 @@ const QualifikationenPage = () => {
         badge="Qualifikationen"
         title="Qualifikationen & Nachweise"
         subtitle="Auf welcher fachlichen Grundlage wir arbeiten – und warum das für Sie als Auftraggeber relevant ist."
+        illustration={teamIllustration}
       />
 
       {/* Summary stats */}

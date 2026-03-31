@@ -8,6 +8,7 @@ import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/sections/FAQSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import heroIllustration from "@/assets/illustrations/hero-security.png";
 
 const processSteps = [
   { icon: Search, title: "Analyse", desc: "Wir erfassen Ihren Bedarf" },
@@ -51,6 +52,7 @@ const KontaktPage = () => {
         badge="Kontakt"
         title="Anfrage stellen"
         subtitle="Beschreiben Sie Ihren Bedarf – wir melden uns innerhalb von 24 Stunden mit einem konkreten Vorschlag."
+        illustration={heroIllustration}
       />
 
       {/* Process steps row */}
