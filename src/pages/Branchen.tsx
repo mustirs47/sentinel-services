@@ -1,15 +1,34 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone, Shield, AlertTriangle, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
+import FAQSection from "@/components/sections/FAQSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { industries } from "@/data/industries";
 import { services } from "@/data/services";
 
+const risks: Record<string, string[]> = {
+  "gewerbe-und-buero": ["Einbruch außerhalb der Geschäftszeiten", "Unbefugter Zutritt", "Vandalismus"],
+  "industrie-und-logistik": ["Diebstahl von Rohmaterialien", "Sabotage", "Unbefugtes Betreten von Produktionsflächen"],
+  "baustellen": ["Materialdiebstahl", "Vandalismus an Baumaschinen", "Unbefugtes Betreten"],
+  "einzelhandel": ["Ladendiebstahl", "Übergriffe auf Personal", "Warenschwund"],
+  "veranstaltungen": ["Überfüllung", "Aggressive Gäste", "Fehlende Evakuierungsplanung"],
+  "hotels-und-gastronomie": ["Unbefugte im Gästebereich", "Nachtruhe-Störungen", "Hausfriedensbruch"],
+  "wohnanlagen": ["Einbruch in Gemeinschaftsflächen", "Vandalismus", "Unbefugte Personen auf dem Gelände"],
+  "oeffentliche-einrichtungen": ["Bedrohung von Mitarbeitern", "Sachbeschädigung", "Unbefugter Zutritt zu sensiblen Bereichen"],
+};
+
+const branchenFaqs = [
+  { question: "Arbeiten Sie nur in bestimmten Branchen?", answer: "Nein, wir sind branchenübergreifend aufgestellt. Die aufgeführten Branchen sind Schwerpunkte, aber wir entwickeln auch für andere Bereiche individuelle Sicherheitslösungen." },
+  { question: "Wie passen Sie Ihre Leistungen an die Branche an?", answer: "Jede Branche hat spezifische Risiken und Abläufe. Wir führen eine objektspezifische Analyse durch und stimmen Personal, Einsatzzeiten und Maßnahmen darauf ab." },
+  { question: "Können Sie mehrere Standorte gleichzeitig betreuen?", answer: "Ja, wir betreuen auch Kunden mit mehreren Standorten – mit einheitlichen Standards und zentraler Koordination." },
+];
+
 const BranchenPage = () => {
   const ref = useScrollAnimation();
+  const ref2 = useScrollAnimation();
 
   return (
     <PageLayout>
@@ -24,8 +43,43 @@ const BranchenPage = () => {
         subtitle="Jede Branche hat eigene Risiken, Abläufe und Erwartungen. Wir passen unsere Sicherheitslösungen gezielt an."
       />
 
+      {/* Stats */}
+      <section className="section-light border-b" style={{ borderColor: "hsl(var(--section-light-border))" }}>
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            <div>
+              <p className="stat-number">8</p>
+              <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>Branchen-Schwerpunkte</p>
+            </div>
+            <div>
+              <p className="stat-number">6</p>
+              <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>Leistungsbereiche</p>
+            </div>
+            <div>
+              <p className="stat-number">100%</p>
+              <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>Individuell angepasst</p>
+            </div>
+            <div>
+              <p className="stat-number">DE</p>
+              <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>Bundesweit einsetzbar</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-light">
         <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-2xl font-bold sm:text-3xl mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+              Branchenspezifische Sicherheitskonzepte
+            </h2>
+            <p className="text-base leading-relaxed text-muted-fg">
+              Ein Bürogebäude hat andere Anforderungen als eine Baustelle oder ein Firmenevent. Wir analysieren die 
+              branchentypischen Risiken und entwickeln Sicherheitslösungen, die exakt darauf zugeschnitten sind – 
+              mit dem passenden Personal, den richtigen Einsatzzeiten und abgestimmten Maßnahmen.
+            </p>
+          </div>
+
           <div className="stagger-children grid gap-6 sm:grid-cols-2">
             {industries.map(({ icon: Icon, title, detail, relatedServices, slug }) => (
               <div
@@ -47,8 +101,31 @@ const BranchenPage = () => {
                     <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h2>
                   </div>
                   <p className="text-sm leading-relaxed text-muted-fg mb-5">{detail}</p>
+                  
+                  {/* Risks */}
+                  {risks[slug] && (
+                    <div className="mb-5">
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-accent mb-2 flex items-center gap-1.5">
+                        <AlertTriangle className="h-3 w-3" /> Typische Risiken
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {risks[slug].map((risk) => (
+                          <span
+                            key={risk}
+                            className="rounded-md px-2 py-0.5 text-[11px] font-medium"
+                            style={{ background: "hsl(42 80% 55% / 0.08)", color: "hsl(var(--section-light-muted))" }}
+                          >
+                            {risk}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Relevante Leistungen</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 flex items-center gap-1.5">
+                      <CheckCircle className="h-3 w-3" /> Passende Leistungen
+                    </p>
                     <div className="flex flex-wrap gap-2">
                       {relatedServices.map((rs) => {
                         const svc = services.find((s) => s.slug === rs);
@@ -76,14 +153,42 @@ const BranchenPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Why us for industries */}
       <section className="bg-background border-t border-border/50">
+        <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Warum Sentinel</p>
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+              Was uns von anderen Anbietern unterscheidet
+            </h2>
+          </div>
+          <div className="stagger-children grid gap-6 sm:grid-cols-3">
+            {[
+              { icon: Shield, title: "Branchenerfahrung", desc: "Unsere Einsatzkräfte werden branchenspezifisch geschult – nicht pauschal eingesetzt." },
+              { icon: CheckCircle, title: "Individuelle Konzepte", desc: "Kein Standardpaket: Jede Branchenlösung wird objektspezifisch entwickelt und regelmäßig angepasst." },
+              { icon: ArrowRight, title: "Schnelle Umsetzung", desc: "Von der Anfrage zum Einsatz in wenigen Tagen – bei Akutbedarf auch innerhalb von 24 Stunden." },
+            ].map(({ icon: DiffIcon, title: diffTitle, desc }) => (
+              <div key={diffTitle} className="text-center p-6">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 mb-4">
+                  <DiffIcon className="h-7 w-7 text-primary" />
+                </div>
+                <h3 className="text-base font-bold text-foreground mb-2">{diffTitle}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-light border-t" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 text-center">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl mb-4">
+          <h2 className="text-2xl font-bold sm:text-3xl mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
             Branchenlösung für Ihr Unternehmen
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-            Wir analysieren die spezifischen Sicherheitsanforderungen Ihrer Branche und entwickeln eine passgenaue Lösung.
+          <p className="text-muted-fg max-w-xl mx-auto mb-8">
+            Wir analysieren die spezifischen Sicherheitsanforderungen Ihrer Branche und entwickeln eine passgenaue Lösung – 
+            kostenlos und unverbindlich.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild size="lg">
@@ -93,11 +198,16 @@ const BranchenPage = () => {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link to="/leistungen">Alle Leistungen ansehen</Link>
+              <a href="tel:+4920893579970">
+                <Phone className="mr-2 h-4 w-4" />
+                Sofort anrufen
+              </a>
             </Button>
           </div>
         </div>
       </section>
+
+      <FAQSection faqs={branchenFaqs} title="Häufige Fragen zu Branchenlösungen" />
     </PageLayout>
   );
 };

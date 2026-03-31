@@ -1,22 +1,39 @@
 import { useState } from "react";
-import { Mail, Clock, MapPin, Send, Phone, Shield, FileCheck, Users, Search, UserCheck, Radio, ClipboardCheck } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Mail, Clock, MapPin, Send, Phone, Shield, FileCheck, Users, Search, UserCheck, Radio, ClipboardCheck, ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
+import FAQSection from "@/components/sections/FAQSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const processSteps = [
-  { icon: Search, title: "Analyse" },
-  { icon: UserCheck, title: "Personal" },
-  { icon: Radio, title: "Einsatz" },
-  { icon: ClipboardCheck, title: "Reporting" },
+  { icon: Search, title: "Analyse", desc: "Wir erfassen Ihren Bedarf" },
+  { icon: UserCheck, title: "Konzept", desc: "Individueller Einsatzplan" },
+  { icon: Radio, title: "Einsatz", desc: "Strukturierter Start" },
+  { icon: ClipboardCheck, title: "Reporting", desc: "Laufende Dokumentation" },
+];
+
+const guarantees = [
+  "Rückmeldung innerhalb von 24 Stunden – garantiert",
+  "Kostenlose und unverbindliche Erstberatung",
+  "Kein Standardangebot – individuelles Konzept für Ihren Bedarf",
+  "Transparente Kostenaufstellung ohne versteckte Gebühren",
+];
+
+const kontaktFaqs = [
+  { question: "Wie schnell melden Sie sich auf meine Anfrage?", answer: "Wir melden uns innerhalb von 24 Stunden auf Ihre Anfrage – per E-Mail oder telefonisch, je nach Ihrem Wunsch." },
+  { question: "Ist die Erstberatung wirklich kostenlos?", answer: "Ja, die Erstberatung und die Erstellung eines unverbindlichen Angebots sind für Sie komplett kostenlos." },
+  { question: "Wie kurzfristig kann ein Einsatz starten?", answer: "Bei akutem Bedarf können wir innerhalb von 24–48 Stunden einsatzbereit sein. Für planbare Einsätze empfehlen wir eine Vorlaufzeit von mindestens einer Woche." },
+  { question: "Kann ich auch telefonisch anfragen?", answer: "Natürlich! Rufen Sie uns an unter +49 (0) 208 935 799 70 (Mo–Fr 10–18 Uhr) oder nutzen Sie unser Kontaktformular." },
 ];
 
 const KontaktPage = () => {
   const [submitted, setSubmitted] = useState(false);
   const ref = useScrollAnimation();
+  const ref2 = useScrollAnimation();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -41,15 +58,16 @@ const KontaktPage = () => {
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
           <p className="text-[10px] font-bold uppercase tracking-widest text-primary text-center mb-5">So läuft es ab</p>
           <div className="grid grid-cols-4 gap-4">
-            {processSteps.map(({ icon: Icon, title }, i) => (
+            {processSteps.map(({ icon: Icon, title, desc }, i) => (
               <div key={title} className="text-center relative">
-                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 mb-2">
+                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 mb-2 relative">
                   <Icon className="h-5 w-5 text-primary" />
                   <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[9px] font-bold text-primary-foreground">
                     {i + 1}
                   </span>
                 </div>
                 <p className="text-xs font-semibold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</p>
+                <p className="text-[10px] text-muted-fg mt-0.5 hidden sm:block">{desc}</p>
               </div>
             ))}
           </div>
@@ -101,7 +119,21 @@ const KontaktPage = () => {
                 </ul>
               </div>
 
+              {/* Guarantees */}
               <div className="rounded-xl p-5" style={{ background: "hsl(205 90% 55% / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}>
+                <p className="text-xs font-bold text-primary mb-3 uppercase tracking-wider">Unsere Garantie</p>
+                <ul className="space-y-2.5">
+                  {guarantees.map((g) => (
+                    <li key={g} className="flex items-start gap-2.5 text-sm text-muted-fg">
+                      <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                      {g}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Trust signals */}
+              <div className="rounded-xl p-5" style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}>
                 <p className="text-xs font-bold text-primary mb-3 uppercase tracking-wider">Darauf können Sie sich verlassen</p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2.5 text-sm text-muted-fg">
@@ -111,7 +143,7 @@ const KontaktPage = () => {
                     <Users className="h-4 w-4 text-primary shrink-0" /> Feste Ansprechpartner
                   </li>
                   <li className="flex items-center gap-2.5 text-sm text-muted-fg">
-                    <FileCheck className="h-4 w-4 text-primary shrink-0" /> Rückmeldung innerhalb von 24 h
+                    <FileCheck className="h-4 w-4 text-primary shrink-0" /> Lückenlose Dokumentation
                   </li>
                 </ul>
               </div>
@@ -125,9 +157,18 @@ const KontaktPage = () => {
                   </div>
                   <h2 className="text-lg font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>Vielen Dank für Ihre Anfrage</h2>
                   <p className="mt-2 text-sm text-muted-fg">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                  <Button asChild className="mt-6" variant="outline">
+                    <Link to="/">Zurück zur Startseite</Link>
+                  </Button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="card-accent rounded-xl p-6 sm:p-8 space-y-4" style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}>
+                  <h2 className="text-base font-bold mb-2" style={{ color: "hsl(var(--section-light-fg))" }}>
+                    Kontaktformular
+                  </h2>
+                  <p className="text-sm text-muted-fg mb-4">
+                    Beschreiben Sie Ihren Bedarf – je genauer, desto besser können wir Ihnen helfen.
+                  </p>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Name *</label>
@@ -198,6 +239,41 @@ const KontaktPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Additional CTA */}
+      <section className="bg-background border-t border-border/50">
+        <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl mb-3">
+              Noch unsicher? Informieren Sie sich weiter
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              Erfahren Sie mehr über unsere Leistungen, Qualifikationen und Arbeitsweise – oder rufen Sie uns einfach an.
+            </p>
+          </div>
+          <div className="stagger-children grid gap-4 sm:grid-cols-3">
+            {[
+              { title: "Unsere Leistungen", desc: "6 Sicherheitsdienstleistungen im Überblick", href: "/leistungen" },
+              { title: "Qualifikationen", desc: "Nachweise und Zertifizierungen unseres Personals", href: "/qualifikationen" },
+              { title: "Arbeitsweise", desc: "Unser strukturierter 4-Phasen-Prozess", href: "/arbeitsweise" },
+            ].map(({ title, desc, href }) => (
+              <Link
+                key={href}
+                to={href}
+                className="group rounded-xl border border-border/50 p-6 text-center transition-all hover:shadow-md hover:border-primary/30"
+              >
+                <h3 className="text-base font-bold text-foreground mb-1">{title}</h3>
+                <p className="text-sm text-muted-foreground mb-3">{desc}</p>
+                <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                  Mehr erfahren <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FAQSection faqs={kontaktFaqs} title="Häufige Fragen zum Kontakt" />
     </PageLayout>
   );
 };

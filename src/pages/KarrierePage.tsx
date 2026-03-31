@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Phone, Briefcase, Gift, MapPin, Send, FileText, Users } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone, Briefcase, Gift, MapPin, Send, FileText, Users, Shield, HeartPulse, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
@@ -14,6 +14,7 @@ const requirements = [
   "Einwandfreies Führungszeugnis",
   "Gute Deutschkenntnisse in Wort und Schrift",
   "Zuverlässigkeit, Pünktlichkeit, professionelles Auftreten",
+  "Bereitschaft zu Schicht-, Nacht- und Wochenendarbeit",
 ];
 
 const benefits = [
@@ -21,6 +22,8 @@ const benefits = [
   "Feste Ansprechpartner und strukturierte Einarbeitung",
   "Regelmäßige Weiterbildung: Deeskalation, Brandschutz, Erste Hilfe",
   "Langfristige Einsatzplanung statt kurzfristiger Abrufarbeit",
+  "Faire Vergütung und transparente Arbeitsbedingungen",
+  "Aufstiegsmöglichkeiten zur Einsatzleitung",
 ];
 
 const fields = [
@@ -29,12 +32,20 @@ const fields = [
   "Baustellenbewachung",
   "Empfangs- & Pfortendienste",
   "Kontroll- & Streifendienste",
+  "Individuelle Sondereinsätze",
 ];
 
 const steps = [
-  { icon: Send, title: "Bewerbung senden", desc: "Per E-Mail mit Lebenslauf und Qualifikationen" },
-  { icon: Users, title: "Kennenlernen", desc: "Persönliches Gespräch und Eignungsprüfung" },
-  { icon: FileText, title: "Einsatzstart", desc: "Strukturierte Einarbeitung und Briefing" },
+  { icon: Send, title: "Bewerbung senden", desc: "Per E-Mail mit Lebenslauf und Qualifikationen an karriere@sentinel-services.de" },
+  { icon: Users, title: "Kennenlernen", desc: "Persönliches Gespräch und Eignungsprüfung – wir lernen Sie kennen" },
+  { icon: FileText, title: "Einsatzstart", desc: "Strukturierte Einarbeitung, Briefing und Begleitung durch erfahrene Kollegen" },
+];
+
+const whyUs = [
+  { icon: Shield, title: "Seriöser Arbeitgeber", desc: "§34a-zugelassen, feste Verträge, transparente Bedingungen. Kein Subunternehmertum." },
+  { icon: HeartPulse, title: "Regelmäßige Schulungen", desc: "Deeskalation, Erste Hilfe, Brandschutz und mehr – wir investieren in Ihre Qualifikation." },
+  { icon: Clock, title: "Planbare Einsätze", desc: "Langfristige Einsatzplanung, feste Schichten, kein ständiges Hin und Her." },
+  { icon: Star, title: "Wertschätzung", desc: "Ihre Arbeit ist wichtig – und wird bei uns auch so behandelt. Feste Ansprechpartner, offenes Ohr." },
 ];
 
 const careerFaqs = [
@@ -42,10 +53,12 @@ const careerFaqs = [
   { question: "In welchen Regionen setzen Sie Personal ein?", answer: "Wir sind bundesweit tätig. Die konkreten Einsatzorte werden im Bewerbungsgespräch besprochen." },
   { question: "Wie läuft die Einarbeitung ab?", answer: "Jede neue Einsatzkraft erhält eine strukturierte Einarbeitung: objektspezifisches Briefing, Vorstellung der Abläufe und Meldeketten sowie Begleitung durch erfahrene Kollegen in den ersten Einsätzen." },
   { question: "Gibt es auch Teilzeit- oder Nebenjob-Möglichkeiten?", answer: "Ja, wir bieten verschiedene Arbeitszeitmodelle an – von Vollzeit über Teilzeit bis hin zu flexiblen Einsatzmodellen für Nacht- und Wochenenddienste." },
+  { question: "Welche Aufstiegsmöglichkeiten gibt es?", answer: "Engagierte Mitarbeiter können sich zur Schichtleitung oder Einsatzleitung weiterentwickeln. Wir fördern interne Karrierewege." },
 ];
 
 const KarrierePage = () => {
   const ref = useScrollAnimation();
+  const ref2 = useScrollAnimation();
 
   return (
     <PageLayout>
@@ -64,12 +77,13 @@ const KarrierePage = () => {
       {/* 3-step application process */}
       <section className="section-light border-b" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-primary text-center mb-6">Bewerbungsprozess</p>
           <div className="grid grid-cols-3 gap-4 sm:gap-8">
             {steps.map(({ icon: Icon, title, desc }, i) => (
               <div key={title} className="text-center relative">
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 mb-3">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 mb-3 relative">
                   <Icon className="h-6 w-6 text-primary" />
-                  <span className="absolute -top-1 -right-1 sm:right-auto sm:-top-2 sm:-right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+                  <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
                     {i + 1}
                   </span>
                 </div>
@@ -148,19 +162,52 @@ const KarrierePage = () => {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* CTA */}
+      {/* Why us as employer */}
+      <section className="bg-background border-t border-border/50">
+        <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Warum Sentinel</p>
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+              Das unterscheidet uns als Arbeitgeber
+            </h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+              Wir wissen: Gute Sicherheitsarbeit beginnt bei zufriedenen Mitarbeitern. Deshalb setzen wir auf faire Bedingungen, 
+              Entwicklung und echte Wertschätzung.
+            </p>
+          </div>
+          <div className="stagger-children grid gap-6 sm:grid-cols-2">
+            {whyUs.map(({ icon: WIcon, title, desc }) => (
+              <div key={title} className="flex items-start gap-4 rounded-xl border border-border/50 p-6 transition-all hover:shadow-md">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 shrink-0">
+                  <WIcon className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-foreground mb-1">{title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-light border-t" style={{ borderColor: "hsl(var(--section-light-border))" }}>
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
           <div
-            className="mt-10 rounded-xl p-6 sm:p-8 text-center"
+            className="rounded-xl p-8 sm:p-10 text-center"
             style={{ background: "hsl(205 90% 55% / 0.05)" }}
           >
-            <h2 className="text-lg font-bold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>Interesse geweckt?</h2>
-            <p className="text-sm text-muted-fg mb-5 max-w-lg mx-auto">
+            <h2 className="text-xl font-bold mb-3 sm:text-2xl" style={{ color: "hsl(var(--section-light-fg))" }}>Interesse geweckt?</h2>
+            <p className="text-sm text-muted-fg mb-6 max-w-lg mx-auto">
               Senden Sie Ihre Bewerbung an{" "}
               <a href="mailto:karriere@sentinel-services.de" className="text-primary hover:underline font-semibold">
                 karriere@sentinel-services.de
               </a>{" "}
-              – mit Lebenslauf, Qualifikationen und gewünschtem Einsatzbereich.
+              – mit Lebenslauf, Qualifikationen und gewünschtem Einsatzbereich. Wir melden uns innerhalb von 48 Stunden.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Button asChild size="lg">

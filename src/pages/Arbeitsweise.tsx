@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import { Search, UserCheck, Radio, ClipboardCheck, ArrowRight, Users, Shield, HeartPulse } from "lucide-react";
+import { Search, UserCheck, Radio, ClipboardCheck, ArrowRight, Users, Shield, HeartPulse, Phone, CheckCircle, Target, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
+import FAQSection from "@/components/sections/FAQSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const phases = [
@@ -13,6 +14,7 @@ const phases = [
     title: "Analyse vor Einsatz",
     desc: "Jeder Auftrag beginnt mit einer Bestandsaufnahme: Objekt, Risikoprofil, betriebliche Abläufe, Kundenerwartung.",
     detail: "Wir bewerten Ihr Objekt hinsichtlich Lage, Zugänge, Betriebszeiten, bekannter Risiken und vorhandener Schutzmaßnahmen. Das Ergebnis ist eine strukturierte Grundlage für den Einsatzplan.",
+    deliverables: ["Objektbegehung vor Ort", "Risikobewertung und Schwachstellenanalyse", "Abstimmung mit Ihrem Ansprechpartner"],
   },
   {
     icon: UserCheck,
@@ -20,6 +22,7 @@ const phases = [
     title: "Auswahl & Briefing Personal",
     desc: "Wir setzen gezielt Personal ein, das zum Einsatz passt – nach Qualifikation, Erfahrung und Auftreten.",
     detail: "Personalauswahl nach Fachkompetenz, Sprachkenntnissen und Einsatzpassung. Vor Einsatzbeginn erfolgt ein objektspezifisches Briefing mit allen relevanten Informationen.",
+    deliverables: ["Profilabgleich mit Einsatzanforderungen", "Objektspezifisches Briefing", "Vorstellung beim Auftraggeber"],
   },
   {
     icon: Radio,
@@ -27,6 +30,7 @@ const phases = [
     title: "Führung im Einsatz",
     desc: "Feste Einsatzleitung, direkte Kommunikationswege und definierte Eskalationsstufen.",
     detail: "Ein fester Einsatzleiter koordiniert vor Ort, hält den Kontakt zum Auftraggeber und steuert bei Abweichungen sofort nach.",
+    deliverables: ["Fester Einsatzleiter als Ansprechpartner", "Definierte Eskalationsstufen", "Sofortmaßnahmen bei Abweichungen"],
   },
   {
     icon: ClipboardCheck,
@@ -34,18 +38,33 @@ const phases = [
     title: "Dokumentation & Reporting",
     desc: "Lückenlose Einsatzdokumentation, regelmäßige Berichte und Nachsteuerung bei Abweichungen.",
     detail: "Standardisierte Protokolle, regelmäßige Einsatzberichte und strukturierte Nachbesprechungen. Volle Transparenz.",
+    deliverables: ["Digitale Einsatzprotokolle", "Regelmäßige Statusberichte", "Nachbesprechung und Optimierung"],
   },
 ];
 
 const teamCompetencies = [
-  { icon: Shield, title: "§34a-geprüftes Personal", desc: "Alle Einsatzkräfte mit Sachkundeprüfung nach §34a GewO (IHK)." },
-  { icon: Users, title: "Feste Teams", desc: "Wir setzen auf Kontinuität – Sie bekommen feste Ansprechpartner und bekannte Gesichter." },
-  { icon: HeartPulse, title: "Weiterbildung", desc: "Regelmäßige Schulungen in Deeskalation, Erste Hilfe und Brandschutz." },
+  { icon: Shield, title: "§34a-geprüftes Personal", desc: "Alle Einsatzkräfte mit Sachkundeprüfung nach §34a GewO (IHK). Zwingende Einstellungsvoraussetzung." },
+  { icon: Users, title: "Feste Teams", desc: "Kontinuität statt Rotation – Sie bekommen feste Ansprechpartner und ein Team, das Ihr Objekt kennt." },
+  { icon: HeartPulse, title: "Regelmäßige Weiterbildung", desc: "Mindestens zweimal jährlich: Deeskalation, Erste Hilfe, Brandschutz und objektspezifische Schulungen." },
+];
+
+const principles = [
+  { icon: Target, title: "Prävention statt Reaktion", desc: "Unser Fokus liegt auf der Vermeidung von Vorfällen – nicht auf deren Nachbearbeitung." },
+  { icon: Handshake, title: "Partnerschaftlich", desc: "Wir verstehen uns als verlängerter Arm Ihrer Organisation – nicht als externer Dienstleister." },
+  { icon: CheckCircle, title: "Transparent & nachvollziehbar", desc: "Jeder Einsatz wird dokumentiert, jede Entscheidung ist nachvollziehbar." },
+];
+
+const arbeitsweiseFaqs = [
+  { question: "Wie schnell kann ein Einsatz starten?", answer: "Bei kurzfristigem Bedarf können wir innerhalb von 24–48 Stunden einsatzbereit sein. Für planbare Einsätze empfehlen wir eine Vorlaufzeit von mindestens einer Woche." },
+  { question: "Wer ist mein Ansprechpartner?", answer: "Sie erhalten einen festen Einsatzleiter als direkten Ansprechpartner. Dieser koordiniert den Einsatz, hält Sie informiert und ist bei Fragen oder Änderungen direkt erreichbar." },
+  { question: "Wie oft erhalte ich Berichte?", answer: "Die Berichtsfrequenz wird individuell vereinbart – von täglichen Schichtprotokollen bis zu wöchentlichen oder monatlichen Zusammenfassungen." },
+  { question: "Kann ich den Einsatz kurzfristig ändern?", answer: "Ja, wir sind flexibel. Änderungen an Einsatzzeiten, -umfang oder Personal können kurzfristig umgesetzt werden." },
 ];
 
 const ArbeitsweisePage = () => {
   const ref = useScrollAnimation();
   const ref2 = useScrollAnimation();
+  const ref3 = useScrollAnimation();
 
   return (
     <PageLayout>
@@ -60,15 +79,75 @@ const ArbeitsweisePage = () => {
         subtitle="Sicherheit ist kein Produkt, sondern ein Prozess. Vier Phasen, die jeden Einsatz tragen."
       />
 
+      {/* Stats */}
+      <section className="section-light border-b" style={{ borderColor: "hsl(var(--section-light-border))" }}>
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            <div>
+              <p className="stat-number">4</p>
+              <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>Phasen pro Einsatz</p>
+            </div>
+            <div>
+              <p className="stat-number">1</p>
+              <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>Fester Ansprechpartner</p>
+            </div>
+            <div>
+              <p className="stat-number">24h</p>
+              <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>Rückmeldung garantiert</p>
+            </div>
+            <div>
+              <p className="stat-number">100%</p>
+              <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>Dokumentierte Einsätze</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Principles */}
+      <section className="section-light">
+        <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-12">
+          <div className="max-w-3xl mb-10">
+            <h2 className="text-2xl font-bold sm:text-3xl mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+              Unsere Leitprinzipien
+            </h2>
+            <p className="text-base leading-relaxed text-muted-fg">
+              Drei Grundsätze, die unsere gesamte Arbeitsweise bestimmen – von der ersten Anfrage bis zum laufenden Einsatz.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {principles.map(({ icon: PIcon, title, desc }) => (
+              <div
+                key={title}
+                className="rounded-xl p-6"
+                style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl mb-4" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                  <PIcon className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="text-sm font-bold mb-2" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h3>
+                <p className="text-sm text-muted-fg leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Vertical Timeline */}
       <section className="section-light">
         <div ref={ref} className="fade-in-section mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
+          <div className="text-center mb-14">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">4 Phasen</p>
+            <h2 className="text-2xl font-bold sm:text-3xl" style={{ color: "hsl(var(--section-light-fg))" }}>
+              Unser strukturierter Einsatzprozess
+            </h2>
+          </div>
+
           <div className="relative">
             {/* Vertical connector line */}
             <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent" />
 
             <div className="space-y-12">
-              {phases.map(({ icon: Icon, step, title, desc, detail }) => (
+              {phases.map(({ icon: Icon, step, title, desc, detail, deliverables }) => (
                 <div key={step} className="relative flex gap-6 sm:gap-8">
                   {/* Step circle */}
                   <div className="relative z-10 flex h-12 w-12 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-2xl border-2 border-primary/30" style={{ background: "hsl(var(--section-light-bg))" }}>
@@ -83,11 +162,19 @@ const ArbeitsweisePage = () => {
                     <h2 className="text-lg font-bold mb-2" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h2>
                     <p className="text-sm leading-relaxed text-muted-fg mb-3">{desc}</p>
                     <div
-                      className="rounded-lg p-4"
+                      className="rounded-lg p-4 mb-3"
                       style={{ background: "hsl(205 90% 55% / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}
                     >
                       <p className="text-sm leading-relaxed text-muted-fg">{detail}</p>
                     </div>
+                    <ul className="space-y-1.5">
+                      {deliverables.map((d) => (
+                        <li key={d} className="flex items-center gap-2 text-xs text-muted-fg">
+                          <CheckCircle className="h-3 w-3 text-primary shrink-0" />
+                          {d}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               ))}
@@ -104,10 +191,13 @@ const ArbeitsweisePage = () => {
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
               Kompetenz, der Sie vertrauen können
             </h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+              Unsere Einsatzkräfte sind das Fundament unserer Leistung. Deshalb investieren wir kontinuierlich in ihre Qualifikation und Entwicklung.
+            </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="stagger-children grid gap-6 sm:grid-cols-3">
             {teamCompetencies.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="text-center p-6">
+              <div key={title} className="card-accent rounded-xl border border-border/50 p-6 text-center">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 mb-4">
                   <Icon className="h-7 w-7 text-primary" />
                 </div>
@@ -126,12 +216,17 @@ const ArbeitsweisePage = () => {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link to="/qualifikationen">Unsere Qualifikationen</Link>
+                <a href="tel:+4920893579970">
+                  <Phone className="mr-2 h-4 w-4" />
+                  Sofort anrufen
+                </a>
               </Button>
             </div>
           </div>
         </div>
       </section>
+
+      <FAQSection faqs={arbeitsweiseFaqs} title="Häufige Fragen zur Arbeitsweise" />
     </PageLayout>
   );
 };

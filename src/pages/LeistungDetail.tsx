@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowRight, CheckCircle, Phone, Shield, Users, FileCheck, Clock } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone, Shield, Users, FileCheck, Clock, Zap, Target, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
@@ -16,6 +16,13 @@ const trustItems = [
   { icon: Clock, text: "Rückmeldung innerhalb von 24 h" },
 ];
 
+const processSteps = [
+  { icon: Target, title: "Analyse", desc: "Bestandsaufnahme Ihres Objekts und Ihrer Anforderungen" },
+  { icon: Users, title: "Konzept", desc: "Individuelle Maßnahmenplanung und Personalauswahl" },
+  { icon: Zap, title: "Einsatz", desc: "Strukturierter Start mit Einweisung und Führung" },
+  { icon: FileCheck, title: "Reporting", desc: "Laufende Dokumentation und regelmäßige Berichte" },
+];
+
 const LeistungDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const service = getServiceBySlug(slug || "");
@@ -24,6 +31,8 @@ const LeistungDetail = () => {
 
   const { icon: Icon, title, h1, metaTitle, metaDescription, longDesc, typicalClients, points, context, faqs } = service;
   const ref = useScrollAnimation();
+  const ref2 = useScrollAnimation();
+  const ref3 = useScrollAnimation();
 
   return (
     <PageLayout>
@@ -54,9 +63,14 @@ const LeistungDetail = () => {
           <div className="grid gap-10 lg:grid-cols-3">
             {/* Left: Main content */}
             <div className="lg:col-span-2 space-y-8">
-              <p className="text-base leading-relaxed text-muted-fg">
-                {longDesc}
-              </p>
+              <div>
+                <h2 className="text-xl font-bold mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+                  Über diese Leistung
+                </h2>
+                <p className="text-base leading-relaxed text-muted-fg">
+                  {longDesc}
+                </p>
+              </div>
 
               <div
                 className="card-accent rounded-xl p-6"
@@ -73,6 +87,26 @@ const LeistungDetail = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              {/* Why this matters section */}
+              <div
+                className="rounded-xl p-6"
+                style={{ background: "hsl(42 80% 55% / 0.06)", border: "1px solid hsl(42 80% 55% / 0.15)" }}
+              >
+                <div className="flex items-start gap-3">
+                  <AlertTriangle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="text-sm font-bold mb-2" style={{ color: "hsl(var(--section-light-fg))" }}>
+                      Warum professionelle Sicherheit wichtig ist
+                    </h3>
+                    <p className="text-sm leading-relaxed text-muted-fg">
+                      Ungesicherte Objekte und Events sind ein Risiko – nicht nur materiell, sondern auch rechtlich. 
+                      Mit einem professionellen Sicherheitsdienstleister minimieren Sie Haftungsrisiken, schützen Ihre 
+                      Vermögenswerte und schaffen ein sicheres Umfeld für Mitarbeiter, Gäste und Besucher.
+                    </p>
+                  </div>
+                </div>
               </div>
 
               <div className="flex flex-wrap gap-3">
@@ -116,6 +150,11 @@ const LeistungDetail = () => {
                   </ul>
                 </div>
 
+                <div className="border-t pt-4 mb-5" style={{ borderColor: "hsl(var(--section-light-border))" }}>
+                  <p className="text-xs font-semibold mb-2" style={{ color: "hsl(var(--section-light-fg))" }}>Einsatzstart möglich</p>
+                  <p className="text-sm text-muted-fg">Innerhalb von 24–48 Stunden bei kurzfristigem Bedarf</p>
+                </div>
+
                 <Button asChild className="w-full" size="lg">
                   <Link to="/kontakt">
                     Jetzt anfragen
@@ -128,27 +167,57 @@ const LeistungDetail = () => {
         </div>
       </section>
 
+      {/* Process steps */}
+      <section className="bg-background border-t border-border/50">
+        <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Ablauf</p>
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+              Vom Erstgespräch zum Einsatz
+            </h2>
+          </div>
+          <div className="stagger-children grid gap-6 sm:grid-cols-4">
+            {processSteps.map(({ icon: StepIcon, title: stepTitle, desc }, i) => (
+              <div key={stepTitle} className="text-center relative">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 mb-4 relative">
+                  <StepIcon className="h-6 w-6 text-primary" />
+                  <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+                    {i + 1}
+                  </span>
+                </div>
+                <h3 className="text-sm font-bold text-foreground mb-1">{stepTitle}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link to="/arbeitsweise" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
+              Mehr zu unserer Arbeitsweise <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <FAQSection faqs={faqs} title={`Häufige Fragen zu ${title}`} />
 
       {/* Related services */}
-      <section className="section-light border-t" style={{ borderColor: "hsl(var(--section-light-border))" }}>
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+      <section ref={ref3} className="fade-in-section section-light border-t" style={{ borderColor: "hsl(var(--section-light-border))" }}>
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
           <h2 className="text-lg font-bold mb-6" style={{ color: "hsl(var(--section-light-fg))" }}>
-            Weitere Leistungen
+            Weitere Leistungen entdecken
           </h2>
-          <div className="grid gap-3 grid-cols-2 sm:grid-cols-4">
+          <div className="grid gap-4 grid-cols-2 sm:grid-cols-5">
             {services
               .filter((s) => s.slug !== slug)
-              .slice(0, 4)
               .map((s) => (
                 <Link
                   key={s.slug}
                   to={`/leistungen/${s.slug}`}
-                  className="group rounded-xl border p-4 text-center transition-all hover:border-primary/30 hover:shadow-md"
+                  className="group rounded-xl border p-4 text-center transition-all hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5"
                   style={{ borderColor: "hsl(var(--section-light-border))", background: "hsl(var(--section-light-card))" }}
                 >
                   <s.icon className="h-5 w-5 text-primary mx-auto mb-2" />
-                  <span className="text-sm font-semibold" style={{ color: "hsl(var(--section-light-fg))" }}>{s.title}</span>
+                  <span className="text-sm font-semibold block" style={{ color: "hsl(var(--section-light-fg))" }}>{s.title}</span>
                 </Link>
               ))}
           </div>
