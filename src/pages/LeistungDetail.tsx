@@ -8,6 +8,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import { ServiceJsonLd, FAQPageJsonLd } from "@/components/StructuredData";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { getServiceBySlug, services } from "@/data/services";
+import { serviceIllustrations } from "@/data/serviceIllustrations";
 
 const trustItems = [
   { icon: Shield, text: "§34a GewO – geprüftes Personal" },
