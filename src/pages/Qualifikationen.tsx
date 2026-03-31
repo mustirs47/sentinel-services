@@ -85,6 +85,7 @@ const QualifikationenPage = () => {
         badge="Qualifikationen"
         title="Qualifikationen & Nachweise"
         subtitle="Auf welcher fachlichen Grundlage wir arbeiten – und warum das für Sie als Auftraggeber relevant ist."
+        illustration={teamIllustration}
       />
 
       {/* Summary stats */}

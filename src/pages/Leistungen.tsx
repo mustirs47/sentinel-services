@@ -103,9 +103,20 @@ const LeistungenPage = () => {
                   borderColor: "hsl(var(--section-light-border))",
                 }}
               >
+              {serviceIllustrations[slug] ? (
+                <img
+                  src={serviceIllustrations[slug]}
+                  alt={title}
+                  className="h-28 w-auto object-contain mb-4 -ml-2"
+                  loading="lazy"
+                  width={112}
+                  height={112}
+                />
+              ) : (
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
                   <Icon className="h-6 w-6 text-primary" />
                 </div>
+              )}
                 <h2 className="text-lg font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h2>
                 <p className="mt-1 text-xs font-semibold text-primary">{context}</p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-fg flex-1">{desc}</p>

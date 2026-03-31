@@ -42,6 +42,7 @@ const BranchenPage = () => {
         badge="Branchen"
         title="Branchen, die wir absichern"
         subtitle="Jede Branche hat eigene Risiken, Abläufe und Erwartungen. Wir passen unsere Sicherheitslösungen gezielt an."
+        illustration={branchenIllustration}
       />
 
       {/* Stats */}

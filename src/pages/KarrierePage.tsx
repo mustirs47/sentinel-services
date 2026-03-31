@@ -73,6 +73,7 @@ const KarrierePage = () => {
         badge="Karriere"
         title="Werden Sie Teil unseres Teams"
         subtitle="Wir suchen Menschen, die Verantwortung übernehmen – nicht nur einen Job suchen."
+        illustration={teamIllustration}
       />
 
       {/* 3-step application process */}

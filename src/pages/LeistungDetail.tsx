@@ -49,6 +49,7 @@ const LeistungDetail = () => {
         backLink={{ label: "Alle Leistungen", href: "/leistungen" }}
         title={h1}
         subtitle={context}
+        illustration={serviceIllustrations[slug || ""]}
       >
         <div className="flex items-center gap-3 mt-4">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">

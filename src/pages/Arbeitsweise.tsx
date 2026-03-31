@@ -78,6 +78,7 @@ const ArbeitsweisePage = () => {
         badge="Arbeitsweise"
         title="So arbeiten wir – unser Betriebsmodell"
         subtitle="Sicherheit ist kein Produkt, sondern ein Prozess. Vier Phasen, die jeden Einsatz tragen."
+        illustration={arbeitweiseIllustration}
       />
 
       {/* Stats */}

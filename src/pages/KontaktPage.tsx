@@ -52,6 +52,7 @@ const KontaktPage = () => {
         badge="Kontakt"
         title="Anfrage stellen"
         subtitle="Beschreiben Sie Ihren Bedarf – wir melden uns innerhalb von 24 Stunden mit einem konkreten Vorschlag."
+        illustration={heroIllustration}
       />
 
       {/* Process steps row */}
