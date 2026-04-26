@@ -42,9 +42,10 @@ const PageHero = ({ title, subtitle, backLink, badge, children, illustration }: 
           <div className="hidden lg:flex lg:w-80 xl:w-96 shrink-0 items-center justify-center">
             <img
               src={illustration}
-              alt=""
+              alt={`Isometrische Illustration: ${title}`}
               className="w-full h-auto max-h-72 object-contain drop-shadow-lg"
               loading="lazy"
+              decoding="async"
               width={384}
               height={288}
             />
