@@ -8,7 +8,7 @@ const trustSignals = [
   { icon: Shield, text: "§34a GewO zugelassen" },
   { icon: FileCheck, text: "Dokumentierte Einsätze" },
   { icon: Users, text: "Feste Ansprechpartner" },
-  { icon: Phone, text: "Telefonisch erreichbar" },
+  { icon: Phone, text: "Mo–Fr 10–18 Uhr erreichbar" },
 ];
 
 const HeroSection = () => (

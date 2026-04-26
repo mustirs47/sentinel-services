@@ -108,7 +108,7 @@ const KontaktPage = () => {
                     <Clock className="h-5 w-5 shrink-0 text-primary mt-0.5" />
                     <div>
                       <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>Erreichbarkeit</p>
-                      <p className="text-sm text-muted-fg">24/7 per E-Mail, telefonisch Mo–Fr 10–18 Uhr</p>
+                      <p className="text-sm text-muted-fg">Telefonisch Mo–Fr 10–18 Uhr · E-Mail jederzeit</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
