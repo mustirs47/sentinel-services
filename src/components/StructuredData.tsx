@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { services } from "@/data/services";
 
-const BASE_URL = "https://sentinel-services.lovable.app";
+const BASE_URL = "https://www.sentinel-services.de";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
