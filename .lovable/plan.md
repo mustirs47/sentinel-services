@@ -1,121 +1,180 @@
+# Website-Audit Sentinel Services
 
+Ich habe die Seite aus Besucher- und Designer-Perspektive analysiert. Unten findest du Befunde und konkrete Verbesserungen, sortiert nach Priorität. Am Ende kannst du auswählen, was umgesetzt werden soll.
 
-# Redesign: Landingpage straffen + Unterseiten aufwerten + visuelles Design modernisieren
+---
 
-## Kernprobleme
+## P0 — Kritisch (Seriosität / Rechtssicherheit)
 
-1. **Landingpage**: Zu viele Sektionen mit Textwänden, monotones Kartenraster, keine visuelle Abwechslung
-2. **Unterseiten**: Zu kurz, nur ein Kartenraster + CTA, kein Storytelling, keine Tiefe
-3. **Überall**: Gleicher visueller Rhythmus (Icon + Text + Bullet-Liste), keine Akzente, keine Spannung
+### 1. Impressum & Datenschutz enthalten Platzhalter
 
-## Designstrategie
+Im Impressum stehen noch `[Vorname Nachname]`, `[Straße]`, `[USt-IdNr.]`, `[Registernummer]`, `[Aufsichtsbehörde]`. Das ist **abmahnfähig** und zerstört Vertrauen sofort, falls ein Interessent es liest.
 
-### A. Landingpage straffen und visuell auflockern
+- **Fix**: Echte Daten einsetzen oder einen sichtbaren Hinweis "Diese Seite befindet sich im Aufbau" plus Kontaktangabe. Mindestens muss ein Verantwortlicher mit ladungsfähiger Adresse her.
 
-**Homepage besteht aktuell aus 11 Sektionen** -- zu viel. Reduzierung auf 8 Sektionen, die visuell abwechslungsreicher sind:
+### 2. Kontaktformular ist nicht funktional
 
-1. **Hero** -- bleibt, wird kompakter (weniger Padding)
-2. **TrustBar** -- bleibt als schmale Zeile
-3. **ServicesSection** -- bleibt als 3er-Grid, aber mit Hover-Animationen und visuell stärkeren Karten (farbiger Top-Border, größere Icons)
-4. **WhyUsSection (Betriebsmodell)** -- visuelles Redesign: horizontale Timeline mit Nummern statt gleichförmiger Textblöcke, mit einem farbigen Connector-Line zwischen den Schritten
-5. **IndustriesSection** -- kompakter: 2-Zeilen-Grid mit Icons, kein Fließtext, nur Titel + "Mehr erfahren"-Link
-6. **ReferencesSection (Einsatzbilder)** -- Redesign als "Spotlight"-Karten mit farbigem Seitenstreifen und visueller Hierarchie
-7. **ContactSection** -- bleibt
-8. **FAQSection** -- bleibt
+`handleSubmit` setzt nur `submitted=true` — es wird **keine E-Mail** verschickt, **keine Datenbank** beschrieben. Anfragen gehen verloren. Außerdem fehlt die DSGVO-Pflicht-Checkbox ("Ich stimme der Verarbeitung gemäß Datenschutzerklärung zu").
 
-**Entfernt von der Homepage** (leben nur noch als Unterseiten):
-- TeamSection (lebt auf /arbeitsweise)
-- QualificationsSection (lebt auf /qualifikationen)
-- ProcessSection (lebt auf /kontakt als "So läuft es ab")
-- CareerSection (lebt auf /karriere)
+- **Fix**: FormSubmit implementierung mit info@sentinel-services.de + Resend für E-Mail-Versand, plus Pflicht-Consent-Checkbox mit Link zur Datenschutzerklärung. Optional Honeypot/Rate-Limit gegen Spam.
 
-### B. Unterseiten deutlich aufwerten
+### 3. Sitemap / Canonical zeigen auf `lovable.app`
 
-Jede Unterseite bekommt **mehr Tiefe und visuellen Rhythmus**:
+`public/sitemap.xml`, `index.html` (canonical, og:image) und `StructuredData.tsx` verwenden `https://sentinel-services.lovable.app` statt der Custom Domain `https://www.sentinel-services.de`. Das schadet SEO (Duplicate Content / falsche kanonische URL).
 
-**Leistungen.tsx**: 
-- Hero mit kurzem Intro-Text
-- 6er-Grid mit hover-fähigen Karten (gradient top-border, shadow on hover)
-- Darunter: "Warum Sentinel"-Vertrauenszeile (3 Punkte nebeneinander)
-- CTA-Block
+- **Fix**: Alle URLs auf `https://www.sentinel-services.de` umstellen.
 
-**LeistungDetail.tsx**:
-- Hero mit Breadcrumb
-- Zweispaltiges Layout: links Fließtext + Bullet-Punkte, rechts "Auf einen Blick"-Sidebar mit typischen Kunden, Trust-Signalen und CTA
-- FAQ-Accordion
-- Verknüpfte Leistungen als Karten-Row
+---
 
-**Branchen.tsx**:
-- Größere Karten mit mehr Detail-Text pro Branche
-- Jede Karte bekommt einen farbigen Akzentstreifen links
-- Pro Branche: typische Risiken + passende Leistungen als Chips
-- CTA-Block am Ende
+## P1 — Hoch (User Experience & Conversion)
 
-**Qualifikationen.tsx**:
-- Visuelleres Layout: große Zahlen/Badges statt nur Bullet-Listen
-- Fortschrittsbalken-artige Darstellung der Qualifikationsgruppen
-- "Relevanz für Kunden"-Box mit hellem Hintergrund und Icon
-- Zusätzlich: Zusammenfassungs-Karte oben ("4 Qualifikationsgruppen, XX+ Nachweise")
-- CTA + FAQ am Ende
+### 4. Hero-Headline ist überladen
 
-**Arbeitsweise.tsx**:
-- Vertikale Timeline mit Nummern und Connector-Lines statt flache Textblöcke
-- Jeder Schritt bekommt ein farbiges Badge und ein hervorgehobenes Detail-Feld
-- Am Ende: Team-Kompetenzfelder (übernommen von TeamSection)
-- CTA
+Aktuell drei Themen in einem H1: "Objektschutz, Veranstaltungsschutz & Baustellenbewachung". Liest sich wie ein Keyword-Stuffing.
 
-**KarrierePage.tsx**:
-- Hero mit einladendem Ton
-- Dreispaltiges Layout: "Was wir erwarten" | "Was wir bieten" | "Einsatzfelder"
-- Visueller Bewerbungsprozess als 3-Schritt-Zeile
-- FAQ am Ende
+- **Fix**: Klare Nutzen-Headline + Keywords als Sub-Zeile. Beispiel: *"Sicherheit, die im Einsatz funktioniert."* — Sub: *"Objektschutz, Veranstaltungen und Baustellen — bundesweit, §34a-zugelassen, mit fester Einsatzleitung."*
 
-**KontaktPage.tsx**:
-- Zweispaltiges Layout bleibt
-- Zusätzlich: 4-Schritt-Prozess (von ProcessSection) als kompakte Zeile über dem Formular
-- Stärkere visuelle Trust-Signale neben dem Formular
+### 5. CTA-Hierarchie unklar
 
-### C. Globale visuelle Verbesserungen
+Zwei gleich starke CTAs ("Kostenlose Erstberatung" + "Kurzfristigen Einsatz anfragen"). Beide führen praktisch zum gleichen Ziel.
 
-- **Gradient-Akzente**: Primärfarbener Top-Border auf allen Karten (2-3px gradient)
-- **Staggered Animations**: Karten erscheinen versetzt statt alle gleichzeitig
-- **Visuelle Trenner**: Zwischen Sektionen dezente Divider mit Icon oder Muster
-- **Größere Icons**: Von h-5/w-5 auf h-6/w-6 in Feature-Karten
-- **Bessere Typografie-Hierarchie**: Mehr Gewichtsunterschiede, Headlines größer
-- **Counter/Stats-Elemente**: Wo möglich Zahlen hervorheben (z.B. "4 Phasen", "6 Leistungen", "8 Branchen")
+- **Fix**: Primärer CTA ist klar dominant (Kontakt/Anfrage), sekundärer ist eindeutig anders ("Leistungen ansehen" oder "Direkt anrufen" mit Telefonnummer sichtbar).
 
-## Technische Umsetzung
+### 6. Keine echten Social-Proof-Elemente
 
-### Geänderte Dateien
+Es gibt keine Testimonials, keine Kundenlogos, keine Fallzahlen ("X Einsätze pro Jahr"), keine Bewertungen. "Typische Einsatzbilder" sind hilfreich, aber fiktiv-wirkende Szenarien.
 
-| Datei | Änderung |
-|---|---|
-| `src/pages/Index.tsx` | Sektionen reduzieren (Team, Qualifikationen, Process, Career raus) |
-| `src/components/sections/ServicesSection.tsx` | Gradient-Border Karten, staggered fade-in |
-| `src/components/sections/WhyUsSection.tsx` | Timeline-Design mit Connector-Lines |
-| `src/components/sections/IndustriesSection.tsx` | Kompakter, visuellere Karten |
-| `src/components/sections/ReferencesSection.tsx` | Spotlight-Karten mit Seitenstreifen |
-| `src/pages/Leistungen.tsx` | Vertrauenszeile hinzufügen, visuellere Karten |
-| `src/pages/LeistungDetail.tsx` | Zweispaltiges Layout mit Sidebar |
-| `src/pages/Branchen.tsx` | Größere Karten, Risiken + Akzentstreifen |
-| `src/pages/Qualifikationen.tsx` | Summary-Karte, Badge-Darstellung, FAQ hinzufügen |
-| `src/pages/Arbeitsweise.tsx` | Vertikale Timeline, Team-Kompetenz-Block unten |
-| `src/pages/KarrierePage.tsx` | 3-Spalten, Bewerbungsprozess-Zeile |
-| `src/pages/KontaktPage.tsx` | Prozess-Zeile über Formular |
-| `src/index.css` | Staggered animation utilities, gradient-border utility |
+- **Fix**: Mindestens 1 Sektion mit Kundenstimme(n), Logo-Leiste (auch anonymisiert: "Hausverwaltung in NRW", "Mittelständischer Bauträger"), oder Zahlen wie "200+ gesicherte Einsätze".
 
-### Neue CSS-Utilities in `index.css`
+### 7. Telefonnummer Erreichbarkeit widersprüchlich
 
-```css
-/* Staggered children animation */
-.stagger-children > * { ... }
+Hero-Trust-Signal sagt "Telefonisch erreichbar", aber Footer/Topbar präzisieren "Mo–Fr 10–18 Uhr". Für einen Sicherheitsdienst mit Notfall-Anspruch ist 10–18 Uhr extrem knapp.
 
-/* Gradient top border for cards */  
-.card-accent { border-top: 3px solid hsl(var(--primary)); }
+- **Fix**: Entweder echte 24/7-Notrufnummer ergänzen ("Notfall-Hotline: …, sonst Mo–Fr 10–18 Uhr"), oder ehrliche Formulierung wie "Reaktion innerhalb 24 h, Notfall-Rückruf möglich".
 
-/* Timeline connector */
-.timeline-connector { ... }
-```
+### 8. Preise/Modelle nicht angedeutet
 
-Keine neuen Dependencies. Keine neuen Dateien nötig -- alles Umbau bestehender Komponenten.
+Interessenten wollen mindestens grob wissen: Stundensatz-Bereich? Pauschale? Mindestlaufzeit? Aktuell null Information dazu.
 
+- **Fix**: Eine kurze "Preise & Konditionen"-Box oder FAQ-Antwort: "Stundensätze beginnen bei … €, abhängig von Qualifikation, Einsatzzeit und Lage. Kostenfreies Angebot innerhalb 24 h."
+
+---
+
+## P2 — Mittel (Design & Polish)
+
+### 9. Bildqualität & Performance
+
+Illustrationen sind als PNG zwischen **286 KB und 902 KB** — `service-baustelle.png` allein ist 902 KB. Insgesamt **~5 MB Illustrationen**. Auf Mobile ein klarer LCP-/Bandbreiten-Killer, obwohl auf Mobile eh ausgeblendet (`hidden lg:`) — dennoch lädt der Browser sie.
+
+- **Fix**: PNGs in WebP konvertieren (typisch −70 %), optional `loading="lazy"` + `<picture>` mit Source-Set, große Hintergrund-Illustrationen mit `media`-Query nur Desktop laden.
+
+### 10. Logo-SVGs sind 290–310 KB
+
+Das ist außergewöhnlich groß für SVG — vermutlich enthalten sie eingebettete Raster. PNG-Versionen (5 KB) liegen daneben, werden aber nicht genutzt.
+
+- **Fix**: SVG bereinigen (SVGO) oder die kleineren PNGs nutzen.
+
+### 11. Mobile: Illustrationen komplett weg
+
+Auf Mobile (`hidden lg:flex`) verschwinden alle Illustrationen. Mobile Hero wirkt dann textlastig.
+
+- **Fix**: Eine kompakte, kleinere Variante (z. B. unterhalb der Headline, max. 200 px hoch) statt komplett ausblenden — schafft visuelle Wärme.
+
+### 12. Branchen-Sektion ist sehr karg
+
+8 kleine Karten ohne Beschreibung, alle linken auf dieselbe `/branchen`-Seite (kein Anchor zum jeweiligen Eintrag).
+
+- **Fix**: Anchor-Links (`/branchen#einzelhandel`) + Hover-Tooltip mit Kurzbeschreibung. Alternativ 1-Zeilen-Detail unter dem Titel.
+
+### 13. Footer hat keine Adresse
+
+Standard-Erwartung im DACH-Raum: Adresse + ggf. Karte im Footer. Aktuell nur Telefon/E-Mail.
+
+- **Fix**: Adresse + Map-Link ergänzen (sobald rechtsverbindlich).
+
+### 14. Outline-Buttons bleiben unsicher auf hellem Hintergrund
+
+Im Light-Section sind Outline-Buttons mit `border-primary/30` recht zart und können untergehen.
+
+- **Fix**: Auf hellen Sektionen kontrastreichere Variante (`border-primary/60` oder gefüllter Sekundärbutton).
+
+---
+
+## P3 — Inhaltliche Lücken
+
+### 15. Fehlende Themen, die Käufer suchen
+
+- **Versicherungsschutz / Haftpflichtsumme**: Wichtigstes B2B-Kriterium — aktuell nirgendwo erwähnt.
+- **Datenschutz im Einsatz** (Bodycam, Besucherregistrierung, Auftragsverarbeitung nach Art. 28 DSGVO).
+- **Tariftreue / Bezahlung des Personals** (Mindestlohn Sicherheitsgewerbe, Tarifbindung).
+- **Reaktionszeit-Garantien** (Anfahrt, Alarmverfolgung).
+- **Subunternehmer ja/nein** — Interessenten fragen das oft.
+- **Sprachen des Personals** (Deutsch/Englisch/weitere).
+
+### 16. Karriere-Seite ohne Bewerbungs-Kanal
+
+Die Karriere-Seite existiert, aber vermutlich kein konkretes Formular oder Stellenliste mit Standorten / Schichten.
+
+- **Fix**: Mindestens E-Mail-Adresse `info@…` + Stellenarten + Bewerbungslink.
+
+### 17. Blog/Insights leer
+
+Es gibt eine `InsightsSection.tsx`, die nicht in `Index.tsx` eingebunden ist. SEO-Potenzial verschenkt (Themen wie "Was kostet ein Sicherheitsdienst?", "§34a Sachkunde erklärt").
+
+- **Fix**: Entweder kleinen Ratgeber-Bereich aufbauen oder Komponente entfernen.
+
+---
+
+## P4 — Technik & SEO
+
+### 18. Keine Cookie-/Consent-Banner
+
+Falls später Tracking (GA, Meta Pixel) ergänzt wird, braucht es Consent. Aktuell wirkt das ohne Tracking ok — aber sobald die Seite Web-Fonts von Google etc. lädt, ist es relevant.
+
+### 19. Strukturierte Daten unvollständig
+
+`LocalBusiness` ist gut, aber:
+
+- Keine `address` (PostalAddress) — Pflicht für Local SEO
+- Kein `aggregateRating` (sobald Reviews existieren)
+- Service-Detailseiten haben `ServiceJsonLd`, aber kein `BreadcrumbList`
+
+### 20. Bilder ohne `alt` oder mit leerem `alt`
+
+Hero-BG `alt=""` ist korrekt (dekorativ), aber Illustrationen in `PageHero` haben `alt=""` obwohl sie inhaltlich relevant sind.
+
+- **Fix**: Sprechende `alt`-Texte für Screenreader/SEO.
+
+### 21. Kein 404-Asset / Sitemap unvollständig
+
+Sitemap geprüft — fehlt z. B. `/impressum`, `/datenschutz` (für Vollständigkeit, auch wenn niedrige Priorität).
+
+---
+
+## Vorgeschlagene Umsetzungs-Reihenfolge
+
+**Sprint 1 (rechtlich + funktional):**
+
+- Impressum/Datenschutz mit echten Daten füllen
+- Kontaktformular mit echtem Versand (Lovable Cloud + Resend) + DSGVO-Consent
+- URLs auf Custom Domain umstellen (sitemap, canonical, JSON-LD)
+
+**Sprint 2 (Conversion):**
+
+- Hero-Headline neu, CTA-Hierarchie schärfen
+- Sektion mit Social Proof / Zahlen / Testimonial-Slot
+- Preis-/Konditionsblock + Reaktionszeit-Aussage präzisieren
+- Versicherungs-/Tariftreue-Hinweise
+
+**Sprint 3 (Performance + Polish):**
+
+- Illustrationen WebP + Lazy + Mobile-Variante
+- Logo-SVGs bereinigen
+- Branchen-Karten anreichern, Footer-Adresse
+- Strukturierte Daten erweitern, Sitemap ergänzen
+
+---
+
+## Frage an dich
+
+Damit ich loslegen kann: Welche Sprints / Themen sollen wir zuerst angehen? Du kannst mir gerne auch einzelne Punkte (per Nummer) nennen, die du priorisieren möchtest.
