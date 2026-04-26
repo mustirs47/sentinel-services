@@ -6,7 +6,7 @@ import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/sections/FAQSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import arbeitweiseIllustration from "@/assets/illustrations/arbeitsweise.png";
+import arbeitweiseIllustration from "@/assets/illustrations/arbeitsweise.webp";
 
 const phases = [
   {

@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { services } from "@/data/services";
 
-const BASE_URL = "https://sentinel-services.lovable.app";
+const BASE_URL = "https://www.sentinel-services.de";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -15,6 +15,14 @@ const localBusinessSchema = {
   areaServed: {
     "@type": "Country",
     name: "Deutschland",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+4920893579970",
+    contactType: "customer service",
+    email: "info@sentinel-services.de",
+    availableLanguage: ["German"],
+    areaServed: "DE",
   },
   priceRange: "$$",
   openingHoursSpecification: [
@@ -47,6 +55,24 @@ export const LocalBusinessJsonLd = () => (
     </script>
   </Helmet>
 );
+
+export const BreadcrumbJsonLd = ({ items }: { items: { name: string; url: string }[] }) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      item: it.url,
+    })),
+  };
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
 
 export const FAQPageJsonLd = ({ faqs }: { faqs: { question: string; answer: string }[] }) => {
   const schema = {

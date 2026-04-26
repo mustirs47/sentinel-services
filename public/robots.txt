@@ -14,4 +14,4 @@ User-agent: *
 Allow: /
 Disallow: /404
 
-Sitemap: https://sentinel-services.lovable.app/sitemap.xml
+Sitemap: https://www.sentinel-services.de/sitemap.xml

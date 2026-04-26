@@ -13,6 +13,30 @@ const Impressum = () => (
 
     <section className="section-light">
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
+        <div
+          role="note"
+          className="mb-8 rounded-lg border-l-4 border-primary p-4"
+          style={{
+            background: "hsl(205 90% 55% / 0.08)",
+            borderColor: "hsl(var(--primary))",
+          }}
+        >
+          <p className="text-sm font-semibold mb-1" style={{ color: "hsl(var(--section-light-fg))" }}>
+            Hinweis: Diese Seite befindet sich im Aufbau
+          </p>
+          <p className="text-xs leading-relaxed text-muted-fg">
+            Die vollständigen Pflichtangaben werden derzeit ergänzt. Für rechtsverbindliche
+            Auskünfte erreichen Sie uns telefonisch unter{" "}
+            <a href="tel:+4920893579970" className="text-primary hover:underline">
+              +49 (0) 208 935 799 70
+            </a>{" "}
+            oder per E-Mail an{" "}
+            <a href="mailto:info@sentinel-services.de" className="text-primary hover:underline">
+              info@sentinel-services.de
+            </a>
+            .
+          </p>
+        </div>
         <div className="prose prose-sm max-w-none" style={{ color: "hsl(var(--section-light-fg))" }}>
           <h2 className="text-lg font-semibold mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
             Angaben gemäß § 5 TMG

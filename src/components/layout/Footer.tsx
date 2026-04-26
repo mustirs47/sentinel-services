@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoGrayscale from "@/assets/logo-grayscale.svg";
+import logoGrayscale from "@/assets/logo-grayscale.png";
 
 const footerNav = [
   { label: "Leistungen", href: "/leistungen" },
@@ -57,7 +57,7 @@ const Footer = () => (
                 info@sentinel-services.de
               </a>
             </li>
-            <li>Mo–Fr 10–18 Uhr, E-Mail 24/7</li>
+            <li>Telefonisch Mo–Fr 10–18 Uhr · E-Mail jederzeit</li>
           </ul>
           <div className="mt-6">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Rechtliches</h4>

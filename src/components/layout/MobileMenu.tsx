@@ -6,7 +6,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import logoColor from "@/assets/logo-color.svg";
+import logoColor from "@/assets/logo-color.png";
 
 interface MobileMenuProps {
   open: boolean;

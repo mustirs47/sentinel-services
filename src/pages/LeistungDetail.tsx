@@ -41,7 +41,7 @@ const LeistungDetail = () => {
       <ServiceJsonLd
         name={title}
         description={metaDescription}
-        url={`https://sentinel-services.lovable.app/leistungen/${slug}`}
+        url={`https://www.sentinel-services.de/leistungen/${slug}`}
       />
       <FAQPageJsonLd faqs={faqs} />
 
