@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Clock, MapPin, Send, Phone, Shield, FileCheck, Users, ArrowRight } from "lucide-react";
+import { Mail, Clock, MapPin, Phone, Shield, FileCheck, Users, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
