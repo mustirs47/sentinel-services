@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, FileCheck, Users, Phone } from "lucide-react";
+import { ArrowRight, Shield, FileCheck, Users, Phone, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroIllustration from "@/assets/illustrations/hero-security.webp";
@@ -26,15 +26,18 @@ const HeroSection = () => (
     <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
       <div className="flex items-center gap-8 lg:gap-16">
         <div className="max-w-2xl flex-1">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary mb-5">
+            <Shield className="h-3 w-3" />
+            Sicherheitsdienst · bundesweit
+          </span>
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl" style={{ lineHeight: 1.15 }}>
-            Professioneller{" "}
-            <span className="text-primary">Sicherheitsdienst</span> –{" "}
-            Objektschutz, Veranstaltungsschutz & Baustellenbewachung
+            Sicherheit, die im{" "}
+            <span className="text-primary">Einsatz</span> funktioniert.
           </h1>
 
           <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg max-w-xl">
-            Sentinel Services schützt Ihre Objekte, Veranstaltungen und Baustellen –
-            mit §34a-geprüftem Personal, klaren Prozessen und persönlicher Einsatzführung. Bundesweit einsatzbereit.
+            Objektschutz, Veranstaltungen und Baustellen – mit §34a-geprüftem
+            Personal, fester Einsatzleitung und lückenloser Dokumentation.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -45,12 +48,21 @@ const HeroSection = () => (
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <a href="tel:+4920893579970">
-                <Phone className="mr-2 h-4 w-4" />
-                Kurzfristigen Einsatz anfragen
-              </a>
+              <Link to="/leistungen">
+                Leistungen ansehen
+                <ChevronRight className="ml-1 h-4 w-4" />
+              </Link>
             </Button>
           </div>
+
+          <a
+            href="tel:+4920893579970"
+            className="mt-5 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
+            <Phone className="h-4 w-4 text-primary" />
+            Oder direkt anrufen:{" "}
+            <span className="font-semibold text-foreground">+49 (0) 208 935 799 70</span>
+          </a>
         </div>
 
         {/* Isometric illustration */}
