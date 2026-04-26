@@ -9,7 +9,7 @@ import { FAQPageJsonLd } from "@/components/StructuredData";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { services } from "@/data/services";
 import { serviceIllustrations } from "@/data/serviceIllustrations";
-import heroIllustration from "@/assets/illustrations/hero-security.png";
+import heroIllustration from "@/assets/illustrations/hero-security.webp";
 
 const defaultFaqs = [
   { question: "Welche Zulassungen hat Sentinel Services?", answer: "Wir verfügen über die Gewerbeerlaubnis nach §34a GewO. Alle Einsatzkräfte haben die Sachkundeprüfung nach §34a GewO (IHK) abgelegt." },

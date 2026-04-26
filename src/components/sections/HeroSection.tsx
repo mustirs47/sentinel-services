@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Shield, FileCheck, Users, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroIllustration from "@/assets/illustrations/hero-security.png";
+import heroIllustration from "@/assets/illustrations/hero-security.webp";
 
 const trustSignals = [
   { icon: Shield, text: "§34a GewO zugelassen" },

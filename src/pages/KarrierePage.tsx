@@ -7,7 +7,7 @@ import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/sections/FAQSection";
 import { FAQPageJsonLd } from "@/components/StructuredData";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import teamIllustration from "@/assets/illustrations/team-qualifikationen.png";
+import teamIllustration from "@/assets/illustrations/team-qualifikationen.webp";
 
 const requirements = [
   "Mindestalter 18 Jahre",
