@@ -5,7 +5,8 @@ import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/sections/FAQSection";
-import { FAQPageJsonLd } from "@/components/StructuredData";
+import { FAQPageJsonLd, BreadcrumbJsonLd, ItemListJsonLd } from "@/components/StructuredData";
+import { BASE_URL } from "@/lib/seo";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { services } from "@/data/services";
 import { serviceIllustrations } from "@/data/serviceIllustrations";
@@ -46,10 +47,23 @@ const LeistungenPage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Sicherheitsdienstleistungen | Sentinel Services"
-        description="Professionelle Sicherheitsdienstleistungen: Objektschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangsdienste, Streifendienste & individuelle Konzepte."
+        title="Leistungen im Sicherheitsdienst – Übersicht"
+        description="Sechs Leistungsbereiche von Objektschutz bis Sicherheitskonzept – kurz erklärt, mit typischen Einsatzlagen und passenden Branchen."
       />
       <FAQPageJsonLd faqs={defaultFaqs} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Startseite", url: `${BASE_URL}/` },
+          { name: "Leistungen", url: `${BASE_URL}/leistungen` },
+        ]}
+      />
+      <ItemListJsonLd
+        items={services.map((s) => ({
+          name: s.title,
+          description: s.desc,
+          url: `${BASE_URL}/leistungen/${s.slug}`,
+        }))}
+      />
 
       <PageHero
         badge="Leistungen"
