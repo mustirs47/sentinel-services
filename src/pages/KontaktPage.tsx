@@ -22,14 +22,14 @@ const processSteps = [
 
 const guarantees = [
   "Schnellstmögliche Rückmeldung auf Ihre Anfrage",
-  "Kostenlose und unverbindliche Erstberatung",
+  "Konkretes Angebot statt allgemeiner Beratung",
   "Kein Standardangebot – individuelles Konzept für Ihren Bedarf",
   "Transparente Kostenaufstellung ohne versteckte Gebühren",
 ];
 
 const kontaktFaqs = [
   { question: "Wie schnell melden Sie sich auf meine Anfrage?", answer: "Wir melden uns schnellstmöglich auf Ihre Anfrage per E-Mail." },
-  { question: "Ist die Erstberatung wirklich kostenlos?", answer: "Ja, die Erstberatung und die Erstellung eines unverbindlichen Angebots sind für Sie komplett kostenlos." },
+  { question: "Was kostet die Angebotserstellung?", answer: "Die Erstellung eines konkreten Angebots auf Basis Ihrer Anfrage ist kostenfrei und unverbindlich." },
   { question: "Wie kurzfristig kann ein Einsatz starten?", answer: "Bei akutem Bedarf können wir zügig einsatzbereit sein. Für planbare Einsätze empfehlen wir eine Vorlaufzeit von mindestens einer Woche." },
 ];
 
@@ -114,7 +114,7 @@ const KontaktPage = () => {
     <PageLayout>
       <SEOHead
         title="Kontakt – Anfrage an Sentinel Services"
-        description="Erstberatung per Formular oder E-Mail. Beschreiben Sie Bedarf, Ort und Zeitraum – wir melden uns mit einem konkreten Vorschlag."
+        description="Anfrage per Formular oder E-Mail. Beschreiben Sie Bedarf, Ort und Zeitraum – wir melden uns mit einem konkreten Angebot."
       />
       <BreadcrumbJsonLd
         items={[
