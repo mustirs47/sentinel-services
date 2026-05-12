@@ -172,7 +172,7 @@ const LeistungDetail = () => {
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Ablauf</p>
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-              Vom Erstgespräch zum Einsatz
+              Von der Anfrage zum Einsatz
             </h2>
           </div>
           <div className="stagger-children grid gap-6 sm:grid-cols-4">

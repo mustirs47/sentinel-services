@@ -17,7 +17,7 @@ const defaultFaqs = [
   { question: "Wie schnell können Sie auf eine Anfrage reagieren?", answer: "Wir melden uns schnellstmöglich auf Ihre Anfrage. Bei kurzfristigem Einsatzbedarf können wir häufig zügig einsatzbereit sein." },
   { question: "In welchem Gebiet sind Sie tätig?", answer: "Wir sind bundesweit einsatzbereit. Kontaktieren Sie uns für eine unverbindliche Bedarfsanalyse." },
   { question: "Kann ich mehrere Leistungen kombinieren?", answer: "Ja, die meisten unserer Kunden nutzen eine Kombination aus mehreren Leistungsbausteinen. Wir erstellen ein individuelles Paket, das genau auf Ihre Anforderungen zugeschnitten ist." },
-  { question: "Was kostet eine Sicherheitsdienstleistung?", answer: "Die Kosten hängen von Umfang, Einsatzzeiten und Anforderungen ab. Wir erstellen Ihnen ein transparentes Angebot nach einer kostenlosen Erstberatung – ohne versteckte Kosten." },
+  { question: "Was kostet eine Sicherheitsdienstleistung?", answer: "Die Kosten hängen von Umfang, Einsatzzeiten und Anforderungen ab. Nach Ihrer Anfrage erhalten Sie ein transparentes Angebot – ohne versteckte Kosten." },
 ];
 
 const trustPoints = [
@@ -206,13 +206,12 @@ const LeistungenPage = () => {
             Individuelle Sicherheitslösung gesucht?
           </h2>
           <p className="text-muted-fg max-w-xl mx-auto mb-8">
-            Beschreiben Sie Ihren Bedarf – wir erstellen ein maßgeschneidertes Konzept mit transparenter Kostenübersicht. 
-            Kostenlos und unverbindlich.
+            Beschreiben Sie Ihren Bedarf – wir erstellen ein passendes Konzept mit transparenter Kostenübersicht.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild size="lg">
               <Link to="/kontakt">
-                Kostenlose Erstberatung
+                Anfrage stellen
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

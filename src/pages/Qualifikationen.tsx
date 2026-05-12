@@ -260,12 +260,12 @@ const QualifikationenPage = () => {
             Überzeugt von unserer Qualifikation?
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-            Lassen Sie sich unverbindlich beraten – wir zeigen Ihnen, wie wir Ihre Sicherheitsanforderungen professionell umsetzen.
+            Stellen Sie Ihre Anfrage – wir zeigen Ihnen, wie wir Ihre Sicherheitsanforderungen konkret umsetzen.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild size="lg">
               <Link to="/kontakt">
-                Jetzt beraten lassen
+                Anfrage stellen
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

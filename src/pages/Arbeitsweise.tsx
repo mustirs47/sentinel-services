@@ -72,7 +72,7 @@ const ArbeitsweisePage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Arbeitsweise – vom Erstgespräch bis zum Reporting"
+        title="Arbeitsweise – von der Anfrage bis zum Reporting"
         description="Vier Phasen pro Auftrag: Analyse, Personalauswahl, Einsatzführung, Dokumentation. So läuft ein Einsatz bei Sentinel Services konkret ab."
       />
       <BreadcrumbJsonLd
@@ -223,7 +223,7 @@ const ArbeitsweisePage = () => {
           <div className="mt-12 text-center">
             <Button asChild size="lg">
               <Link to="/kontakt">
-                Kostenlose Erstberatung
+                Anfrage stellen
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

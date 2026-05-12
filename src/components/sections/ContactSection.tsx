@@ -68,11 +68,11 @@ const ContactSection = () => {
               </h3>
               <p className="text-sm text-muted-fg mb-6">
                 Auf unserer Kontaktseite finden Sie ein vollständiges Anfrageformular –
-                kostenfrei und unverbindlich.
+                mit allen Angaben für ein konkretes Angebot.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Kostenlose Erstberatung",
+                  "Konkretes Angebot auf Anfrage",
                   "Konzept individuell auf Ihren Bedarf",
                   "Transparente Kostenaufstellung",
                 ].map((item) => (
