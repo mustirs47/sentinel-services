@@ -12,7 +12,7 @@ interface PageHeroProps {
 }
 
 const PageHero = ({ title, subtitle, backLink, badge, children, illustration }: PageHeroProps) => (
-  <section className="bg-background border-b border-border/50">
+  <section className="bg-background bg-slate-50 text-slate-950 border-b border-border/50">
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
       <div className={illustration ? "flex flex-col lg:flex-row lg:items-center lg:gap-12" : ""}>
         <div className={illustration ? "flex-1" : ""}>

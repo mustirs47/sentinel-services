@@ -26,7 +26,7 @@ const FAQSection = ({ faqs, title = "Häufig gestellte Fragen", light = false }:
   const items = faqs || defaultFaqs;
 
   return (
-    <section className={light ? "section-light" : "bg-background"}>
+    <section className={light ? "section-light" : "bg-background bg-slate-50 text-slate-950"}>
       <div ref={ref} className="fade-in-section mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="text-center mb-10">
           <h2
