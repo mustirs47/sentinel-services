@@ -81,19 +81,43 @@ const Datenschutz = () => (
           <div>
             <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>7. Cookies</h2>
             <p className="text-sm leading-relaxed text-muted-fg">
-              Unsere Website verwendet derzeit keine Cookies, die einer Einwilligung bedürfen. Technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind, werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gesetzt. Wir haben ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und Optimierung unserer Website.
+              Technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind, werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gesetzt. Wir haben ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und Optimierung unserer Website. Darüber hinaus setzen wir Cookies im Rahmen von Google Analytics ein (siehe Ziffer 8).
             </p>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>8. Hosting</h2>
+            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>8. Google Analytics</h2>
+            <p className="text-sm leading-relaxed text-muted-fg mb-3">
+              Diese Website nutzt Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google"). Google Analytics verwendet sogenannte „Cookies", Textdateien, die auf Ihrem Endgerät gespeichert werden und eine Analyse der Benutzung der Website durch Sie ermöglichen.
+            </p>
+            <p className="text-sm leading-relaxed text-muted-fg mb-3">
+              Wir setzen Google Analytics mit aktivierter IP-Anonymisierung ein (<em>anonymize_ip</em>). Dadurch wird Ihre IP-Adresse von Google innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt.
+            </p>
+            <p className="text-sm leading-relaxed text-muted-fg mb-3">
+              Die im Rahmen von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt. Im Auftrag des Betreibers dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber dem Websitebetreiber zu erbringen.
+            </p>
+            <p className="text-sm leading-relaxed text-muted-fg mb-3">
+              Rechtsgrundlage für die Nutzung von Google Analytics ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer statistischen Auswertung des Nutzerverhaltens zur Optimierung unseres Angebots). Sofern eine Einwilligung erforderlich ist (z. B. bei nicht zwingend erforderlichen Cookies), erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO sowie § 25 Abs. 1 TDDDG.
+            </p>
+            <p className="text-sm leading-relaxed text-muted-fg mb-3">
+              Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern. Außerdem können Sie die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter folgendem Link verfügbare Browser-Plugin herunterladen und installieren:{" "}
+              <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" rel="noopener noreferrer" className="underline">tools.google.com/dlpage/gaoptout</a>.
+            </p>
+            <p className="text-sm leading-relaxed text-muted-fg">
+              Mehr Informationen zum Umgang mit Nutzerdaten bei Google Analytics finden Sie in der Datenschutzerklärung von Google:{" "}
+              <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer" className="underline">policies.google.com/privacy</a>.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>9. Hosting</h2>
             <p className="text-sm leading-relaxed text-muted-fg">
               Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots (Art. 6 Abs. 1 lit. f DSGVO).
             </p>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>9. Änderung der Datenschutzerklärung</h2>
+            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>10. Änderung der Datenschutzerklärung</h2>
             <p className="text-sm leading-relaxed text-muted-fg">
               Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
             </p>
