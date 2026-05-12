@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import useScrollToTop from "@/hooks/useScrollToTop";
@@ -6,17 +7,18 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
-import Impressum from "./pages/Impressum";
-import Datenschutz from "./pages/Datenschutz";
-import LeistungenPage from "./pages/Leistungen";
-import LeistungDetail from "./pages/LeistungDetail";
-import BranchenPage from "./pages/Branchen";
-import QualifikationenPage from "./pages/Qualifikationen";
-import ArbeitsweisePage from "./pages/Arbeitsweise";
-import KarrierePage from "./pages/KarrierePage";
-import KontaktPage from "./pages/KontaktPage";
-import NotFound from "./pages/NotFound";
 import { CookieBanner } from "@/components/CookieBanner";
+
+const Impressum = lazy(() => import("./pages/Impressum"));
+const Datenschutz = lazy(() => import("./pages/Datenschutz"));
+const LeistungenPage = lazy(() => import("./pages/Leistungen"));
+const LeistungDetail = lazy(() => import("./pages/LeistungDetail"));
+const BranchenPage = lazy(() => import("./pages/Branchen"));
+const QualifikationenPage = lazy(() => import("./pages/Qualifikationen"));
+const ArbeitsweisePage = lazy(() => import("./pages/Arbeitsweise"));
+const KarrierePage = lazy(() => import("./pages/KarrierePage"));
+const KontaktPage = lazy(() => import("./pages/KontaktPage"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <Suspense fallback={<div className="min-h-screen bg-background" />}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/leistungen" element={<LeistungenPage />} />
@@ -43,6 +46,7 @@ const App = () => (
             <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          </Suspense>
           <CookieBanner />
         </BrowserRouter>
       </TooltipProvider>
