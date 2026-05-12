@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Phone, Briefcase, Gift, MapPin, Send, FileText, Users, Shield, HeartPulse, Clock, Star } from "lucide-react";
+import { ArrowRight, CheckCircle, Briefcase, Gift, MapPin, Send, FileText, Users, Shield, HeartPulse, CalendarCheck, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
@@ -45,7 +45,7 @@ const steps = [
 const whyUs = [
   { icon: Shield, title: "Seriöser Arbeitgeber", desc: "§34a-zugelassen, feste Verträge, transparente Bedingungen. Kein Subunternehmertum." },
   { icon: HeartPulse, title: "Regelmäßige Schulungen", desc: "Deeskalation, Erste Hilfe, Brandschutz und mehr – wir investieren in Ihre Qualifikation." },
-  { icon: Clock, title: "Planbare Einsätze", desc: "Langfristige Einsatzplanung, feste Schichten, kein ständiges Hin und Her." },
+  { icon: CalendarCheck, title: "Planbare Einsätze", desc: "Langfristige Einsatzplanung, feste Schichten, kein ständiges Hin und Her." },
   { icon: Star, title: "Wertschätzung", desc: "Ihre Arbeit ist wichtig – und wird bei uns auch so behandelt. Feste Ansprechpartner, offenes Ohr." },
 ];
 
@@ -209,19 +209,13 @@ const KarrierePage = () => {
               <a href="mailto:karriere@sentinel-services.de" className="text-primary hover:underline font-semibold">
                 karriere@sentinel-services.de
               </a>{" "}
-              – mit Lebenslauf, Qualifikationen und gewünschtem Einsatzbereich. Wir melden uns innerhalb von 48 Stunden.
+              – mit Lebenslauf, Qualifikationen und gewünschtem Einsatzbereich. Wir melden uns schnellstmöglich.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Button asChild size="lg">
                 <a href="mailto:karriere@sentinel-services.de">
                   Jetzt bewerben
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <a href="tel:+4920893579970">
-                  <Phone className="mr-2 h-4 w-4" />
-                  Anrufen
                 </a>
               </Button>
             </div>

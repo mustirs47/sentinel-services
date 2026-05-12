@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone, Shield, AlertTriangle, CheckCircle } from "lucide-react";
+import { ArrowRight, Shield, AlertTriangle, CheckCircle, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
@@ -168,7 +168,7 @@ const BranchenPage = () => {
             {[
               { icon: Shield, title: "Branchenerfahrung", desc: "Unsere Einsatzkräfte werden branchenspezifisch geschult – nicht pauschal eingesetzt." },
               { icon: CheckCircle, title: "Individuelle Konzepte", desc: "Kein Standardpaket: Jede Branchenlösung wird objektspezifisch entwickelt und regelmäßig angepasst." },
-              { icon: ArrowRight, title: "Schnelle Umsetzung", desc: "Von der Anfrage zum Einsatz in wenigen Tagen – bei Akutbedarf auch innerhalb von 24 Stunden." },
+              { icon: Zap, title: "Schnelle Umsetzung", desc: "Von der Anfrage zum Einsatz in wenigen Tagen – auch bei Akutbedarf zügig einsatzbereit." },
             ].map(({ icon: DiffIcon, title: diffTitle, desc }) => (
               <div key={diffTitle} className="text-center p-6">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 mb-4">
@@ -198,12 +198,6 @@ const BranchenPage = () => {
                 Jetzt Branchenlösung anfragen
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href="tel:+4920893579970">
-                <Phone className="mr-2 h-4 w-4" />
-                Sofort anrufen
-              </a>
             </Button>
           </div>
         </div>

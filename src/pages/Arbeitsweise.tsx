@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Search, UserCheck, Radio, ClipboardCheck, ArrowRight, Users, Shield, HeartPulse, Phone, CheckCircle, Target, Handshake } from "lucide-react";
+import { Search, UserCheck, Radio, ClipboardCheck, ArrowRight, Users, Shield, HeartPulse, CheckCircle, Target, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
@@ -56,7 +56,7 @@ const principles = [
 ];
 
 const arbeitsweiseFaqs = [
-  { question: "Wie schnell kann ein Einsatz starten?", answer: "Bei kurzfristigem Bedarf können wir innerhalb von 24–48 Stunden einsatzbereit sein. Für planbare Einsätze empfehlen wir eine Vorlaufzeit von mindestens einer Woche." },
+  { question: "Wie schnell kann ein Einsatz starten?", answer: "Bei kurzfristigem Bedarf können wir zügig einsatzbereit sein. Für planbare Einsätze empfehlen wir eine Vorlaufzeit von mindestens einer Woche." },
   { question: "Wer ist mein Ansprechpartner?", answer: "Sie erhalten einen festen Einsatzleiter als direkten Ansprechpartner. Dieser koordiniert den Einsatz, hält Sie informiert und ist bei Fragen oder Änderungen direkt erreichbar." },
   { question: "Wie oft erhalte ich Berichte?", answer: "Die Berichtsfrequenz wird individuell vereinbart – von täglichen Schichtprotokollen bis zu wöchentlichen oder monatlichen Zusammenfassungen." },
   { question: "Kann ich den Einsatz kurzfristig ändern?", answer: "Ja, wir sind flexibel. Änderungen an Einsatzzeiten, -umfang oder Personal können kurzfristig umgesetzt werden." },
@@ -92,10 +92,6 @@ const ArbeitsweisePage = () => {
             <div>
               <p className="stat-number">1</p>
               <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>Fester Ansprechpartner</p>
-            </div>
-            <div>
-              <p className="stat-number">24h</p>
-              <p className="text-sm font-medium mt-1" style={{ color: "hsl(var(--section-light-fg))" }}>Rückmeldung garantiert</p>
             </div>
             <div>
               <p className="stat-number">100%</p>
@@ -210,20 +206,12 @@ const ArbeitsweisePage = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="flex flex-wrap gap-3 justify-center">
-              <Button asChild size="lg">
-                <Link to="/kontakt">
-                  Kostenlose Erstberatung
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <a href="tel:+4920893579970">
-                  <Phone className="mr-2 h-4 w-4" />
-                  Sofort anrufen
-                </a>
-              </Button>
-            </div>
+            <Button asChild size="lg">
+              <Link to="/kontakt">
+                Kostenlose Erstberatung
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

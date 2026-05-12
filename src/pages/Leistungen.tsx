@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, Clock, CheckCircle, Users, FileCheck, Phone, Zap } from "lucide-react";
+import { ArrowRight, Shield, CheckCircle, Users, FileCheck, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
@@ -13,7 +13,7 @@ import heroIllustration from "@/assets/illustrations/hero-security.webp";
 
 const defaultFaqs = [
   { question: "Welche Zulassungen hat Sentinel Services?", answer: "Wir verfügen über die Gewerbeerlaubnis nach §34a GewO. Alle Einsatzkräfte haben die Sachkundeprüfung nach §34a GewO (IHK) abgelegt." },
-  { question: "Wie schnell können Sie auf eine Anfrage reagieren?", answer: "Wir melden uns innerhalb von 24 Stunden auf Ihre Anfrage. Bei kurzfristigem Einsatzbedarf können wir häufig innerhalb von 24–48 Stunden einsatzbereit sein." },
+  { question: "Wie schnell können Sie auf eine Anfrage reagieren?", answer: "Wir melden uns schnellstmöglich auf Ihre Anfrage. Bei kurzfristigem Einsatzbedarf können wir häufig zügig einsatzbereit sein." },
   { question: "In welchem Gebiet sind Sie tätig?", answer: "Wir sind bundesweit einsatzbereit. Kontaktieren Sie uns für eine unverbindliche Bedarfsanalyse." },
   { question: "Kann ich mehrere Leistungen kombinieren?", answer: "Ja, die meisten unserer Kunden nutzen eine Kombination aus mehreren Leistungsbausteinen. Wir erstellen ein individuelles Paket, das genau auf Ihre Anforderungen zugeschnitten ist." },
   { question: "Was kostet eine Sicherheitsdienstleistung?", answer: "Die Kosten hängen von Umfang, Einsatzzeiten und Anforderungen ab. Wir erstellen Ihnen ein transparentes Angebot nach einer kostenlosen Erstberatung – ohne versteckte Kosten." },
@@ -21,14 +21,14 @@ const defaultFaqs = [
 
 const trustPoints = [
   { icon: Shield, text: "§34a GewO – geprüftes Personal" },
-  { icon: Clock, text: "Rückmeldung innerhalb von 24 h" },
   { icon: CheckCircle, text: "Individuelle Konzepte statt Standardpakete" },
+  { icon: FileCheck, text: "Lückenlose Einsatzdokumentation" },
 ];
 
 const stats = [
   { value: "6", label: "Leistungsbereiche" },
-  { value: "24h", label: "Reaktionszeit" },
   { value: "100%", label: "§34a-geprüft" },
+  { value: "DE", label: "Bundesweit einsetzbar" },
   { value: "∞", label: "Individuelle Lösungen" },
 ];
 
@@ -201,12 +201,6 @@ const LeistungenPage = () => {
                 Kostenlose Erstberatung
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href="tel:+4920893579970">
-                <Phone className="mr-2 h-4 w-4" />
-                Sofort anrufen
-              </a>
             </Button>
           </div>
         </div>
