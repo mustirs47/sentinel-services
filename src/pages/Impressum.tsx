@@ -106,6 +106,9 @@ const Impressum = () => (
             um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte
             umgehend entfernen.
           </p>
+          <p className="text-xs text-muted-fg mt-8 pt-6 border-t border-border/40">
+            Stand: Mai 2026
+          </p>
         </div>
       </div>
     </section>
