@@ -8,6 +8,8 @@ import FAQSection from "@/components/sections/FAQSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { industries } from "@/data/industries";
 import { services } from "@/data/services";
+import { FAQPageJsonLd, BreadcrumbJsonLd, ItemListJsonLd } from "@/components/StructuredData";
+import { BASE_URL } from "@/lib/seo";
 import branchenIllustration from "@/assets/illustrations/branchen.webp";
 
 const risks: Record<string, string[]> = {
@@ -34,9 +36,23 @@ const BranchenPage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Branchen | Sentinel Services – Sicherheit für Ihre Branche"
-        description="Sicherheitsdienstleistungen für Gewerbe, Industrie, Baustellen, Einzelhandel, Veranstaltungen, Hotels, Wohnanlagen und öffentliche Einrichtungen."
+        title="Sicherheit nach Branche – Lösungen für acht Bereiche"
+        description="Gewerbe, Industrie, Baustelle, Handel, Events, Hotel, Wohnanlage, Behörden – mit den jeweils typischen Risiken und passenden Leistungen."
       />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Startseite", url: `${BASE_URL}/` },
+          { name: "Branchen", url: `${BASE_URL}/branchen` },
+        ]}
+      />
+      <ItemListJsonLd
+        items={industries.map((i) => ({
+          name: i.title,
+          description: i.detail,
+          url: `${BASE_URL}/branchen#${i.slug}`,
+        }))}
+      />
+      <FAQPageJsonLd faqs={branchenFaqs} />
 
       <PageHero
         badge="Branchen"
