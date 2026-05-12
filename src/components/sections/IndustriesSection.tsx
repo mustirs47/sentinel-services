@@ -11,7 +11,7 @@ const IndustriesSection = () => {
       <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="text-center mb-14">
           <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">8 Branchen</p>
-          <h2 className="text-3xl font-extrabold sm:text-4xl" style={{ color: "hsl(var(--section-light-fg))" }}>
+          <h2 className="text-2xl font-extrabold sm:text-4xl break-words hyphens-auto" style={{ color: "hsl(var(--section-light-fg))" }}>
             Branchen, die wir absichern
           </h2>
         </div>

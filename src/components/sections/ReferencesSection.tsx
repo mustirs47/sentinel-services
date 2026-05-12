@@ -30,7 +30,7 @@ const ReferencesSection = () => {
       <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="text-center mb-14">
           <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Praxis</p>
-          <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl">
+          <h2 className="text-2xl font-extrabold text-foreground sm:text-4xl break-words hyphens-auto">
             Typische Einsatzbilder
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base">
