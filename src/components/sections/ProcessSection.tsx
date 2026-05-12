@@ -5,8 +5,8 @@ const steps = [
   {
     icon: MessageSquare,
     step: "01",
-    title: "Anfrage & Erstgespräch",
-    desc: "Sie schildern Ihren Bedarf per Formular oder E-Mail. Ein persönlicher Ansprechpartner meldet sich schnellstmöglich.",
+    title: "Anfrage & Abstimmung",
+    desc: "Sie schildern Ihren konkreten Bedarf per Formular oder E-Mail. Ein persönlicher Ansprechpartner meldet sich schnellstmöglich zur Klärung der Details.",
   },
   {
     icon: Search,
@@ -36,7 +36,7 @@ const ProcessSection = () => {
       <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="text-center mb-12">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            Vom Erstgespräch zum laufenden Einsatz
+            Von der Anfrage zum laufenden Einsatz
           </h2>
           <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
             Vier Schritte, klare Verantwortlichkeiten, ein fester Ansprechpartner.
