@@ -1,63 +1,90 @@
 ## Ziel
 
-Alle Telefon-/Erreichbarkeits-Elemente entfernen, Layout- und Logo-Inkonsistenzen bereinigen. Primärer Kontaktweg ist künftig Kontaktformular + E-Mail.
+Vollständige, handgeschriebene SEO-Überarbeitung jeder Seite – einheitlich, einzigartig, deutsch, ohne KI-typische Floskeln. Schwerpunkte: einzigartige Meta-Tags je Seite, Canonicals, Open Graph/Twitter pro Seite, erweitertes strukturiertes Daten-Markup, Breadcrumbs, semantische H1-Hierarchie, interne Verlinkung, technische SEO-Hygiene.
 
-## 1. Entfernen (global)
+## 1. `SEOHead` erweitern (zentral)
 
-**Telefon & Anruf-CTAs**
-- Datei `src/components/layout/StickyCallButton.tsx` löschen, Einbindung in `PageLayout.tsx` entfernen.
-- `src/components/layout/Topbar.tsx`: Telefon-Link, "Anrufen"-Mobil-Variante und Uhrzeit-Block entfernen. Übrig bleibt nur die E-Mail rechts. Falls dadurch fast leer → Topbar komplett entfernen (Empfehlung: behalten, nur E-Mail rechtsbündig).
-- `src/components/layout/Header.tsx`: `<a href="tel:…">` mitsamt `Phone`-Icon entfernen.
-- `src/components/layout/MobileMenu.tsx`: Telefon-Eintrag und zugehörige Icons entfernen.
-- `src/components/layout/Footer.tsx`: Telefon-`<li>` und Zeile "Telefonisch Mo–Fr 10–18 Uhr · E-Mail jederzeit" entfernen.
-- `src/pages/KontaktPage.tsx`: 
-  - Telefon-Eintrag aus Kontaktinformationen entfernen
-  - "Erreichbarkeit"-Listenpunkt (Clock-Icon + Mo–Fr-Zeile) entfernen
-  - Button "Sofort anrufen" entfernen
-  - FAQ-Eintrag "Kann ich auch telefonisch anfragen?" entfernen
-  - Aus FAQ "Wie schnell melden Sie sich…" und Garantie-Liste die "24-Stunden"-Zusage entfernen → ersetzen durch "Schnellstmögliche Rückmeldung" (kein Zeitversprechen, kein Clock-Icon)
-- `src/components/sections/HeroSection.tsx`, `ContactSection.tsx`, `TrustBar.tsx`, `ProcessSection.tsx`, `FAQSection.tsx`, `Leistungen.tsx`, `LeistungDetail.tsx`, `Branchen.tsx`, `Arbeitsweise.tsx`, `KarrierePage.tsx`, `data/services.ts`: Alle `tel:`-Links, Phone-Icons, "Anrufen"-Buttons, Clock-Icons mit Zeitangaben sowie "Rückmeldung innerhalb …"-Formulierungen entfernen. Wo eine sekundäre CTA wegfällt, primäre CTA "Anfrage stellen" → `/kontakt` erhalten.
-- `src/components/StructuredData.tsx`: `telephone` und `contactPoint.telephone` aus JSON-LD entfernen, `openingHours` ebenfalls (kein Zeitversprechen mehr).
-- `index.html`: ggf. dieselben Felder im inline JSON-LD bereinigen.
+Neue optionale Props: `ogImage`, `ogType` (`website`/`article`), `keywords`, `noindex`, `lang`. Standard-Canonical automatisch aus `useLocation().pathname` ableiten, damit jede Route eine korrekte selbstreferenzierende Canonical-URL bekommt. `og:url`, `og:site_name="Sentinel Services"`, `og:locale="de_DE"`, `twitter:card="summary_large_image"` immer mitschreiben. `BASE_URL = https://www.sentinel-services.de`.
 
-**Impressum / Datenschutz**
-- `src/pages/Impressum.tsx`: Abschnitt "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV" komplett entfernen. Telefonnummer aus "Kontakt"-Block und aus Hinweis-Box entfernen (nur E-Mail bleibt).
-- `src/pages/Datenschutz.tsx`: Telefonnummer und Uhrzeitangaben analog entfernen.
+## 2. Pro Seite individuelle, menschlich klingende Meta-Daten
 
-**Sticky Call**
-- Komponente und alle Imports entfernen.
+Alle Title ≤ 60 Zeichen, Descriptions 140–160 Zeichen, einzigartig, im Tonfall „einsatznah, sachlich, konkret" (Memory: tone-and-voice). Keine generischen Adjektive wie „professionell, hochwertig, erstklassig" wiederholt.
 
-## 2. Anpassen
+| Route | Title (neu) | Description-Kern |
+|---|---|---|
+| `/` | Sicherheitsdienst Sentinel Services – bundesweit einsatzbereit | Objektschutz, Veranstaltungsschutz, Baustellenbewachung. §34a, feste Ansprechpartner, kurze Reaktionszeiten. |
+| `/leistungen` | Leistungen im Sicherheitsdienst – Übersicht | Sechs Leistungsbereiche von Objektschutz bis Sicherheitskonzept – kurz erklärt, mit klaren Einsatzbeispielen. |
+| `/leistungen/:slug` | bereits in `services.ts` – pro Slug überarbeiten (s. unten) | individuell |
+| `/branchen` | Sicherheit nach Branche – Lösungen für acht Bereiche | Gewerbe, Industrie, Baustelle, Handel, Events, Hotel, Wohnanlage, Behörden – je mit typischen Risiken. |
+| `/qualifikationen` | Qualifikationen & §34a-Nachweise unseres Personals | Sachkunde, Erste Hilfe, Brandschutz, Deeskalation – was es im Einsatz konkret bedeutet. |
+| `/arbeitsweise` | Arbeitsweise – vom Erstgespräch bis zum Reporting | Vier Phasen: Analyse, Personal, Einsatz, Dokumentation. So läuft ein Auftrag bei uns. |
+| `/karriere` | Karriere im Sicherheitsdienst – offene Stellen | Anforderungen, Schichtmodelle, Weiterbildung. Bewerbung in wenigen Schritten. |
+| `/kontakt` | Kontakt – Anfrage an Sentinel Services | Erstberatung per Formular oder E-Mail. Wir melden uns kurzfristig mit konkretem Vorschlag. |
+| `/impressum` | Impressum – Sentinel Services, Magdeburg | Pflichtangaben nach § 5 TMG. (`noindex,follow`) |
+| `/datenschutz` | Datenschutz – Hinweise nach DSGVO | Welche Daten wir verarbeiten, wie lange, mit welcher Rechtsgrundlage. (`noindex,follow`) |
+| `*` (404) | Seite nicht gefunden – Sentinel Services | Diese Seite existiert nicht. Zurück zur Startseite oder Leistungen ansehen. (`noindex,follow`) |
 
-**Logo**
-- `src/assets/logo-color.png` und `src/assets/logo-grayscale.png` via `imagegen--edit_image` mit transparentem Hintergrund neu erzeugen, korrektes Seitenverhältnis (Inhalt nicht beschnitten).
-- Header: `h-9 sm:h-10` → `h-10 sm:h-12`, `w-auto` bleibt.
-- Footer: `h-8` → `h-10`, `opacity-80` entfernen.
-- Mobile-Menü-Logo entsprechend anheben.
+Service-Detail-Slugs in `src/data/services.ts`: `metaTitle`, `metaDescription`, `h1` und `longDesc` durchgehen und sprachlich entspannen (kürzere Sätze, konkrete Beispiele, kein „nahtlos integriert"-Vokabular).
 
-**Einheitliche Seitenbreite**
-- Verbindlich: `max-w-7xl mx-auto px-4 sm:px-6` für jeden Section-Container.
-- Reine Textseiten (`Impressum`, `Datenschutz`) behalten innen `max-w-3xl` für Lesbarkeit, aber im `max-w-7xl`-Wrapper.
-- Audit aller Seiten/Sections: jede abweichende Breite (`max-w-6xl`, `max-w-5xl`, fehlendes `mx-auto`) auf den Standard ziehen.
+## 3. Strukturierte Daten (JSON-LD) ausweiten
 
-**Einheitliche Spacings**
-- Section-Vertikal-Padding standardisieren auf `py-16 sm:py-24` (Content-Sections) bzw. `py-12 sm:py-16` (kompakte Bänder wie Process-Strip, TrustBar).
-- Doppel-Paddings (z. B. Section + innerer Wrapper mit zusätzlichem `py-*`) zusammenführen.
-- Karten-Innenabstände vereinheitlichen auf `p-6 sm:p-8`.
-- Überflüssige `mt-*`/`mb-*` zwischen aufeinanderfolgenden Section-Wrappern entfernen.
+- `BreadcrumbJsonLd` (existiert) auf **allen** Unterseiten einsetzen, mit korrekter Hierarchie (Startseite › Eltern › Aktuell).
+- `/leistungen`: zusätzlich `ItemList` der sechs Services.
+- `/branchen`: zusätzlich `ItemList` der acht Branchen.
+- `/leistungen/:slug`: bestehendes `ServiceJsonLd` um `serviceType`, `areaServed: Deutschland`, `provider` mit Telefon entfällt (haben wir nicht), E-Mail bleibt.
+- `/kontakt`: `ContactPage` Schema + Wiederholung der `ContactPoint`-Daten.
+- `/karriere`: `WebPage` mit `about: HiringOrganization`. (Kein `JobPosting` ohne echte Stellen – würde sonst von Google abgestraft.)
+- `/qualifikationen`, `/arbeitsweise`: `WebPage` mit `mainEntity: AboutPage`.
+- `LocalBusinessJsonLd` (Index): ergänzen um `address: PostalAddress` (Grusonstraße 9, 39112 Magdeburg, DE), `foundingDate` weglassen falls unbekannt, `sameAs` weglassen wenn keine Profile vorhanden.
 
-**Einheitliche Farben**
-- Audit auf direkte Farb-Klassen (`text-white`, `bg-gray-…`, `text-gray-…`, hartcodierte HSL): durch semantische Tokens (`text-foreground`, `text-muted-foreground`, `bg-background`, `border-border`, `--section-light-*`) ersetzen.
-- KontaktPage-Form: `bg-white`/`text-gray-900`/`border-gray-200`/`text-gray-500` → semantische Tokens.
+## 4. Canonicals & Indexierungssteuerung
 
-## 3. Verifikation
+- Selbstreferenzierende Canonical auf jeder Route via `SEOHead` (Prop oder automatisch aus Pathname).
+- `Impressum`, `Datenschutz`, `NotFound`: `<meta name="robots" content="noindex,follow">`.
+- `index.html`: globale Canonical entfernen (sonst überschreibt sie Subseiten); Helmet setzt sie pro Seite.
 
-- `rg "tel:|\\+49 \\(0\\)|Anrufen|Sofort anrufen|Mo–Fr 10|10–18|innerhalb von 24"` muss leer sein.
-- Build durchläuft (Harness).
-- Visueller Check Startseite, Kontakt, Impressum, Footer, Header (Desktop + Mobile-Viewport).
+## 5. Open Graph / Social
 
-## Technische Hinweise
+- Eine generische OG-Bild-URL bleibt im `index.html` als Fallback.
+- Pro Seite OG-Title = Meta-Title, OG-Description = Meta-Description; OG-URL automatisch aus aktuellem Pfad.
+- `og:type` für `/leistungen/:slug` = `article`, sonst `website`.
 
-- `lucide-react` Imports nach Entfernung von `Phone`/`Clock` bereinigen, sonst TS-Warnungen.
-- Memory `mem://features/contact-mechanisms` ist obsolet → nach Umsetzung aktualisieren ("kein Telefon, primär Kontaktformular").
-- `StickyCallButton`-Datei wirklich löschen, nicht nur auskommentieren.
+## 6. On-Page-Hygiene
+
+- Sicherstellen: genau **ein** `<h1>` pro Seite. `PageHero` rendert bereits `h1` – Section-Überschriften auf `h2` prüfen (kurzer Audit Hero/Sections, nichts visuell ändern).
+- Bilder: `alt`-Texte aller dekorativen Illustrationen prüfen; leere `alt=""` nur wenn rein dekorativ, sonst beschreibend („Isometrische Darstellung eines bewachten Objekts" o.ä.).
+- Interne Verlinkung: am Ende jeder Service-Detailseite zu zwei verwandten Leistungen + `/branchen` linken (existiert teilweise – vereinheitlichen).
+- `lang="de"` ist gesetzt; zusätzlich `<html>` `lang="de-DE"`.
+
+## 7. Sitemap & robots
+
+- `public/sitemap.xml` bleibt manuell gepflegt; `lastmod` (heutiges Datum) auf allen Einträgen ergänzen, `priority`-Werte unverändert. Reihenfolge: `/`, `/leistungen` + Detailseiten, `/branchen`, `/qualifikationen`, `/arbeitsweise`, `/karriere`, `/kontakt`, Legal.
+- `Impressum`/`Datenschutz` aus Sitemap entfernen (passt zu `noindex`).
+- `robots.txt`: `Disallow: /404` raus (Route existiert nicht), stattdessen nichts blockieren – `noindex` reicht.
+
+## 8. Inhaltliche Anti-KI-Politur
+
+Audit (kein Re-Write der ganzen Seiten) folgender Stellen auf KI-Floskeln und Ersetzung durch konkrete, nüchterne Formulierungen:
+- Hero-Subtitles aller Seiten
+- `services.ts` `longDesc` und `desc`
+- `industries.ts` Beschreibungen
+- FAQ-Antworten kürzen, wo Füllwörter vorkommen
+
+Verbotene Wörter im Audit: „nahtlos", „ganzheitlich", „maßgeschneidert" (1× max pro Seite), „erstklassig", „revolutionär", „state-of-the-art", „in der heutigen schnelllebigen Welt", Aufzählungen mit drei Adjektiven hintereinander.
+
+## 9. Technische Details
+
+- Neue Helper `src/lib/seo.ts`: `buildCanonical(path)`, `BASE_URL`, `SITE_NAME`.
+- `SEOHead` nutzt `useLocation` → daher muss es immer innerhalb des Routers gerendert werden (ist bereits der Fall).
+- Keine neuen Abhängigkeiten.
+- Keine Layout-/Design-Änderungen.
+
+## 10. Reihenfolge der Umsetzung
+
+1. `SEOHead` erweitern + `lib/seo.ts`.
+2. `StructuredData.tsx` um `ItemList`, `ContactPage`, `WebPage`, `PostalAddress` ergänzen.
+3. `services.ts`: Texte, `metaTitle`, `metaDescription`, `h1` pro Slug überarbeiten.
+4. Jede Page-Datei: neuer SEOHead-Aufruf, Breadcrumb-JSON-LD, ggf. zusätzliche Schemas.
+5. `index.html` aufräumen (Canonical raus, Title generisch lassen für Erst-Render).
+6. `sitemap.xml` aktualisieren, `robots.txt` anpassen.
+7. Sicht-Check über alle Routen + Light-House-/Build-Validierung.
