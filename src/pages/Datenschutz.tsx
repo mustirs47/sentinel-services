@@ -13,26 +13,6 @@ const Datenschutz = () => (
 
     <section className="section-light">
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
-        <div
-          role="note"
-          className="mb-10 rounded-lg border-l-4 p-4"
-          style={{
-            background: "hsl(205 90% 55% / 0.08)",
-            borderLeftColor: "hsl(var(--primary))",
-          }}
-        >
-          <p className="text-sm font-semibold mb-1" style={{ color: "hsl(var(--section-light-fg))" }}>
-            Hinweis: Diese Seite befindet sich im Aufbau
-          </p>
-          <p className="text-xs leading-relaxed text-muted-fg">
-            Die vollständigen Angaben zum Verantwortlichen werden derzeit ergänzt. Für Auskünfte
-            zu Ihren Datenschutzrechten erreichen Sie uns per E-Mail unter{" "}
-            <a href="mailto:info@sentinel-services.de" className="text-primary hover:underline">
-              info@sentinel-services.de
-            </a>
-            .
-          </p>
-        </div>
         <div className="space-y-10" style={{ color: "hsl(var(--section-light-fg))" }}>
 
           <div>
@@ -41,7 +21,8 @@ const Datenschutz = () => (
               Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO):<br /><br />
               Sentinel Services<br />
               Inhaber Tim Fitzlaff<br />
-              Magdeburg<br />
+              Grusonstraße 9<br />
+              39112 Magdeburg<br />
               E-Mail: info@sentinel-services.de
             </p>
           </div>
@@ -118,11 +99,6 @@ const Datenschutz = () => (
             </p>
           </div>
 
-          <div className="rounded-lg p-4" style={{ background: "hsl(205 90% 55% / 0.05)" }}>
-            <p className="text-xs text-muted-fg">
-              <span className="font-semibold text-primary">Hinweis:</span> Diese Datenschutzerklärung enthält Platzhalter [in eckigen Klammern], die vor dem Launch durch die tatsächlichen Unternehmensdaten ersetzt werden müssen.
-            </p>
-          </div>
         </div>
       </div>
     </section>
