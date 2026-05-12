@@ -5,7 +5,8 @@ import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/sections/FAQSection";
-import { FAQPageJsonLd } from "@/components/StructuredData";
+import { FAQPageJsonLd, BreadcrumbJsonLd, WebPageJsonLd } from "@/components/StructuredData";
+import { BASE_URL } from "@/lib/seo";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import teamIllustration from "@/assets/illustrations/team-qualifikationen.webp";
 
@@ -64,10 +65,21 @@ const KarrierePage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Karriere bei Sentinel Services | Jobs im Sicherheitsdienst"
-        description="Karriere bei Sentinel Services: Anforderungen, Einsatzfelder, Weiterbildung und Bewerbungsprozess. Jetzt als Sicherheitsmitarbeiter bewerben."
+        title="Karriere im Sicherheitsdienst – jetzt bewerben"
+        description="Anforderungen, Schichtmodelle, Weiterbildung und Bewerbungsweg. Wer wir suchen und was wir als Arbeitgeber bieten."
       />
       <FAQPageJsonLd faqs={careerFaqs} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Startseite", url: `${BASE_URL}/` },
+          { name: "Karriere", url: `${BASE_URL}/karriere` },
+        ]}
+      />
+      <WebPageJsonLd
+        name="Karriere bei Sentinel Services"
+        description="Stellenprofile, Anforderungen und Bewerbungsprozess im Sicherheitsdienst."
+        url={`${BASE_URL}/karriere`}
+      />
 
       <PageHero
         badge="Karriere"
