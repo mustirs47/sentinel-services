@@ -19,8 +19,8 @@ const Datenschutz = () => (
             <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>1. Verantwortlicher</h2>
             <p className="text-sm leading-relaxed text-muted-fg">
               Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO):<br /><br />
-              Sentinel Services<br />
-              Inhaber Tim Fitzlaff<br />
+              Sentinel Service<br />
+              Inh. Tim Fitzlaff<br />
               Grusonstraße 9<br />
               39112 Magdeburg<br />
               E-Mail: info@sentinel-services.de
