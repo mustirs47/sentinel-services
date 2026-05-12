@@ -6,6 +6,8 @@ import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/sections/FAQSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { BreadcrumbJsonLd, FAQPageJsonLd, WebPageJsonLd } from "@/components/StructuredData";
+import { BASE_URL } from "@/lib/seo";
 import teamIllustration from "@/assets/illustrations/team-qualifikationen.webp";
 
 const groups = [
@@ -77,9 +79,22 @@ const QualifikationenPage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Qualifikationen & Nachweise | Sentinel Services"
-        description="Alle Qualifikationen und Nachweise von Sentinel Services: §34a GewO, Sachkundeprüfung, Erste Hilfe, Brandschutz, Deeskalation. Geprüftes Sicherheitspersonal."
+        title="Qualifikationen und §34a-Nachweise unseres Personals"
+        description="Sachkunde nach §34a, Erste Hilfe, Brandschutz, Deeskalation – was unsere Einsatzkräfte mitbringen und was das im Alltag konkret bedeutet."
       />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Startseite", url: `${BASE_URL}/` },
+          { name: "Qualifikationen", url: `${BASE_URL}/qualifikationen` },
+        ]}
+      />
+      <WebPageJsonLd
+        type="AboutPage"
+        name="Qualifikationen und Nachweise – Sentinel Services"
+        description="Übersicht über die rechtlichen, fachlichen und betrieblichen Qualifikationen unseres Sicherheitspersonals."
+        url={`${BASE_URL}/qualifikationen`}
+      />
+      <FAQPageJsonLd faqs={qualFaqs} />
 
       <PageHero
         badge="Qualifikationen"
