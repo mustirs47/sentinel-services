@@ -19,7 +19,7 @@ const MobileMenu = ({ open, onClose, items }: MobileMenuProps) => (
     <SheetContent side="left" className="w-72 bg-background border-border">
       <SheetHeader className="mb-6">
         <SheetTitle>
-          <img src={logoColor} alt="Sentinel Services" className="h-6 w-auto" />
+          <img src={logoColor} alt="Sentinel Services" className="h-8 w-auto" />
         </SheetTitle>
       </SheetHeader>
 
@@ -36,12 +36,9 @@ const MobileMenu = ({ open, onClose, items }: MobileMenuProps) => (
         ))}
       </nav>
 
-      <div className="mt-8 px-3 space-y-3">
+      <div className="mt-8 px-3">
         <Button asChild className="w-full">
           <Link to="/kontakt" onClick={onClose}>Anfrage stellen</Link>
-        </Button>
-        <Button asChild variant="outline" className="w-full">
-          <a href="tel:+4920893579970" onClick={onClose}>Jetzt anrufen</a>
         </Button>
       </div>
     </SheetContent>

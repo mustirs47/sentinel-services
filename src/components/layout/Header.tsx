@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Phone } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MobileMenu from "./MobileMenu";
 import logoColor from "@/assets/logo-color.png";
@@ -36,7 +36,7 @@ const Header = () => {
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
           <Link to="/" className="flex items-center">
-            <img src={logoColor} alt="Sentinel Services" className="h-9 sm:h-10 w-auto" />
+            <img src={logoColor} alt="Sentinel Services" className="h-10 sm:h-12 w-auto" />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
@@ -54,13 +54,6 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href="tel:+4920893579970"
-              className="hidden lg:flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Phone className="h-4 w-4" />
-              <span className="hidden xl:inline">+49 (0) 208 935 799 70</span>
-            </a>
             <Button asChild size="sm" className="hidden sm:inline-flex">
               <Link to="/kontakt">Anfrage stellen</Link>
             </Button>
