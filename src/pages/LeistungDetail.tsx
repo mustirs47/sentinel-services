@@ -5,7 +5,8 @@ import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/sections/FAQSection";
-import { ServiceJsonLd, FAQPageJsonLd } from "@/components/StructuredData";
+import { ServiceJsonLd, FAQPageJsonLd, BreadcrumbJsonLd } from "@/components/StructuredData";
+import { BASE_URL } from "@/lib/seo";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { getServiceBySlug, services } from "@/data/services";
 import { serviceIllustrations } from "@/data/serviceIllustrations";
@@ -37,13 +38,20 @@ const LeistungDetail = () => {
 
   return (
     <PageLayout>
-      <SEOHead title={metaTitle} description={metaDescription} />
+      <SEOHead title={metaTitle} description={metaDescription} ogType="article" />
       <ServiceJsonLd
         name={title}
         description={metaDescription}
-        url={`https://www.sentinel-services.de/leistungen/${slug}`}
+        url={`${BASE_URL}/leistungen/${slug}`}
       />
       <FAQPageJsonLd faqs={faqs} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Startseite", url: `${BASE_URL}/` },
+          { name: "Leistungen", url: `${BASE_URL}/leistungen` },
+          { name: title, url: `${BASE_URL}/leistungen/${slug}` },
+        ]}
+      />
 
       <PageHero
         backLink={{ label: "Alle Leistungen", href: "/leistungen" }}

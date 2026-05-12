@@ -6,6 +6,8 @@ import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/sections/FAQSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { BreadcrumbJsonLd, FAQPageJsonLd, WebPageJsonLd } from "@/components/StructuredData";
+import { BASE_URL } from "@/lib/seo";
 import arbeitweiseIllustration from "@/assets/illustrations/arbeitsweise.webp";
 
 const phases = [
@@ -70,9 +72,22 @@ const ArbeitsweisePage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Unsere Arbeitsweise | Sentinel Services – Betriebsmodell"
-        description="So arbeitet Sentinel Services: Analyse, Personalauswahl, Einsatzführung und Dokumentation. Vier Phasen für strukturierte Sicherheitsdienstleistungen."
+        title="Arbeitsweise – vom Erstgespräch bis zum Reporting"
+        description="Vier Phasen pro Auftrag: Analyse, Personalauswahl, Einsatzführung, Dokumentation. So läuft ein Einsatz bei Sentinel Services konkret ab."
       />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Startseite", url: `${BASE_URL}/` },
+          { name: "Arbeitsweise", url: `${BASE_URL}/arbeitsweise` },
+        ]}
+      />
+      <WebPageJsonLd
+        type="AboutPage"
+        name="Arbeitsweise – Sentinel Services"
+        description="Vier-Phasen-Modell: Analyse, Personal, Einsatzführung, Dokumentation."
+        url={`${BASE_URL}/arbeitsweise`}
+      />
+      <FAQPageJsonLd faqs={arbeitsweiseFaqs} />
 
       <PageHero
         badge="Arbeitsweise"

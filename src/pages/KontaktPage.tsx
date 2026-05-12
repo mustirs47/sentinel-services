@@ -9,6 +9,8 @@ import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/sections/FAQSection";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { BreadcrumbJsonLd, FAQPageJsonLd, WebPageJsonLd } from "@/components/StructuredData";
+import { BASE_URL } from "@/lib/seo";
 import heroIllustration from "@/assets/illustrations/hero-security.webp";
 
 const processSteps = [
@@ -111,9 +113,22 @@ const KontaktPage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Kontakt | Sentinel Services – Jetzt Anfrage stellen"
-        description="Kontaktieren Sie Sentinel Services für eine kostenlose Erstberatung – per E-Mail oder Kontaktformular."
+        title="Kontakt – Anfrage an Sentinel Services"
+        description="Erstberatung per Formular oder E-Mail. Beschreiben Sie Bedarf, Ort und Zeitraum – wir melden uns mit einem konkreten Vorschlag."
       />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Startseite", url: `${BASE_URL}/` },
+          { name: "Kontakt", url: `${BASE_URL}/kontakt` },
+        ]}
+      />
+      <WebPageJsonLd
+        type="ContactPage"
+        name="Kontakt – Sentinel Services"
+        description="Anfrageformular und Kontaktwege zu Sentinel Services."
+        url={`${BASE_URL}/kontakt`}
+      />
+      <FAQPageJsonLd faqs={kontaktFaqs} />
 
       <PageHero
         badge="Kontakt"
