@@ -205,8 +205,7 @@ const BranchenPage = () => {
             Branchenlösung für Ihr Unternehmen
           </h2>
           <p className="text-muted-fg max-w-xl mx-auto mb-8">
-            Wir analysieren die spezifischen Sicherheitsanforderungen Ihrer Branche und entwickeln eine passgenaue Lösung – 
-            kostenlos und unverbindlich.
+            Wir analysieren die spezifischen Sicherheitsanforderungen Ihrer Branche und entwickeln eine passgenaue Lösung.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild size="lg">
