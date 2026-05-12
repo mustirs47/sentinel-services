@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu } from "lucide-react";
+import { Menu, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MobileMenu from "./MobileMenu";
 import logoColor from "@/assets/logo-color.png";
@@ -54,6 +54,13 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-3">
+            <a
+              href="mailto:info@sentinel-services.de"
+              aria-label="E-Mail an info@sentinel-services.de"
+              className="hidden sm:inline-flex items-center justify-center rounded-md p-2 text-muted-foreground transition-colors hover:text-primary"
+            >
+              <Mail className="h-5 w-5" />
+            </a>
             <Button asChild size="sm" className="hidden sm:inline-flex">
               <Link to="/kontakt">Anfrage stellen</Link>
             </Button>
