@@ -4,7 +4,11 @@ import SEOHead from "@/components/SEOHead";
 
 const Impressum = () => (
   <PageLayout>
-    <SEOHead title="Impressum | Sentinel Services" description="Impressum der Sentinel Services – Angaben gemäß § 5 TMG." />
+    <SEOHead
+      title="Impressum – Sentinel Services, Magdeburg"
+      description="Pflichtangaben nach § 5 TMG: Anbieter, Aufsichtsbehörde, Kontakt."
+      noindex
+    />
 
     <PageHero
       title="Impressum"
