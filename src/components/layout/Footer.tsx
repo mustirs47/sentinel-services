@@ -74,7 +74,7 @@ const Footer = () => (
         </p>
         <p className="text-xs text-muted-foreground/40">
           Webdesign:{" "}
-          <a href="https://www.ovarna.de" target="_blank" rel="noopener noreferrer" className="hover:text-muted-foreground/60 transition-colors">
+          <a href="https://www.ovarna.de/?utm_source=sentinel-services.de&utm_medium=referral&utm_campaign=footer-credit" target="_blank" rel="noopener noreferrer" className="hover:text-muted-foreground/60 transition-colors">
             Ovarna
           </a>
         </p>
