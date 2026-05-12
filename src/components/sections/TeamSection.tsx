@@ -11,7 +11,7 @@ const competences = [
   {
     icon: HeartHandshake,
     title: "Kundenverantwortung",
-    desc: "Fester Ansprechpartner vom Erstgespräch bis zum laufenden Einsatz. Kennt Ihr Objekt, Ihre Anforderungen und Ihre Erwartungen – und stellt sicher, dass sie erfüllt werden.",
+    desc: "Fester Ansprechpartner von der Anfrage bis zum laufenden Einsatz. Kennt Ihr Objekt, Ihre Anforderungen und Ihre Erwartungen – und stellt sicher, dass sie erfüllt werden.",
     focus: ["Bedarfsanalyse und Konzeptentwicklung", "Regelmäßige Abstimmung und Berichterstattung", "Anpassung bei veränderten Anforderungen"],
   },
   {
