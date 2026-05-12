@@ -16,10 +16,17 @@ interface MobileMenuProps {
 
 const MobileMenu = ({ open, onClose, items }: MobileMenuProps) => (
   <Sheet open={open} onOpenChange={(v) => !v && onClose()}>
-    <SheetContent side="left" className="w-72 bg-background border-border">
-      <SheetHeader className="mb-6">
-        <SheetTitle>
-          <img src={logoColor} alt="Sentinel Services" className="h-8 w-auto" />
+    <SheetContent
+      side="right"
+      className="w-72 bg-background border-border [&>button]:hidden"
+    >
+      <SheetHeader className="mb-6 items-start">
+        <SheetTitle asChild>
+          <img
+            src={logoColor}
+            alt="Sentinel Services"
+            className="h-7 w-auto shrink-0 max-w-full object-contain"
+          />
         </SheetTitle>
       </SheetHeader>
 
