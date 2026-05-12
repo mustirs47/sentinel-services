@@ -26,7 +26,7 @@ const ReferencesSection = () => {
   const ref = useScrollAnimation();
 
   return (
-    <section className="bg-background bg-slate-50 text-slate-950">
+    <section className="bg-background">
       <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="text-center mb-14">
           <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Praxis</p>
