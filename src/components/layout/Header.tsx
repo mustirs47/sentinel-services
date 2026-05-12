@@ -35,8 +35,8 @@ const Header = () => {
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
-          <Link to="/" className="flex items-center">
-            <img src={logoColor} alt="Sentinel Services" className="h-10 sm:h-12 w-auto" />
+          <Link to="/" className="flex items-center min-w-0">
+            <img src={logoColor} alt="Sentinel Services" className="h-7 sm:h-9 w-auto" />
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
