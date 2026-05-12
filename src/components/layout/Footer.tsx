@@ -48,16 +48,10 @@ const Footer = () => (
           <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Kontakt</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
-              <a href="tel:+4920893579970" className="hover:text-primary transition-colors">
-                +49 (0) 208 935 799 70
-              </a>
-            </li>
-            <li>
               <a href="mailto:info@sentinel-services.de" className="hover:text-primary transition-colors">
                 info@sentinel-services.de
               </a>
             </li>
-            <li>Telefonisch Mo–Fr 10–18 Uhr · E-Mail jederzeit</li>
           </ul>
           <div className="mt-6">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Rechtliches</h4>
