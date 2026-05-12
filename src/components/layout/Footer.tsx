@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logoGrayscale from "@/assets/logo-grayscale.png";
+import { reopenCookieSettings } from "@/components/CookieBanner";
 
 const footerNav = [
   { label: "Leistungen", href: "/leistungen" },
@@ -63,6 +64,15 @@ const Footer = () => (
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={reopenCookieSettings}
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary text-left"
+                >
+                  Cookie-Einstellungen
+                </button>
+              </li>
             </ul>
           </div>
         </div>

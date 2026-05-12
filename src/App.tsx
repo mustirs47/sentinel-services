@@ -16,6 +16,7 @@ import ArbeitsweisePage from "./pages/Arbeitsweise";
 import KarrierePage from "./pages/KarrierePage";
 import KontaktPage from "./pages/KontaktPage";
 import NotFound from "./pages/NotFound";
+import { CookieBanner } from "@/components/CookieBanner";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/datenschutz" element={<Datenschutz />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <CookieBanner />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
