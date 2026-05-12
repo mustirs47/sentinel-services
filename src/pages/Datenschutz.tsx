@@ -123,6 +123,10 @@ const Datenschutz = () => (
             </p>
           </div>
 
+          <p className="text-xs text-muted-fg pt-6 border-t border-border/40">
+            Stand: Mai 2026
+          </p>
+
         </div>
       </div>
     </section>
