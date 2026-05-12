@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Clock, MapPin, Phone, Shield, FileCheck, Users, ArrowRight } from "lucide-react";
+import { Mail, MapPin, Shield, FileCheck, Users, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -14,7 +14,7 @@ const ContactSection = () => {
             Anfrage stellen
           </h2>
           <p className="mt-3 text-muted-fg max-w-2xl mx-auto">
-            Beschreiben Sie Ihren Bedarf – wir melden uns innerhalb von 24 Stunden mit einem konkreten Vorschlag.
+            Beschreiben Sie Ihren Bedarf – wir melden uns schnellstmöglich mit einem konkreten Vorschlag.
           </p>
         </div>
 
@@ -26,29 +26,12 @@ const ContactSection = () => {
               </h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <Phone className="h-5 w-5 shrink-0 text-primary mt-0.5" />
-                  <div>
-                    <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>Telefon</p>
-                    <a href="tel:+4920893579970" className="text-sm text-muted-fg hover:text-primary transition-colors">
-                      +49 (0) 208 935 799 70
-                    </a>
-                    <p className="text-xs text-muted-fg mt-0.5">Mo–Fr 10–18 Uhr</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
                   <Mail className="h-5 w-5 shrink-0 text-primary mt-0.5" />
                   <div>
                     <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>E-Mail</p>
                     <a href="mailto:info@sentinel-services.de" className="text-sm text-muted-fg hover:text-primary transition-colors">
                       info@sentinel-services.de
                     </a>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Clock className="h-5 w-5 shrink-0 text-primary mt-0.5" />
-                  <div>
-                    <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>Erreichbarkeit</p>
-                    <p className="text-sm text-muted-fg">Telefonisch Mo–Fr 10–18 Uhr · E-Mail jederzeit</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
