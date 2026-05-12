@@ -10,7 +10,6 @@ const localBusinessSchema = {
   name: "Sentinel Services",
   description: "Professioneller Sicherheitsdienst – Objektschutz, Veranstaltungsschutz, Baustellenbewachung & individuelle Sicherheitskonzepte. §34a-zugelassen, bundesweit einsatzbereit.",
   url: BASE_URL,
-  telephone: "+4920893579970",
   email: "info@sentinel-services.de",
   areaServed: {
     "@type": "Country",
@@ -18,21 +17,12 @@ const localBusinessSchema = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+4920893579970",
     contactType: "customer service",
     email: "info@sentinel-services.de",
     availableLanguage: ["German"],
     areaServed: "DE",
   },
   priceRange: "$$",
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "10:00",
-      closes: "18:00",
-    },
-  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Sicherheitsdienstleistungen",
@@ -107,7 +97,6 @@ export const ServiceJsonLd = ({ name, description, url }: { name: string; descri
     provider: {
       "@type": "LocalBusiness",
       name: "Sentinel Services",
-      telephone: "+4920893579970",
       email: "info@sentinel-services.de",
     },
     areaServed: {

@@ -55,7 +55,7 @@ const ContactSection = () => {
                   <Users className="h-3.5 w-3.5 text-primary shrink-0" /> Feste Ansprechpartner
                 </li>
                 <li className="flex items-center gap-2 text-xs text-muted-fg">
-                  <FileCheck className="h-3.5 w-3.5 text-primary shrink-0" /> Rückmeldung innerhalb von 24 h
+                  <FileCheck className="h-3.5 w-3.5 text-primary shrink-0" /> Lückenlose Dokumentation
                 </li>
               </ul>
             </div>
@@ -67,8 +67,8 @@ const ContactSection = () => {
                 Bereit für ein konkretes Angebot?
               </h3>
               <p className="text-sm text-muted-fg mb-6">
-                Auf unserer Kontaktseite finden Sie ein vollständiges Anfrageformular. Wir melden uns
-                innerhalb von 24 Stunden – kostenfrei und unverbindlich.
+                Auf unserer Kontaktseite finden Sie ein vollständiges Anfrageformular –
+                kostenfrei und unverbindlich.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
@@ -88,12 +88,6 @@ const ContactSection = () => {
                     Zum Kontaktformular
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <a href="tel:+4920893579970">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Sofort anrufen
-                  </a>
                 </Button>
               </div>
             </div>

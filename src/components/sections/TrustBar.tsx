@@ -1,11 +1,11 @@
-import { Award, GraduationCap, FileCheck, Zap } from "lucide-react";
+import { Award, GraduationCap, FileCheck, Users } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const items = [
   { icon: Award, value: "§34a GewO", label: "Gewerberechtliche Zulassung" },
   { icon: GraduationCap, value: "Sachkundeprüfung", label: "Geprüftes Fachpersonal" },
   { icon: FileCheck, value: "100 %", label: "Einsatzdokumentation" },
-  { icon: Zap, value: "< 24 h", label: "Rückmeldung auf Anfragen" },
+  { icon: Users, value: "Bundesweit", label: "Einsatzbereit in ganz Deutschland" },
 ];
 
 const TrustBar = () => {

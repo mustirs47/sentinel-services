@@ -6,7 +6,7 @@ const steps = [
     icon: MessageSquare,
     step: "01",
     title: "Anfrage & Erstgespräch",
-    desc: "Sie schildern Ihren Bedarf per Formular, E-Mail oder Telefon. Ein persönlicher Ansprechpartner meldet sich innerhalb von 24 Stunden.",
+    desc: "Sie schildern Ihren Bedarf per Formular oder E-Mail. Ein persönlicher Ansprechpartner meldet sich schnellstmöglich.",
   },
   {
     icon: Search,
