@@ -22,8 +22,8 @@ const Impressum = () => (
             Angaben gemäß § 5 TMG
           </h2>
           <p className="text-sm leading-relaxed text-muted-fg mb-6">
-            Sentinel Services<br />
-            Inhaber Tim Fitzlaff<br />
+            Sentinel Service<br />
+            Inh. Tim Fitzlaff<br />
             Grusonstraße 9<br />
             39112 Magdeburg<br />
             Deutschland
