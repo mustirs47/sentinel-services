@@ -39,9 +39,8 @@ const Impressum = () => (
           </h2>
           <p className="text-sm leading-relaxed text-muted-fg mb-6">
             Sentinel Services<br />
-            [Vorname Nachname – Geschäftsführung]<br />
-            [Straße und Hausnummer]<br />
-            [PLZ Ort]<br />
+            Inhaber Tim Fitzlaff<br />
+            Magdeburg<br />
             Deutschland
           </p>
 
@@ -57,8 +56,7 @@ const Impressum = () => (
           </h2>
           <p className="text-sm leading-relaxed text-muted-fg mb-6">
             Bewachungsgewerbe gemäß § 34a Gewerbeordnung (GewO)<br />
-            Zuständige Aufsichtsbehörde: [Name der zuständigen IHK / Ordnungsamt]<br />
-            Registernummer: [Registernummer einfügen]
+            Zuständige Aufsichtsbehörde: Ordnungsamt Magdeburg
           </p>
 
           <h2 className="text-lg font-semibold mb-4 mt-8" style={{ color: "hsl(var(--section-light-fg))" }}>
@@ -66,7 +64,7 @@ const Impressum = () => (
           </h2>
           <p className="text-sm leading-relaxed text-muted-fg mb-6">
             Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
-            [USt-IdNr. einfügen]
+            *folgt*
           </p>
 
           <h2 className="text-lg font-semibold mb-4 mt-8" style={{ color: "hsl(var(--section-light-fg))" }}>
