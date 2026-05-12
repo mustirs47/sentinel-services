@@ -42,7 +42,7 @@ const HeroSection = () => (
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg" className="text-base px-6">
               <Link to="/kontakt">
-                Kostenlose Erstberatung
+                Anfrage stellen
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
