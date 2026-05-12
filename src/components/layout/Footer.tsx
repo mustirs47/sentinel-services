@@ -22,7 +22,15 @@ const Footer = () => (
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <div>
           <Link to="/">
-            <img src={logoGrayscale} alt="Sentinel Services" className="h-8 w-auto mb-4" />
+            <img
+              src={logoGrayscale}
+              alt="Sentinel Services"
+              className="h-8 w-auto mb-4"
+              width={500}
+              height={62}
+              loading="lazy"
+              decoding="async"
+            />
           </Link>
           <p className="text-sm leading-relaxed text-muted-foreground max-w-xs">
             Professioneller Sicherheitsdienst mit Struktur, Verlässlichkeit und qualifiziertem Personal.

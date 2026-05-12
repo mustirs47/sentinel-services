@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, FileCheck, Users, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.webp";
 import heroIllustration from "@/assets/illustrations/hero-security.webp";
 
 const trustSignals = [
@@ -13,7 +13,15 @@ const trustSignals = [
 const HeroSection = () => (
   <section className="relative overflow-hidden bg-background">
     <div className="absolute inset-0">
-      <img src={heroBg} alt="" className="h-full w-full object-cover" width={1920} height={1080} />
+      <img
+        src={heroBg}
+        alt=""
+        className="h-full w-full object-cover"
+        width={1920}
+        height={1080}
+        fetchPriority="high"
+        decoding="async"
+      />
       <div
         className="absolute inset-0"
         style={{
