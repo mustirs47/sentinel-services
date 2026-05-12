@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Clock, MapPin, Send, Phone, Shield, FileCheck, Users, Search, UserCheck, Radio, ClipboardCheck, ArrowRight, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Send, Shield, FileCheck, Users, Search, UserCheck, Radio, ClipboardCheck, ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
@@ -19,17 +19,16 @@ const processSteps = [
 ];
 
 const guarantees = [
-  "Rückmeldung innerhalb von 24 Stunden – garantiert",
+  "Schnellstmögliche Rückmeldung auf Ihre Anfrage",
   "Kostenlose und unverbindliche Erstberatung",
   "Kein Standardangebot – individuelles Konzept für Ihren Bedarf",
   "Transparente Kostenaufstellung ohne versteckte Gebühren",
 ];
 
 const kontaktFaqs = [
-  { question: "Wie schnell melden Sie sich auf meine Anfrage?", answer: "Wir melden uns innerhalb von 24 Stunden auf Ihre Anfrage – per E-Mail oder telefonisch, je nach Ihrem Wunsch." },
+  { question: "Wie schnell melden Sie sich auf meine Anfrage?", answer: "Wir melden uns schnellstmöglich auf Ihre Anfrage per E-Mail." },
   { question: "Ist die Erstberatung wirklich kostenlos?", answer: "Ja, die Erstberatung und die Erstellung eines unverbindlichen Angebots sind für Sie komplett kostenlos." },
-  { question: "Wie kurzfristig kann ein Einsatz starten?", answer: "Bei akutem Bedarf können wir innerhalb von 24–48 Stunden einsatzbereit sein. Für planbare Einsätze empfehlen wir eine Vorlaufzeit von mindestens einer Woche." },
-  { question: "Kann ich auch telefonisch anfragen?", answer: "Natürlich! Rufen Sie uns an unter +49 (0) 208 935 799 70 (Mo–Fr 10–18 Uhr) oder nutzen Sie unser Kontaktformular." },
+  { question: "Wie kurzfristig kann ein Einsatz starten?", answer: "Bei akutem Bedarf können wir zügig einsatzbereit sein. Für planbare Einsätze empfehlen wir eine Vorlaufzeit von mindestens einer Woche." },
 ];
 
 const KontaktPage = () => {
@@ -113,13 +112,13 @@ const KontaktPage = () => {
     <PageLayout>
       <SEOHead
         title="Kontakt | Sentinel Services – Jetzt Anfrage stellen"
-        description="Kontaktieren Sie Sentinel Services für eine kostenlose Erstberatung. Rückmeldung innerhalb von 24 Stunden. Telefon, E-Mail oder Kontaktformular."
+        description="Kontaktieren Sie Sentinel Services für eine kostenlose Erstberatung – per E-Mail oder Kontaktformular."
       />
 
       <PageHero
         badge="Kontakt"
         title="Anfrage stellen"
-        subtitle="Beschreiben Sie Ihren Bedarf – wir melden uns innerhalb von 24 Stunden mit einem konkreten Vorschlag."
+        subtitle="Beschreiben Sie Ihren Bedarf – wir melden uns schnellstmöglich mit einem konkreten Vorschlag."
         illustration={heroIllustration}
       />
 
@@ -154,29 +153,12 @@ const KontaktPage = () => {
                 </h2>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 shrink-0 text-primary mt-0.5" />
-                    <div>
-                      <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>Telefon</p>
-                      <a href="tel:+4920893579970" className="text-sm text-muted-fg hover:text-primary transition-colors">
-                        +49 (0) 208 935 799 70
-                      </a>
-                      <p className="text-xs text-muted-fg mt-0.5">Mo–Fr 10–18 Uhr</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
                     <Mail className="h-5 w-5 shrink-0 text-primary mt-0.5" />
                     <div>
                       <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>E-Mail</p>
                       <a href="mailto:info@sentinel-services.de" className="text-sm text-muted-fg hover:text-primary transition-colors">
                         info@sentinel-services.de
                       </a>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Clock className="h-5 w-5 shrink-0 text-primary mt-0.5" />
-                    <div>
-                      <p className="text-sm font-medium" style={{ color: "hsl(var(--section-light-fg))" }}>Erreichbarkeit</p>
-                      <p className="text-sm text-muted-fg">Telefonisch Mo–Fr 10–18 Uhr · E-Mail jederzeit</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -226,7 +208,7 @@ const KontaktPage = () => {
                     <Send className="h-5 w-5 text-primary" />
                   </div>
                   <h2 className="text-lg font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>Vielen Dank für Ihre Anfrage</h2>
-                  <p className="mt-2 text-sm text-muted-fg">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                  <p className="mt-2 text-sm text-muted-fg">Wir melden uns schnellstmöglich bei Ihnen.</p>
                   <Button asChild className="mt-6" variant="outline">
                     <Link to="/">Zurück zur Startseite</Link>
                   </Button>
@@ -322,12 +304,6 @@ const KontaktPage = () => {
                     <Button type="submit" size="lg" disabled={submitting}>
                       {submitting ? "Wird gesendet…" : "Anfrage absenden"}
                       <Send className="ml-2 h-4 w-4" />
-                    </Button>
-                    <Button type="button" variant="outline" size="lg" asChild>
-                      <a href="tel:+4920893579970">
-                        <Phone className="mr-2 h-4 w-4" />
-                        Sofort anrufen
-                      </a>
                     </Button>
                   </div>
                   <p className="text-[11px] text-gray-500 leading-relaxed">

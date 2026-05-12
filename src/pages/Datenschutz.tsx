@@ -43,7 +43,6 @@ const Datenschutz = () => (
               [Vorname Nachname]<br />
               [Straße und Hausnummer]<br />
               [PLZ Ort]<br />
-              Telefon: +49 (0) 208 935 799 70<br />
               E-Mail: info@sentinel-services.de
             </p>
           </div>
@@ -71,9 +70,9 @@ const Datenschutz = () => (
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>4. Anfrage per E-Mail oder Telefon</h2>
+            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>4. Anfrage per E-Mail</h2>
             <p className="text-sm leading-relaxed text-muted-fg">
-              Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist.
+              Wenn Sie uns per E-Mail kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist.
             </p>
           </div>
 
