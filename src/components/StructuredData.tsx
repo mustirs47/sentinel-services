@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { services } from "@/data/services";
-
-const BASE_URL = "https://www.sentinel-services.de";
+import { BASE_URL } from "@/lib/seo";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -11,6 +10,13 @@ const localBusinessSchema = {
   description: "Professioneller Sicherheitsdienst – Objektschutz, Veranstaltungsschutz, Baustellenbewachung & individuelle Sicherheitskonzepte. §34a-zugelassen, bundesweit einsatzbereit.",
   url: BASE_URL,
   email: "info@sentinel-services.de",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Grusonstraße 9",
+    postalCode: "39112",
+    addressLocality: "Magdeburg",
+    addressCountry: "DE",
+  },
   areaServed: {
     "@type": "Country",
     name: "Deutschland",
@@ -92,6 +98,7 @@ export const ServiceJsonLd = ({ name, description, url }: { name: string; descri
     "@context": "https://schema.org",
     "@type": "Service",
     name,
+    serviceType: name,
     description,
     url,
     provider: {
@@ -110,6 +117,57 @@ export const ServiceJsonLd = ({ name, description, url }: { name: string; descri
       <script type="application/ld+json">
         {JSON.stringify(schema)}
       </script>
+    </Helmet>
+  );
+};
+
+export const ItemListJsonLd = ({
+  items,
+}: {
+  items: { name: string; url: string; description?: string }[];
+}) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      url: it.url,
+      ...(it.description ? { description: it.description } : {}),
+    })),
+  };
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
+export const WebPageJsonLd = ({
+  type = "WebPage",
+  name,
+  description,
+  url,
+}: {
+  type?: "WebPage" | "AboutPage" | "ContactPage";
+  name: string;
+  description: string;
+  url: string;
+}) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": type,
+    name,
+    description,
+    url,
+    isPartOf: { "@id": `${BASE_URL}/#website` },
+    publisher: { "@id": `${BASE_URL}/#organization` },
+    inLanguage: "de-DE",
+  };
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
   );
 };
