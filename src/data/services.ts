@@ -30,7 +30,7 @@ export const services: ServiceData[] = [
     metaDescription: "Professioneller Objektschutz mit Zugangskontrollen, Schließdiensten und dokumentierten Rundgängen. §34a-zugelassen, feste Ansprechpartner. Jetzt anfragen.",
     faqs: [
       { question: "Welche Qualifikationen haben Ihre Objektschutzkräfte?", answer: "Alle Einsatzkräfte verfügen über die Sachkundeprüfung nach §34a GewO, regelmäßige Schulungen in Deeskalation und Erste Hilfe sowie objektspezifische Einweisungen." },
-      { question: "Wie schnell kann ein Objektschutz-Einsatz starten?", answer: "Bei kurzfristigem Bedarf können wir innerhalb von 24–48 Stunden einsatzbereit sein. Für planbare Einsätze erstellen wir vorab ein individuelles Konzept." },
+      { question: "Wie schnell kann ein Objektschutz-Einsatz starten?", answer: "Bei kurzfristigem Bedarf können wir zügig einsatzbereit sein. Für planbare Einsätze erstellen wir vorab ein individuelles Konzept." },
       { question: "Bieten Sie auch Nacht- und Wochenendbewachung an?", answer: "Ja, wir bieten Objektschutz rund um die Uhr, einschließlich Nacht-, Wochenend- und Feiertagsdiensten." },
     ],
   },
@@ -49,7 +49,7 @@ export const services: ServiceData[] = [
     faqs: [
       { question: "Ab welcher Veranstaltungsgröße bieten Sie Schutz an?", answer: "Wir sichern Veranstaltungen jeder Größe – von Firmenfeiern mit 50 Gästen bis zu Großveranstaltungen mit mehreren tausend Besuchern." },
       { question: "Übernehmen Sie auch die Abstimmung mit dem Ordnungsamt?", answer: "Ja, wir unterstützen bei der Erstellung von Sicherheitskonzepten und koordinieren uns direkt mit den zuständigen Behörden." },
-      { question: "Wie kurzfristig können Sie Veranstaltungssicherheit bereitstellen?", answer: "In dringenden Fällen können wir innerhalb von 24 Stunden Personal bereitstellen. Für optimale Planung empfehlen wir eine Vorlaufzeit von mindestens einer Woche." },
+      { question: "Wie kurzfristig können Sie Veranstaltungssicherheit bereitstellen?", answer: "In dringenden Fällen können wir auch sehr kurzfristig Personal bereitstellen. Für optimale Planung empfehlen wir eine Vorlaufzeit von mindestens einer Woche." },
     ],
   },
   {
@@ -67,7 +67,7 @@ export const services: ServiceData[] = [
     faqs: [
       { question: "Welche Baustellen sichern Sie?", answer: "Wir sichern Baustellen jeder Größe – vom Einfamilienhaus bis zur Großbaustelle. Der Fokus liegt auf Flächen mit hohem Materialwert oder offenem Zugang." },
       { question: "Was passiert bei einem Vorfall auf der Baustelle?", answer: "Unsere Einsatzkräfte melden jeden Vorfall sofort an den Bauleiter und dokumentieren den Sachverhalt lückenlos. Bei Bedarf werden Polizei oder Rettungskräfte verständigt." },
-      { question: "Können Sie auch kurzfristig Baustellenbewachung bereitstellen?", answer: "Ja, wir können bei akutem Bedarf innerhalb von 24 Stunden einsatzbereit sein." },
+      { question: "Können Sie auch kurzfristig Baustellenbewachung bereitstellen?", answer: "Ja, wir können bei akutem Bedarf zügig einsatzbereit sein." },
     ],
   },
   {

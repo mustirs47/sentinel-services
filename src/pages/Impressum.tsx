@@ -26,11 +26,7 @@ const Impressum = () => (
           </p>
           <p className="text-xs leading-relaxed text-muted-fg">
             Die vollständigen Pflichtangaben werden derzeit ergänzt. Für rechtsverbindliche
-            Auskünfte erreichen Sie uns telefonisch unter{" "}
-            <a href="tel:+4920893579970" className="text-primary hover:underline">
-              +49 (0) 208 935 799 70
-            </a>{" "}
-            oder per E-Mail an{" "}
+            Auskünfte erreichen Sie uns per E-Mail an{" "}
             <a href="mailto:info@sentinel-services.de" className="text-primary hover:underline">
               info@sentinel-services.de
             </a>
@@ -53,7 +49,6 @@ const Impressum = () => (
             Kontakt
           </h2>
           <p className="text-sm leading-relaxed text-muted-fg mb-6">
-            Telefon: +49 (0) 208 935 799 70<br />
             E-Mail: info@sentinel-services.de
           </p>
 
@@ -72,15 +67,6 @@ const Impressum = () => (
           <p className="text-sm leading-relaxed text-muted-fg mb-6">
             Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
             [USt-IdNr. einfügen]
-          </p>
-
-          <h2 className="text-lg font-semibold mb-4 mt-8" style={{ color: "hsl(var(--section-light-fg))" }}>
-            Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
-          </h2>
-          <p className="text-sm leading-relaxed text-muted-fg mb-6">
-            [Vorname Nachname]<br />
-            [Straße und Hausnummer]<br />
-            [PLZ Ort]
           </p>
 
           <h2 className="text-lg font-semibold mb-4 mt-8" style={{ color: "hsl(var(--section-light-fg))" }}>

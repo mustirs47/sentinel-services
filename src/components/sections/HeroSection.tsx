@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, FileCheck, Users, Phone, ChevronRight } from "lucide-react";
+import { ArrowRight, Shield, FileCheck, Users, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroIllustration from "@/assets/illustrations/hero-security.webp";
@@ -8,7 +8,6 @@ const trustSignals = [
   { icon: Shield, text: "§34a GewO zugelassen" },
   { icon: FileCheck, text: "Dokumentierte Einsätze" },
   { icon: Users, text: "Feste Ansprechpartner" },
-  { icon: Phone, text: "Mo–Fr 10–18 Uhr erreichbar" },
 ];
 
 const HeroSection = () => (
@@ -54,15 +53,6 @@ const HeroSection = () => (
               </Link>
             </Button>
           </div>
-
-          <a
-            href="tel:+4920893579970"
-            className="mt-5 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-          >
-            <Phone className="h-4 w-4 text-primary" />
-            Oder direkt anrufen:{" "}
-            <span className="font-semibold text-foreground">+49 (0) 208 935 799 70</span>
-          </a>
         </div>
 
         {/* Isometric illustration */}

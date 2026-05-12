@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowRight, CheckCircle, Phone, Shield, Users, FileCheck, Clock, Zap, Target, AlertTriangle } from "lucide-react";
+import { ArrowRight, CheckCircle, Shield, Users, FileCheck, Zap, Target, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
@@ -14,7 +14,7 @@ const trustItems = [
   { icon: Shield, text: "§34a GewO – geprüftes Personal" },
   { icon: Users, text: "Feste Ansprechpartner" },
   { icon: FileCheck, text: "Lückenlose Dokumentation" },
-  { icon: Clock, text: "Rückmeldung innerhalb von 24 h" },
+  { icon: CheckCircle, text: "Individuelle Einsatzkonzepte" },
 ];
 
 const processSteps = [
@@ -118,12 +118,6 @@ const LeistungDetail = () => {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
-                  <a href="tel:+4920893579970">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Kurzfristigen Einsatz anfragen
-                  </a>
-                </Button>
               </div>
             </div>
 
@@ -150,11 +144,6 @@ const LeistungDetail = () => {
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                <div className="border-t pt-4 mb-5" style={{ borderColor: "hsl(var(--section-light-border))" }}>
-                  <p className="text-xs font-semibold mb-2" style={{ color: "hsl(var(--section-light-fg))" }}>Einsatzstart möglich</p>
-                  <p className="text-sm text-muted-fg">Innerhalb von 24–48 Stunden bei kurzfristigem Bedarf</p>
                 </div>
 
                 <Button asChild className="w-full" size="lg">
