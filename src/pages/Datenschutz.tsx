@@ -40,9 +40,8 @@ const Datenschutz = () => (
             <p className="text-sm leading-relaxed text-muted-fg">
               Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO):<br /><br />
               Sentinel Services<br />
-              [Vorname Nachname]<br />
-              [Straße und Hausnummer]<br />
-              [PLZ Ort]<br />
+              Inhaber Tim Fitzlaff<br />
+              Magdeburg<br />
               E-Mail: info@sentinel-services.de
             </p>
           </div>

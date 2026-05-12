@@ -97,13 +97,13 @@ const KontaktPage = () => {
       });
       if (!res.ok) throw new Error("submit failed");
       setSubmitted(true);
-    } catch {
-      toast({
-        title: "Senden fehlgeschlagen",
-        description: "Bitte versuchen Sie es erneut oder rufen Sie uns direkt an.",
-        variant: "destructive",
-      });
-    } finally {
+      } catch {
+        toast({
+          title: "Senden fehlgeschlagen",
+          description: "Bitte versuchen Sie es erneut oder senden Sie uns eine E-Mail.",
+          variant: "destructive",
+        });
+      } finally {
       setSubmitting(false);
     }
   };
@@ -325,7 +325,7 @@ const KontaktPage = () => {
               Noch unsicher? Informieren Sie sich weiter
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Erfahren Sie mehr über unsere Leistungen, Qualifikationen und Arbeitsweise – oder rufen Sie uns einfach an.
+              Erfahren Sie mehr über unsere Leistungen, Qualifikationen und Arbeitsweise – oder schreiben Sie uns eine Nachricht.
             </p>
           </div>
           <div className="stagger-children grid gap-4 sm:grid-cols-3">
