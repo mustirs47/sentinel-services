@@ -47,7 +47,7 @@ const PageHero = ({ title, subtitle, backLink, badge, children, illustration }: 
               loading="lazy"
               decoding="async"
               width={384}
-              height={288}
+              height={384}
             />
           </div>
         )}
