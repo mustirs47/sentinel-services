@@ -1,0 +1,29 @@
+# Sentinel Services
+
+> Sicherheitsdienst aus Magdeburg, bundesweit einsatzbereit. §34a-zertifiziert, feste Ansprechpartner, kurze Reaktionszeiten.
+
+Sentinel Service (Inh. Tim Fitzlaff) bietet Objektschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangs- und Pfortendienst, Kontroll- und Streifendienst sowie individuelle Sicherheitskonzepte für Gewerbe, Industrie, Handel, Events, Hotellerie, Wohnanlagen und Behörden.
+
+## Pages
+
+- [Startseite](/): Überblick über Leistungen, Branchen und Kontakt.
+- [Leistungen](/leistungen): Sechs Sicherheitsleistungen im Überblick.
+- [Branchen](/branchen): Sicherheitslösungen nach Branche.
+- [Qualifikationen](/qualifikationen): §34a, Sachkunde, Erste Hilfe, Brandschutz, Deeskalation.
+- [Arbeitsweise](/arbeitsweise): Vier Phasen vom Erstkontakt bis zum Reporting.
+- [Karriere](/karriere): Offene Stellen und Anforderungen.
+- [Kontakt](/kontakt): Anfragen per Formular oder E-Mail.
+
+## Leistungen
+
+- [Objektschutz](/leistungen/objektschutz): Stationärer Schutz von Gebäuden und Arealen.
+- [Veranstaltungsschutz](/leistungen/veranstaltungsschutz): Einlass, Ordner- und Sicherheitsdienst bei Events.
+- [Baustellenbewachung](/leistungen/baustellenbewachung): Schutz von Baustellen, Material und Maschinen.
+- [Empfangs- und Pfortendienst](/leistungen/empfangs-und-pfortendienst): Empfang, Zutrittskontrolle, Besuchermanagement.
+- [Kontroll- und Streifendienst](/leistungen/kontroll-und-streifendienst): Mobile Kontrollen und Revieren.
+- [Sicherheitskonzepte](/leistungen/sicherheitskonzepte): Individuelle Konzepte nach Risikoanalyse.
+
+## Optional
+
+- [Impressum](/impressum): Pflichtangaben nach § 5 TMG.
+- [Datenschutz](/datenschutz): Hinweise nach DSGVO.
