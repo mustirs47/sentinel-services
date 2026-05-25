@@ -65,8 +65,9 @@ const KarrierePage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Karriere im Sicherheitsdienst – jetzt bewerben"
-        description="Anforderungen, Schichtmodelle, Weiterbildung und Bewerbungsweg. Wer wir suchen und was wir als Arbeitgeber bieten."
+        title="Security Job & Sicherheitsmitarbeiter Job | Sentinel Services Karriere"
+        description="Security Job mit §34a-Sachkundeprüfung gesucht? Wir bieten faire Bezahlung, planbare Schichten und Weiterbildung. Jetzt als Sicherheitsmitarbeiter bewerben – bundesweit."
+        keywords="Security Job, Sicherheitsmitarbeiter Job, Wachmann Stelle, §34a Job, Sicherheitsdienst Karriere"
       />
       <FAQPageJsonLd faqs={careerFaqs} />
       <BreadcrumbJsonLd
@@ -83,8 +84,8 @@ const KarrierePage = () => {
 
       <PageHero
         badge="Karriere"
-        title="Werden Sie Teil unseres Teams"
-        subtitle="Wir suchen Menschen, die Verantwortung übernehmen – nicht nur einen Job suchen."
+        title="Security Job mit Perspektive – jetzt als Sicherheitsmitarbeiter bewerben"
+        subtitle="Wir suchen §34a-geprüfte Sicherheitsmitarbeiter und engagierten Nachwuchs für Objektschutz, Veranstaltungen und Revierdienst. Faire Bedingungen, planbare Einsätze, echte Entwicklung."
         illustration={teamIllustration}
       />
 
