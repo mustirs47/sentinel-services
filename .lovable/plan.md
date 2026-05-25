@@ -1,90 +1,77 @@
-## Ziel
+# SEO-Optimierung nach Ahrefs Site Audit (überarbeitet)
 
-Vollständige, handgeschriebene SEO-Überarbeitung jeder Seite – einheitlich, einzigartig, deutsch, ohne KI-typische Floskeln. Schwerpunkte: einzigartige Meta-Tags je Seite, Canonicals, Open Graph/Twitter pro Seite, erweitertes strukturiertes Daten-Markup, Breadcrumbs, semantische H1-Hierarchie, interne Verlinkung, technische SEO-Hygiene.
+Aktueller Health Score: **64 (Fair)** — 14 Errors, 27 Warnings, 24 Notices.
+Strategiewechsel laut Vorgabe: **breitere, traffic-starke Keywords** statt enger Magdeburg-Long-Tails. Quelle: Semrush DE, Mai 2026.
 
-## 1. `SEOHead` erweitern (zentral)
+## 1. Technische SEO-Fixes (Ahrefs)
 
-Neue optionale Props: `ogImage`, `ogType` (`website`/`article`), `keywords`, `noindex`, `lang`. Standard-Canonical automatisch aus `useLocation().pathname` ableiten, damit jede Route eine korrekte selbstreferenzierende Canonical-URL bekommt. `og:url`, `og:site_name="Sentinel Services"`, `og:locale="de_DE"`, `twitter:card="summary_large_image"` immer mitschreiben. `BASE_URL = https://www.sentinel-services.de`.
+### a) Multiple meta description tags (14 URLs — Error, größter Hebel)
+`index.html` definiert statisch `description`, `og:title/description`, `twitter:title/description` — `SEOHead` setzt sie zusätzlich per Helmet → Ahrefs sieht Duplikate.
+- `index.html` aufräumen: nur charset, viewport, og:type, og:site_name, og:locale, og:image, twitter:card, twitter:image + Default-`<title>` als Fallback. **Description, og:title, og:description, twitter:title, twitter:description entfernen** — `SEOHead` setzt sie pro Route.
 
-## 2. Pro Seite individuelle, menschlich klingende Meta-Daten
+### b) Structured data validation error (6 URLs)
+- `LocalBusiness` JSON-LD: `image` (Logo absolut), `telephone` falls vorhanden, `@id`-Referenzen konsistent.
+- `Service` JSON-LD: `provider.url`/`address` ergänzen, `serviceType` als String.
+- `WebSite`-Schema sitewide in `index.html` ergänzen.
 
-Alle Title ≤ 60 Zeichen, Descriptions 140–160 Zeichen, einzigartig, im Tonfall „einsatznah, sachlich, konkret" (Memory: tone-and-voice). Keine generischen Adjektive wie „professionell, hochwertig, erstklassig" wiederholt.
+### c) H1 / Open Graph incomplete (je 1 URL)
+- Wahrscheinlich `/404` bzw. eine Redirect-Ziel-Seite. H1 sicherstellen, OG-Felder ergänzen.
 
-| Route | Title (neu) | Description-Kern |
-|---|---|---|
-| `/` | Sicherheitsdienst Sentinel Services – bundesweit einsatzbereit | Objektschutz, Veranstaltungsschutz, Baustellenbewachung. §34a, feste Ansprechpartner, kurze Reaktionszeiten. |
-| `/leistungen` | Leistungen im Sicherheitsdienst – Übersicht | Sechs Leistungsbereiche von Objektschutz bis Sicherheitskonzept – kurz erklärt, mit klaren Einsatzbeispielen. |
-| `/leistungen/:slug` | bereits in `services.ts` – pro Slug überarbeiten (s. unten) | individuell |
-| `/branchen` | Sicherheit nach Branche – Lösungen für acht Bereiche | Gewerbe, Industrie, Baustelle, Handel, Events, Hotel, Wohnanlage, Behörden – je mit typischen Risiken. |
-| `/qualifikationen` | Qualifikationen & §34a-Nachweise unseres Personals | Sachkunde, Erste Hilfe, Brandschutz, Deeskalation – was es im Einsatz konkret bedeutet. |
-| `/arbeitsweise` | Arbeitsweise – vom Erstgespräch bis zum Reporting | Vier Phasen: Analyse, Personal, Einsatz, Dokumentation. So läuft ein Auftrag bei uns. |
-| `/karriere` | Karriere im Sicherheitsdienst – offene Stellen | Anforderungen, Schichtmodelle, Weiterbildung. Bewerbung in wenigen Schritten. |
-| `/kontakt` | Kontakt – Anfrage an Sentinel Services | Erstberatung per Formular oder E-Mail. Wir melden uns kurzfristig mit konkretem Vorschlag. |
-| `/impressum` | Impressum – Sentinel Services, Magdeburg | Pflichtangaben nach § 5 TMG. (`noindex,follow`) |
-| `/datenschutz` | Datenschutz – Hinweise nach DSGVO | Welche Daten wir verarbeiten, wie lange, mit welcher Rechtsgrundlage. (`noindex,follow`) |
-| `*` (404) | Seite nicht gefunden – Sentinel Services | Diese Seite existiert nicht. Zurück zur Startseite oder Leistungen ansehen. (`noindex,follow`) |
+### d) Redirects (HTTP→HTTPS, 3xx-Chains, 302)
+- Internes Link-Audit: alle Links auf finale URL (`https://www.…` ohne trailing slash).
+- Sicherstellen, dass `canonical`/`og:url` in Helmet konsistent generiert werden.
 
-Service-Detail-Slugs in `src/data/services.ts`: `metaTitle`, `metaDescription`, `h1` und `longDesc` durchgehen und sprachlich entspannen (kürzere Sätze, konkrete Beispiele, kein „nahtlos integriert"-Vokabular).
+### e) Slow page (15 URLs, Notice)
+- `<link rel="preload" as="image">` für `hero-bg.webp` + Service-Illustrationen above-the-fold.
+- Google Analytics auf `defer`, weiter erst nach Consent laden.
 
-## 3. Strukturierte Daten (JSON-LD) ausweiten
+### f) IndexNow (15 Seiten)
+- `scripts/indexnow.mjs` einmal anstoßen.
 
-- `BreadcrumbJsonLd` (existiert) auf **allen** Unterseiten einsetzen, mit korrekter Hierarchie (Startseite › Eltern › Aktuell).
-- `/leistungen`: zusätzlich `ItemList` der sechs Services.
-- `/branchen`: zusätzlich `ItemList` der acht Branchen.
-- `/leistungen/:slug`: bestehendes `ServiceJsonLd` um `serviceType`, `areaServed: Deutschland`, `provider` mit Telefon entfällt (haben wir nicht), E-Mail bleibt.
-- `/kontakt`: `ContactPage` Schema + Wiederholung der `ContactPoint`-Daten.
-- `/karriere`: `WebPage` mit `about: HiringOrganization`. (Kein `JobPosting` ohne echte Stellen – würde sonst von Google abgestraft.)
-- `/qualifikationen`, `/arbeitsweise`: `WebPage` mit `mainEntity: AboutPage`.
-- `LocalBusinessJsonLd` (Index): ergänzen um `address: PostalAddress` (Grusonstraße 9, 39112 Magdeburg, DE), `foundingDate` weglassen falls unbekannt, `sameAs` weglassen wenn keine Profile vorhanden.
+---
 
-## 4. Canonicals & Indexierungssteuerung
+## 2. Keyword-Strategie — breiter ausgelegt (Semrush DE)
 
-- Selbstreferenzierende Canonical auf jeder Route via `SEOHead` (Prop oder automatisch aus Pathname).
-- `Impressum`, `Datenschutz`, `NotFound`: `<meta name="robots" content="noindex,follow">`.
-- `index.html`: globale Canonical entfernen (sonst überschreibt sie Subseiten); Helmet setzt sie pro Seite.
+Statt lokaler 90-140/mo-Begriffe priorisieren wir bundesweite Suchanfragen mit deutlich höherem Volumen. Magdeburg bleibt als Sekundär-Signal im Footer/Impressum/JSON-LD verankert (lokales Pack), drückt aber keine H1/Titles mehr.
 
-## 5. Open Graph / Social
+### Reichweiten-Cluster (Vol = monatliches Suchvolumen, KDI = Difficulty 0–100)
 
-- Eine generische OG-Bild-URL bleibt im `index.html` als Fallback.
-- Pro Seite OG-Title = Meta-Title, OG-Description = Meta-Description; OG-URL automatisch aus aktuellem Pfad.
-- `og:type` für `/leistungen/:slug` = `article`, sonst `website`.
+| Seite | Primär-KW | Vol | KDI | Sekundär (Vol) | Begründung |
+|---|---|---|---|---|---|
+| `/` | **Sicherheitsdienst** | 8.100 | 58 | Sicherheitsfirma (1.300, 37), Wachdienst (880, 19) | Größtes Volumen; Brand stärkt mittelfristig Authority |
+| `/leistungen/objektschutz` | **Objektschutz** | 1.900 | 19 | Werkschutz (1.600, 20), Wachschutz (480, 28) | Sehr realistisch, drei verwandte Begriffe bündeln |
+| `/leistungen/veranstaltungsschutz` | **Veranstaltungsschutz** | 880 | 6 | Türsteher (1.900, 26), Eventsecurity (70) | KDI 6 = schnell rankbar; Türsteher als Sekundär-Pull |
+| `/leistungen/baustellenbewachung` | **Baustellenbewachung** | 590 | 10 | Brandwache (720, 13), Nachtwache (1.900, 28) | Brandwache als zusätzlicher Sub-Service / interner Link |
+| `/leistungen/empfangs-und-pfortendienst` | **Empfangsdienst** | 390 | 10 | Pfortendienst (320, 3), Doorman (880, 21) | Beide Begriffe gemeinsam adressieren |
+| `/leistungen/kontroll-und-streifendienst` | **Revierdienst** | 480 | 6 | Streifendienst (260, 29), Nachtwache (1.900, 28) | Revier = stärker, Streifen = synonym |
+| `/leistungen/sicherheitskonzepte` | **Sicherheitskonzept** | 1.300 | 29 | Risikoanalyse, Bewachungsunternehmen (30) | Beratungs-Intent, gute Conversion |
+| `/branchen` | **Bewachung** (Branchen-Hub) | — | — | Industrie-/Baustellen-/Hotel-Begriffe als Anker | Interner Link-Hub, kein Ranking-Ziel |
+| `/qualifikationen` | **Sachkundeprüfung §34a** | 8.100 | 28 | §34a (2.900, 27) | Trust-Seite; massive Top-Funnel-Reichweite |
+| `/arbeitsweise` | **Sicherheitsdienst Ablauf** | low | — | — | Conversion-Support, kein primäres SEO-Ziel |
+| `/karriere` | **Security Job** | 880 | 23 | Sicherheitsmitarbeiter Job (110, 15) | Bewerber-Funnel |
+| `/kontakt` | **Sicherheitsdienst anfragen** | low | — | — | Pure Conversion |
 
-## 6. On-Page-Hygiene
+### Zusätzliche Empfehlung
+**Neue Seite „Personenschutz"** (2.400/mo, KDI 18) als 7. Leistung — ein Begriff dieser Größe mit niedriger Schwierigkeit ist Pflicht im Portfolio eines Sicherheitsdienstes. Falls inhaltlich nicht im Angebot, bewusst weglassen.
 
-- Sicherstellen: genau **ein** `<h1>` pro Seite. `PageHero` rendert bereits `h1` – Section-Überschriften auf `h2` prüfen (kurzer Audit Hero/Sections, nichts visuell ändern).
-- Bilder: `alt`-Texte aller dekorativen Illustrationen prüfen; leere `alt=""` nur wenn rein dekorativ, sonst beschreibend („Isometrische Darstellung eines bewachten Objekts" o.ä.).
-- Interne Verlinkung: am Ende jeder Service-Detailseite zu zwei verwandten Leistungen + `/branchen` linken (existiert teilweise – vereinheitlichen).
-- `lang="de"` ist gesetzt; zusätzlich `<html>` `lang="de-DE"`.
+### On-Page-Änderungen pro Seite
+Für jede Seite anpassen:
+1. **Meta Title** (<60 Z.) mit Primär-KW vorn, Marke hinten: z. B. „Objektschutz & Werkschutz – bundesweit | Sentinel Services".
+2. **Meta Description** (<160 Z.) mit Primär- + 1 Sekundär-KW + Nutzen + CTA.
+3. **H1** mit Primär-KW natürlich integriert (kein Stuffing, Tone bleibt seriös/„einsatznah").
+4. **Intro-Absatz** (60–90 W.) mit Primär-KW im ersten Satz, 1–2 Sekundär-KWs verteilt.
+5. **Interne Links** mit Anchor-Text = Primär-KW der Zielseite.
+6. **FAQ-Erweiterung** mit Question-Keywords (z. B. „Was kostet ein Sicherheitsdienst?", „Was ist der Unterschied zwischen Objektschutz und Werkschutz?") → speist FAQPage-Schema.
 
-## 7. Sitemap & robots
+---
 
-- `public/sitemap.xml` bleibt manuell gepflegt; `lastmod` (heutiges Datum) auf allen Einträgen ergänzen, `priority`-Werte unverändert. Reihenfolge: `/`, `/leistungen` + Detailseiten, `/branchen`, `/qualifikationen`, `/arbeitsweise`, `/karriere`, `/kontakt`, Legal.
-- `Impressum`/`Datenschutz` aus Sitemap entfernen (passt zu `noindex`).
-- `robots.txt`: `Disallow: /404` raus (Route existiert nicht), stattdessen nichts blockieren – `noindex` reicht.
+## 3. Reihenfolge der Umsetzung
 
-## 8. Inhaltliche Anti-KI-Politur
+1. `index.html` entdoppeln + `LocalBusiness`/`Service`-Schema reparieren.
+2. Internes Link-/Redirect-Audit.
+3. Title/Description/H1/Intro für alle 12 Seiten nach Tabelle oben überarbeiten.
+4. Performance-Mikro-Fixes (Preload LCP, GA defer).
+5. SEO-Rescan + IndexNow-Submit.
 
-Audit (kein Re-Write der ganzen Seiten) folgender Stellen auf KI-Floskeln und Ersetzung durch konkrete, nüchterne Formulierungen:
-- Hero-Subtitles aller Seiten
-- `services.ts` `longDesc` und `desc`
-- `industries.ts` Beschreibungen
-- FAQ-Antworten kürzen, wo Füllwörter vorkommen
-
-Verbotene Wörter im Audit: „nahtlos", „ganzheitlich", „maßgeschneidert" (1× max pro Seite), „erstklassig", „revolutionär", „state-of-the-art", „in der heutigen schnelllebigen Welt", Aufzählungen mit drei Adjektiven hintereinander.
-
-## 9. Technische Details
-
-- Neue Helper `src/lib/seo.ts`: `buildCanonical(path)`, `BASE_URL`, `SITE_NAME`.
-- `SEOHead` nutzt `useLocation` → daher muss es immer innerhalb des Routers gerendert werden (ist bereits der Fall).
-- Keine neuen Abhängigkeiten.
-- Keine Layout-/Design-Änderungen.
-
-## 10. Reihenfolge der Umsetzung
-
-1. `SEOHead` erweitern + `lib/seo.ts`.
-2. `StructuredData.tsx` um `ItemList`, `ContactPage`, `WebPage`, `PostalAddress` ergänzen.
-3. `services.ts`: Texte, `metaTitle`, `metaDescription`, `h1` pro Slug überarbeiten.
-4. Jede Page-Datei: neuer SEOHead-Aufruf, Breadcrumb-JSON-LD, ggf. zusätzliche Schemas.
-5. `index.html` aufräumen (Canonical raus, Title generisch lassen für Erst-Render).
-6. `sitemap.xml` aktualisieren, `robots.txt` anpassen.
-7. Sicht-Check über alle Routen + Light-House-/Build-Validierung.
+## Hinweis
+Recherche aus dem eingebauten Semrush-Tool (Stichprobe). Wenn Sie laufendes Rank-Tracking, Wettbewerbs-Dashboards oder bulk-Keyword-Recherche direkt in der App haben möchten, ließe sich später der **Semrush-Connector** anbinden — für diese Optimierungsrunde nicht nötig.

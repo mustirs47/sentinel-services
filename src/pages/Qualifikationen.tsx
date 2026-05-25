@@ -79,8 +79,9 @@ const QualifikationenPage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Qualifikationen und §34a-Nachweise unseres Personals"
-        description="Sachkunde nach §34a, Erste Hilfe, Brandschutz, Deeskalation – was unsere Einsatzkräfte mitbringen und was das im Alltag konkret bedeutet."
+        title="Sachkundeprüfung §34a & Qualifikationen | Sentinel Services"
+        description="Sachkundeprüfung §34a GewO, Erste-Hilfe, Brandschutzhelfer, Deeskalation: alle Qualifikationen unseres Sicherheitspersonals – mit Erklärung, was §34a für Auftraggeber bedeutet."
+        keywords="Sachkundeprüfung 34a, §34a GewO, Sicherheitsmitarbeiter Qualifikation, IHK Unterrichtung, geprüfte Schutz- und Sicherheitskraft"
       />
       <BreadcrumbJsonLd
         items={[
@@ -98,8 +99,8 @@ const QualifikationenPage = () => {
 
       <PageHero
         badge="Qualifikationen"
-        title="Qualifikationen & Nachweise"
-        subtitle="Auf welcher fachlichen Grundlage wir arbeiten – und warum das für Sie als Auftraggeber relevant ist."
+        title="Sachkundeprüfung §34a & Qualifikationen unseres Personals"
+        subtitle="Welche §34a-Nachweise, Schulungen und Zusatzqualifikationen unsere Einsatzkräfte mitbringen – und was das für Sie als Auftraggeber konkret bedeutet."
         illustration={teamIllustration}
       />
 

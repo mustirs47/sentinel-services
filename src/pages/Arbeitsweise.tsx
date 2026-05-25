@@ -72,8 +72,8 @@ const ArbeitsweisePage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Arbeitsweise – von der Anfrage bis zum Reporting"
-        description="Vier Phasen pro Auftrag: Analyse, Personalauswahl, Einsatzführung, Dokumentation. So läuft ein Einsatz bei Sentinel Services konkret ab."
+        title="Arbeitsweise Sicherheitsdienst – Ablauf in 4 Phasen | Sentinel Services"
+        description="Ablauf eines Sicherheitsdienst-Einsatzes in vier Phasen: Analyse, Personalauswahl, Einsatzführung und Reporting. Transparente Arbeitsweise mit fester Einsatzleitung."
       />
       <BreadcrumbJsonLd
         items={[

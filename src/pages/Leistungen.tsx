@@ -47,8 +47,9 @@ const LeistungenPage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Leistungen im Sicherheitsdienst – Übersicht"
-        description="Sechs Leistungsbereiche von Objektschutz bis Sicherheitskonzept – kurz erklärt, mit typischen Einsatzlagen und passenden Branchen."
+        title="Leistungen Sicherheitsdienst – Objektschutz bis Sicherheitskonzept"
+        description="Alle Leistungen unserer Sicherheitsfirma: Objektschutz, Werkschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangsdienst, Revierdienst und Sicherheitskonzepte – §34a-geprüft."
+        keywords="Sicherheitsdienst Leistungen, Wachdienst, Sicherheitsfirma, Objektschutz, Werkschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangsdienst, Revierdienst"
       />
       <FAQPageJsonLd faqs={defaultFaqs} />
       <BreadcrumbJsonLd
@@ -67,8 +68,8 @@ const LeistungenPage = () => {
 
       <PageHero
         badge="Leistungen"
-        title="Unsere Sicherheitsdienstleistungen"
-        subtitle="Jede Leistung wird auf Objekt, Einsatzlage und Kundenanforderung abgestimmt – maßgeschneiderte Sicherheitslösungen."
+        title="Leistungen unseres Sicherheitsdienstes"
+        subtitle="Sechs Leistungsbereiche – vom Objektschutz über den Wachdienst bis zum individuellen Sicherheitskonzept. Jede Leistung wird auf Objekt, Einsatzlage und Anforderung abgestimmt."
         illustration={heroIllustration}
       />
 
