@@ -113,8 +113,8 @@ const KontaktPage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Kontakt – Anfrage an Sentinel Services"
-        description="Anfrage per Formular oder E-Mail. Beschreiben Sie Bedarf, Ort und Zeitraum – wir melden uns mit einem konkreten Angebot."
+        title="Sicherheitsdienst anfragen – Kontakt | Sentinel Services"
+        description="Sicherheitsdienst anfragen: Formular oder E-Mail genügt. Beschreiben Sie Bedarf, Einsatzort und Zeitraum – wir melden uns mit einem konkreten Angebot. Kostenfrei und unverbindlich."
       />
       <BreadcrumbJsonLd
         items={[
