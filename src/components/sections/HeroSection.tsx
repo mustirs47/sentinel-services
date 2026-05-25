@@ -38,13 +38,13 @@ const HeroSection = () => (
             Sicherheitsdienst · bundesweit
           </span>
           <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl break-words hyphens-auto" style={{ lineHeight: 1.15 }}>
-            Sicherheit, die im{" "}
+            Sicherheitsdienst &amp; Wachdienst, der im{" "}
             <span className="text-primary">Einsatz</span> funktioniert.
           </h1>
 
           <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg max-w-xl">
-            Objektschutz, Veranstaltungen und Baustellen – mit §34a-geprüftem
-            Personal, fester Einsatzleitung und lückenloser Dokumentation.
+            Sicherheitsfirma für Objektschutz, Veranstaltungsschutz und Baustellenbewachung –
+            mit §34a-geprüftem Personal, fester Einsatzleitung und lückenloser Dokumentation.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
