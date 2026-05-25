@@ -13,9 +13,9 @@ import FAQSection from "@/components/sections/FAQSection";
 const Index = () => (
   <PageLayout>
     <SEOHead
-      title="Sentinel Services – Sicherheitsdienst, bundesweit einsatzbereit"
-      description="Objektschutz, Veranstaltungsschutz, Baustellenbewachung und Empfangsdienste. §34a-zertifiziert, feste Ansprechpartner, kurze Reaktionszeiten."
-      keywords="Sicherheitsdienst, Objektschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangsdienst, §34a, Magdeburg, bundesweit"
+      title="Sicherheitsdienst & Wachdienst bundesweit | Sentinel Services"
+      description="Sicherheitsdienst & Sicherheitsfirma für Objektschutz, Veranstaltungsschutz, Baustellenbewachung und Empfangsdienst. §34a-geprüfter Wachdienst, bundesweit einsatzbereit."
+      keywords="Sicherheitsdienst, Sicherheitsfirma, Wachdienst, Objektschutz, Werkschutz, Veranstaltungsschutz, Eventsecurity, Baustellenbewachung, Brandwache, Empfangsdienst, Pfortendienst, Revierdienst, Sicherheitskonzept, §34a, bundesweit"
     />
     <LocalBusinessJsonLd />
     <HeroSection />
