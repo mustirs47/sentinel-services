@@ -4,17 +4,20 @@ import { BASE_URL } from "@/lib/seo";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "SecurityService",
   "@id": `${BASE_URL}/#organization`,
   name: "Sentinel Services",
   description: "Professioneller Sicherheitsdienst – Objektschutz, Veranstaltungsschutz, Baustellenbewachung & individuelle Sicherheitskonzepte. §34a-zugelassen, bundesweit einsatzbereit.",
   url: BASE_URL,
+  logo: `${BASE_URL}/logo.png`,
+  image: `${BASE_URL}/logo.png`,
   email: "info@sentinel-services.de",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Grusonstraße 9",
     postalCode: "39112",
     addressLocality: "Magdeburg",
+    addressRegion: "Sachsen-Anhalt",
     addressCountry: "DE",
   },
   areaServed: {
@@ -28,7 +31,7 @@ const localBusinessSchema = {
     availableLanguage: ["German"],
     areaServed: "DE",
   },
-  priceRange: "$$",
+  priceRange: "€€",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Sicherheitsdienstleistungen",
@@ -102,9 +105,19 @@ export const ServiceJsonLd = ({ name, description, url }: { name: string; descri
     description,
     url,
     provider: {
-      "@type": "LocalBusiness",
+      "@type": "SecurityService",
+      "@id": `${BASE_URL}/#organization`,
       name: "Sentinel Services",
+      url: BASE_URL,
+      image: `${BASE_URL}/logo.png`,
       email: "info@sentinel-services.de",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Grusonstraße 9",
+        postalCode: "39112",
+        addressLocality: "Magdeburg",
+        addressCountry: "DE",
+      },
     },
     areaServed: {
       "@type": "Country",
