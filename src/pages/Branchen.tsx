@@ -36,8 +36,9 @@ const BranchenPage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Sicherheit nach Branche – Lösungen für acht Bereiche"
-        description="Gewerbe, Industrie, Baustelle, Handel, Events, Hotel, Wohnanlage, Behörden – mit den jeweils typischen Risiken und passenden Leistungen."
+        title="Bewachung nach Branche – 8 Einsatzbereiche | Sentinel Services"
+        description="Bewachung & Wachdienst nach Branche: Gewerbe, Industrie, Baustelle, Handel, Events, Hotel, Wohnanlage, Behörden. Risiken im Überblick, passende Sicherheitsleistungen je Branche."
+        keywords="Bewachung Industrie, Werkschutz Logistik, Baustellenbewachung, Eventsecurity, Hotelsicherheit, Wachschutz Wohnanlage"
       />
       <BreadcrumbJsonLd
         items={[
@@ -56,8 +57,8 @@ const BranchenPage = () => {
 
       <PageHero
         badge="Branchen"
-        title="Branchen, die wir absichern"
-        subtitle="Jede Branche hat eigene Risiken, Abläufe und Erwartungen. Wir passen unsere Sicherheitslösungen gezielt an."
+        title="Bewachung & Sicherheitsdienst nach Branche"
+        subtitle="Acht Branchen, eigene Risiken, eigene Abläufe – wir passen Personal, Konzept und Einsatzzeiten gezielt an die jeweilige Branche an."
         illustration={branchenIllustration}
       />
 
