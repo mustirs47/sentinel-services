@@ -1,77 +1,132 @@
-# SEO-Optimierung nach Ahrefs Site Audit (überarbeitet)
 
-Aktueller Health Score: **64 (Fair)** — 14 Errors, 27 Warnings, 24 Notices.
-Strategiewechsel laut Vorgabe: **breitere, traffic-starke Keywords** statt enger Magdeburg-Long-Tails. Quelle: Semrush DE, Mai 2026.
+# Umbau Sentinel Services → Dachmarke mit 4 Geschäftsbereichen
 
-## 1. Technische SEO-Fixes (Ahrefs)
+## 1. Neue Positionierung & Claim
 
-### a) Multiple meta description tags (14 URLs — Error, größter Hebel)
-`index.html` definiert statisch `description`, `og:title/description`, `twitter:title/description` — `SEOHead` setzt sie zusätzlich per Helmet → Ahrefs sieht Duplikate.
-- `index.html` aufräumen: nur charset, viewport, og:type, og:site_name, og:locale, og:image, twitter:card, twitter:image + Default-`<title>` als Fallback. **Description, og:title, og:description, twitter:title, twitter:description entfernen** — `SEOHead` setzt sie pro Route.
+- Name bleibt: **Sentinel Services**
+- Neuer Claim: **„Sicherheit. Sauberkeit. Substanz."** (Alternativen im Prozess: „Schutz, Pflege, Werterhalt." / „Ihr Partner für Objektbetreuung.")
+- Logo: Untertitel/Tagline ergänzen (Wortmarke unverändert).
+- Sprachregelung: „bundesweit" nur in Footer, Kontakt, FAQ und Schema – nicht in jeder Headline.
 
-### b) Structured data validation error (6 URLs)
-- `LocalBusiness` JSON-LD: `image` (Logo absolut), `telephone` falls vorhanden, `@id`-Referenzen konsistent.
-- `Service` JSON-LD: `provider.url`/`address` ergänzen, `serviceType` als String.
-- `WebSite`-Schema sitewide in `index.html` ergänzen.
+## 2. Informationsarchitektur (neu)
 
-### c) H1 / Open Graph incomplete (je 1 URL)
-- Wahrscheinlich `/404` bzw. eine Redirect-Ziel-Seite. H1 sicherstellen, OG-Felder ergänzen.
+```text
+/                              Dachseite: 4 Bereiche gleichwertig
+├── /sicherheit                Hub Sicherheit & Bewachung
+│   ├── /sicherheit/objektschutz
+│   ├── /sicherheit/veranstaltungsschutz   (Event Services)
+│   ├── /sicherheit/baustellenbewachung
+│   ├── /sicherheit/empfangs-und-pfortendienst
+│   ├── /sicherheit/kontroll-und-streifendienst
+│   └── /sicherheit/sicherheitskonzepte
+├── /reinigung                 Hub Reinigung
+│   ├── /reinigung/unterhaltsreinigung
+│   ├── /reinigung/glas-und-fensterreinigung
+│   ├── /reinigung/grundreinigung
+│   └── /reinigung/bauschluss-und-sonderreinigung
+├── /gruenanlagen              Hub Garten & Grünanlagen
+│   ├── /gruenanlagen/pflege          (Mähen, Hecken, Beete)
+│   ├── /gruenanlagen/baumpflege
+│   └── /gruenanlagen/winterdienst
+├── /facility-management       Hub FM (Klammer über alles)
+│   ├── /facility-management/technisches-fm
+│   ├── /facility-management/infrastrukturelles-fm
+│   └── /facility-management/kaufmaennisches-fm
+├── /branchen                  bleibt – pro Branche Cross-Linking zu allen 4 Säulen
+├── /arbeitsweise              bleibt – 4-Phasen-Modell auf alle Bereiche generalisiert
+├── /qualifikationen           erweitert: §34a + Gebäudereiniger-HWK + Fachkunde Pflanzenschutz/Baumpflege
+├── /karriere                  Jobs nach Bereich filterbar
+└── /kontakt                   eine Anfrage, Bereichs-Auswahl im Formular
+```
 
-### d) Redirects (HTTP→HTTPS, 3xx-Chains, 302)
-- Internes Link-Audit: alle Links auf finale URL (`https://www.…` ohne trailing slash).
-- Sicherstellen, dass `canonical`/`og:url` in Helmet konsistent generiert werden.
+301-Redirects: alle alten `/leistungen/...` → neue `/sicherheit/...` (Ranking-Erhalt).
 
-### e) Slow page (15 URLs, Notice)
-- `<link rel="preload" as="image">` für `hero-bg.webp` + Service-Illustrationen above-the-fold.
-- Google Analytics auf `defer`, weiter erst nach Consent laden.
+## 3. Startseite (neu)
 
-### f) IndexNow (15 Seiten)
-- `scripts/indexnow.mjs` einmal anstoßen.
+Sektionen, ohne überladen zu wirken:
 
----
+1. **Hero**: Headline „Schutz, Pflege und Werterhalt für Ihr Objekt", Sub: 4 Säulen in einem Satz, 1 Primary-CTA + 1 Sekundär.
+2. **4-Säulen-Block** (zentrales Element): vier gleich große Karten mit Icon, Kurzbeschreibung, Link auf Hub. Ersetzt die heutige `ServicesSection`.
+3. **TrustBar** (bleibt).
+4. **Warum Sentinel** (eine kombinierte WhyUs-Sektion mit Argumenten, die für alle Bereiche gelten: geprüftes Personal, ein Ansprechpartner, dokumentierte Leistung, regionale Teams).
+5. **Branchen-Block** (bleibt, leicht überarbeitet: zeigt welche Branche welche Säulen typisch bündelt).
+6. **Cross-Selling-Block** „Ein Anbieter – weniger Schnittstellen" (USP der Bündelung).
+7. **Referenzen** (bleibt).
+8. **Kontakt + FAQ** (FAQ um säulenübergreifende Fragen ergänzt).
 
-## 2. Keyword-Strategie — breiter ausgelegt (Semrush DE)
+Hero-Illustration: bestehende Security-Szene weicht einem neutraleren isometrischen Objekt-Set (Gebäude mit allen 4 Services angedeutet) – ein einziges neues WebP.
 
-Statt lokaler 90-140/mo-Begriffe priorisieren wir bundesweite Suchanfragen mit deutlich höherem Volumen. Magdeburg bleibt als Sekundär-Signal im Footer/Impressum/JSON-LD verankert (lokales Pack), drückt aber keine H1/Titles mehr.
+## 4. Hub-Seiten pro Säule (identisches Muster)
 
-### Reichweiten-Cluster (Vol = monatliches Suchvolumen, KDI = Difficulty 0–100)
+Wiederverwendbare Komponente, damit die Seite konsistent und nicht überladen wirkt:
 
-| Seite | Primär-KW | Vol | KDI | Sekundär (Vol) | Begründung |
-|---|---|---|---|---|---|
-| `/` | **Sicherheitsdienst** | 8.100 | 58 | Sicherheitsfirma (1.300, 37), Wachdienst (880, 19) | Größtes Volumen; Brand stärkt mittelfristig Authority |
-| `/leistungen/objektschutz` | **Objektschutz** | 1.900 | 19 | Werkschutz (1.600, 20), Wachschutz (480, 28) | Sehr realistisch, drei verwandte Begriffe bündeln |
-| `/leistungen/veranstaltungsschutz` | **Veranstaltungsschutz** | 880 | 6 | Türsteher (1.900, 26), Eventsecurity (70) | KDI 6 = schnell rankbar; Türsteher als Sekundär-Pull |
-| `/leistungen/baustellenbewachung` | **Baustellenbewachung** | 590 | 10 | Brandwache (720, 13), Nachtwache (1.900, 28) | Brandwache als zusätzlicher Sub-Service / interner Link |
-| `/leistungen/empfangs-und-pfortendienst` | **Empfangsdienst** | 390 | 10 | Pfortendienst (320, 3), Doorman (880, 21) | Beide Begriffe gemeinsam adressieren |
-| `/leistungen/kontroll-und-streifendienst` | **Revierdienst** | 480 | 6 | Streifendienst (260, 29), Nachtwache (1.900, 28) | Revier = stärker, Streifen = synonym |
-| `/leistungen/sicherheitskonzepte` | **Sicherheitskonzept** | 1.300 | 29 | Risikoanalyse, Bewachungsunternehmen (30) | Beratungs-Intent, gute Conversion |
-| `/branchen` | **Bewachung** (Branchen-Hub) | — | — | Industrie-/Baustellen-/Hotel-Begriffe als Anker | Interner Link-Hub, kein Ranking-Ziel |
-| `/qualifikationen` | **Sachkundeprüfung §34a** | 8.100 | 28 | §34a (2.900, 27) | Trust-Seite; massive Top-Funnel-Reichweite |
-| `/arbeitsweise` | **Sicherheitsdienst Ablauf** | low | — | — | Conversion-Support, kein primäres SEO-Ziel |
-| `/karriere` | **Security Job** | 880 | 23 | Sicherheitsmitarbeiter Job (110, 15) | Bewerber-Funnel |
-| `/kontakt` | **Sicherheitsdienst anfragen** | low | — | — | Pure Conversion |
+- `PageHero` mit Bereichs-Illustration
+- Intro (1 Absatz, Primary-Keyword in Satz 1)
+- Sub-Leistungen als Karten-Grid (3–4 Karten → Detailseiten)
+- „Für wen geeignet" (Branchenbezug)
+- Arbeitsweise (komprimierte Variante)
+- FAQ bereichsspezifisch
+- CTA
 
-### Zusätzliche Empfehlung
-**Neue Seite „Personenschutz"** (2.400/mo, KDI 18) als 7. Leistung — ein Begriff dieser Größe mit niedriger Schwierigkeit ist Pflicht im Portfolio eines Sicherheitsdienstes. Falls inhaltlich nicht im Angebot, bewusst weglassen.
+## 5. Datenstruktur (Code)
 
-### On-Page-Änderungen pro Seite
-Für jede Seite anpassen:
-1. **Meta Title** (<60 Z.) mit Primär-KW vorn, Marke hinten: z. B. „Objektschutz & Werkschutz – bundesweit | Sentinel Services".
-2. **Meta Description** (<160 Z.) mit Primär- + 1 Sekundär-KW + Nutzen + CTA.
-3. **H1** mit Primär-KW natürlich integriert (kein Stuffing, Tone bleibt seriös/„einsatznah").
-4. **Intro-Absatz** (60–90 W.) mit Primär-KW im ersten Satz, 1–2 Sekundär-KWs verteilt.
-5. **Interne Links** mit Anchor-Text = Primär-KW der Zielseite.
-6. **FAQ-Erweiterung** mit Question-Keywords (z. B. „Was kostet ein Sicherheitsdienst?", „Was ist der Unterschied zwischen Objektschutz und Werkschutz?") → speist FAQPage-Schema.
+- `src/data/services.ts` → wird zu `src/data/divisions.ts` mit Schema:
+  ```ts
+  type Division = { slug: 'sicherheit'|'reinigung'|'gruenanlagen'|'facility-management';
+                    title, claim, hero, intro, seo: {title,description,keywords},
+                    services: Service[] }
+  ```
+- Bestehende Service-Einträge ziehen unter `sicherheit.services` um.
+- Neue Einträge für Reinigung (4), Grünanlagen (3), FM (3).
+- `serviceIllustrations.ts` erweitert; pro neuem Service eine isometrische WebP-Illustration im Stil der bestehenden.
+- `LeistungDetail.tsx` → `ServiceDetail.tsx`, routet `/[division]/[slug]`.
 
----
+## 6. SEO-Strategie je Hub (Semrush DE, Richtwerte)
 
-## 3. Reihenfolge der Umsetzung
+| Hub | Primär-Keyword | Sekundär |
+|---|---|---|
+| /sicherheit | Sicherheitsdienst (8.100) | Wachdienst, Sicherheitsfirma |
+| /reinigung | Gebäudereinigung (5.400) | Unterhaltsreinigung, Glasreinigung |
+| /gruenanlagen | Grünanlagenpflege (590) | Gartenpflege gewerblich, Landschaftspflege |
+| /facility-management | Facility Management (8.100) | Gebäudemanagement, FM Dienstleister |
 
-1. `index.html` entdoppeln + `LocalBusiness`/`Service`-Schema reparieren.
-2. Internes Link-/Redirect-Audit.
-3. Title/Description/H1/Intro für alle 12 Seiten nach Tabelle oben überarbeiten.
-4. Performance-Mikro-Fixes (Preload LCP, GA defer).
-5. SEO-Rescan + IndexNow-Submit.
+Vor finalem Texten: einmaliger Semrush-Lauf zur Verifikation der DE-Volumina je neuem Hub und je Sub-Service.
 
-## Hinweis
-Recherche aus dem eingebauten Semrush-Tool (Stichprobe). Wenn Sie laufendes Rank-Tracking, Wettbewerbs-Dashboards oder bulk-Keyword-Recherche direkt in der App haben möchten, ließe sich später der **Semrush-Connector** anbinden — für diese Optimierungsrunde nicht nötig.
+## 7. Technische SEO & Schema
+
+- `index.html`: Organization-Schema → `services`/`makesOffer` mit allen 4 Bereichen.
+- Pro Hub: `Service`-Schema mit korrektem `serviceType`.
+- Neue Sitemap-Einträge + Footer-Sitemap.
+- Canonicals self-reference, OG pro Hub.
+- Robots & llms.txt aktualisieren.
+- Redirect-Map dokumentieren (alte → neue URLs).
+
+## 8. Design / UI
+
+- Farbsystem bleibt (Primärblau). Keine eigenen Farben pro Säule – stattdessen pro Säule ein **Icon-Akzent** (Schild, Tropfen, Blatt, Zahnrad) und konsistente isometrische Illustrationen.
+- Header-Navigation: Top-Level wird `Sicherheit · Reinigung · Grünanlagen · Facility Management · Branchen · Kontakt`. Restliche Items (Arbeitsweise, Qualifikationen, Karriere) in Footer + sekundäre Topbar.
+- Mobile: vier Säulen als Akkordeon im Menü.
+- Keine Section-Verdopplung – pro Hub max. 6 Sektionen.
+
+## 9. Inhalt & Tone
+
+- Wording bleibt nüchtern, einsatznah.
+- Keine generischen AI-Floskeln, keine Stockfotos.
+- Cross-Selling subtil: am Ende jeder Hub-Seite ein dezenter Block „Auch von Sentinel: …" mit Verlinkung auf die anderen 3 Säulen.
+
+## 10. Umsetzungsschritte
+
+1. Datenmodell `divisions.ts` + Migrations-Mapping der bestehenden Services.
+2. Routing-Umbau in `App.tsx` (lazy Hubs + Detail-Route, Redirects über `<Navigate>`).
+3. Neue Komponenten: `DivisionHub.tsx`, `DivisionCard.tsx`, neuer Hero-Block „4-Säulen".
+4. Header/Footer-Navigation umstellen.
+5. Content für Hubs + Sub-Services (Reinigung, Grün, FM) schreiben, je Sub-Service eine Illustration generieren.
+6. SEO-Köpfe je Seite, Schema, Sitemap, robots, llms.txt.
+7. Startseite umbauen, neue Hero-Illustration.
+8. 301-Mapping + Cross-Links + interne Linkstruktur prüfen.
+9. Ahrefs/Semrush-Re-Scan + IndexNow-Submit.
+
+## Offene Punkte (in der Umsetzung zu klären)
+- Genaue Sub-Leistungen je neuer Säule final bestätigen.
+- Neuer Claim final wählen (3 Vorschläge oben).
+- Soll Veranstaltungsschutz zusätzlich als „Event Services"-Marke unter Sicherheit sichtbar werden (Top-Nav-Eintrag) oder reicht die Detailseite?
