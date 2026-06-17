@@ -1,21 +1,16 @@
-import { Building2, PartyPopper, HardHat, DoorOpen, Route, Settings } from "lucide-react";
+// Backwards-compatible re-export. Source of truth: src/data/divisions.ts
+import { divisions, type ServiceData } from "./divisions";
 
-export interface ServiceData {
-  slug: string;
-  icon: typeof Building2;
-  title: string;
-  context: string;
-  desc: string;
-  points: string[];
-  longDesc: string;
-  typicalClients: string;
-  h1: string;
-  metaTitle: string;
-  metaDescription: string;
-  faqs: { question: string; answer: string }[];
-}
+export type { ServiceData };
 
-export const services: ServiceData[] = [
+// Historically `services` contained the security offerings only. Keep the
+// same shape so existing imports keep working while we migrate.
+export const services: ServiceData[] =
+  divisions.find((d) => d.slug === "sicherheit")?.services ?? [];
+
+export const getServiceBySlug = (slug: string) => services.find((s) => s.slug === slug);
+
+const _LEGACY_SERVICES_BELOW_FOR_REFERENCE_ONLY: ServiceData[] = [
   {
     slug: "objektschutz",
     icon: Building2,
