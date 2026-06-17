@@ -1,0 +1,238 @@
+import { Link } from "react-router-dom";
+import { ArrowRight, CheckCircle, Shield, FileCheck, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import PageLayout from "@/components/layout/PageLayout";
+import PageHero from "@/components/layout/PageHero";
+import SEOHead from "@/components/SEOHead";
+import FAQSection from "@/components/sections/FAQSection";
+import {
+  BreadcrumbJsonLd,
+  FAQPageJsonLd,
+  ItemListJsonLd,
+} from "@/components/StructuredData";
+import { BASE_URL } from "@/lib/seo";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { divisions, getDivision, type DivisionSlug } from "@/data/divisions";
+import { serviceIllustrations } from "@/data/serviceIllustrations";
+
+interface Props {
+  division: DivisionSlug;
+}
+
+const trustPoints = [
+  { icon: Shield, text: "Geprüftes, eingewiesenes Personal" },
+  { icon: Users, text: "Feste Ansprechpartner" },
+  { icon: FileCheck, text: "Dokumentierte Leistung" },
+];
+
+const hubFaqs = [
+  {
+    question: "Können Sie mehrere Leistungen meines Objekts übernehmen?",
+    answer:
+      "Ja. Unsere vier Bereiche – Sicherheit, Reinigung, Grünanlagen und Facility Management – lassen sich beliebig kombinieren. Sie haben einen Ansprechpartner statt mehrerer Dienstleister.",
+  },
+  {
+    question: "Wie schnell erhalte ich ein Angebot?",
+    answer:
+      "Nach einer kurzen Bedarfsaufnahme erstellen wir ein transparentes, schriftliches Angebot mit klaren Leistungsbausteinen.",
+  },
+  {
+    question: "Wo sind Sie tätig?",
+    answer:
+      "Wir arbeiten bundesweit. Eine Bedarfsanalyse klärt schnell, ob und in welcher Form ein Einsatz in Ihrer Region sinnvoll ist.",
+  },
+];
+
+const DivisionHub = ({ division: slug }: Props) => {
+  const division = getDivision(slug);
+  const ref = useScrollAnimation();
+  const ref2 = useScrollAnimation();
+
+  if (!division) return null;
+
+  const others = divisions.filter((d) => d.slug !== slug);
+
+  return (
+    <PageLayout>
+      <SEOHead
+        title={division.metaTitle}
+        description={division.metaDescription}
+        keywords={division.keywords}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Startseite", url: `${BASE_URL}/` },
+          { name: division.title, url: `${BASE_URL}/${division.slug}` },
+        ]}
+      />
+      <ItemListJsonLd
+        items={division.services.map((s) => ({
+          name: s.title,
+          description: s.desc,
+          url: `${BASE_URL}/${division.slug}/${s.slug}`,
+        }))}
+      />
+      <FAQPageJsonLd faqs={hubFaqs} />
+
+      <PageHero
+        badge={division.shortLabel}
+        title={division.h1}
+        subtitle={division.intro}
+      />
+
+      {/* Trust row */}
+      <section
+        className="section-light border-b"
+        style={{ borderColor: "hsl(var(--section-light-border))" }}
+      >
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
+          <div className="grid gap-4 sm:grid-cols-3">
+            {trustPoints.map(({ icon: Icon, text }) => (
+              <div
+                key={text}
+                className="flex items-center gap-3 rounded-xl p-4"
+                style={{ background: "hsl(205 90% 55% / 0.05)" }}
+              >
+                <Icon className="h-5 w-5 text-primary shrink-0" />
+                <span
+                  className="text-sm font-medium"
+                  style={{ color: "hsl(var(--section-light-fg))" }}
+                >
+                  {text}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="section-light">
+        <div
+          ref={ref}
+          className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24"
+        >
+          <div className="max-w-3xl mb-10">
+            <h2
+              className="text-2xl font-bold sm:text-3xl mb-4"
+              style={{ color: "hsl(var(--section-light-fg))" }}
+            >
+              Leistungen im Bereich {division.shortLabel}
+            </h2>
+            <p className="text-base leading-relaxed text-muted-fg">{division.intro}</p>
+          </div>
+
+          <div className="stagger-children grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {division.services.map(({ slug: sSlug, icon: Icon, title, context, desc, points }) => (
+              <Link
+                key={sSlug}
+                to={`/${division.slug}/${sSlug}`}
+                className="card-accent group rounded-xl border p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col"
+                style={{
+                  background: "hsl(var(--section-light-card))",
+                  borderColor: "hsl(var(--section-light-border))",
+                }}
+              >
+                {serviceIllustrations[sSlug] ? (
+                  <img
+                    src={serviceIllustrations[sSlug]}
+                    alt={title}
+                    className="h-28 w-auto object-contain mb-4 -ml-2"
+                    loading="lazy"
+                    width={112}
+                    height={112}
+                  />
+                ) : (
+                  <div
+                    className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl"
+                    style={{ background: "hsl(205 90% 55% / 0.1)" }}
+                  >
+                    <Icon className="h-6 w-6 text-primary" />
+                  </div>
+                )}
+                <h3
+                  className="text-lg font-bold"
+                  style={{ color: "hsl(var(--section-light-fg))" }}
+                >
+                  {title}
+                </h3>
+                <p className="mt-1 text-xs font-semibold text-primary">{context}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-fg flex-1">{desc}</p>
+                <ul className="mt-4 space-y-1.5">
+                  {points.slice(0, 3).map((p) => (
+                    <li
+                      key={p}
+                      className="flex items-center gap-2 text-xs text-muted-fg"
+                    >
+                      <CheckCircle className="h-3 w-3 text-primary shrink-0" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  Mehr erfahren <ArrowRight className="h-3.5 w-3.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section
+        ref={ref2}
+        className="fade-in-section section-light border-t"
+        style={{ borderColor: "hsl(var(--section-light-border))" }}
+      >
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 text-center">
+          <h2
+            className="text-2xl font-bold sm:text-3xl mb-4"
+            style={{ color: "hsl(var(--section-light-fg))" }}
+          >
+            Bedarf im Bereich {division.shortLabel}?
+          </h2>
+          <p className="text-muted-fg max-w-xl mx-auto mb-8">
+            Beschreiben Sie Ihr Objekt – wir melden uns mit einem passenden Konzept und transparentem Angebot.
+          </p>
+          <Button asChild size="lg">
+            <Link to="/kontakt">
+              Anfrage stellen
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Cross-Selling */}
+      <section className="bg-background border-t border-border/50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
+          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3 text-center">
+            Auch von Sentinel
+          </p>
+          <h2 className="text-xl font-bold text-foreground text-center mb-8">
+            Ein Anbieter – weniger Schnittstellen
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {others.map(({ slug: oSlug, icon: OIcon, title, claim }) => (
+              <Link
+                key={oSlug}
+                to={`/${oSlug}`}
+                className="group rounded-xl border border-border/50 p-5 transition-all hover:border-primary/40 hover:shadow-md"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <OIcon className="h-5 w-5 text-primary" />
+                  <span className="text-sm font-bold text-foreground">{title}</span>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">{claim}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FAQSection faqs={hubFaqs} title={`Häufige Fragen – ${division.shortLabel}`} />
+    </PageLayout>
+  );
+};
+
+export default DivisionHub;
