@@ -8,8 +8,16 @@ import FAQSection from "@/components/sections/FAQSection";
 import { ServiceJsonLd, FAQPageJsonLd, BreadcrumbJsonLd } from "@/components/StructuredData";
 import { BASE_URL } from "@/lib/seo";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { getServiceBySlug, services } from "@/data/services";
+import {
+  getDivision,
+  getDivisionAndService,
+  type DivisionSlug,
+} from "@/data/divisions";
 import { serviceIllustrations } from "@/data/serviceIllustrations";
+
+interface Props {
+  division: DivisionSlug;
+}
 
 const trustItems = [
   { icon: Shield, text: "§34a GewO – geprüftes Personal" },
@@ -25,16 +33,21 @@ const processSteps = [
   { icon: FileCheck, title: "Reporting", desc: "Laufende Dokumentation und regelmäßige Berichte" },
 ];
 
-const LeistungDetail = () => {
+const ServiceDetail = ({ division: divisionSlug }: Props) => {
   const { slug } = useParams<{ slug: string }>();
-  const service = getServiceBySlug(slug || "");
-
-  if (!service) return <Navigate to="/leistungen" replace />;
-
-  const { icon: Icon, title, h1, metaTitle, metaDescription, longDesc, typicalClients, points, context, faqs } = service;
   const ref = useScrollAnimation();
   const ref2 = useScrollAnimation();
   const ref3 = useScrollAnimation();
+
+  const division = getDivision(divisionSlug);
+  const pair = getDivisionAndService(divisionSlug, slug || "");
+  if (!division) return <Navigate to="/" replace />;
+  if (!pair) return <Navigate to={`/${division.slug}`} replace />;
+
+  const { service } = pair;
+  const { icon: Icon, title, h1, metaTitle, metaDescription, longDesc, typicalClients, points, context, faqs } = service;
+  const detailUrl = `${BASE_URL}/${division.slug}/${slug}`;
+  const siblings = division.services.filter((s) => s.slug !== slug);
 
   return (
     <PageLayout>
@@ -42,19 +55,19 @@ const LeistungDetail = () => {
       <ServiceJsonLd
         name={title}
         description={metaDescription}
-        url={`${BASE_URL}/leistungen/${slug}`}
+        url={detailUrl}
       />
       <FAQPageJsonLd faqs={faqs} />
       <BreadcrumbJsonLd
         items={[
           { name: "Startseite", url: `${BASE_URL}/` },
-          { name: "Leistungen", url: `${BASE_URL}/leistungen` },
-          { name: title, url: `${BASE_URL}/leistungen/${slug}` },
+          { name: division.title, url: `${BASE_URL}/${division.slug}` },
+          { name: title, url: detailUrl },
         ]}
       />
 
       <PageHero
-        backLink={{ label: "Alle Leistungen", href: "/leistungen" }}
+        backLink={{ label: division.title, href: `/${division.slug}` }}
         title={h1}
         subtitle={context}
         illustration={serviceIllustrations[slug || ""]}
@@ -97,26 +110,6 @@ const LeistungDetail = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              {/* Why this matters section */}
-              <div
-                className="rounded-xl p-6"
-                style={{ background: "hsl(42 80% 55% / 0.06)", border: "1px solid hsl(42 80% 55% / 0.15)" }}
-              >
-                <div className="flex items-start gap-3">
-                  <AlertTriangle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="text-sm font-bold mb-2" style={{ color: "hsl(var(--section-light-fg))" }}>
-                      Warum professionelle Sicherheit wichtig ist
-                    </h3>
-                    <p className="text-sm leading-relaxed text-muted-fg">
-                      Ungesicherte Objekte und Events sind ein Risiko – nicht nur materiell, sondern auch rechtlich. 
-                      Mit einem professionellen Sicherheitsdienstleister minimieren Sie Haftungsrisiken, schützen Ihre 
-                      Vermögenswerte und schaffen ein sicheres Umfeld für Mitarbeiter, Gäste und Besucher.
-                    </p>
-                  </div>
-                </div>
               </div>
 
               <div className="flex flex-wrap gap-3">
@@ -203,15 +196,13 @@ const LeistungDetail = () => {
       <section ref={ref3} className="fade-in-section section-light border-t" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
           <h2 className="text-lg font-bold mb-6" style={{ color: "hsl(var(--section-light-fg))" }}>
-            Weitere Leistungen entdecken
+            Weitere Leistungen aus {division.title}
           </h2>
           <div className="grid gap-4 grid-cols-2 sm:grid-cols-5">
-            {services
-              .filter((s) => s.slug !== slug)
-              .map((s) => (
+            {siblings.map((s) => (
                 <Link
                   key={s.slug}
-                  to={`/leistungen/${s.slug}`}
+                  to={`/${division.slug}/${s.slug}`}
                   className="group rounded-xl border p-4 text-center transition-all hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5"
                   style={{ borderColor: "hsl(var(--section-light-border))", background: "hsl(var(--section-light-card))" }}
                 >
@@ -226,4 +217,4 @@ const LeistungDetail = () => {
   );
 };
 
-export default LeistungDetail;
+export default ServiceDetail;
