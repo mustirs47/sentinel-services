@@ -345,7 +345,7 @@ const KontaktPage = () => {
           </div>
           <div className="stagger-children grid gap-4 sm:grid-cols-3">
             {[
-              { title: "Unsere Leistungen", desc: "6 Sicherheitsdienstleistungen im Überblick", href: "/leistungen" },
+              { title: "Unsere Bereiche", desc: "Sicherheit, Reinigung, Grünanlagen, Facility Management", href: "/#leistungen" },
               { title: "Qualifikationen", desc: "Nachweise und Zertifizierungen unseres Personals", href: "/qualifikationen" },
               { title: "Arbeitsweise", desc: "Unser strukturierter 4-Phasen-Prozess", href: "/arbeitsweise" },
             ].map(({ title, desc, href }) => (
