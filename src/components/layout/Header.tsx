@@ -6,11 +6,11 @@ import MobileMenu from "./MobileMenu";
 import logoColor from "@/assets/logo-color.png";
 
 const navItems = [
-  { label: "Leistungen", href: "/leistungen" },
+  { label: "Sicherheit", href: "/sicherheit" },
+  { label: "Reinigung", href: "/reinigung" },
+  { label: "Grünanlagen", href: "/gruenanlagen" },
+  { label: "Facility", href: "/facility-management" },
   { label: "Branchen", href: "/branchen" },
-  { label: "Arbeitsweise", href: "/arbeitsweise" },
-  { label: "Qualifikationen", href: "/qualifikationen" },
-  { label: "Karriere", href: "/karriere" },
   { label: "Kontakt", href: "/kontakt" },
 ];
 

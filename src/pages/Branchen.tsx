@@ -152,7 +152,7 @@ const BranchenPage = () => {
                         return (
                           <Link
                             key={rs}
-                            to={`/leistungen/${rs}`}
+                            to={`/sicherheit/${rs}`}
                             className="rounded-md px-2.5 py-1 text-xs font-medium transition-colors hover:text-primary hover:border-primary/40"
                             style={{
                               border: "1px solid hsl(var(--section-light-border))",

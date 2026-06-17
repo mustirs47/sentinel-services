@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, FileCheck, Users, ChevronRight } from "lucide-react";
+import { ArrowRight, Shield, FileCheck, Users, ChevronRight, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.webp";
 import heroIllustration from "@/assets/illustrations/hero-security.webp";
 
 const trustSignals = [
   { icon: Shield, text: "§34a GewO zugelassen" },
-  { icon: FileCheck, text: "Dokumentierte Einsätze" },
+  { icon: FileCheck, text: "Dokumentierte Leistung" },
   { icon: Users, text: "Feste Ansprechpartner" },
+  { icon: Building2, text: "Vier Bereiche – ein Anbieter" },
 ];
 
 const HeroSection = () => (
@@ -35,16 +36,16 @@ const HeroSection = () => (
         <div className="max-w-2xl flex-1">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary mb-5">
             <Shield className="h-3 w-3" />
-            Sicherheitsdienst · bundesweit
+            Sicherheit · Reinigung · Grünanlagen · Facility Management
           </span>
           <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl break-words hyphens-auto" style={{ lineHeight: 1.15 }}>
-            Sicherheitsdienst &amp; Wachdienst, der im{" "}
-            <span className="text-primary">Einsatz</span> funktioniert.
+            Schutz, Sauberkeit und{" "}
+            <span className="text-primary">Werterhalt</span> für Ihr Objekt.
           </h1>
 
           <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg max-w-xl">
-            Sicherheitsfirma für Objektschutz, Veranstaltungsschutz und Baustellenbewachung –
-            mit §34a-geprüftem Personal, fester Einsatzleitung und lückenloser Dokumentation.
+            Sicherheitsdienst, Gebäudereinigung, Grünanlagenpflege und Facility Management –
+            aus einer Hand, mit eingewiesenem Personal, fester Ansprechperson und dokumentierter Leistung.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -55,8 +56,8 @@ const HeroSection = () => (
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link to="/leistungen">
-                Leistungen ansehen
+              <Link to="#leistungen">
+                Bereiche ansehen
                 <ChevronRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>

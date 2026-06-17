@@ -3,7 +3,7 @@ import SEOHead from "@/components/SEOHead";
 import { LocalBusinessJsonLd } from "@/components/StructuredData";
 import HeroSection from "@/components/sections/HeroSection";
 import TrustBar from "@/components/sections/TrustBar";
-import ServicesSection from "@/components/sections/ServicesSection";
+import PillarsSection from "@/components/sections/PillarsSection";
 import IndustriesSection from "@/components/sections/IndustriesSection";
 import WhyUsSection from "@/components/sections/WhyUsSection";
 import ReferencesSection from "@/components/sections/ReferencesSection";
@@ -13,14 +13,14 @@ import FAQSection from "@/components/sections/FAQSection";
 const Index = () => (
   <PageLayout>
     <SEOHead
-      title="Sicherheitsdienst & Wachdienst bundesweit | Sentinel Services"
-      description="Sicherheitsdienst & Sicherheitsfirma für Objektschutz, Veranstaltungsschutz, Baustellenbewachung und Empfangsdienst. §34a-geprüfter Wachdienst, bundesweit einsatzbereit."
-      keywords="Sicherheitsdienst, Sicherheitsfirma, Wachdienst, Objektschutz, Werkschutz, Veranstaltungsschutz, Eventsecurity, Baustellenbewachung, Brandwache, Empfangsdienst, Pfortendienst, Revierdienst, Sicherheitskonzept, §34a, bundesweit"
+      title="Sentinel Services – Sicherheit, Reinigung, Grünanlagen & Facility Management"
+      description="Sicherheitsdienst, Gebäudereinigung, Grünanlagenpflege und Facility Management aus einer Hand. Geprüftes Personal, feste Ansprechpartner, dokumentierte Leistung."
+      keywords="Sicherheitsdienst, Gebäudereinigung, Grünanlagenpflege, Facility Management, Objektbetreuung, Wachdienst, Fensterreinigung, Winterdienst, FM Dienstleister"
     />
     <LocalBusinessJsonLd />
     <HeroSection />
     <TrustBar />
-    <ServicesSection />
+    <PillarsSection />
     <WhyUsSection />
     <IndustriesSection />
     <ReferencesSection />
