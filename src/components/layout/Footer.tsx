@@ -2,8 +2,14 @@ import { Link } from "react-router-dom";
 import logoGrayscale from "@/assets/logo-grayscale.png";
 import { reopenCookieSettings } from "@/components/CookieBanner";
 
-const footerNav = [
-  { label: "Leistungen", href: "/leistungen" },
+const bereiche = [
+  { label: "Sicherheit & Bewachung", href: "/sicherheit" },
+  { label: "Gebäudereinigung", href: "/reinigung" },
+  { label: "Garten & Grünanlagen", href: "/gruenanlagen" },
+  { label: "Facility Management", href: "/facility-management" },
+];
+
+const unternehmenNav = [
   { label: "Branchen", href: "/branchen" },
   { label: "Arbeitsweise", href: "/arbeitsweise" },
   { label: "Qualifikationen", href: "/qualifikationen" },
@@ -19,7 +25,7 @@ const legalNav = [
 const Footer = () => (
   <footer className="bg-background border-t border-border/50">
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/">
             <img
@@ -33,7 +39,7 @@ const Footer = () => (
             />
           </Link>
           <p className="text-sm leading-relaxed text-muted-foreground max-w-xs">
-            Professioneller Sicherheitsdienst mit Struktur, Verlässlichkeit und qualifiziertem Personal.
+            Sicherheit, Reinigung, Grünanlagen und Facility Management – aus einer Hand, mit eingewiesenem Personal und dokumentierter Leistung.
           </p>
           <p className="mt-3 text-xs text-muted-foreground/60">
             Einsatzgebiet: Bundesweit
@@ -41,9 +47,22 @@ const Footer = () => (
         </div>
 
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Navigation</h4>
+          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Bereiche</h4>
           <ul className="space-y-2">
-            {footerNav.map((item) => (
+            {bereiche.map((item) => (
+              <li key={item.href}>
+                <Link to={item.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Unternehmen</h4>
+          <ul className="space-y-2">
+            {unternehmenNav.map((item) => (
               <li key={item.href}>
                 <Link to={item.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
                   {item.label}
