@@ -1,13 +1,14 @@
 import { Helmet } from "react-helmet-async";
-import { services } from "@/data/services";
+import { divisions, allServices } from "@/data/divisions";
 import { BASE_URL } from "@/lib/seo";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "SecurityService",
+  "@type": ["Organization", "LocalBusiness"],
   "@id": `${BASE_URL}/#organization`,
   name: "Sentinel Services",
-  description: "Professioneller Sicherheitsdienst – Objektschutz, Veranstaltungsschutz, Baustellenbewachung & individuelle Sicherheitskonzepte. §34a-zugelassen, bundesweit einsatzbereit.",
+  description:
+    "Sentinel Services bietet Sicherheit & Bewachung, Gebäudereinigung, Garten- und Grünanlagenpflege sowie Facility Management aus einer Hand – bundesweit einsatzbereit.",
   url: BASE_URL,
   logo: `${BASE_URL}/logo.png`,
   image: `${BASE_URL}/logo.png`,
@@ -34,15 +35,20 @@ const localBusinessSchema = {
   priceRange: "€€",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Sicherheitsdienstleistungen",
-    itemListElement: services.map((s) => ({
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: s.title,
-        description: s.desc,
-        url: `${BASE_URL}/leistungen/${s.slug}`,
-      },
+    name: "Objektbezogene Dienstleistungen",
+    itemListElement: divisions.map((d) => ({
+      "@type": "OfferCatalog",
+      name: d.title,
+      url: `${BASE_URL}/${d.slug}`,
+      itemListElement: d.services.map((s) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: s.title,
+          description: s.desc,
+          url: `${BASE_URL}/${d.slug}/${s.slug}`,
+        },
+      })),
     })),
   },
 };
@@ -105,7 +111,7 @@ export const ServiceJsonLd = ({ name, description, url }: { name: string; descri
     description,
     url,
     provider: {
-      "@type": "SecurityService",
+      "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
       name: "Sentinel Services",
       url: BASE_URL,
@@ -133,6 +139,9 @@ export const ServiceJsonLd = ({ name, description, url }: { name: string; descri
     </Helmet>
   );
 };
+
+// Suppress unused-import warning – kept for future use.
+void allServices;
 
 export const ItemListJsonLd = ({
   items,
