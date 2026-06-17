@@ -1,29 +1,22 @@
 # Sentinel Services
 
-> Sicherheitsdienst aus Magdeburg, bundesweit einsatzbereit. §34a-zertifiziert, feste Ansprechpartner, kurze Reaktionszeiten.
+> Objektbezogene Dienstleistungen aus einer Hand: Sicherheit & Bewachung, Gebäudereinigung, Garten- & Grünanlagenpflege sowie Facility Management. Bundesweit einsatzbereit.
 
-Sentinel Service (Inh. Tim Fitzlaff) bietet Objektschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangs- und Pfortendienst, Kontroll- und Streifendienst sowie individuelle Sicherheitskonzepte für Gewerbe, Industrie, Handel, Events, Hotellerie, Wohnanlagen und Behörden.
+Sentinel Services (Inhaber Tim Fitzlaff, Magdeburg) bietet vier eigenständige Geschäftsbereiche an, die einzeln gebucht oder als integrierte Objektbetreuung kombiniert werden können. Im Bereich Sicherheit arbeitet das Unternehmen mit §34a-geprüftem Personal.
 
-## Pages
+## Geschäftsbereiche
 
-- [Startseite](/): Überblick über Leistungen, Branchen und Kontakt.
-- [Leistungen](/leistungen): Sechs Sicherheitsleistungen im Überblick.
-- [Branchen](/branchen): Sicherheitslösungen nach Branche.
-- [Qualifikationen](/qualifikationen): §34a, Sachkunde, Erste Hilfe, Brandschutz, Deeskalation.
+- [Sicherheit & Bewachung](/sicherheit): Sicherheitsdienst und Wachdienst – Objektschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangsdienst, Streifendienst, Sicherheitskonzepte.
+- [Gebäudereinigung](/reinigung): Unterhaltsreinigung, Glas- und Fensterreinigung, Grundreinigung, Bauschluss- und Sonderreinigung.
+- [Garten & Grünanlagen](/gruenanlagen): Grünanlagenpflege, Baumpflege & Baumkontrolle, Winterdienst.
+- [Facility Management](/facility-management): Technisches, infrastrukturelles und kaufmännisches FM.
+
+## Weitere Seiten
+
+- [Branchen](/branchen): Lösungen nach Branche.
 - [Arbeitsweise](/arbeitsweise): Vier Phasen vom Erstkontakt bis zum Reporting.
+- [Qualifikationen](/qualifikationen): §34a, Sachkunde, Erste Hilfe, Brandschutz, Deeskalation.
 - [Karriere](/karriere): Offene Stellen und Anforderungen.
 - [Kontakt](/kontakt): Anfragen per Formular oder E-Mail.
-
-## Leistungen
-
-- [Objektschutz](/leistungen/objektschutz): Stationärer Schutz von Gebäuden und Arealen.
-- [Veranstaltungsschutz](/leistungen/veranstaltungsschutz): Einlass, Ordner- und Sicherheitsdienst bei Events.
-- [Baustellenbewachung](/leistungen/baustellenbewachung): Schutz von Baustellen, Material und Maschinen.
-- [Empfangs- und Pfortendienst](/leistungen/empfangs-und-pfortendienst): Empfang, Zutrittskontrolle, Besuchermanagement.
-- [Kontroll- und Streifendienst](/leistungen/kontroll-und-streifendienst): Mobile Kontrollen und Revieren.
-- [Sicherheitskonzepte](/leistungen/sicherheitskonzepte): Individuelle Konzepte nach Risikoanalyse.
-
-## Optional
-
-- [Impressum](/impressum): Pflichtangaben nach § 5 TMG.
-- [Datenschutz](/datenschutz): Hinweise nach DSGVO.
+- [Impressum](/impressum)
+- [Datenschutz](/datenschutz)
