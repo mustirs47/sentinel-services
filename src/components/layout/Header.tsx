@@ -34,14 +34,14 @@ const Header = () => {
             : "border-transparent bg-background/80 backdrop-blur-sm"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
-          <Link to="/" className="flex items-center min-w-0">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6 sm:py-3">
+          <Link to="/" className="flex items-center min-w-0 shrink-0" aria-label="Sentinel Services – Startseite">
             <img
               src={logoColor}
               alt="Sentinel Services"
-              className="h-7 sm:h-9 w-auto"
-              width={500}
-              height={62}
+              className="h-10 sm:h-12 lg:h-14 w-auto"
+              width={800}
+              height={800}
               fetchPriority="high"
               decoding="async"
             />
