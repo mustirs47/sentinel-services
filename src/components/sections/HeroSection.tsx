@@ -31,19 +31,19 @@ const HeroSection = () => (
       />
     </div>
 
-    <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
-      <div className="flex items-center gap-8 lg:gap-16">
-        <div className="max-w-2xl flex-1">
+    <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24 xl:py-28">
+      <div className="flex items-center gap-8 lg:gap-16 xl:gap-24">
+        <div className="max-w-2xl xl:max-w-3xl flex-1">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary mb-5">
             <Building2 className="h-3 w-3" />
             Reinigung · Facility · Grünanlagen · Sicherheit
           </span>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl break-words hyphens-auto" style={{ lineHeight: 1.15 }}>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[4.25rem] break-words hyphens-auto" style={{ lineHeight: 1.1 }}>
             Schutz, Sauberkeit und{" "}
             <span className="text-primary">Werterhalt</span> für Ihr Objekt.
           </h1>
 
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg max-w-xl">
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg lg:text-xl xl:text-[1.375rem] max-w-xl xl:max-w-2xl">
             Gebäudereinigung, Facility Management, Grünanlagenpflege und Sicherheitsdienst –
             aus einer Hand, mit eingewiesenem Personal, fester Ansprechperson und dokumentierter Leistung.
           </p>
@@ -69,7 +69,7 @@ const HeroSection = () => (
           <img
             src={heroIllustration}
             alt="Isometrische Darstellung: Objektbetreuung mit Reinigung, Pflege und Sicherheit"
-            className="w-72 xl:w-96 h-auto drop-shadow-2xl"
+            className="w-72 xl:w-[26rem] 2xl:w-[32rem] h-auto drop-shadow-2xl"
             width={384}
             height={288}
           />
