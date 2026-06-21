@@ -38,12 +38,12 @@ const Header = () => {
             : "border-transparent bg-background/80 backdrop-blur-sm"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6 sm:py-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6 sm:py-3 lg:py-4">
           <Link to="/" className="flex items-center min-w-0 shrink-0" aria-label="Sentinel Services – Startseite">
             <img
               src={logoColor}
               alt="Sentinel Services"
-              className="h-7 sm:h-8 lg:h-9 w-auto"
+              className="h-7 sm:h-8 lg:h-10 xl:h-11 w-auto"
               width={776}
               height={94}
               fetchPriority="high"
@@ -55,7 +55,7 @@ const Header = () => {
             <Popover>
               <PopoverTrigger asChild>
                 <button
-                  className={`inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                  className={`inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm xl:text-[15px] font-medium transition-colors hover:text-primary ${
                     divisionPathPrefixes.some((p) => location.pathname.startsWith(p))
                       ? "text-primary"
                       : "text-muted-foreground"
