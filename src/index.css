@@ -76,21 +76,26 @@
   body {
     @apply bg-background text-foreground;
     overflow-x: clip;
-    font-size: 16px;
     line-height: 1.55;
   }
 
   html {
     scroll-behavior: smooth;
     overflow-x: clip;
+    font-size: 16px;
   }
 
-  /* Progressive base type scaling for large displays */
+  /* Progressive base type scaling for large displays.
+     Scaling html (not body) makes every rem-based Tailwind size
+     (text-sm, text-base, text-4xl …) grow on wide screens. */
   @media (min-width: 1280px) {
-    body { font-size: 17px; }
+    html { font-size: 16.5px; }
   }
   @media (min-width: 1536px) {
-    body { font-size: 18px; }
+    html { font-size: 17px; }
+  }
+  @media (min-width: 1800px) {
+    html { font-size: 17.5px; }
   }
 
   h1, h2, h3, h4 {
