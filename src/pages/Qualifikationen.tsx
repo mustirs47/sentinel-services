@@ -79,9 +79,9 @@ const QualifikationenPage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Sachkundeprüfung §34a & Qualifikationen | Sentinel Services"
-        description="Sachkundeprüfung §34a GewO, Erste-Hilfe, Brandschutzhelfer, Deeskalation: alle Qualifikationen unseres Sicherheitspersonals – mit Erklärung, was §34a für Auftraggeber bedeutet."
-        keywords="Sachkundeprüfung 34a, §34a GewO, Sicherheitsmitarbeiter Qualifikation, IHK Unterrichtung, geprüfte Schutz- und Sicherheitskraft"
+        title="Qualifikationen & Nachweise unseres Personals | Sentinel Services"
+        description="Qualifikationen je Bereich: Reinigung (DIN 13549, Hygiene), Grünpflege (FLL, Baumkontrolle), Facility Management sowie Sicherheit (§34a GewO, IHK). Geprüftes, eingewiesenes Fachpersonal."
+        keywords="Gebäudereinigung Qualifikation, FLL Baumpflege, Facility Management Nachweise, Sachkundeprüfung 34a, §34a GewO, Fachpersonal Objektbetreuung"
       />
       <BreadcrumbJsonLd
         items={[
@@ -92,15 +92,15 @@ const QualifikationenPage = () => {
       <WebPageJsonLd
         type="AboutPage"
         name="Qualifikationen und Nachweise – Sentinel Services"
-        description="Übersicht über die rechtlichen, fachlichen und betrieblichen Qualifikationen unseres Sicherheitspersonals."
+        description="Rechtliche, fachliche und betriebliche Qualifikationen unseres Personals in Reinigung, Facility Management, Grünpflege und Sicherheit."
         url={`${BASE_URL}/qualifikationen`}
       />
       <FAQPageJsonLd faqs={qualFaqs} />
 
       <PageHero
         badge="Qualifikationen"
-        title="Sachkundeprüfung §34a & Qualifikationen unseres Personals"
-        subtitle="Welche §34a-Nachweise, Schulungen und Zusatzqualifikationen unsere Einsatzkräfte mitbringen – und was das für Sie als Auftraggeber konkret bedeutet."
+        title="Qualifikationen & Nachweise unseres Personals"
+        subtitle="Welche Nachweise, Schulungen und Zusatzqualifikationen unsere Einsatzkräfte in Reinigung, Pflege, Facility Management und Sicherheit mitbringen – und was das für Sie als Auftraggeber konkret bedeutet."
         illustration={teamIllustration}
       />
 
@@ -136,10 +136,10 @@ const QualifikationenPage = () => {
               Warum Qualifikation zählt
             </h2>
             <p className="text-base leading-relaxed text-muted-fg">
-              Im Sicherheitsgewerbe entscheidet die Qualifikation des Personals über die Qualität der Leistung – und über 
-              Ihr Haftungsrisiko als Auftraggeber. Wir investieren kontinuierlich in die Aus- und Weiterbildung unserer 
-              Einsatzkräfte und setzen ausschließlich §34a-geprüftes Personal ein. Jeder Nachweis ist dokumentiert, 
-              jede Schulung wird regelmäßig aufgefrischt.
+              Ob Hygienestandard in der Unterhaltsreinigung, FLL-konforme Baumkontrolle, Betreiberpflichten im Facility 
+              Management oder §34a-geprüfter Sicherheitsdienst – die Qualifikation des Personals entscheidet über Qualität, 
+              Ergebnis und Ihr Haftungsrisiko als Auftraggeber. Wir investieren kontinuierlich in Aus- und Weiterbildung, 
+              dokumentieren jeden Nachweis und frischen jede Schulung regelmäßig auf.
             </p>
           </div>
         </div>
@@ -261,7 +261,7 @@ const QualifikationenPage = () => {
             Überzeugt von unserer Qualifikation?
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-            Stellen Sie Ihre Anfrage – wir zeigen Ihnen, wie wir Ihre Sicherheitsanforderungen konkret umsetzen.
+            Stellen Sie Ihre Anfrage – wir zeigen Ihnen, wie wir Ihre Anforderungen in Reinigung, Pflege, Facility Management oder Sicherheit konkret umsetzen.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild size="lg">

@@ -12,28 +12,28 @@ import teamIllustration from "@/assets/illustrations/team-qualifikationen.webp";
 
 const requirements = [
   "Mindestalter 18 Jahre",
-  "Sachkundeprüfung nach §34a GewO (oder Bereitschaft zur Absolvierung)",
+  "Fachliche Qualifikation oder Bereitschaft zur Weiterbildung (z. B. Gebäudereinigung, Garten- und Landschaftspflege, §34a GewO für Sicherheit)",
   "Einwandfreies Führungszeugnis",
   "Gute Deutschkenntnisse in Wort und Schrift",
   "Zuverlässigkeit, Pünktlichkeit, professionelles Auftreten",
-  "Bereitschaft zu Schicht-, Nacht- und Wochenendarbeit",
+  "Bereitschaft zu Schicht-, Früh- oder Wochenendarbeit – je nach Bereich",
 ];
 
 const benefits = [
-  "Einsätze in verschiedenen Bereichen: Objekt, Event, Empfang, Revier",
-  "Feste Ansprechpartner und strukturierte Einarbeitung",
-  "Regelmäßige Weiterbildung: Deeskalation, Brandschutz, Erste Hilfe",
+  "Einsätze in vier Bereichen: Reinigung, Facility, Grünanlagen, Sicherheit",
+  "Feste Ansprechpartner und strukturierte Einarbeitung am Objekt",
+  "Regelmäßige Weiterbildung – fachlich, sicherheitstechnisch, gesundheitlich",
   "Langfristige Einsatzplanung statt kurzfristiger Abrufarbeit",
   "Faire Vergütung und transparente Arbeitsbedingungen",
-  "Aufstiegsmöglichkeiten zur Einsatzleitung",
+  "Aufstiegsmöglichkeiten zur Objekt- oder Einsatzleitung",
 ];
 
 const fields = [
-  "Objektschutz & Gebäudebewachung",
-  "Veranstaltungsschutz & Einlass",
-  "Baustellenbewachung",
-  "Empfangs- & Pfortendienste",
-  "Kontroll- & Streifendienste",
+  "Unterhalts-, Glas- und Sonderreinigung",
+  "Facility Management & Hausmeisterdienste",
+  "Garten-, Grünanlagen- und Winterdienst",
+  "Objektschutz, Empfang und Streifendienst",
+  "Veranstaltungs- und Baustellenschutz",
   "Individuelle Sondereinsätze",
 ];
 
@@ -44,18 +44,18 @@ const steps = [
 ];
 
 const whyUs = [
-  { icon: Shield, title: "Seriöser Arbeitgeber", desc: "§34a-zugelassen, feste Verträge, transparente Bedingungen. Kein Subunternehmertum." },
-  { icon: HeartPulse, title: "Regelmäßige Schulungen", desc: "Deeskalation, Erste Hilfe, Brandschutz und mehr – wir investieren in Ihre Qualifikation." },
-  { icon: CalendarCheck, title: "Planbare Einsätze", desc: "Langfristige Einsatzplanung, feste Schichten, kein ständiges Hin und Her." },
+  { icon: Shield, title: "Seriöser Arbeitgeber", desc: "Feste Verträge, transparente Bedingungen, keine Subunternehmer-Ketten – in allen vier Geschäftsbereichen." },
+  { icon: HeartPulse, title: "Regelmäßige Schulungen", desc: "Fachliche Weiterbildung, Arbeitssicherheit, Erste Hilfe und Brandschutz – wir investieren in Ihre Qualifikation." },
+  { icon: CalendarCheck, title: "Planbare Einsätze", desc: "Langfristige Planung, feste Touren oder Schichten, kein ständiges Hin und Her." },
   { icon: Star, title: "Wertschätzung", desc: "Ihre Arbeit ist wichtig – und wird bei uns auch so behandelt. Feste Ansprechpartner, offenes Ohr." },
 ];
 
 const careerFaqs = [
-  { question: "Brauche ich die §34a-Sachkundeprüfung, um mich zu bewerben?", answer: "Die Sachkundeprüfung ist Voraussetzung für viele Einsätze. Wenn Sie sie noch nicht haben, aber bereit sind, sie zu absolvieren, können Sie sich trotzdem bewerben – wir unterstützen Sie dabei." },
+  { question: "Brauche ich eine bestimmte Qualifikation, um mich zu bewerben?", answer: "Je nach Bereich: In der Reinigung und Grünpflege zählt Erfahrung oder Lernbereitschaft, im Sicherheitsdienst ist die §34a-Sachkundeprüfung Voraussetzung. Wenn Sie sie noch nicht haben, aber bereit sind, sie zu absolvieren, unterstützen wir Sie dabei." },
   { question: "In welchen Regionen setzen Sie Personal ein?", answer: "Wir sind bundesweit tätig. Die konkreten Einsatzorte werden im Bewerbungsgespräch besprochen." },
   { question: "Wie läuft die Einarbeitung ab?", answer: "Jede neue Einsatzkraft erhält eine strukturierte Einarbeitung: objektspezifisches Briefing, Vorstellung der Abläufe und Meldeketten sowie Begleitung durch erfahrene Kollegen in den ersten Einsätzen." },
-  { question: "Gibt es auch Teilzeit- oder Nebenjob-Möglichkeiten?", answer: "Ja, wir bieten verschiedene Arbeitszeitmodelle an – von Vollzeit über Teilzeit bis hin zu flexiblen Einsatzmodellen für Nacht- und Wochenenddienste." },
-  { question: "Welche Aufstiegsmöglichkeiten gibt es?", answer: "Engagierte Mitarbeiter können sich zur Schichtleitung oder Einsatzleitung weiterentwickeln. Wir fördern interne Karrierewege." },
+  { question: "Gibt es auch Teilzeit- oder Nebenjob-Möglichkeiten?", answer: "Ja, wir bieten verschiedene Arbeitszeitmodelle an – von Vollzeit über Teilzeit bis hin zu flexiblen Einsatzmodellen für Früh-, Nacht- oder Wochenenddienste." },
+  { question: "Welche Aufstiegsmöglichkeiten gibt es?", answer: "Engagierte Mitarbeitende können sich zur Objekt-, Schicht- oder Einsatzleitung weiterentwickeln. Wir fördern interne Karrierewege." },
 ];
 
 const KarrierePage = () => {
@@ -65,9 +65,9 @@ const KarrierePage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Security Job & Sicherheitsmitarbeiter Job | Sentinel Services Karriere"
-        description="Security Job mit §34a-Sachkundeprüfung gesucht? Wir bieten faire Bezahlung, planbare Schichten und Weiterbildung. Jetzt als Sicherheitsmitarbeiter bewerben – bundesweit."
-        keywords="Security Job, Sicherheitsmitarbeiter Job, Wachmann Stelle, §34a Job, Sicherheitsdienst Karriere"
+        title="Karriere bei Sentinel Services – Jobs in Reinigung, FM, Grünpflege & Sicherheit"
+        description="Jobs in Gebäudereinigung, Facility Management, Garten- und Grünanlagenpflege und Sicherheit. Faire Bezahlung, planbare Einsätze und Weiterbildung. Jetzt bewerben – bundesweit."
+        keywords="Gebäudereiniger Job, Facility Management Job, Gärtner Job, Hausmeister Job, Security Job, §34a Job, Karriere Sentinel Services"
       />
       <FAQPageJsonLd faqs={careerFaqs} />
       <BreadcrumbJsonLd
@@ -84,8 +84,8 @@ const KarrierePage = () => {
 
       <PageHero
         badge="Karriere"
-        title="Security Job mit Perspektive – jetzt als Sicherheitsmitarbeiter bewerben"
-        subtitle="Wir suchen §34a-geprüfte Sicherheitsmitarbeiter und engagierten Nachwuchs für Objektschutz, Veranstaltungen und Revierdienst. Faire Bedingungen, planbare Einsätze, echte Entwicklung."
+        title="Job mit Perspektive – in Reinigung, Facility, Grünanlagen oder Sicherheit"
+        subtitle="Wir suchen engagierte Mitarbeitende und Nachwuchs für Gebäudereinigung, Facility Management, Garten- und Grünanlagenpflege sowie Sicherheitsdienst. Faire Bedingungen, planbare Einsätze, echte Entwicklung."
         illustration={teamIllustration}
       />
 

@@ -113,8 +113,8 @@ const KontaktPage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Sicherheitsdienst anfragen – Kontakt | Sentinel Services"
-        description="Sicherheitsdienst anfragen: Formular oder E-Mail genügt. Beschreiben Sie Bedarf, Einsatzort und Zeitraum – wir melden uns mit einem konkreten Angebot. Kostenfrei und unverbindlich."
+        title="Anfrage stellen – Kontakt | Sentinel Services"
+        description="Reinigung, Facility Management, Grünpflege oder Sicherheit anfragen: Formular oder E-Mail genügt. Beschreiben Sie Bedarf, Einsatzort und Zeitraum – wir melden uns mit einem konkreten Angebot. Kostenfrei und unverbindlich."
       />
       <BreadcrumbJsonLd
         items={[
@@ -204,7 +204,7 @@ const KontaktPage = () => {
                 <p className="text-xs font-bold text-primary mb-3 uppercase tracking-wider">Darauf können Sie sich verlassen</p>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2.5 text-sm text-muted-fg">
-                    <Shield className="h-4 w-4 text-primary shrink-0" /> §34a GewO – geprüftes Personal
+                    <Shield className="h-4 w-4 text-primary shrink-0" /> Eingewiesenes Fachpersonal je Bereich
                   </li>
                   <li className="flex items-center gap-2.5 text-sm text-muted-fg">
                     <Users className="h-4 w-4 text-primary shrink-0" /> Feste Ansprechpartner
@@ -260,7 +260,7 @@ const KontaktPage = () => {
                   </div>
                   <div>
                     <label className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Gewünschte Leistung</label>
-                    <Input name="service" maxLength={150} placeholder="z.B. Objektschutz, Veranstaltung, Baustellenbewachung" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400" />
+                    <Input name="service" maxLength={150} placeholder="z.B. Unterhaltsreinigung, Facility Management, Grünpflege, Objektschutz" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400" />
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>

@@ -72,8 +72,8 @@ const ArbeitsweisePage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Arbeitsweise Sicherheitsdienst – Ablauf in 4 Phasen | Sentinel Services"
-        description="Ablauf eines Sicherheitsdienst-Einsatzes in vier Phasen: Analyse, Personalauswahl, Einsatzführung und Reporting. Transparente Arbeitsweise mit fester Einsatzleitung."
+        title="Unsere Arbeitsweise – Ablauf in 4 Phasen | Sentinel Services"
+        description="So arbeiten wir in Reinigung, Facility Management, Grünpflege und Sicherheit: vier Phasen von der Objektanalyse über Personal und Einsatz bis zum Reporting. Transparent und mit fester Einsatzleitung."
       />
       <BreadcrumbJsonLd
         items={[
@@ -92,7 +92,7 @@ const ArbeitsweisePage = () => {
       <PageHero
         badge="Arbeitsweise"
         title="So arbeiten wir – unser Betriebsmodell"
-        subtitle="Sicherheit ist kein Produkt, sondern ein Prozess. Vier Phasen, die jeden Einsatz tragen."
+        subtitle="Reinigung, Pflege und Sicherheit sind kein Produkt, sondern ein Prozess. Vier Phasen, die jeden Einsatz tragen – egal in welchem Bereich."
         illustration={arbeitweiseIllustration}
       />
 
