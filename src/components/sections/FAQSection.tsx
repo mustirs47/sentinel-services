@@ -27,22 +27,39 @@ const FAQSection = ({ faqs, title = "Häufig gestellte Fragen", light = false }:
 
   return (
     <section className={light ? "section-light" : "bg-background"}>
-      <div ref={ref} className="fade-in-section mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="text-center mb-10">
+      <div ref={ref} className="fade-in-section mx-auto max-w-3xl px-4 section-pad sm:px-6">
+        <div className="mb-10">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">FAQ</span>
           <h2
-            className="text-2xl font-bold sm:text-3xl"
+            className="mt-2 text-2xl font-bold sm:text-3xl lg:text-[2rem] tracking-tight"
             style={light ? { color: "hsl(var(--section-light-fg))" } : undefined}
           >
             {title}
           </h2>
+          <p
+            className={`mt-3 prose-body ${light ? "text-muted-fg" : "text-muted-foreground"}`}
+          >
+            Antworten auf die Fragen, die uns am häufigsten gestellt werden. Fehlt etwas? Schreiben Sie uns kurz – wir antworten persönlich.
+          </p>
         </div>
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full border-t"
+          style={light ? { borderColor: "hsl(var(--section-light-border))" } : { borderColor: "hsl(var(--border) / 0.4)" }}
+        >
           {items.map((faq, i) => (
-            <AccordionItem key={i} value={`faq-${i}`}>
-              <AccordionTrigger className="text-left text-sm font-medium">
+            <AccordionItem
+              key={i}
+              value={`faq-${i}`}
+              style={light ? { borderColor: "hsl(var(--section-light-border))" } : undefined}
+            >
+              <AccordionTrigger style={light ? { color: "hsl(var(--section-light-fg))" } : undefined}>
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
+              <AccordionContent
+                className={light ? "text-muted-fg" : undefined}
+              >
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
