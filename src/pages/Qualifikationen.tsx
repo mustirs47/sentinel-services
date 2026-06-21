@@ -131,11 +131,11 @@ const QualifikationenPage = () => {
       {/* Intro */}
       <section className="section-light">
         <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-12">
-          <div className="max-w-3xl">
-            <h2 className="text-2xl font-bold sm:text-3xl mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold sm:text-3xl lg:text-[2rem] tracking-tight mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
               Warum Qualifikation zählt
             </h2>
-            <p className="text-base leading-relaxed text-muted-fg">
+            <p className="prose-lead text-muted-fg">
               Ob Hygienestandard in der Unterhaltsreinigung, FLL-konforme Baumkontrolle, Betreiberpflichten im Facility 
               Management oder §34a-geprüfter Sicherheitsdienst – die Qualifikation des Personals entscheidet über Qualität, 
               Ergebnis und Ihr Haftungsrisiko als Auftraggeber. Wir investieren kontinuierlich in Aus- und Weiterbildung, 
