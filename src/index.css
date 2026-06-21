@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Wide-screen container scaling ===== */
+/* Lets every page that uses `max-w-7xl` breathe on large monitors
+   without touching dozens of files individually. */
+@media (min-width: 1280px) {
+  .max-w-7xl { max-width: 84rem; }   /* 1344px */
+}
+@media (min-width: 1536px) {
+  .max-w-7xl { max-width: 90rem; }   /* 1440px */
+  /* slightly more side padding on huge screens */
+  .max-w-7xl.px-4,
+  .max-w-7xl.sm\:px-6 { padding-left: 2.5rem; padding-right: 2.5rem; }
+}
+@media (min-width: 1800px) {
+  .max-w-7xl { max-width: 100rem; } /* 1600px */
+}
+
 @layer base {
   :root {
     --background: 220 20% 10%;
@@ -60,11 +76,26 @@
   body {
     @apply bg-background text-foreground;
     overflow-x: clip;
+    line-height: 1.55;
   }
 
   html {
     scroll-behavior: smooth;
     overflow-x: clip;
+    font-size: 16px;
+  }
+
+  /* Progressive base type scaling for large displays.
+     Scaling html (not body) makes every rem-based Tailwind size
+     (text-sm, text-base, text-4xl …) grow on wide screens. */
+  @media (min-width: 1280px) {
+    html { font-size: 16.5px; }
+  }
+  @media (min-width: 1536px) {
+    html { font-size: 17px; }
+  }
+  @media (min-width: 1800px) {
+    html { font-size: 17.5px; }
   }
 
   h1, h2, h3, h4 {
@@ -142,13 +173,16 @@
 .prose-lead {
   font-size: 1rem;          /* 16px */
   line-height: 1.65;
-  max-width: 42rem;          /* keep reading column comfortable */
+  max-width: 44rem;          /* keep reading column comfortable */
 }
 @media (min-width: 640px) {
-  .prose-lead { font-size: 1.0625rem; }   /* 17px */
+  .prose-lead { font-size: 1.125rem; }    /* 18px */
 }
 @media (min-width: 1024px) {
-  .prose-lead { font-size: 1.1875rem; line-height: 1.6; } /* 19px */
+  .prose-lead { font-size: 1.25rem; line-height: 1.6; max-width: 46rem; } /* 20px */
+}
+@media (min-width: 1536px) {
+  .prose-lead { font-size: 1.375rem; max-width: 48rem; } /* 22px */
 }
 
 /* Body paragraph: used inside cards, descriptions, accordion answers */
@@ -157,14 +191,20 @@
   line-height: 1.65;
 }
 @media (min-width: 1024px) {
-  .prose-body { font-size: 1rem; }  /* 16px on desktop */
+  .prose-body { font-size: 1.0625rem; }  /* 17px on desktop */
+}
+@media (min-width: 1536px) {
+  .prose-body { font-size: 1.125rem; }   /* 18px on wide */
 }
 
 /* Standard reading column for intro blocks and FAQs */
 .reading-col {
-  max-width: 44rem;
+  max-width: 46rem;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 1536px) {
+  .reading-col { max-width: 52rem; }
 }
 
 /* Section vertical rhythm — unified across content pages */

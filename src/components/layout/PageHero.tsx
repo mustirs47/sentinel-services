@@ -30,7 +30,7 @@ const PageHero = ({ title, subtitle, backLink, badge, children, illustration }: 
               {badge}
             </span>
           )}
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] break-words hyphens-auto" style={{ lineHeight: 1.1 }}>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl xl:text-[3.25rem] 2xl:text-[3.75rem] break-words hyphens-auto" style={{ lineHeight: 1.1 }}>
             {title}
           </h1>
           <p className="mt-5 prose-lead text-muted-foreground">
