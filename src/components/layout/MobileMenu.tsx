@@ -6,44 +6,99 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import logoColor from "@/assets/logo-color.png";
+import logoSymbol from "@/assets/logo-color-symbol.png";
+import { divisions } from "@/data/divisions";
 
 interface MobileMenuProps {
   open: boolean;
   onClose: () => void;
-  items: { label: string; href: string }[];
 }
 
-const MobileMenu = ({ open, onClose, items }: MobileMenuProps) => (
+const extras = [
+  { label: "Arbeitsweise", href: "/arbeitsweise" },
+  { label: "Kontakt", href: "/kontakt" },
+];
+
+const secondary = [
+  { label: "Branchen", href: "/branchen" },
+  { label: "Qualifikationen", href: "/qualifikationen" },
+  { label: "Karriere", href: "/karriere" },
+];
+
+const MobileMenu = ({ open, onClose }: MobileMenuProps) => (
   <Sheet open={open} onOpenChange={(v) => !v && onClose()}>
     <SheetContent
       side="right"
-      className="w-72 bg-background border-border [&>button]:hidden"
+      className="w-80 bg-background border-border [&>button]:hidden flex flex-col"
     >
-      <SheetHeader className="mb-6 items-start">
+      <SheetHeader className="mb-4 items-start">
         <SheetTitle asChild>
-          <img
-            src={logoColor}
-            alt="Sentinel Services"
-            className="h-7 w-auto shrink-0 max-w-full object-contain"
-          />
+          <Link to="/" onClick={onClose} aria-label="Sentinel Services – Startseite">
+            <img
+              src={logoSymbol}
+              alt="Sentinel Services"
+              className="h-10 w-auto shrink-0 object-contain"
+              width={123}
+              height={118}
+            />
+          </Link>
         </SheetTitle>
       </SheetHeader>
 
-      <nav className="flex flex-col gap-1">
-        {items.map((item) => (
-          <Link
-            key={item.href}
-            to={item.href}
-            onClick={onClose}
-            className="rounded-md px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
-          >
-            {item.label}
-          </Link>
-        ))}
+      <nav className="flex-1 overflow-y-auto pr-1">
+        <p className="px-3 mb-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground/70">
+          Bereiche
+        </p>
+        <div className="flex flex-col gap-1 mb-6">
+          {divisions.map((d) => {
+            const Icon = d.icon;
+            return (
+              <Link
+                key={d.slug}
+                to={`/${d.slug}`}
+                onClick={onClose}
+                className="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:text-primary"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
+                  <Icon className="h-4 w-4" />
+                </span>
+                {d.title}
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className="flex flex-col gap-1 mb-6">
+          {extras.map((item) => (
+            <Link
+              key={item.href}
+              to={item.href}
+              onClick={onClose}
+              className="rounded-md px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:text-primary"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        <p className="px-3 mb-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground/70">
+          Mehr
+        </p>
+        <div className="flex flex-col gap-1">
+          {secondary.map((item) => (
+            <Link
+              key={item.href}
+              to={item.href}
+              onClick={onClose}
+              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
       </nav>
 
-      <div className="mt-8 px-3">
+      <div className="mt-4 pt-4 border-t border-border/60">
         <Button asChild className="w-full">
           <Link to="/kontakt" onClick={onClose}>Anfrage stellen</Link>
         </Button>

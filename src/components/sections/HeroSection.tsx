@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Shield, FileCheck, Users, ChevronRight, Building2 } from "lucide-react";
+import { ArrowRight, Sparkles, FileCheck, Users, ChevronRight, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.webp";
 import heroIllustration from "@/assets/illustrations/hero-security.webp";
 
 const trustSignals = [
-  { icon: Shield, text: "§34a GewO zugelassen" },
-  { icon: FileCheck, text: "Dokumentierte Leistung" },
-  { icon: Users, text: "Feste Ansprechpartner" },
   { icon: Building2, text: "Vier Bereiche – ein Anbieter" },
+  { icon: Users, text: "Feste Ansprechpartner" },
+  { icon: FileCheck, text: "Dokumentierte Leistung" },
+  { icon: Sparkles, text: "Eingewiesenes Fachpersonal" },
 ];
 
 const HeroSection = () => (
@@ -35,8 +35,8 @@ const HeroSection = () => (
       <div className="flex items-center gap-8 lg:gap-16">
         <div className="max-w-2xl flex-1">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary mb-5">
-            <Shield className="h-3 w-3" />
-            Sicherheit · Reinigung · Grünanlagen · Facility Management
+            <Building2 className="h-3 w-3" />
+            Reinigung · Facility · Grünanlagen · Sicherheit
           </span>
           <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl break-words hyphens-auto" style={{ lineHeight: 1.15 }}>
             Schutz, Sauberkeit und{" "}
@@ -44,7 +44,7 @@ const HeroSection = () => (
           </h1>
 
           <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg max-w-xl">
-            Sicherheitsdienst, Gebäudereinigung, Grünanlagenpflege und Facility Management –
+            Gebäudereinigung, Facility Management, Grünanlagenpflege und Sicherheitsdienst –
             aus einer Hand, mit eingewiesenem Personal, fester Ansprechperson und dokumentierter Leistung.
           </p>
 
@@ -68,7 +68,7 @@ const HeroSection = () => (
         <div className="hidden lg:block shrink-0">
           <img
             src={heroIllustration}
-            alt="Isometrische Darstellung: Gesichertes Gebäude mit Sicherheitspersonal"
+            alt="Isometrische Darstellung: Objektbetreuung mit Reinigung, Pflege und Sicherheit"
             className="w-72 xl:w-96 h-auto drop-shadow-2xl"
             width={384}
             height={288}

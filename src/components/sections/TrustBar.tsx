@@ -1,11 +1,11 @@
-import { Award, GraduationCap, FileCheck, Users } from "lucide-react";
+import { Building2, Users, FileCheck, MapPin } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const items = [
-  { icon: Award, value: "§34a GewO", label: "Gewerberechtliche Zulassung" },
-  { icon: GraduationCap, value: "Sachkundeprüfung", label: "Geprüftes Fachpersonal" },
-  { icon: FileCheck, value: "100 %", label: "Einsatzdokumentation" },
-  { icon: Users, value: "Bundesweit", label: "Einsatzbereit in ganz Deutschland" },
+  { icon: Building2, value: "4 Bereiche", label: "Reinigung · FM · Grün · Sicherheit" },
+  { icon: Users, value: "Feste Teams", label: "Persönliche Ansprechpartner" },
+  { icon: FileCheck, value: "100 %", label: "Dokumentierte Leistung" },
+  { icon: MapPin, value: "Bundesweit", label: "Auf Anfrage einsatzbereit" },
 ];
 
 const TrustBar = () => {

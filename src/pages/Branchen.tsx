@@ -24,9 +24,9 @@ const risks: Record<string, string[]> = {
 };
 
 const branchenFaqs = [
-  { question: "Arbeiten Sie nur in bestimmten Branchen?", answer: "Nein, wir sind branchenübergreifend aufgestellt. Die aufgeführten Branchen sind Schwerpunkte, aber wir entwickeln auch für andere Bereiche individuelle Sicherheitslösungen." },
-  { question: "Wie passen Sie Ihre Leistungen an die Branche an?", answer: "Jede Branche hat spezifische Risiken und Abläufe. Wir führen eine objektspezifische Analyse durch und stimmen Personal, Einsatzzeiten und Maßnahmen darauf ab." },
-  { question: "Können Sie mehrere Standorte gleichzeitig betreuen?", answer: "Ja, wir betreuen auch Kunden mit mehreren Standorten – mit einheitlichen Standards und zentraler Koordination." },
+  { question: "Arbeiten Sie nur in bestimmten Branchen?", answer: "Nein, wir sind branchenübergreifend aufgestellt. Die aufgeführten Branchen sind Schwerpunkte – Reinigung, Facility Management, Grünpflege und Sicherheit lassen sich auch für andere Bereiche kombinieren." },
+  { question: "Wie passen Sie Ihre Leistungen an die Branche an?", answer: "Jede Branche hat eigene Abläufe und Hygiene-, Pflege- oder Sicherheitsanforderungen. Wir führen eine objektspezifische Analyse durch und stimmen Personal, Frequenzen und Maßnahmen darauf ab." },
+  { question: "Können Sie mehrere Standorte gleichzeitig betreuen?", answer: "Ja, wir betreuen auch Kunden mit mehreren Standorten – mit einheitlichen Standards, zentraler Koordination und einem Ansprechpartner über alle Leistungsbereiche hinweg." },
 ];
 
 const BranchenPage = () => {
@@ -36,9 +36,9 @@ const BranchenPage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Bewachung nach Branche – 8 Einsatzbereiche | Sentinel Services"
-        description="Bewachung & Wachdienst nach Branche: Gewerbe, Industrie, Baustelle, Handel, Events, Hotel, Wohnanlage, Behörden. Risiken im Überblick, passende Sicherheitsleistungen je Branche."
-        keywords="Bewachung Industrie, Werkschutz Logistik, Baustellenbewachung, Eventsecurity, Hotelsicherheit, Wachschutz Wohnanlage"
+        title="Objektbetreuung nach Branche – 8 Einsatzbereiche | Sentinel Services"
+        description="Reinigung, Facility Management, Grünpflege und Sicherheit nach Branche: Gewerbe, Industrie, Baustelle, Handel, Events, Hotel, Wohnanlagen, Behörden. Anforderungen und passende Leistungen je Branche."
+        keywords="Gebäudereinigung Branche, Facility Management Branche, Grünanlagenpflege gewerblich, Werkschutz Logistik, Eventsecurity, Hotelobjektbetreuung, Wohnanlagen Service"
       />
       <BreadcrumbJsonLd
         items={[
@@ -57,8 +57,8 @@ const BranchenPage = () => {
 
       <PageHero
         badge="Branchen"
-        title="Bewachung & Sicherheitsdienst nach Branche"
-        subtitle="Acht Branchen, eigene Risiken, eigene Abläufe – wir passen Personal, Konzept und Einsatzzeiten gezielt an die jeweilige Branche an."
+        title="Objektbetreuung nach Branche"
+        subtitle="Acht Branchen, eigene Abläufe, eigene Anforderungen – wir kombinieren Reinigung, Facility Management, Grünpflege und Sicherheit passgenau für Ihren Objekttyp."
         illustration={branchenIllustration}
       />
 
@@ -90,12 +90,12 @@ const BranchenPage = () => {
         <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="max-w-3xl mb-12">
             <h2 className="text-2xl font-bold sm:text-3xl mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
-              Branchenspezifische Sicherheitskonzepte
+              Branchenspezifische Servicepakete
             </h2>
             <p className="text-base leading-relaxed text-muted-fg">
-              Ein Bürogebäude hat andere Anforderungen als eine Baustelle oder ein Firmenevent. Wir analysieren die 
-              branchentypischen Risiken und entwickeln Sicherheitslösungen, die exakt darauf zugeschnitten sind – 
-              mit dem passenden Personal, den richtigen Einsatzzeiten und abgestimmten Maßnahmen.
+              Ein Bürogebäude hat andere Anforderungen als eine Baustelle, ein Hotel oder eine Wohnanlage. Wir analysieren 
+              die branchentypischen Abläufe und stellen Reinigung, Pflege und Sicherheit so zusammen, dass Frequenzen, 
+              Personal und Dokumentation exakt zum Objekt passen.
             </p>
           </div>
 
@@ -206,7 +206,7 @@ const BranchenPage = () => {
             Branchenlösung für Ihr Unternehmen
           </h2>
           <p className="text-muted-fg max-w-xl mx-auto mb-8">
-            Wir analysieren die spezifischen Sicherheitsanforderungen Ihrer Branche und entwickeln eine passgenaue Lösung.
+            Wir analysieren die Anforderungen Ihrer Branche und stellen Reinigung, Facility Management, Grünpflege und Sicherheit passgenau zusammen.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <Button asChild size="lg">
