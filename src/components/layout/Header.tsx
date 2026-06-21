@@ -1,18 +1,22 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Mail } from "lucide-react";
+import { Menu, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import MobileMenu from "./MobileMenu";
 import logoColor from "@/assets/logo-color-lockup.png";
+import { divisions } from "@/data/divisions";
 
-const navItems = [
-  { label: "Sicherheit", href: "/sicherheit" },
-  { label: "Reinigung", href: "/reinigung" },
-  { label: "Grünanlagen", href: "/gruenanlagen" },
-  { label: "Facility", href: "/facility-management" },
-  { label: "Branchen", href: "/branchen" },
+const primaryNav = [
+  { label: "Arbeitsweise", href: "/arbeitsweise" },
   { label: "Kontakt", href: "/kontakt" },
 ];
+
+const divisionPathPrefixes = divisions.map((d) => `/${d.slug}`);
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -48,7 +52,70 @@ const Header = () => {
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
-            {navItems.map((item) => (
+            <Popover>
+              <PopoverTrigger asChild>
+                <button
+                  className={`inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                    divisionPathPrefixes.some((p) => location.pathname.startsWith(p))
+                      ? "text-primary"
+                      : "text-muted-foreground"
+                  }`}
+                  aria-label="Bereiche öffnen"
+                >
+                  Bereiche
+                  <ChevronDown className="h-3.5 w-3.5 opacity-70" />
+                </button>
+              </PopoverTrigger>
+              <PopoverContent
+                align="start"
+                sideOffset={8}
+                className="w-[480px] p-2 bg-background/95 backdrop-blur-lg border-border/60"
+              >
+                <div className="grid grid-cols-2 gap-1">
+                  {divisions.map((d) => {
+                    const Icon = d.icon;
+                    const active = location.pathname.startsWith(`/${d.slug}`);
+                    return (
+                      <Link
+                        key={d.slug}
+                        to={`/${d.slug}`}
+                        className={`group flex items-start gap-3 rounded-md p-3 transition-colors hover:bg-secondary ${
+                          active ? "bg-secondary" : ""
+                        }`}
+                      >
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
+                          <Icon className="h-4 w-4" />
+                        </span>
+                        <span className="min-w-0">
+                          <span className={`block text-sm font-semibold ${active ? "text-primary" : "text-foreground"}`}>
+                            {d.title}
+                          </span>
+                          <span className="mt-0.5 block text-xs leading-snug text-muted-foreground line-clamp-2">
+                            {d.claim}
+                          </span>
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+                <div className="mt-2 flex items-center justify-between border-t border-border/60 px-3 pt-2">
+                  <Link
+                    to="/branchen"
+                    className="text-xs text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    Branchenüberblick
+                  </Link>
+                  <Link
+                    to="/qualifikationen"
+                    className="text-xs text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    Qualifikationen
+                  </Link>
+                </div>
+              </PopoverContent>
+            </Popover>
+
+            {primaryNav.map((item) => (
               <Link
                 key={item.href}
                 to={item.href}
@@ -83,7 +150,7 @@ const Header = () => {
         </div>
       </header>
 
-      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} items={navItems} />
+      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </>
   );
 };
