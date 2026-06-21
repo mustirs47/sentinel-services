@@ -3,19 +3,19 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const articles = [
   {
-    title: "Checkliste: Veranstaltungssicherheit",
-    desc: "Was Veranstalter bei der Sicherheitsplanung beachten sollten – von der Risikoanalyse bis zum Einsatzplan.",
-    tag: "Checkliste",
-  },
-  {
-    title: "Worauf Unternehmen bei Objektschutz achten sollten",
-    desc: "Die häufigsten Fehler bei der Absicherung von Gewerbeimmobilien – und wie man sie vermeidet.",
+    title: "Reinigungspläne, die wirklich gelebt werden",
+    desc: "Wie ein belastbares Leistungsverzeichnis für Unterhaltsreinigung aufgebaut sein muss – mit Frequenzen, Kontrollen und Nachweisen.",
     tag: "Fachartikel",
   },
   {
-    title: "Typische Schwachstellen bei Baustellen",
-    desc: "Warum Baustellen besonders anfällig für Diebstahl sind und welche Maßnahmen wirklich helfen.",
+    title: "Facility Management bündeln statt verteilen",
+    desc: "Warum ein Ansprechpartner für Reinigung, Pflege und Sicherheit Schnittstellen reduziert und Kosten transparenter macht.",
     tag: "Praxistipp",
+  },
+  {
+    title: "Grünpflege im Pflegekalender",
+    desc: "Wie sich Außenanlagen ganzjährig planen lassen – von Rasenmahd und Heckenschnitt bis Laubentfernung und Winterdienst.",
+    tag: "Checkliste",
   },
   {
     title: "Sicherheitskonzepte sauber vorbereiten",
@@ -35,7 +35,7 @@ const InsightsSection = () => {
             Fachbeiträge & Insights
           </h2>
           <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            Wissen teilen, Kompetenz zeigen – praxisnahe Beiträge aus dem Sicherheitsalltag.
+            Wissen teilen, Kompetenz zeigen – praxisnahe Beiträge aus Reinigung, Facility Management, Grünpflege und Sicherheit.
           </p>
         </div>
 
