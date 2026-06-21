@@ -119,11 +119,11 @@ const ArbeitsweisePage = () => {
       {/* Principles */}
       <section className="section-light">
         <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-12">
-          <div className="max-w-3xl mb-10">
-            <h2 className="text-2xl font-bold sm:text-3xl mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+          <div className="max-w-2xl mb-10">
+            <h2 className="text-2xl font-bold sm:text-3xl lg:text-[2rem] tracking-tight mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
               Unsere Leitprinzipien
             </h2>
-            <p className="text-base leading-relaxed text-muted-fg">
+            <p className="prose-lead text-muted-fg">
               Drei Grundsätze, die unsere gesamte Arbeitsweise bestimmen – von der ersten Anfrage bis zum laufenden Einsatz.
             </p>
           </div>
