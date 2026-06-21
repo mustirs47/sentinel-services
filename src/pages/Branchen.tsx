@@ -99,7 +99,7 @@ const BranchenPage = () => {
             </p>
           </div>
 
-          <div className="stagger-children grid gap-6 sm:grid-cols-2">
+          <div className="stagger-children grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {industries.map(({ icon: Icon, title, detail, relatedServices, slug }) => (
               <div
                 key={slug}
@@ -181,7 +181,7 @@ const BranchenPage = () => {
               Was uns von anderen Anbietern unterscheidet
             </h2>
           </div>
-          <div className="stagger-children grid gap-6 sm:grid-cols-3">
+          <div className="stagger-children grid gap-6 sm:grid-cols-3 xl:grid-cols-3 max-w-6xl mx-auto">
             {[
               { icon: Shield, title: "Branchenerfahrung", desc: "Unsere Einsatzkräfte werden branchenspezifisch geschult – nicht pauschal eingesetzt." },
               { icon: CheckCircle, title: "Individuelle Konzepte", desc: "Kein Standardpaket: Jede Branchenlösung wird objektspezifisch entwickelt und regelmäßig angepasst." },

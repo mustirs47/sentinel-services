@@ -59,7 +59,7 @@ const QualificationsSection = () => {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {groups.map(({ icon: Icon, title, items, relevance }) => (
             <div
               key={title}

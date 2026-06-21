@@ -43,7 +43,7 @@ const TeamSection = () => {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {competences.map(({ icon: Icon, title, desc, focus }) => (
             <div key={title} className="rounded-xl border border-border/60 bg-card/50 p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-4">
