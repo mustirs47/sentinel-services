@@ -193,7 +193,7 @@ const KarrierePage = () => {
               Entwicklung und echte Wertschätzung.
             </p>
           </div>
-          <div className="stagger-children grid gap-6 sm:grid-cols-2">
+          <div className="stagger-children grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {whyUs.map(({ icon: WIcon, title, desc }) => (
               <div key={title} className="flex items-start gap-4 rounded-xl border border-border/50 p-6 transition-all hover:shadow-md">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 shrink-0">
