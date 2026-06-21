@@ -135,3 +135,54 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ===== Consistent reading rhythm ===== */
+
+/* Lead paragraph: used directly under a page H1 or section H2 */
+.prose-lead {
+  font-size: 1rem;          /* 16px */
+  line-height: 1.65;
+  max-width: 42rem;          /* keep reading column comfortable */
+}
+@media (min-width: 640px) {
+  .prose-lead { font-size: 1.0625rem; }   /* 17px */
+}
+@media (min-width: 1024px) {
+  .prose-lead { font-size: 1.1875rem; line-height: 1.6; } /* 19px */
+}
+
+/* Body paragraph: used inside cards, descriptions, accordion answers */
+.prose-body {
+  font-size: 0.9375rem;     /* 15px */
+  line-height: 1.65;
+}
+@media (min-width: 1024px) {
+  .prose-body { font-size: 1rem; }  /* 16px on desktop */
+}
+
+/* Standard reading column for intro blocks and FAQs */
+.reading-col {
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section vertical rhythm — unified across content pages */
+.section-pad {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 640px) {
+  .section-pad { padding-top: 5rem; padding-bottom: 5rem; }
+}
+@media (min-width: 1024px) {
+  .section-pad { padding-top: 6rem; padding-bottom: 6rem; }
+}
+
+.section-pad-sm {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+@media (min-width: 640px) {
+  .section-pad-sm { padding-top: 3rem; padding-bottom: 3rem; }
+}

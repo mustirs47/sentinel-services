@@ -88,11 +88,11 @@ const BranchenPage = () => {
 
       <section className="section-light">
         <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-          <div className="max-w-3xl mb-12">
-            <h2 className="text-2xl font-bold sm:text-3xl mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+          <div className="max-w-2xl mb-12">
+            <h2 className="text-2xl font-bold sm:text-3xl lg:text-[2rem] tracking-tight mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
               Branchenspezifische Servicepakete
             </h2>
-            <p className="text-base leading-relaxed text-muted-fg">
+            <p className="prose-lead text-muted-fg">
               Ein Bürogebäude hat andere Anforderungen als eine Baustelle, ein Hotel oder eine Wohnanlage. Wir analysieren 
               die branchentypischen Abläufe und stellen Reinigung, Pflege und Sicherheit so zusammen, dass Frequenzen, 
               Personal und Dokumentation exakt zum Objekt passen.
@@ -119,7 +119,7 @@ const BranchenPage = () => {
                     </div>
                     <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h2>
                   </div>
-                  <p className="text-sm leading-relaxed text-muted-fg mb-5">{detail}</p>
+                  <p className="prose-body text-muted-fg mb-5">{detail}</p>
                   
                   {/* Risks */}
                   {risks[slug] && (

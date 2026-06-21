@@ -15,7 +15,7 @@ const PageHero = ({ title, subtitle, backLink, badge, children, illustration }: 
   <section className="bg-background border-b border-border/50">
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
       <div className={illustration ? "flex flex-col lg:flex-row lg:items-center lg:gap-12" : ""}>
-        <div className={illustration ? "flex-1" : ""}>
+        <div className={illustration ? "flex-1 min-w-0" : "max-w-3xl"}>
           {backLink && (
             <Link
               to={backLink.href}
@@ -26,14 +26,14 @@ const PageHero = ({ title, subtitle, backLink, badge, children, illustration }: 
             </Link>
           )}
           {badge && (
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-3 block">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-4 block">
               {badge}
             </span>
           )}
-          <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl break-words hyphens-auto" style={{ lineHeight: 1.15 }}>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem] break-words hyphens-auto" style={{ lineHeight: 1.1 }}>
             {title}
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg max-w-2xl">
+          <p className="mt-5 prose-lead text-muted-foreground">
             {subtitle}
           </p>
           {children}
