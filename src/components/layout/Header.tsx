@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MobileMenu from "./MobileMenu";
-import logoColor from "@/assets/logo-color.png";
+import logoColor from "@/assets/logo-color-lockup.png";
 
 const navItems = [
   { label: "Sicherheit", href: "/sicherheit" },
@@ -39,9 +39,9 @@ const Header = () => {
             <img
               src={logoColor}
               alt="Sentinel Services"
-              className="h-10 sm:h-12 lg:h-14 w-auto"
-              width={800}
-              height={800}
+              className="h-7 sm:h-8 lg:h-9 w-auto"
+              width={776}
+              height={94}
               fetchPriority="high"
               decoding="async"
             />
