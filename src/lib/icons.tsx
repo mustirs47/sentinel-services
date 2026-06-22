@@ -72,7 +72,7 @@ export type LucideIcon = ComponentType<ComponentProps<PhIcon>>;
  * h-/w- size classes keep working unchanged. Default weight is "duotone"
  * which renders a two-tone, professional look consistent with the brand.
  */
-const wrap = (Cmp: PhIcon, fallbackWeight: IconProps["weight"] = "duotone") => {
+const wrap = (Cmp: PhIcon, fallbackWeight: IconProps["weight"] = "regular") => {
   const Wrapped = (props: ComponentProps<typeof Cmp>) => (
     <Cmp weight={fallbackWeight} {...props} />
   );
