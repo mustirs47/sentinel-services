@@ -8,18 +8,11 @@ const PillarsSection = () => {
 
   return (
     <section id="leistungen" className="section-light">
-      <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="text-center mb-14">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">
-            Vier Geschäftsbereiche
-          </p>
-          <h2
-            className="text-2xl font-extrabold sm:text-4xl break-words hyphens-auto"
-            style={{ color: "hsl(var(--section-light-fg))" }}
-          >
-            Schutz, Sauberkeit und Werterhalt – aus einer Hand
-          </h2>
-          <p className="mt-4 text-muted-fg max-w-2xl mx-auto text-base">
+      <div ref={ref} className="fade-in-section section-shell">
+        <div className="section-head">
+          <span className="eyebrow">Vier Geschäftsbereiche</span>
+          <h2 className="h-section">Schutz, Sauberkeit und Werterhalt – aus einer Hand</h2>
+          <p className="section-intro">
             Sicherheit, Gebäudereinigung, Grünanlagen und Facility Management.
             Eigenständige Bereiche, ein Ansprechpartner, gemeinsame Standards.
           </p>
@@ -30,30 +23,18 @@ const PillarsSection = () => {
             <Link
               key={slug}
               to={`/${slug}`}
-              className="card-accent group rounded-xl border p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col"
-              style={{
-                background: "hsl(var(--section-light-card))",
-                borderColor: "hsl(var(--section-light-border))",
-              }}
+              className="card-accent surface-card surface-card--hover group flex flex-col"
             >
-              <div
-                className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl"
-                style={{ background: "hsl(205 90% 55% / 0.1)" }}
-              >
-                <Icon className="h-6 w-6 text-primary" />
-              </div>
-              <h3
-                className="text-lg font-bold"
-                style={{ color: "hsl(var(--section-light-fg))" }}
-              >
-                {title}
-              </h3>
+              <span className="icon-tile mb-5">
+                <Icon />
+              </span>
+              <h3 className="h-card">{title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-fg flex-1">{claim}</p>
               <p className="mt-4 text-xs text-muted-fg/80">
                 {services.length} Leistungen
               </p>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all">
-                Bereich ansehen <ArrowRight className="h-3.5 w-3.5" />
+              <span className="link-arrow mt-4">
+                Bereich ansehen <ArrowRight />
               </span>
             </Link>
           ))}

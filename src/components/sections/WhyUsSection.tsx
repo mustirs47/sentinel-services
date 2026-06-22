@@ -34,13 +34,11 @@ const WhyUsSection = () => {
 
   return (
     <section className="bg-background">
-      <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="text-center mb-14">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">4 Phasen</p>
-          <h2 className="text-2xl font-extrabold text-foreground sm:text-4xl break-words hyphens-auto">
-            So arbeiten wir
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base">
+      <div ref={ref} className="fade-in-section section-shell">
+        <div className="section-head">
+          <span className="eyebrow">4 Phasen</span>
+          <h2 className="h-section text-foreground">So arbeiten wir</h2>
+          <p className="section-intro">
             Sicherheit ist kein Produkt, sondern ein Prozess – vier Phasen, die jeden Einsatz tragen.
           </p>
         </div>
@@ -52,25 +50,21 @@ const WhyUsSection = () => {
 
           {phases.map(({ icon: Icon, step, title, desc }) => (
             <div key={step} className="relative flex flex-col items-center text-center p-6 lg:p-8">
-              {/* Step circle */}
-              <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border-2 border-primary/30 bg-background mb-5">
-                <Icon className="h-7 w-7 text-primary" />
+              <div className="icon-tile-lg relative z-10 mb-5 border-2 border-primary/30 !bg-background">
+                <Icon />
                 <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
                   {step}
                 </span>
               </div>
-              <h3 className="text-base font-bold text-foreground mb-2">{title}</h3>
+              <h3 className="h-card text-foreground mb-2">{title}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">{desc}</p>
             </div>
           ))}
         </div>
 
         <div className="mt-10 text-center">
-          <Link
-            to="/arbeitsweise"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
-          >
-            Mehr über unsere Arbeitsweise <ArrowRight className="h-3.5 w-3.5" />
+          <Link to="/arbeitsweise" className="link-arrow">
+            Mehr über unsere Arbeitsweise <ArrowRight />
           </Link>
         </div>
       </div>

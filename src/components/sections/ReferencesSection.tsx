@@ -27,40 +27,30 @@ const ReferencesSection = () => {
 
   return (
     <section className="bg-background">
-      <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="text-center mb-14">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Praxis</p>
-          <h2 className="text-2xl font-extrabold text-foreground sm:text-4xl break-words hyphens-auto">
-            Typische Einsatzbilder
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base">
-            Drei realistische Szenarien, für die wir aufgestellt sind.
-          </p>
+      <div ref={ref} className="fade-in-section section-shell">
+        <div className="section-head">
+          <span className="eyebrow">Praxis</span>
+          <h2 className="h-section text-foreground">Typische Einsatzbilder</h2>
+          <p className="section-intro">Drei realistische Szenarien, für die wir aufgestellt sind.</p>
         </div>
 
         <div className="stagger-children grid gap-6 sm:grid-cols-3">
           {scenarios.map(({ icon: Icon, title, situation, einsatz }) => (
-            <div
-              key={title}
-              className="group relative rounded-xl border border-border/60 bg-card/50 p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-lg overflow-hidden"
-            >
-              {/* Left accent stripe */}
+            <div key={title} className="surface-card surface-card--hover group overflow-hidden">
               <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-xl bg-gradient-to-b from-primary to-accent" />
 
               <div className="pl-4">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <Icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <h3 className="text-sm font-bold text-foreground">{title}</h3>
+                  <span className="icon-tile-sm"><Icon /></span>
+                  <h3 className="h-card text-foreground">{title}</h3>
                 </div>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">Ausgangslage</p>
+                    <p className="eyebrow !mb-1 !text-[10px]">Ausgangslage</p>
                     <p className="text-sm text-muted-foreground leading-relaxed">{situation}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">Unser Einsatz</p>
+                    <p className="eyebrow !mb-1 !text-[10px]">Unser Einsatz</p>
                     <p className="text-sm text-muted-foreground leading-relaxed">{einsatz}</p>
                   </div>
                 </div>

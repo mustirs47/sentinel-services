@@ -25,17 +25,9 @@ const PageHero = ({ title, subtitle, backLink, badge, children, illustration }: 
               {backLink.label}
             </Link>
           )}
-          {badge && (
-            <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-4 block">
-              {badge}
-            </span>
-          )}
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl xl:text-[3.25rem] 2xl:text-[3.75rem] break-words hyphens-auto" style={{ lineHeight: 1.1 }}>
-            {title}
-          </h1>
-          <p className="mt-5 prose-lead text-muted-foreground">
-            {subtitle}
-          </p>
+          {badge && <span className="eyebrow">{badge}</span>}
+          <h1 className="h-display text-foreground">{title}</h1>
+          <p className="mt-5 prose-lead text-muted-foreground">{subtitle}</p>
           {children}
         </div>
         {illustration && (
@@ -43,7 +35,7 @@ const PageHero = ({ title, subtitle, backLink, badge, children, illustration }: 
             <img
               src={illustration}
               alt={`Isometrische Illustration: ${title}`}
-              className="w-full h-auto max-h-72 object-contain drop-shadow-lg"
+              className="w-full h-auto max-h-72 object-contain drop-shadow-[0_20px_40px_hsl(var(--primary)/0.18)]"
               loading="lazy"
               decoding="async"
               width={384}

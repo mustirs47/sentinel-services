@@ -28,17 +28,10 @@ const FAQSection = ({ faqs, title = "Häufig gestellte Fragen", light = false }:
   return (
     <section className={light ? "section-light" : "bg-background"}>
       <div ref={ref} className="fade-in-section mx-auto max-w-3xl px-4 section-pad sm:px-6">
-        <div className="mb-10">
-          <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">FAQ</span>
-          <h2
-            className="mt-2 text-2xl font-bold sm:text-3xl lg:text-[2rem] tracking-tight"
-            style={light ? { color: "hsl(var(--section-light-fg))" } : undefined}
-          >
-            {title}
-          </h2>
-          <p
-            className={`mt-3 prose-body ${light ? "text-muted-fg" : "text-muted-foreground"}`}
-          >
+        <div className="section-head section-head--left !mb-10">
+          <span className="eyebrow">FAQ</span>
+          <h2 className="h-section">{title}</h2>
+          <p className={`mt-3 prose-body ${light ? "text-muted-fg" : "text-muted-foreground"}`}>
             Antworten auf die Fragen, die uns am häufigsten gestellt werden. Fehlt etwas? Schreiben Sie uns kurz – wir antworten persönlich.
           </p>
         </div>
