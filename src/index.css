@@ -445,6 +445,6 @@
 }
 @media (min-width: 640px)  { .reading-shell { padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 5rem; padding-bottom: 5rem; } }
 @media (min-width: 1024px) { .reading-shell { max-width: 52rem; padding-top: 6rem; padding-bottom: 6rem; } }
-@media (min-width: 1280px) { .reading-shell { max-width: 58rem; } }
-@media (min-width: 1536px) { .reading-shell { max-width: 64rem; } }
-@media (min-width: 1800px) { .reading-shell { max-width: 72rem; } }
+@media (min-width: 1280px) { .reading-shell { max-width: 56rem; } }
+@media (min-width: 1536px) { .reading-shell { max-width: 60rem; } }
+@media (min-width: 1800px) { .reading-shell { max-width: 64rem; } }
