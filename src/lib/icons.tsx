@@ -49,6 +49,22 @@ import {
   type IconProps,
   type Icon as PhIcon,
 } from "@phosphor-icons/react";
+import {
+  SprayBottle,
+  Leaf as PhLeaf,
+  Path,
+  PaintBrush,
+  Wine,
+  Hammer as PhHammer,
+  Tree,
+  TreeEvergreen,
+  Snowflake as PhSnowflake,
+  Wrench as PhWrench,
+  ClipboardText as PhClipboardList,
+  Calculator as PhCalculator,
+} from "@phosphor-icons/react";
+
+export type LucideIcon = ComponentType<ComponentProps<PhIcon>>;
 
 /**
  * Brand icon set: Phosphor Duotone.
@@ -118,3 +134,17 @@ export const UserCheck = wrap(UserCircleCheck);
 export const Users = wrap(PhUsers);
 export const X = wrapRegular(PhX);
 export const Zap = wrap(Lightning, "fill");
+
+// Extended set used by data/divisions.ts and similar.
+export const SprayCan = wrap(SprayBottle);
+export const Leaf = wrap(PhLeaf);
+export const Route = wrap(Path);
+export const Brush = wrap(PaintBrush);
+export const GlassWater = wrap(Wine);
+export const Hammer = wrap(PhHammer);
+export const Trees = wrap(Tree);
+export const TreePine = wrap(TreeEvergreen);
+export const Snowflake = wrap(PhSnowflake);
+export const Wrench = wrap(PhWrench);
+export const ClipboardList = wrap(PhClipboardList);
+export const Calculator = wrap(PhCalculator);
