@@ -147,7 +147,7 @@ const ArbeitsweisePage = () => {
 
       {/* Vertical Timeline */}
       <section className="section-light">
-        <div ref={ref} className="fade-in-section mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
+        <div ref={ref} className="fade-in-section reading-shell">
           <div className="text-center mb-14">
             <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">4 Phasen</p>
             <h2 className="text-2xl font-bold sm:text-3xl" style={{ color: "hsl(var(--section-light-fg))" }}>
