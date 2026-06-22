@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Briefcase, Gift, MapPin, Send, FileText, Users, Shield, HeartPulse, CalendarCheck, Star } from "lucide-react";
+import { ArrowRight, CheckCircle, Briefcase, Gift, MapPin, Send, FileText, Users, Shield, HeartPulse, CalendarCheck, Star } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";

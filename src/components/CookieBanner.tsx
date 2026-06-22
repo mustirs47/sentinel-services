@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { Cookie, Settings, X, Shield, BarChart3, Check } from "lucide-react";
+import { Cookie, Settings, X, Shield, BarChart3, Check } from "@/lib/icons";
 
 interface CookieConsent {
   necessary: boolean;

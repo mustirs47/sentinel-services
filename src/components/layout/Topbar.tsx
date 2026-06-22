@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { Mail } from "@/lib/icons";
 
 const Topbar = () => (
   <div className="bg-background border-b border-border/50 text-xs">

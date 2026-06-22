@@ -1,4 +1,4 @@
-import { Building, Factory, HardHat, ShoppingBag, PartyPopper, Hotel, Home, Landmark } from "lucide-react";
+import { Building, Factory, HardHat, ShoppingBag, PartyPopper, Hotel, Home, Landmark } from "@/lib/icons";
 
 export interface IndustryData {
   slug: string;

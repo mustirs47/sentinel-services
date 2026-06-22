@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Search, UserCheck, Radio, ClipboardCheck, ArrowRight, Users, Shield, HeartPulse, CheckCircle, Target, Handshake } from "lucide-react";
+import { Search, UserCheck, Radio, ClipboardCheck, ArrowRight, Users, Shield, HeartPulse, CheckCircle, Target, Handshake } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";

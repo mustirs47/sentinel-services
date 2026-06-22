@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Mail, ChevronDown } from "lucide-react";
+import { Menu, Mail, ChevronDown } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import {
   Popover,

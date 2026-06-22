@@ -1,4 +1,4 @@
-import { MessageSquare, Search, FileText, Handshake } from "lucide-react";
+import { MessageSquare, Search, FileText, Handshake } from "@/lib/icons";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const steps = [

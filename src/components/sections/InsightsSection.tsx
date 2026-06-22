@@ -1,4 +1,4 @@
-import { FileText, ArrowRight } from "lucide-react";
+import { FileText, ArrowRight } from "@/lib/icons";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const articles = [

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/lib/icons";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { industries } from "@/data/industries";
 
