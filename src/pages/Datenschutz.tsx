@@ -12,7 +12,7 @@ const Datenschutz = () => (
     />
 
     <section className="section-light">
-      <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
+      <div className="reading-shell">
         <div className="space-y-10" style={{ color: "hsl(var(--section-light-fg))" }}>
 
           <div>
