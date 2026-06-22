@@ -226,3 +226,207 @@
 @media (min-width: 640px) {
   .section-pad-sm { padding-top: 3rem; padding-bottom: 3rem; }
 }
+
+/* =============================================================
+   STRICT DESIGN SYSTEM — unified across every page & section
+   ============================================================= */
+
+/* ---- Section shell: identical container width + rhythm ---- */
+.section-shell {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80rem; /* 1280px, scales via wide-screen rules above */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 640px) {
+  .section-shell { padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 5rem; padding-bottom: 5rem; }
+}
+@media (min-width: 1024px) {
+  .section-shell { padding-top: 6rem; padding-bottom: 6rem; }
+}
+@media (min-width: 1280px) { .section-shell { max-width: 84rem; } }
+@media (min-width: 1536px) { .section-shell { max-width: 90rem; padding-left: 2.5rem; padding-right: 2.5rem; } }
+@media (min-width: 1800px) { .section-shell { max-width: 100rem; } }
+
+/* ---- Section head block: eyebrow / title / intro ---- */
+.section-head {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .section-head { margin-bottom: 3.5rem; }
+}
+.section-head--left { text-align: left; }
+
+/* Eyebrow label — exactly one style site-wide */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.6875rem;            /* 11px */
+  line-height: 1;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: hsl(var(--primary));
+  margin-bottom: 0.875rem;
+}
+
+/* H1 page hero — single canonical scale */
+.h-display {
+  font-size: 1.875rem;             /* 30px */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+@media (min-width: 640px)  { .h-display { font-size: 2.25rem; } }   /* 36px */
+@media (min-width: 1024px) { .h-display { font-size: 3rem; } }      /* 48px */
+@media (min-width: 1280px) { .h-display { font-size: 3.25rem; } }   /* 52px */
+@media (min-width: 1536px) { .h-display { font-size: 3.75rem; } }   /* 60px */
+
+/* H2 section title — single canonical scale */
+.h-section {
+  font-size: 1.625rem;             /* 26px */
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+@media (min-width: 640px)  { .h-section { font-size: 2rem; } }       /* 32px */
+@media (min-width: 1024px) { .h-section { font-size: 2.25rem; } }    /* 36px */
+@media (min-width: 1536px) { .h-section { font-size: 2.5rem; } }     /* 40px */
+
+/* H3 card / sub-block title */
+.h-card {
+  font-size: 1rem;                 /* 16px */
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+}
+@media (min-width: 1024px) { .h-card { font-size: 1.0625rem; } }    /* 17px */
+@media (min-width: 1536px) { .h-card { font-size: 1.125rem; } }     /* 18px */
+
+/* Centered intro paragraph below a section head */
+.section-intro {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42rem;
+  color: hsl(var(--muted-foreground));
+  font-size: 1rem;
+  line-height: 1.65;
+}
+@media (min-width: 1024px) { .section-intro { font-size: 1.125rem; max-width: 44rem; } }
+@media (min-width: 1536px) { .section-intro { font-size: 1.1875rem; max-width: 46rem; } }
+
+/* ---- Surface card: single canonical surface ---- */
+.surface-card {
+  position: relative;
+  border-radius: 0.875rem;          /* 14px */
+  border: 1px solid hsl(var(--border) / 0.6);
+  background: hsl(var(--card) / 0.5);
+  padding: 1.5rem;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+@media (min-width: 640px) { .surface-card { padding: 2rem; } }
+
+.surface-card--hover:hover {
+  border-color: hsl(var(--primary) / 0.35);
+  box-shadow: 0 14px 40px -22px hsl(var(--primary) / 0.4);
+  transform: translateY(-2px);
+}
+
+/* Light-section variants — auto-apply correct tokens */
+.section-light .eyebrow { color: hsl(var(--primary)); }
+.section-light .h-section,
+.section-light .h-card { color: hsl(var(--section-light-fg)); }
+.section-light .section-intro { color: hsl(var(--section-light-muted)); }
+.section-light .surface-card {
+  background: hsl(var(--section-light-card));
+  border-color: hsl(var(--section-light-border));
+  color: hsl(var(--section-light-fg));
+}
+.section-light .surface-card--hover:hover {
+  border-color: hsl(var(--primary) / 0.35);
+  box-shadow: 0 14px 40px -24px hsl(var(--primary) / 0.25);
+}
+
+/* ---- Icon tile: uniform across the site ---- */
+.icon-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 2.75rem;
+  width: 2.75rem;
+  border-radius: 0.75rem;
+  background: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+}
+.icon-tile > svg { height: 1.375rem; width: 1.375rem; }
+
+.icon-tile-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 0.625rem;
+  background: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+}
+.icon-tile-sm > svg { height: 1.125rem; width: 1.125rem; }
+
+.icon-tile-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 1rem;
+  background: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+}
+.icon-tile-lg > svg { height: 1.75rem; width: 1.75rem; }
+
+/* ---- Arrow link: every "more / read on" link looks identical ---- */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  transition: gap .2s ease, color .2s ease;
+}
+.link-arrow:hover { gap: 0.625rem; }
+.link-arrow > svg { height: 0.875rem; width: 0.875rem; }
+
+/* ---- Image frame: every photographic/illustrative asset gets the same treatment ---- */
+.image-frame {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border) / 0.6);
+  background: hsl(var(--card));
+}
+.section-light .image-frame {
+  border-color: hsl(var(--section-light-border));
+  background: hsl(var(--section-light-card));
+}
+
+/* ---- Divider ---- */
+.divider-soft {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    hsl(var(--border) / 0.8) 20%,
+    hsl(var(--border) / 0.8) 80%,
+    transparent);
+}
