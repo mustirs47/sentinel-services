@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ArrowRight, CheckCircle, Shield, Users, FileCheck, Zap, Target } from "lucide-react";
+import { ArrowRight, CheckCircle, Shield, Users, FileCheck, Zap, Target } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";

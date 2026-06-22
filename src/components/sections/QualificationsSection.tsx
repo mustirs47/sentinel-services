@@ -1,4 +1,4 @@
-import { Scale, GraduationCap, HeartPulse, Settings } from "lucide-react";
+import { Scale, GraduationCap, HeartPulse, Settings } from "@/lib/icons";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const groups = [

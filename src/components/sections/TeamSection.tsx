@@ -1,4 +1,4 @@
-import { ShieldCheck, HeartHandshake, BookOpen, Target } from "lucide-react";
+import { ShieldCheck, HeartHandshake, BookOpen, Target } from "@/lib/icons";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const competences = [

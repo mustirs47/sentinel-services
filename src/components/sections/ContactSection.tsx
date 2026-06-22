@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Shield, FileCheck, Users, ArrowRight } from "lucide-react";
+import { Mail, MapPin, Shield, FileCheck, Users, ArrowRight } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 

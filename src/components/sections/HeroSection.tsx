@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, FileCheck, Users, ChevronRight, Building2 } from "lucide-react";
+import { ArrowRight, Sparkles, FileCheck, Users, ChevronRight, Building2 } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.webp";
 import heroIllustration from "@/assets/illustrations/hero-security.webp";

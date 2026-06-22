@@ -19,7 +19,7 @@ import {
   ClipboardList,
   Calculator,
   type LucideIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 
 export interface ServiceData {
   slug: string;

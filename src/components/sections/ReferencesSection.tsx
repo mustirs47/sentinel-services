@@ -1,4 +1,4 @@
-import { Shield, HardHat, PartyPopper, DoorOpen } from "lucide-react";
+import { Shield, HardHat, PartyPopper, DoorOpen } from "@/lib/icons";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const scenarios = [

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Shield, FileCheck, Users } from "lucide-react";
+import { ArrowRight, CheckCircle, Shield, FileCheck, Users } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";

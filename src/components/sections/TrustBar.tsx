@@ -1,4 +1,4 @@
-import { Building2, Users, FileCheck, MapPin } from "lucide-react";
+import { Building2, Users, FileCheck, MapPin } from "@/lib/icons";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const items = [

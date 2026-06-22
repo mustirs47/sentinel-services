@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Scale, GraduationCap, HeartPulse, Settings, ArrowRight, Award, Shield, Users, BookOpen, RefreshCw } from "lucide-react";
+import { Scale, GraduationCap, HeartPulse, Settings, ArrowRight, Award, Shield, Users, BookOpen, RefreshCw } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
