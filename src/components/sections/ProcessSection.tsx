@@ -33,26 +33,21 @@ const ProcessSection = () => {
 
   return (
     <section className="bg-background">
-      <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            Von der Anfrage zum laufenden Einsatz
-          </h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            Vier Schritte, klare Verantwortlichkeiten, ein fester Ansprechpartner.
-          </p>
+      <div ref={ref} className="fade-in-section section-shell">
+        <div className="section-head">
+          <span className="eyebrow">Ablauf</span>
+          <h2 className="h-section text-foreground">Von der Anfrage zum laufenden Einsatz</h2>
+          <p className="section-intro">Vier Schritte, klare Verantwortlichkeiten, ein fester Ansprechpartner.</p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map(({ icon: Icon, step, title, desc }, i) => (
-            <div key={step} className="relative rounded-xl border border-border/60 bg-card/50 p-6">
+            <div key={step} className="surface-card">
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
-                  <Icon className="h-5 w-5 text-primary" />
-                </div>
+                <span className="icon-tile-sm !rounded-full"><Icon /></span>
                 <span className="text-xs font-bold text-primary">{step}</span>
               </div>
-              <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+              <h3 className="h-card text-foreground">{title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
               {i < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-border" />

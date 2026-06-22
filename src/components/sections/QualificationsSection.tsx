@@ -49,32 +49,25 @@ const QualificationsSection = () => {
 
   return (
     <section id="qualifikationen" className="section-light">
-      <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold sm:text-3xl" style={{ color: "hsl(var(--section-light-fg))" }}>
-            Qualifikationen & Nachweise
-          </h2>
-          <p className="mt-3 text-muted-fg max-w-2xl mx-auto">
+      <div ref={ref} className="fade-in-section section-shell">
+        <div className="section-head">
+          <span className="eyebrow">Nachweise</span>
+          <h2 className="h-section">Qualifikationen & Nachweise</h2>
+          <p className="section-intro">
             Konkrete Nachweisgruppen, die zeigen, auf welcher fachlichen Grundlage wir arbeiten.
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {groups.map(({ icon: Icon, title, items, relevance }) => (
-            <div
-              key={title}
-              className="rounded-xl p-6 sm:p-8"
-              style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
-            >
+            <div key={title} className="surface-card">
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
-                  <Icon className="h-5 w-5 text-primary" />
-                </div>
-                <h3 className="text-base font-semibold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h3>
+                <span className="icon-tile-sm"><Icon /></span>
+                <h3 className="h-card">{title}</h3>
               </div>
               <ul className="space-y-2 mb-4">
                 {items.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm" style={{ color: "hsl(var(--section-light-fg))" }}>
+                  <li key={item} className="flex items-start gap-2 text-sm">
                     <span className="mt-2 h-1 w-1 rounded-full bg-primary shrink-0" />
                     {item}
                   </li>

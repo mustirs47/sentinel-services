@@ -22,20 +22,18 @@ const CareerSection = () => {
 
   return (
     <section id="karriere" className="bg-background border-y border-border/50">
-      <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="text-center mb-12">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-3 block">Karriere</span>
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            Arbeiten bei Sentinel Services
-          </h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+      <div ref={ref} className="fade-in-section section-shell">
+        <div className="section-head">
+          <span className="eyebrow">Karriere</span>
+          <h2 className="h-section text-foreground">Arbeiten bei Sentinel Services</h2>
+          <p className="section-intro">
             Wir suchen Menschen, die Verantwortung übernehmen – nicht nur einen Job suchen.
           </p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">
-          <div className="rounded-xl border border-border/60 bg-card/50 p-6 sm:p-8">
-            <h3 className="text-base font-semibold text-foreground mb-4">Was wir erwarten</h3>
+          <div className="surface-card">
+            <h3 className="h-card text-foreground mb-4">Was wir erwarten</h3>
             <ul className="space-y-3">
               {requirements.map((r) => (
                 <li key={r} className="flex items-start gap-3">
@@ -46,8 +44,8 @@ const CareerSection = () => {
             </ul>
           </div>
 
-          <div className="rounded-xl border border-border/60 bg-card/50 p-6 sm:p-8">
-            <h3 className="text-base font-semibold text-foreground mb-4">Was wir bieten</h3>
+          <div className="surface-card">
+            <h3 className="h-card text-foreground mb-4">Was wir bieten</h3>
             <ul className="space-y-3">
               {benefits.map((b) => (
                 <li key={b} className="flex items-start gap-3">
@@ -59,8 +57,8 @@ const CareerSection = () => {
           </div>
         </div>
 
-        <div className="mt-10 rounded-xl border border-border/60 bg-card/50 p-6 sm:p-8">
-          <h3 className="text-base font-semibold text-foreground mb-3">So bewerben Sie sich</h3>
+        <div className="surface-card mt-10">
+          <h3 className="h-card text-foreground mb-3">So bewerben Sie sich</h3>
           <p className="text-sm text-muted-foreground leading-relaxed mb-4">
             Senden Sie Ihre Bewerbung per E-Mail an{" "}
             <a href="mailto:karriere@sentinel-services.de" className="text-primary hover:underline font-medium">

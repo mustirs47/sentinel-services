@@ -33,24 +33,21 @@ const TeamSection = () => {
 
   return (
     <section id="team" className="bg-background">
-      <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-            Kompetenz und Verantwortung im Team
-          </h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+      <div ref={ref} className="fade-in-section section-shell">
+        <div className="section-head">
+          <span className="eyebrow">Team</span>
+          <h2 className="h-section text-foreground">Kompetenz und Verantwortung im Team</h2>
+          <p className="section-intro">
             Hinter jedem Einsatz stehen klare Verantwortlichkeiten. Vier Kompetenzfelder tragen unsere Arbeit.
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {competences.map(({ icon: Icon, title, desc, focus }) => (
-            <div key={title} className="rounded-xl border border-border/60 bg-card/50 p-6 sm:p-8">
+            <div key={title} className="surface-card">
               <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                  <Icon className="h-5 w-5 text-primary" />
-                </div>
-                <h3 className="text-base font-semibold text-foreground">{title}</h3>
+                <span className="icon-tile-sm"><Icon /></span>
+                <h3 className="h-card text-foreground">{title}</h3>
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground mb-4">{desc}</p>
               <ul className="space-y-1.5">
