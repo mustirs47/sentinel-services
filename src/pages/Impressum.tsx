@@ -16,7 +16,7 @@ const Impressum = () => (
     />
 
     <section className="section-light">
-      <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
+      <div className="reading-shell">
         <div className="prose prose-sm max-w-none" style={{ color: "hsl(var(--section-light-fg))" }}>
           <h2 className="text-lg font-semibold mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
             Angaben gemäß § 5 TMG
