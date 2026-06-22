@@ -35,8 +35,8 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border/60 bg-card/40 text-muted-foreground transition-colors group-hover:border-primary/40 group-hover:text-primary">
-        <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200" />
+      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border/60 bg-transparent text-muted-foreground transition-colors group-hover:border-primary/60 group-hover:text-primary">
+        <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200" strokeWidth={2} />
       </span>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>

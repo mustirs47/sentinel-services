@@ -72,7 +72,7 @@ export type LucideIcon = ComponentType<ComponentProps<PhIcon>>;
  * h-/w- size classes keep working unchanged. Default weight is "duotone"
  * which renders a two-tone, professional look consistent with the brand.
  */
-const wrap = (Cmp: PhIcon, fallbackWeight: IconProps["weight"] = "duotone") => {
+const wrap = (Cmp: PhIcon, fallbackWeight: IconProps["weight"] = "regular") => {
   const Wrapped = (props: ComponentProps<typeof Cmp>) => (
     <Cmp weight={fallbackWeight} {...props} />
   );
@@ -128,12 +128,12 @@ export const Shield = wrap(PhShield);
 export const ShieldCheck = wrap(PhShieldCheck);
 export const ShoppingBag = wrap(PhShoppingBag);
 export const Sparkles = wrap(Sparkle);
-export const Star = wrap(PhStar, "fill");
+export const Star = wrap(PhStar);
 export const Target = wrap(PhTarget);
 export const UserCheck = wrap(UserCircleCheck);
 export const Users = wrap(PhUsers);
 export const X = wrapRegular(PhX);
-export const Zap = wrap(Lightning, "fill");
+export const Zap = wrap(Lightning);
 
 // Extended set used by data/divisions.ts and similar.
 export const SprayCan = wrap(SprayBottle);
