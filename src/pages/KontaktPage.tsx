@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Send, Shield, FileCheck, Users, Search, UserCheck, Radio, ClipboardCheck, ArrowRight, CheckCircle } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
@@ -39,6 +39,8 @@ const KontaktPage = () => {
   const { toast } = useToast();
   const ref = useScrollAnimation();
   const ref2 = useScrollAnimation();
+  const fid = useId();
+  const id = (k: string) => `${fid}-${k}`;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -114,7 +116,7 @@ const KontaktPage = () => {
     <PageLayout>
       <SEOHead
         title="Anfrage stellen – Kontakt | Sentinel Services"
-        description="Reinigung, Facility Management, Grünpflege oder Sicherheit anfragen: Formular oder E-Mail genügt. Beschreiben Sie Bedarf, Einsatzort und Zeitraum – wir melden uns mit einem konkreten Angebot. Kostenfrei und unverbindlich."
+        description="Reinigung, Facility Management, Grünpflege oder Sicherheit anfragen: Bedarf, Einsatzort und Zeitraum nennen – wir melden uns mit einem konkreten Angebot."
       />
       <BreadcrumbJsonLd
         items={[
@@ -141,7 +143,7 @@ const KontaktPage = () => {
       <section className="section-light border-b" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
           <p className="text-[10px] font-bold uppercase tracking-widest text-primary text-center mb-5">So läuft es ab</p>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {processSteps.map(({ icon: Icon, title, desc }, i) => (
               <div key={title} className="text-center relative">
                 <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 mb-2 relative">
@@ -229,7 +231,7 @@ const KontaktPage = () => {
                   </Button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="card-accent rounded-xl p-6 sm:p-8 space-y-4" style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}>
+                <form onSubmit={handleSubmit} className="card-accent rounded-xl p-6 sm:p-8 space-y-4" style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }} noValidate>
                   <h2 className="text-base font-bold mb-2" style={{ color: "hsl(var(--section-light-fg))" }}>
                     Kontaktformular
                   </h2>
@@ -240,74 +242,77 @@ const KontaktPage = () => {
                   <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
-                      <label className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Name *</label>
-                      <Input required name="name" maxLength={100} placeholder="Ihr Name" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400" />
+                      <label htmlFor={id("name")} className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Name *</label>
+                      <Input id={id("name")} required name="name" autoComplete="name" maxLength={100} placeholder="Ihr Name" />
                     </div>
                     <div>
-                      <label className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Unternehmen</label>
-                      <Input name="company" maxLength={150} placeholder="Firma / Organisation" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400" />
+                      <label htmlFor={id("company")} className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Unternehmen</label>
+                      <Input id={id("company")} name="company" autoComplete="organization" maxLength={150} placeholder="Firma / Organisation" />
                     </div>
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
-                      <label className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>E-Mail *</label>
-                      <Input required name="email" type="email" maxLength={255} placeholder="ihre@email.de" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400" />
+                      <label htmlFor={id("email")} className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>E-Mail *</label>
+                      <Input id={id("email")} required name="email" type="email" autoComplete="email" maxLength={255} placeholder="ihre@email.de" />
                     </div>
                     <div>
-                      <label className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Telefon</label>
-                      <Input name="phone" type="tel" maxLength={30} placeholder="Für Rückruf" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400" />
+                      <label htmlFor={id("phone")} className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Telefon</label>
+                      <Input id={id("phone")} name="phone" type="tel" autoComplete="tel" maxLength={30} placeholder="Für Rückruf" />
                     </div>
                   </div>
                   <div>
-                    <label className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Gewünschte Leistung</label>
-                    <Input name="service" maxLength={150} placeholder="z.B. Unterhaltsreinigung, Facility Management, Grünpflege, Objektschutz" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400" />
+                    <label htmlFor={id("service")} className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Gewünschte Leistung</label>
+                    <Input id={id("service")} name="service" maxLength={150} placeholder="z.B. Unterhaltsreinigung, Facility Management, Grünpflege, Objektschutz" />
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
-                      <label className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Einsatzort</label>
-                      <Input name="location" maxLength={120} placeholder="Stadt / PLZ" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400" />
+                      <label htmlFor={id("location")} className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Einsatzort</label>
+                      <Input id={id("location")} name="location" autoComplete="address-level2" maxLength={120} placeholder="Stadt / PLZ" />
                     </div>
                     <div>
-                      <label className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Zeitraum</label>
-                      <Input name="period" maxLength={80} placeholder="z.B. ab sofort, Q2 2026" className="bg-white border-gray-200 text-gray-900 placeholder:text-gray-400" />
+                      <label htmlFor={id("period")} className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Zeitraum</label>
+                      <Input id={id("period")} name="period" maxLength={80} placeholder="z.B. ab sofort, Q2 2026" />
                     </div>
                   </div>
                   <div>
-                    <label className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Nachricht *</label>
+                    <label htmlFor={id("message")} className="text-xs font-medium mb-1.5 block" style={{ color: "hsl(var(--section-light-fg))" }}>Nachricht *</label>
                     <textarea
+                      id={id("message")}
                       name="message"
                       required
                       maxLength={2000}
                       rows={4}
                       placeholder="Beschreiben Sie Ihren Bedarf..."
-                      className="flex w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                      className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     />
                   </div>
                   <div className="flex flex-wrap gap-4 text-sm text-muted-fg">
                     <label className="flex items-center gap-2 cursor-pointer">
-                      <input type="checkbox" name="callback" className="rounded border-gray-300 text-primary focus:ring-primary" />
+                      <input type="checkbox" name="callback" className="rounded border-input text-primary focus:ring-primary" />
                       Rückruf erwünscht
                     </label>
                     <label className="flex items-center gap-2 cursor-pointer">
-                      <input type="checkbox" name="urgent" className="rounded border-gray-300 text-primary focus:ring-primary" />
+                      <input type="checkbox" name="urgent" className="rounded border-input text-primary focus:ring-primary" />
                       Kurzfristiger Einsatzbedarf
                     </label>
                   </div>
-                  <div className="rounded-md border border-gray-200 bg-gray-50 p-3">
-                    <label className="flex items-start gap-2.5 cursor-pointer text-xs text-gray-700">
+                  <div className="rounded-md border p-3" style={{ borderColor: "hsl(var(--section-light-border))", background: "hsl(var(--section-light-card))" }}>
+                    <label className="flex items-start gap-2.5 cursor-pointer text-xs text-muted-fg">
                       <input
                         type="checkbox"
                         name="consent"
                         required
-                        className="mt-0.5 rounded border-gray-300 text-primary focus:ring-primary"
+                        className="mt-0.5 rounded border-input text-primary focus:ring-primary"
                       />
                       <span>
-                        Ich willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage
-                        verarbeitet werden. Weitere Informationen finden Sie in der{" "}
+                        Ich willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet und
+                        hierfür an unseren Formular-Dienstleister <strong>FormSubmit</strong> (USA) übermittelt
+                        werden (Art. 49 Abs. 1 lit. a DSGVO). Für die USA besteht kein genereller
+                        Angemessenheitsbeschluss; mögliche Risiken sind in der{" "}
                         <Link to="/datenschutz" className="text-primary hover:underline">
                           Datenschutzerklärung
                         </Link>
-                        . Die Einwilligung kann jederzeit per E-Mail an{" "}
+                        {" "}beschrieben. Die Einwilligung kann jederzeit per E-Mail an{" "}
                         <a href="mailto:info@sentinel-services.de" className="text-primary hover:underline">
                           info@sentinel-services.de
                         </a>{" "}
@@ -321,9 +326,10 @@ const KontaktPage = () => {
                       <Send className="ml-2 h-4 w-4" />
                     </Button>
                   </div>
-                  <p className="text-[11px] text-gray-500 leading-relaxed">
+                  <p className="text-[11px] text-muted-fg leading-relaxed">
                     Pflichtfelder sind mit * markiert. Wir verarbeiten Ihre Daten ausschließlich zur
-                    Bearbeitung Ihrer Anfrage und geben sie nicht an Dritte weiter.
+                    Bearbeitung Ihrer Anfrage. Zur Zustellung nutzen wir den Dienst FormSubmit (USA);
+                    Details siehe Datenschutzerklärung.
                   </p>
                 </form>
               )}

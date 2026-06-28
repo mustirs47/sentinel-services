@@ -37,7 +37,7 @@ const BranchenPage = () => {
     <PageLayout>
       <SEOHead
         title="Objektbetreuung nach Branche – 8 Einsatzbereiche | Sentinel Services"
-        description="Reinigung, Facility Management, Grünpflege und Sicherheit nach Branche: Gewerbe, Industrie, Baustelle, Handel, Events, Hotel, Wohnanlagen, Behörden. Anforderungen und passende Leistungen je Branche."
+        description="Reinigung, Facility Management, Grünpflege und Sicherheit nach Branche: Gewerbe, Industrie, Baustelle, Handel, Events, Hotel, Wohnanlagen, Behörden."
         keywords="Gebäudereinigung Branche, Facility Management Branche, Grünanlagenpflege gewerblich, Werkschutz Logistik, Eventsecurity, Hotelobjektbetreuung, Wohnanlagen Service"
       />
       <BreadcrumbJsonLd

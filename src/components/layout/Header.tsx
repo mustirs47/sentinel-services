@@ -46,8 +46,8 @@ const Header = () => {
               className="h-7 sm:h-8 lg:h-10 xl:h-11 w-auto"
               width={776}
               height={94}
-              fetchPriority="high"
               decoding="async"
+              {...({ fetchpriority: "high" } as Record<string, string>)}
             />
           </Link>
 

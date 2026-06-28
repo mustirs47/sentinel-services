@@ -66,7 +66,7 @@ const KarrierePage = () => {
     <PageLayout>
       <SEOHead
         title="Karriere bei Sentinel Services – Jobs in Reinigung, FM, Grünpflege & Sicherheit"
-        description="Jobs in Gebäudereinigung, Facility Management, Garten- und Grünanlagenpflege und Sicherheit. Faire Bezahlung, planbare Einsätze und Weiterbildung. Jetzt bewerben – bundesweit."
+        description="Jobs in Reinigung, Facility Management, Grünpflege und Sicherheit. Faire Bezahlung, planbare Einsätze, Weiterbildung. Jetzt bundesweit bewerben."
         keywords="Gebäudereiniger Job, Facility Management Job, Gärtner Job, Hausmeister Job, Security Job, §34a Job, Karriere Sentinel Services"
       />
       <FAQPageJsonLd faqs={careerFaqs} />
