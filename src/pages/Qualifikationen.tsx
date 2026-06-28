@@ -277,7 +277,7 @@ const QualifikationenPage = () => {
         </div>
       </section>
 
-      <FAQSection faqs={qualFaqs} title="Häufige Fragen zu Qualifikationen" />
+      <FAQSection faqs={qualFaqs} title="Häufige Fragen zu Qualifikationen" emitJsonLd={false} />
     </PageLayout>
   );
 };

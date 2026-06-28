@@ -231,7 +231,7 @@ const ArbeitsweisePage = () => {
         </div>
       </section>
 
-      <FAQSection faqs={arbeitsweiseFaqs} title="Häufige Fragen zur Arbeitsweise" />
+      <FAQSection faqs={arbeitsweiseFaqs} title="Häufige Fragen zur Arbeitsweise" emitJsonLd={false} />
     </PageLayout>
   );
 };

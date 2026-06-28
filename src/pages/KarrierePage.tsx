@@ -236,7 +236,7 @@ const KarrierePage = () => {
         </div>
       </section>
 
-      <FAQSection faqs={careerFaqs} title="Häufige Fragen zur Karriere" />
+      <FAQSection faqs={careerFaqs} title="Häufige Fragen zur Karriere" emitJsonLd={false} />
     </PageLayout>
   );
 };
