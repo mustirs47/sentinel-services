@@ -9,6 +9,8 @@ import {
   BreadcrumbJsonLd,
   FAQPageJsonLd,
   ItemListJsonLd,
+  ServiceJsonLd,
+  WebPageJsonLd,
 } from "@/components/StructuredData";
 import { BASE_URL } from "@/lib/seo";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -64,6 +66,16 @@ const DivisionHub = ({ division: slug }: Props) => {
           { name: "Startseite", url: `${BASE_URL}/` },
           { name: division.title, url: `${BASE_URL}/${division.slug}` },
         ]}
+      />
+      <WebPageJsonLd
+        name={division.metaTitle}
+        description={division.metaDescription}
+        url={`${BASE_URL}/${division.slug}`}
+      />
+      <ServiceJsonLd
+        name={division.title}
+        description={division.intro}
+        url={`${BASE_URL}/${division.slug}`}
       />
       <ItemListJsonLd
         items={division.services.map((s) => ({
@@ -230,7 +242,7 @@ const DivisionHub = ({ division: slug }: Props) => {
         </div>
       </section>
 
-      <FAQSection faqs={hubFaqs} title={`Häufige Fragen – ${division.shortLabel}`} />
+      <FAQSection faqs={hubFaqs} title={`Häufige Fragen – ${division.shortLabel}`} emitJsonLd={false} />
     </PageLayout>
   );
 };

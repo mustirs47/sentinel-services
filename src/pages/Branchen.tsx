@@ -219,7 +219,7 @@ const BranchenPage = () => {
         </div>
       </section>
 
-      <FAQSection faqs={branchenFaqs} title="Häufige Fragen zu Branchenlösungen" />
+      <FAQSection faqs={branchenFaqs} title="Häufige Fragen zu Branchenlösungen" emitJsonLd={false} />
     </PageLayout>
   );
 };

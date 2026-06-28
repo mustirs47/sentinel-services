@@ -71,7 +71,7 @@ const sicherheitServices: ServiceData[] = [
     h1: "Objektschutz & Werkschutz – Gebäudebewachung",
     metaTitle: "Objektschutz & Werkschutz | Sentinel Services",
     metaDescription:
-      "Objektschutz, Werkschutz und Wachschutz für Gebäude, Industrie und Gewerbe. §34a-geprüftes Personal, Zugangskontrolle, dokumentierte Rundgänge. Jetzt Angebot anfordern.",
+      "Objektschutz, Werkschutz und Wachschutz für Gebäude, Industrie und Gewerbe – §34a-geprüftes Personal, Zugangskontrolle, dokumentierte Rundgänge.",
     faqs: [
       { question: "Welche Qualifikationen haben Ihre Objektschutzkräfte?", answer: "Alle Einsatzkräfte verfügen über die Sachkundeprüfung nach §34a GewO, regelmäßige Schulungen in Deeskalation und Erste Hilfe sowie objektspezifische Einweisungen." },
       { question: "Wie schnell kann ein Objektschutz-Einsatz starten?", answer: "Bei kurzfristigem Bedarf können wir zügig einsatzbereit sein. Für planbare Einsätze erstellen wir vorab ein individuelles Konzept." },
@@ -92,7 +92,7 @@ const sicherheitServices: ServiceData[] = [
     h1: "Veranstaltungsschutz & Eventsecurity",
     metaTitle: "Veranstaltungsschutz & Eventsecurity | Sentinel Services",
     metaDescription:
-      "Veranstaltungsschutz mit erfahrenen Türstehern: Einlasskontrolle, Besucherlenkung und Deeskalation. Eventsecurity für Firmenevents, Messen und Großveranstaltungen.",
+      "Veranstaltungsschutz mit erfahrenen Türstehern: Einlasskontrolle, Besucherlenkung, Deeskalation – für Firmenevents, Messen und Großveranstaltungen.",
     faqs: [
       { question: "Ab welcher Veranstaltungsgröße bieten Sie Schutz an?", answer: "Wir sichern Veranstaltungen jeder Größe – von Firmenfeiern mit 50 Gästen bis zu Großveranstaltungen mit mehreren tausend Besuchern." },
       { question: "Übernehmen Sie auch die Abstimmung mit dem Ordnungsamt?", answer: "Ja, wir unterstützen bei der Erstellung von Sicherheitskonzepten und koordinieren uns direkt mit den zuständigen Behörden." },
@@ -151,7 +151,7 @@ const sicherheitServices: ServiceData[] = [
     h1: "Revierdienst, Streifendienst & Nachtwache",
     metaTitle: "Revierdienst & Streifendienst | Sentinel Services",
     metaDescription:
-      "Revierdienst, Streifendienst und Nachtwache mit geplanten Kontrollfahrten, Alarmverfolgung und Schließrunden. Bewachung ohne permanente Besetzung – effizient und dokumentiert.",
+      "Revierdienst, Streifendienst und Nachtwache mit geplanten Kontrollfahrten, Alarmverfolgung und Schließrunden – Bewachung ohne permanente Besetzung.",
     faqs: [
       { question: "Wie oft finden die Kontrollfahrten statt?", answer: "Die Häufigkeit wird individuell festgelegt – von einmal täglich bis zu mehrfachen Kontrollen pro Nacht, je nach Risikoprofil und Bedarf." },
       { question: "Werden die Kontrollgänge dokumentiert?", answer: "Ja, jeder Kontrollgang wird lückenlos dokumentiert. Sie erhalten regelmäßige Berichte über durchgeführte Kontrollen und festgestellte Abweichungen." },
@@ -385,7 +385,7 @@ export const divisions: DivisionData[] = [
     h1: "Sicherheit & Bewachung – Sicherheitsdienst mit §34a",
     metaTitle: "Sicherheitsdienst & Wachdienst | Sentinel Services",
     metaDescription:
-      "Sicherheitsdienst und Wachdienst: Objektschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangsdienst, Streifendienst und Sicherheitskonzepte – §34a-geprüft.",
+      "Sicherheitsdienst & Wachdienst: Objektschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangs- und Streifendienst – §34a-geprüft, bundesweit.",
     keywords: "Sicherheitsdienst, Wachdienst, Sicherheitsfirma, Objektschutz, Werkschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangsdienst, Streifendienst, Sicherheitskonzept, §34a",
     services: sicherheitServices,
   },
@@ -401,7 +401,7 @@ export const divisions: DivisionData[] = [
     h1: "Gebäudereinigung – Unterhalt, Glas, Grund- und Sonderreinigung",
     metaTitle: "Gebäudereinigung für Büro & Gewerbe | Sentinel Services",
     metaDescription:
-      "Gebäudereinigung aus einer Hand: Unterhaltsreinigung, Glas- und Fensterreinigung, Grundreinigung, Bauschluss- und Sonderreinigung. Eingewiesenes Personal, dokumentierte Qualität.",
+      "Gebäudereinigung aus einer Hand: Unterhaltsreinigung, Glas- & Fensterreinigung, Grundreinigung sowie Bauschluss- und Sonderreinigung – mit dokumentierter Qualität.",
     keywords: "Gebäudereinigung, Unterhaltsreinigung, Fensterreinigung, Glasreinigung, Grundreinigung, Bauschlussreinigung, Sonderreinigung",
     services: reinigungServices,
   },
@@ -433,7 +433,7 @@ export const divisions: DivisionData[] = [
     h1: "Facility Management – Gebäudemanagement aus einer Hand",
     metaTitle: "Facility Management & Gebäudemanagement | Sentinel Services",
     metaDescription:
-      "Facility Management: technisches, infrastrukturelles und kaufmännisches FM. Reinigung, Sicherheit, Grünpflege, Wartung und Vertragssteuerung – ein Ansprechpartner.",
+      "Facility Management aus einer Hand: technisches, infrastrukturelles & kaufmännisches FM – Reinigung, Sicherheit, Grünpflege und Vertragssteuerung.",
     keywords: "Facility Management, Gebäudemanagement, FM Dienstleister, technisches FM, infrastrukturelles FM, kaufmännisches FM",
     services: facilityServices,
   },

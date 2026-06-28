@@ -371,7 +371,7 @@ const KontaktPage = () => {
         </div>
       </section>
 
-      <FAQSection faqs={kontaktFaqs} title="Häufige Fragen zum Kontakt" />
+      <FAQSection faqs={kontaktFaqs} title="Häufige Fragen zum Kontakt" emitJsonLd={false} />
     </PageLayout>
   );
 };

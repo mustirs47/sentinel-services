@@ -5,11 +5,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { FAQPageJsonLd } from "@/components/StructuredData";
 
 interface FAQSectionProps {
   faqs?: { question: string; answer: string }[];
   title?: string;
   light?: boolean;
+  /** Set to false when parent already renders FAQPage JSON-LD for the same items. */
+  emitJsonLd?: boolean;
 }
 
 const defaultFaqs = [
@@ -21,12 +24,13 @@ const defaultFaqs = [
   { question: "Bieten Sie auch Nacht- und Wochenenddienste an?", answer: "Ja, wir sind rund um die Uhr einsatzbereit – einschließlich Nacht-, Wochenend- und Feiertagsdiensten." },
 ];
 
-const FAQSection = ({ faqs, title = "Häufig gestellte Fragen", light = false }: FAQSectionProps) => {
+const FAQSection = ({ faqs, title = "Häufig gestellte Fragen", light = false, emitJsonLd = true }: FAQSectionProps) => {
   const ref = useScrollAnimation();
   const items = faqs || defaultFaqs;
 
   return (
     <section className={light ? "section-light" : "bg-background"}>
+      {emitJsonLd && <FAQPageJsonLd faqs={items} />}
       <div ref={ref} className="fade-in-section reading-shell">
         <div className="section-head section-head--left !mb-10">
           <span className="eyebrow">FAQ</span>

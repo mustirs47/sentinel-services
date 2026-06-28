@@ -190,7 +190,7 @@ const ServiceDetail = ({ division: divisionSlug }: Props) => {
         </div>
       </section>
 
-      <FAQSection faqs={faqs} title={`Häufige Fragen zu ${title}`} />
+      <FAQSection faqs={faqs} title={`Häufige Fragen zu ${title}`} emitJsonLd={false} />
 
       {/* Related services */}
       <section ref={ref3} className="fade-in-section section-light border-t" style={{ borderColor: "hsl(var(--section-light-border))" }}>
