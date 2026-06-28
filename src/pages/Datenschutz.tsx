@@ -50,14 +50,48 @@ const Datenschutz = () => (
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>4. Anfrage per E-Mail</h2>
+            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>4. Formularverarbeitung über FormSubmit (Drittland-Übermittlung USA)</h2>
+            <p className="text-sm leading-relaxed text-muted-fg mb-3">
+              Zur technischen Verarbeitung und Zustellung der über unser Kontaktformular abgesendeten Anfragen nutzen wir den Dienst <strong>FormSubmit</strong> (Archieboy Holdings, LLC, USA),
+              erreichbar unter <a href="https://formsubmit.co" target="_blank" rel="noopener noreferrer" className="underline">formsubmit.co</a>. FormSubmit nimmt die übermittelten
+              Formularinhalte entgegen und leitet sie als E-Mail an unsere Postfachadresse weiter.
+            </p>
+            <p className="text-sm leading-relaxed text-muted-fg mb-3">
+              Verarbeitet werden dabei die von Ihnen aktiv eingegebenen Angaben (Name, ggf. Unternehmen, E-Mail-Adresse, Telefonnummer, gewünschte Leistung, Einsatzort, Zeitraum, Nachricht
+              sowie die optionalen Häkchen „Rückruf erwünscht" und „Kurzfristiger Einsatzbedarf"). Technisch unvermeidlich übermittelt Ihr Browser zusätzlich Ihre IP-Adresse und einen Zeitstempel
+              an die Server von FormSubmit.
+            </p>
+            <p className="text-sm leading-relaxed text-muted-fg mb-3">
+              Die Verarbeitung erfolgt zur Bearbeitung Ihrer Anfrage und zur Anbahnung eines möglichen Vertragsverhältnisses (Art. 6 Abs. 1 lit. b DSGVO) sowie auf Grundlage unseres berechtigten
+              Interesses an einer verlässlichen und spam-resistenten Formularzustellung (Art. 6 Abs. 1 lit. f DSGVO).
+            </p>
+            <p className="text-sm leading-relaxed text-muted-fg mb-3">
+              FormSubmit verarbeitet die Daten in den USA. Für die USA besteht kein genereller Angemessenheitsbeschluss der Europäischen Kommission, der mit dem Schutzniveau der DSGVO
+              uneingeschränkt vergleichbar wäre. Die Übermittlung erfolgt daher zusätzlich auf Grundlage Ihrer ausdrücklichen Einwilligung gemäß <strong>Art. 49 Abs. 1 lit. a DSGVO</strong>,
+              die Sie durch Setzen des entsprechenden Häkchens vor dem Absenden des Formulars erteilen. Sie wurden darüber informiert, dass für die USA derzeit kein Angemessenheitsbeschluss
+              vorliegt und mögliche Risiken einer Datenverarbeitung durch US-Behörden bestehen können (z. B. Zugriffsrechte nach US-Überwachungsgesetzen, eingeschränkte Betroffenenrechte).
+            </p>
+            <p className="text-sm leading-relaxed text-muted-fg mb-3">
+              Ihre Einwilligung können Sie jederzeit mit Wirkung für die Zukunft per E-Mail an
+              {" "}<a href="mailto:info@sentinel-services.de" className="underline">info@sentinel-services.de</a> widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung
+              bleibt davon unberührt. Möchten Sie keine Übermittlung an FormSubmit, nutzen Sie bitte alternativ den direkten E-Mail-Kontakt.
+            </p>
+            <p className="text-sm leading-relaxed text-muted-fg">
+              Die übermittelten Inhalte werden nur so lange gespeichert, wie es zur Bearbeitung Ihrer Anfrage erforderlich ist; gesetzliche Aufbewahrungsfristen bleiben unberührt. Weitere
+              Informationen zum Datenumgang durch FormSubmit finden Sie unter{" "}
+              <a href="https://formsubmit.co/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">formsubmit.co/legal/privacy-policy</a>.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>5. Anfrage per E-Mail</h2>
             <p className="text-sm leading-relaxed text-muted-fg">
               Wenn Sie uns per E-Mail kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist.
             </p>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>5. Ihre Rechte</h2>
+            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>6. Ihre Rechte</h2>
             <p className="text-sm leading-relaxed text-muted-fg mb-3">
               Sie haben jederzeit das Recht:
             </p>
@@ -72,21 +106,21 @@ const Datenschutz = () => (
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>6. SSL-/TLS-Verschlüsselung</h2>
+            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>7. SSL-/TLS-Verschlüsselung</h2>
             <p className="text-sm leading-relaxed text-muted-fg">
               Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL-/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
             </p>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>7. Cookies</h2>
+            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>8. Cookies</h2>
             <p className="text-sm leading-relaxed text-muted-fg">
-              Technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind, werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gesetzt. Wir haben ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und Optimierung unserer Website. Darüber hinaus setzen wir Cookies im Rahmen von Google Analytics ein (siehe Ziffer 8).
+              Technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind, werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gesetzt. Wir haben ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und Optimierung unserer Website. Darüber hinaus setzen wir Cookies im Rahmen von Google Analytics ein (siehe Ziffer 9).
             </p>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>8. Google Analytics</h2>
+            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>9. Google Analytics</h2>
             <p className="text-sm leading-relaxed text-muted-fg mb-3">
               Diese Website nutzt Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google"). Google Analytics verwendet sogenannte „Cookies", Textdateien, die auf Ihrem Endgerät gespeichert werden und eine Analyse der Benutzung der Website durch Sie ermöglichen.
             </p>
@@ -110,14 +144,14 @@ const Datenschutz = () => (
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>9. Hosting</h2>
+            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>10. Hosting</h2>
             <p className="text-sm leading-relaxed text-muted-fg">
               Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots (Art. 6 Abs. 1 lit. f DSGVO).
             </p>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>10. Änderung der Datenschutzerklärung</h2>
+            <h2 className="text-lg font-semibold mb-3" style={{ color: "hsl(var(--section-light-fg))" }}>11. Änderung der Datenschutzerklärung</h2>
             <p className="text-sm leading-relaxed text-muted-fg">
               Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
             </p>
