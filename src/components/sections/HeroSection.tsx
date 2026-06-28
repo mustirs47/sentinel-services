@@ -20,8 +20,8 @@ const HeroSection = () => (
         className="h-full w-full object-cover"
         width={1920}
         height={1080}
-        fetchPriority="high"
         decoding="async"
+        {...({ fetchpriority: "high" } as Record<string, string>)}
       />
       <div
         className="absolute inset-0"
