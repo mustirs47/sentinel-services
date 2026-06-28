@@ -39,6 +39,8 @@ const KontaktPage = () => {
   const { toast } = useToast();
   const ref = useScrollAnimation();
   const ref2 = useScrollAnimation();
+  const fid = useId();
+  const id = (k: string) => `${fid}-${k}`;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -141,7 +143,7 @@ const KontaktPage = () => {
       <section className="section-light border-b" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
           <p className="text-[10px] font-bold uppercase tracking-widest text-primary text-center mb-5">So läuft es ab</p>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {processSteps.map(({ icon: Icon, title, desc }, i) => (
               <div key={title} className="text-center relative">
                 <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 mb-2 relative">
