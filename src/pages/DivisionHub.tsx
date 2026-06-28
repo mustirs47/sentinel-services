@@ -242,7 +242,7 @@ const DivisionHub = ({ division: slug }: Props) => {
         </div>
       </section>
 
-      <FAQSection faqs={hubFaqs} title={`Häufige Fragen – ${division.shortLabel}`} />
+      <FAQSection faqs={hubFaqs} title={`Häufige Fragen – ${division.shortLabel}`} emitJsonLd={false} />
     </PageLayout>
   );
 };
