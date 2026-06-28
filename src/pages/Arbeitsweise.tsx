@@ -73,7 +73,7 @@ const ArbeitsweisePage = () => {
     <PageLayout>
       <SEOHead
         title="Unsere Arbeitsweise – Ablauf in 4 Phasen | Sentinel Services"
-        description="So arbeiten wir in Reinigung, Facility Management, Grünpflege und Sicherheit: vier Phasen von der Objektanalyse über Personal und Einsatz bis zum Reporting. Transparent und mit fester Einsatzleitung."
+        description="Unser Vier-Phasen-Modell für Reinigung, FM, Grünpflege und Sicherheit: Analyse, Personal, Einsatz, Reporting – transparent und mit fester Einsatzleitung."
       />
       <BreadcrumbJsonLd
         items={[

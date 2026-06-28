@@ -80,7 +80,7 @@ const QualifikationenPage = () => {
     <PageLayout>
       <SEOHead
         title="Qualifikationen & Nachweise unseres Personals | Sentinel Services"
-        description="Qualifikationen je Bereich: Reinigung (DIN 13549, Hygiene), Grünpflege (FLL, Baumkontrolle), Facility Management sowie Sicherheit (§34a GewO, IHK). Geprüftes, eingewiesenes Fachpersonal."
+        description="Qualifikationen je Bereich: Reinigung (DIN 13549), Grünpflege (FLL), Facility Management und Sicherheit (§34a GewO). Geprüftes Fachpersonal."
         keywords="Gebäudereinigung Qualifikation, FLL Baumpflege, Facility Management Nachweise, Sachkundeprüfung 34a, §34a GewO, Fachpersonal Objektbetreuung"
       />
       <BreadcrumbJsonLd
