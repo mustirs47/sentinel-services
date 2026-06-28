@@ -73,9 +73,22 @@ export type LucideIcon = ComponentType<ComponentProps<PhIcon>>;
  * which renders a two-tone, professional look consistent with the brand.
  */
 const wrap = (Cmp: PhIcon, fallbackWeight: IconProps["weight"] = "regular") => {
-  const Wrapped = (props: ComponentProps<typeof Cmp>) => (
-    <Cmp weight={fallbackWeight} {...props} />
-  );
+  const Wrapped = (props: ComponentProps<typeof Cmp>) => {
+    // Mark decorative icons as aria-hidden by default; call-sites that
+    // need an accessible name pass aria-label and explicitly override.
+    const hasA11yName =
+      (props as { "aria-label"?: string })["aria-label"] !== undefined ||
+      (props as { "aria-labelledby"?: string })["aria-labelledby"] !== undefined ||
+      (props as { role?: string }).role === "img";
+    return (
+      <Cmp
+        weight={fallbackWeight}
+        aria-hidden={hasA11yName ? undefined : true}
+        focusable={false}
+        {...props}
+      />
+    );
+  };
   Wrapped.displayName = `Icon(${Cmp.displayName ?? "phosphor"})`;
   return Wrapped as ComponentType<ComponentProps<typeof Cmp>>;
 };
