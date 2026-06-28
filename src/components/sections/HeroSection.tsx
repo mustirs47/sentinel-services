@@ -72,6 +72,8 @@ const HeroSection = () => (
             className="w-72 xl:w-[26rem] 2xl:w-[32rem] h-auto drop-shadow-2xl"
             width={384}
             height={288}
+            decoding="async"
+            loading="eager"
           />
         </div>
       </div>
