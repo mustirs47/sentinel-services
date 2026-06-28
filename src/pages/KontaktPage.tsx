@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Send, Shield, FileCheck, Users, Search, UserCheck, Radio, ClipboardCheck, ArrowRight, CheckCircle } from "@/lib/icons";
 import { Button } from "@/components/ui/button";
@@ -114,7 +114,7 @@ const KontaktPage = () => {
     <PageLayout>
       <SEOHead
         title="Anfrage stellen – Kontakt | Sentinel Services"
-        description="Reinigung, Facility Management, Grünpflege oder Sicherheit anfragen: Formular oder E-Mail genügt. Beschreiben Sie Bedarf, Einsatzort und Zeitraum – wir melden uns mit einem konkreten Angebot. Kostenfrei und unverbindlich."
+        description="Reinigung, Facility Management, Grünpflege oder Sicherheit anfragen: Bedarf, Einsatzort und Zeitraum nennen – wir melden uns mit einem konkreten Angebot."
       />
       <BreadcrumbJsonLd
         items={[
