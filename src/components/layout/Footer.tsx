@@ -41,7 +41,7 @@ const Footer = () => (
           <p className="text-sm leading-relaxed text-muted-foreground max-w-xs">
             Sicherheit, Reinigung, Grünanlagen und Facility Management – aus einer Hand, mit eingewiesenem Personal und dokumentierter Leistung.
           </p>
-          <p className="mt-3 text-xs text-muted-foreground/60">
+          <p className="mt-3 text-xs text-muted-foreground">
             Einsatzgebiet: Bundesweit
           </p>
         </div>
@@ -106,12 +106,12 @@ const Footer = () => (
       </div>
 
       <div className="mt-10 border-t border-border/40 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-        <p className="text-xs text-muted-foreground/60">
+        <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} Sentinel Services. Alle Rechte vorbehalten.
         </p>
-        <p className="text-xs text-muted-foreground/40">
+        <p className="text-xs text-muted-foreground">
           Webdesign:{" "}
-          <a href="https://www.ovarna.de/?utm_source=sentinel-services.de&utm_medium=referral&utm_campaign=footer-credit" target="_blank" rel="noopener noreferrer" className="hover:text-muted-foreground/60 transition-colors">
+          <a href="https://www.ovarna.de/?utm_source=sentinel-services.de&utm_medium=referral&utm_campaign=footer-credit" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
             Ovarna
           </a>
         </p>
