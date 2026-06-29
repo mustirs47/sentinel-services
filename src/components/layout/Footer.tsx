@@ -95,7 +95,7 @@ const Footer = () => (
                 <button
                   type="button"
                   onClick={reopenCookieSettings}
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary text-left"
+                  className="block py-1.5 text-sm text-muted-foreground transition-colors hover:text-primary text-left"
                 >
                   Cookie-Einstellungen
                 </button>
