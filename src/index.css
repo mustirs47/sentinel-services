@@ -131,6 +131,7 @@
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  min-width: 0; /* prevent CSS-Grid min-content blowup on mobile */
 }
 
 .stagger-children.is-visible > *:nth-child(1),
