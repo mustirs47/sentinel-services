@@ -32,8 +32,8 @@ const Footer = () => (
               src={logoGrayscale}
               alt="Sentinel Services"
               className="h-8 sm:h-9 w-auto mb-4"
-              width={776}
-              height={94}
+              width={798}
+              height={118}
               loading="lazy"
               decoding="async"
             />

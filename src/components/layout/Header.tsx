@@ -44,8 +44,8 @@ const Header = () => {
               src={logoColor}
               alt="Sentinel Services"
               className="h-7 sm:h-8 lg:h-10 xl:h-11 w-auto"
-              width={776}
-              height={94}
+              width={798}
+              height={118}
               decoding="async"
               {...({ fetchpriority: "high" } as Record<string, string>)}
             />
