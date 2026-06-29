@@ -11,10 +11,11 @@ const PillarsSection = () => {
       <div ref={ref} className="fade-in-section section-shell">
         <div className="section-head">
           <span className="eyebrow">Vier Geschäftsbereiche</span>
-          <h2 className="h-section">Schutz, Sauberkeit und Werterhalt – aus einer Hand</h2>
+          <h2 className="h-section">Vier Bereiche, ein Ansprechpartner</h2>
           <p className="section-intro">
-            Sicherheit, Gebäudereinigung, Grünanlagen und Facility Management.
-            Eigenständige Bereiche, ein Ansprechpartner, gemeinsame Standards.
+            Sicherheit, Gebäudereinigung, Grünanlagen und Facility Management lassen sich
+            einzeln beauftragen oder zur kompletten Objektbetreuung kombinieren – mit den
+            gleichen Standards für Personal, Dokumentation und Reporting.
           </p>
         </div>
 

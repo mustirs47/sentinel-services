@@ -16,12 +16,13 @@ interface FAQSectionProps {
 }
 
 const defaultFaqs = [
-  { question: "Welche Zulassungen hat Sentinel Services?", answer: "Wir verfügen über die Gewerbeerlaubnis nach §34a GewO. Alle Einsatzkräfte haben die Sachkundeprüfung nach §34a GewO (IHK) abgelegt." },
-  { question: "Wie schnell können Sie auf eine Anfrage reagieren?", answer: "Wir melden uns schnellstmöglich auf Ihre Anfrage. Bei kurzfristigem Einsatzbedarf können wir häufig zügig einsatzbereit sein." },
-  { question: "In welchem Gebiet sind Sie tätig?", answer: "Wir sind bundesweit einsatzbereit. Kontaktieren Sie uns für eine unverbindliche Bedarfsanalyse." },
-  { question: "Wie werden Einsätze dokumentiert?", answer: "Jeder Einsatz wird lückenlos dokumentiert – mit standardisierten Übergabe- und Meldeprotokollen. Sie erhalten regelmäßige Berichte." },
-  { question: "Gibt es Mindestlaufzeiten für Verträge?", answer: "Die Vertragslaufzeit wird individuell vereinbart. Wir bieten sowohl projektbezogene Einzeleinsätze als auch langfristige Betreuung an." },
-  { question: "Bieten Sie auch Nacht- und Wochenenddienste an?", answer: "Ja, wir sind rund um die Uhr einsatzbereit – einschließlich Nacht-, Wochenend- und Feiertagsdiensten." },
+  { question: "Kann ich mehrere Bereiche gleichzeitig beauftragen?", answer: "Ja. Sicherheit, Reinigung, Grünanlagen und Facility Management lassen sich frei kombinieren – Sie haben in jedem Fall einen festen Ansprechpartner für das gesamte Objekt." },
+  { question: "Welche Zulassungen liegen vor?", answer: "Für den Bereich Sicherheit verfügen wir über die Gewerbeerlaubnis nach § 34a GewO; alle Einsatzkräfte haben die zugehörige IHK-Sachkundeprüfung abgelegt. In den anderen Bereichen arbeiten wir mit eingewiesenem Fachpersonal." },
+  { question: "Wie schnell bekomme ich eine Rückmeldung?", answer: "In der Regel innerhalb eines Werktags. Bei kurzfristigem Bedarf melden wir uns am selben Tag und prüfen, was sich kurzfristig realisieren lässt." },
+  { question: "Sind Sie auch außerhalb von Magdeburg tätig?", answer: "Ja, wir arbeiten bundesweit. Ob und in welcher Form ein Einsatz in Ihrer Region sinnvoll ist, klären wir kurz im Vorfeld." },
+  { question: "Wie wird die Leistung dokumentiert?", answer: "Jeder Einsatz wird mit standardisierten Übergabe- und Meldeprotokollen festgehalten. Sie bekommen Berichte in dem Rhythmus, den wir vorab gemeinsam festlegen." },
+  { question: "Gibt es feste Vertragslaufzeiten?", answer: "Nein, die Laufzeit wird individuell vereinbart – vom projektbezogenen Einzeleinsatz bis zur langfristigen Objektbetreuung." },
+  { question: "Auch nachts und am Wochenende?", answer: "Ja, Nacht-, Wochenend- und Feiertagseinsätze gehören in den Bereichen Sicherheit, Winterdienst und Bauschlussreinigung zum Standard." },
 ];
 
 const FAQSection = ({ faqs, title = "Häufig gestellte Fragen", light = false, emitJsonLd = true }: FAQSectionProps) => {
