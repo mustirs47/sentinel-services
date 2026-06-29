@@ -92,7 +92,7 @@ const KarrierePage = () => {
       {/* 3-step application process */}
       <section className="section-light border-b" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-          <p className="text-[10px] font-bold uppercase tracking-widest text-primary text-center mb-6">Bewerbungsprozess</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-primary text-center mb-6">Bewerbungsprozess</p>
           <div className="grid grid-cols-3 gap-4 sm:gap-8">
             {steps.map(({ icon: Icon, title, desc }, i) => (
               <div key={title} className="text-center relative">

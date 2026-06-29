@@ -124,14 +124,14 @@ const BranchenPage = () => {
                   {/* Risks */}
                   {risks[slug] && (
                     <div className="mb-5">
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-accent mb-2 flex items-center gap-1.5">
+                      <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2 flex items-center gap-1.5">
                         <AlertTriangle className="h-3 w-3" /> Typische Risiken
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         {risks[slug].map((risk) => (
                           <span
                             key={risk}
-                            className="rounded-md px-2 py-0.5 text-[11px] font-medium"
+                            className="rounded-md px-2 py-0.5 text-xs font-medium"
                             style={{ background: "hsl(42 80% 55% / 0.08)", color: "hsl(var(--section-light-muted))" }}
                           >
                             {risk}
@@ -142,7 +142,7 @@ const BranchenPage = () => {
                   )}
 
                   <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary mb-2 flex items-center gap-1.5">
+                    <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2 flex items-center gap-1.5">
                       <CheckCircle className="h-3 w-3" /> Passende Leistungen
                     </p>
                     <div className="flex flex-wrap gap-2">
