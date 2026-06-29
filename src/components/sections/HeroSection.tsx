@@ -72,8 +72,8 @@ const HeroSection = () => (
             src={heroIllustration}
             alt="Isometrische Darstellung: Objektbetreuung mit Reinigung, Pflege und Sicherheit"
             className="w-72 xl:w-[26rem] 2xl:w-[32rem] h-auto drop-shadow-2xl"
-            width={384}
-            height={288}
+            width={1024}
+            height={1024}
             decoding="async"
             loading="eager"
           />
