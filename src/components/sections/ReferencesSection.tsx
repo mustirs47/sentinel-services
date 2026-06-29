@@ -46,11 +46,11 @@ const ReferencesSection = () => {
                 </div>
                 <div className="space-y-4">
                   <div>
-                    <p className="eyebrow !mb-1 !text-[10px]">Ausgangslage</p>
+                    <p className="eyebrow !mb-1 !text-[12px]">Ausgangslage</p>
                     <p className="text-sm text-muted-foreground leading-relaxed">{situation}</p>
                   </div>
                   <div>
-                    <p className="eyebrow !mb-1 !text-[10px]">Unser Einsatz</p>
+                    <p className="eyebrow !mb-1 !text-[12px]">Unser Einsatz</p>
                     <p className="text-sm text-muted-foreground leading-relaxed">{einsatz}</p>
                   </div>
                 </div>
