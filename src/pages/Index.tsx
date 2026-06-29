@@ -13,7 +13,7 @@ import FAQSection from "@/components/sections/FAQSection";
 const Index = () => (
   <PageLayout>
     <SEOHead
-      title="Sentinel Services – Sicherheit, Reinigung, Grünanlagen & Facility Management"
+      title="Sentinel Services – Objektbetreuung aus einer Hand"
       description="Sicherheitsdienst, Gebäudereinigung, Grünanlagenpflege und Facility Management aus einer Hand. Geprüftes Personal, feste Ansprechpartner, dokumentierte Leistung."
       keywords="Sicherheitsdienst, Gebäudereinigung, Grünanlagenpflege, Facility Management, Objektbetreuung, Wachdienst, Fensterreinigung, Winterdienst, FM Dienstleister"
     />

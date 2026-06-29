@@ -148,7 +148,7 @@ const DivisionHub = ({ division: slug }: Props) => {
                 {serviceIllustrations[sSlug] ? (
                   <img
                     src={serviceIllustrations[sSlug]}
-                    alt={title}
+                    alt={`Illustration – ${title} (${division.shortLabel})`}
                     className="h-28 w-auto object-contain mb-4 -ml-2"
                     loading="lazy"
                     width={112}
