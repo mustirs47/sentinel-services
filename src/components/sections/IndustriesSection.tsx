@@ -10,8 +10,11 @@ const IndustriesSection = () => {
     <section id="branchen" className="section-light">
       <div ref={ref} className="fade-in-section section-shell">
         <div className="section-head">
-          <span className="eyebrow">8 Branchen</span>
-          <h2 className="h-section">Branchen, die wir absichern</h2>
+          <span className="eyebrow">Branchen</span>
+          <h2 className="h-section">Wo wir typischerweise tätig sind</h2>
+          <p className="section-intro">
+            Acht Branchen, in denen wir die Anforderungen an Objekt, Personal und Dokumentation kennen.
+          </p>
         </div>
 
         <div className="stagger-children grid gap-3 grid-cols-2 lg:grid-cols-4">

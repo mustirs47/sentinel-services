@@ -11,9 +11,10 @@ const ContactSection = () => {
       <div ref={ref} className="fade-in-section section-shell">
         <div className="section-head">
           <span className="eyebrow">Kontakt</span>
-          <h2 className="h-section">Anfrage stellen</h2>
+          <h2 className="h-section">Sie wissen, was Sie brauchen?</h2>
           <p className="section-intro">
-            Beschreiben Sie Ihren Bedarf – wir melden uns schnellstmöglich mit einem konkreten Vorschlag.
+            Schildern Sie kurz Objekt, Leistung und Zeitraum – wir melden uns mit einem konkreten Vorschlag,
+            in der Regel innerhalb eines Werktags.
           </p>
         </div>
 
@@ -60,16 +61,16 @@ const ContactSection = () => {
 
           <div className="lg:col-span-3">
             <div className="card-accent surface-card flex flex-col h-full">
-              <h3 className="h-card text-lg !font-bold mb-2">Bereit für ein konkretes Angebot?</h3>
+              <h3 className="h-card text-lg !font-bold mb-2">Anfrageformular ausfüllen</h3>
               <p className="text-sm text-muted-fg mb-6">
-                Auf unserer Kontaktseite finden Sie ein vollständiges Anfrageformular –
-                mit allen Angaben für ein konkretes Angebot.
+                Auf der Kontaktseite finden Sie ein kurzes Formular für die wichtigsten Eckdaten –
+                wir erstellen daraus ein passendes Angebot, ohne Umwege über ein Vertriebsgespräch.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Konkretes Angebot auf Anfrage",
-                  "Konzept individuell auf Ihren Bedarf",
-                  "Transparente Kostenaufstellung",
+                  "Schriftliches Angebot statt Verkaufsgespräch",
+                  "Konzept auf Ihr Objekt zugeschnitten",
+                  "Kosten klar und nachvollziehbar aufgeschlüsselt",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-muted-fg">
                     <FileCheck className="h-4 w-4 text-primary shrink-0 mt-0.5" />
