@@ -85,7 +85,7 @@ const ServiceDetail = ({ division: divisionSlug }: Props) => {
           {/* Two-column layout */}
           <div className="grid gap-10 lg:grid-cols-3">
             {/* Left: Main content */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 min-w-0 space-y-8">
               <div>
                 <h2 className="text-xl font-bold mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
                   Über diese Leistung
@@ -113,17 +113,17 @@ const ServiceDetail = ({ division: divisionSlug }: Props) => {
               </div>
 
               <div className="flex flex-wrap gap-3">
-                <Button asChild size="lg">
+                <Button asChild size="lg" className="max-w-full whitespace-normal h-auto py-3 text-left">
                   <Link to="/kontakt">
-                    {title} anfragen
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <span className="break-words">Anfrage senden</span>
+                    <ArrowRight className="ml-2 h-4 w-4 shrink-0" />
                   </Link>
                 </Button>
               </div>
             </div>
 
             {/* Right: Sidebar */}
-            <div className="space-y-6">
+            <div className="min-w-0 space-y-6">
               <div
                 className="rounded-xl p-6 sticky top-24"
                 style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
