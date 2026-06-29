@@ -47,13 +47,13 @@ const ContactSection = () => {
               <p className="eyebrow !mb-3 !text-[11px]">Darauf können Sie sich verlassen</p>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2 text-xs text-muted-fg">
-                  <Shield className="h-3.5 w-3.5 text-primary shrink-0" /> §34a GewO – geprüftes Personal
+                  <Shield className="h-3.5 w-3.5 text-primary shrink-0" /> Geprüftes, eingewiesenes Personal
                 </li>
                 <li className="flex items-center gap-2 text-xs text-muted-fg">
                   <Users className="h-3.5 w-3.5 text-primary shrink-0" /> Feste Ansprechpartner
                 </li>
                 <li className="flex items-center gap-2 text-xs text-muted-fg">
-                  <FileCheck className="h-3.5 w-3.5 text-primary shrink-0" /> Lückenlose Dokumentation
+                  <FileCheck className="h-3.5 w-3.5 text-primary shrink-0" /> Nachvollziehbare Berichte
                 </li>
               </ul>
             </div>
