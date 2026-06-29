@@ -21,14 +21,13 @@
     <meta name="twitter:description" content="Sicherheit, Reinigung, Grünanlagen und Facility Management – bundesweit." />
     <meta name="twitter:image" content="https://www.sentinel-services.de/logo.png" />
 
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
     <!-- LCP preload: Hero background -->
     <link rel="preload" as="image" href="/hero-bg.webp" type="image/webp" fetchpriority="high" />
 
-    <!-- Google tag (gtag.js) -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-7SEPJVQ1VF"></script>
+    <!-- Google tag (gtag.js) – deferred until first interaction to protect LCP/TBT -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -44,6 +43,27 @@
       });
       gtag('js', new Date());
       gtag('config', 'G-7SEPJVQ1VF', { anonymize_ip: true });
+      (function () {
+        var loaded = false;
+        function loadGtag() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7SEPJVQ1VF';
+          document.head.appendChild(s);
+        }
+        var events = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+        events.forEach(function (e) {
+          window.addEventListener(e, loadGtag, { once: true, passive: true });
+        });
+        // Fallback: load after idle so analytics still fires for bounce visits
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadGtag, { timeout: 6000 });
+        } else {
+          setTimeout(loadGtag, 5000);
+        }
+      })();
     </script>
 
     <script type="application/ld+json">
