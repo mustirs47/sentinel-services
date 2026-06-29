@@ -164,7 +164,7 @@ const ServiceDetail = ({ division: divisionSlug }: Props) => {
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center mb-12">
             <p className="eyebrow">Ablauf</p>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            <h2 className="h-section">
               Von der Anfrage zum Einsatz
             </h2>
           </div>

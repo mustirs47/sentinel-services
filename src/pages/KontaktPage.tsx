@@ -342,7 +342,7 @@ const KontaktPage = () => {
       <section className="bg-background border-t border-border/50">
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl mb-3">
+            <h2 className="h-section mb-3">
               Noch unsicher? Informieren Sie sich weiter
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">

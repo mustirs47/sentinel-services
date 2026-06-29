@@ -120,7 +120,7 @@ const ArbeitsweisePage = () => {
       <section className="section-light">
         <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-12">
           <div className="max-w-2xl mb-10">
-            <h2 className="text-2xl font-bold sm:text-3xl lg:text-[2rem] tracking-tight mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+            <h2 className="h-section mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
               Unsere Leitprinzipien
             </h2>
             <p className="prose-lead text-muted-fg">
@@ -150,7 +150,7 @@ const ArbeitsweisePage = () => {
         <div ref={ref} className="fade-in-section reading-shell">
           <div className="text-center mb-14">
             <p className="eyebrow">4 Phasen</p>
-            <h2 className="text-2xl font-bold sm:text-3xl" style={{ color: "hsl(var(--section-light-fg))" }}>
+            <h2 className="h-section" style={{ color: "hsl(var(--section-light-fg))" }}>
               Unser strukturierter Einsatzprozess
             </h2>
           </div>
@@ -201,7 +201,7 @@ const ArbeitsweisePage = () => {
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="text-center mb-12">
             <p className="eyebrow">Unser Team</p>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            <h2 className="h-section">
               Kompetenz, der Sie vertrauen können
             </h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">

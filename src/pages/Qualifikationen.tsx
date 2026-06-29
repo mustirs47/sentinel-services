@@ -132,7 +132,7 @@ const QualifikationenPage = () => {
       <section className="section-light">
         <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-12">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold sm:text-3xl lg:text-[2rem] tracking-tight mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+            <h2 className="h-section mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
               Warum Qualifikation zählt
             </h2>
             <p className="prose-lead text-muted-fg">
@@ -193,7 +193,7 @@ const QualifikationenPage = () => {
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="text-center mb-12">
             <p className="eyebrow">Unser Qualifizierungsprozess</p>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            <h2 className="h-section">
               Vom Nachwuchs zur zertifizierten Einsatzkraft
             </h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
@@ -257,7 +257,7 @@ const QualifikationenPage = () => {
       {/* CTA Section */}
       <section className="bg-background border-t border-border/50">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 text-center">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl mb-4">
+          <h2 className="h-section mb-4">
             Überzeugt von unserer Qualifikation?
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">

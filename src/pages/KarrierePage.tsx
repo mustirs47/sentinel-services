@@ -185,7 +185,7 @@ const KarrierePage = () => {
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="text-center mb-12">
             <p className="eyebrow">Warum Sentinel</p>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            <h2 className="h-section">
               Das unterscheidet uns als Arbeitgeber
             </h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">

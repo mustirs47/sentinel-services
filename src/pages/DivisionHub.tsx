@@ -126,7 +126,7 @@ const DivisionHub = ({ division: slug }: Props) => {
         >
           <div className="max-w-3xl mb-10">
             <h2
-              className="text-2xl font-bold sm:text-3xl mb-4"
+              className="h-section mb-4"
               style={{ color: "hsl(var(--section-light-fg))" }}
             >
               Leistungen im Bereich {division.shortLabel}
@@ -198,7 +198,7 @@ const DivisionHub = ({ division: slug }: Props) => {
       >
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 text-center">
           <h2
-            className="text-2xl font-bold sm:text-3xl mb-4"
+            className="h-section mb-4"
             style={{ color: "hsl(var(--section-light-fg))" }}
           >
             Bedarf im Bereich {division.shortLabel}?
