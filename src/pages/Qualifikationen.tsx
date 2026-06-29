@@ -148,7 +148,7 @@ const QualifikationenPage = () => {
       {/* Qualification groups */}
       <section className="section-light">
         <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-24">
-          <div className="stagger-children grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="stagger-children grid gap-6 sm:grid-cols-2 xl:grid-cols-4 [&>*]:min-w-0">
             {groups.map(({ icon: Icon, title, items, relevance }) => (
               <div
                 key={title}
