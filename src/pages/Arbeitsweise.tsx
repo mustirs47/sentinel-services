@@ -46,7 +46,7 @@ const phases = [
 ];
 
 const teamCompetencies = [
-  { icon: Shield, title: "§34a-geprüftes Personal", desc: "Alle Einsatzkräfte mit Sachkundeprüfung nach §34a GewO (IHK). Zwingende Einstellungsvoraussetzung." },
+  { icon: Shield, title: "Geprüftes Fachpersonal", desc: "Im Sicherheitsdienst gehört die IHK-Sachkundeprüfung zur Grundvoraussetzung – in den übrigen Bereichen arbeiten wir mit eingearbeiteten Fachkräften." },
   { icon: Users, title: "Feste Teams", desc: "Kontinuität statt Rotation – Sie bekommen feste Ansprechpartner und ein Team, das Ihr Objekt kennt." },
   { icon: HeartPulse, title: "Regelmäßige Weiterbildung", desc: "Mindestens zweimal jährlich: Deeskalation, Erste Hilfe, Brandschutz und objektspezifische Schulungen." },
 ];

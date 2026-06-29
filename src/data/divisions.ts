@@ -66,14 +66,14 @@ const sicherheitServices: ServiceData[] = [
     desc: "Zugangskontrollen, Schichtbetrieb und sichtbare Präsenz – abgestimmt auf Objekt und Risikoprofil.",
     points: ["Zugangs- und Zutrittskontrolle", "Schließ- und Kontrolldienste", "Dokumentierte Rundgänge"],
     longDesc:
-      "Professioneller Objektschutz und Werkschutz für Gebäude, Betriebsstätten und Industrieanlagen – rund um die Uhr durch §34a-geprüftes Personal. Ob Bürokomplex, Produktionsstätte, Lager oder öffentliches Gebäude: Wir setzen auf sichtbare Präsenz, lückenlose Zugangs- und Zutrittskontrolle sowie dokumentierte Kontrollgänge. Als Objektschutz-Dienstleister entwickeln wir Wachschutz-Konzepte, die auf Risikoprofil, Betriebszeiten und interne Abläufe Ihres Objekts abgestimmt sind.",
+      "Objektschutz und Werkschutz für Gebäude, Betriebsstätten und Industrieanlagen – mit geprüftem Sicherheitspersonal, das auf Ihr Objekt eingewiesen ist. Ob Bürokomplex, Produktionsstätte, Lager oder öffentliches Gebäude: sichtbare Präsenz, geregelte Zugangs- und Zutrittskontrolle und dokumentierte Kontrollgänge. Die Wachkonzepte richten sich nach Risikoprofil, Betriebszeiten und den internen Abläufen Ihres Hauses.",
     typicalClients: "Hausverwaltungen, Unternehmen mit Büro- und Gewerbeflächen, öffentliche Einrichtungen, Industriebetriebe.",
     h1: "Objektschutz & Werkschutz – Gebäudebewachung",
     metaTitle: "Objektschutz & Werkschutz | Sentinel Services",
     metaDescription:
-      "Objektschutz, Werkschutz und Wachschutz für Gebäude, Industrie und Gewerbe – §34a-geprüftes Personal, Zugangskontrolle, dokumentierte Rundgänge.",
+      "Objektschutz, Werkschutz und Wachschutz für Gebäude, Industrie und Gewerbe – geprüftes Sicherheitspersonal, Zugangskontrolle und dokumentierte Rundgänge.",
     faqs: [
-      { question: "Welche Qualifikationen haben Ihre Objektschutzkräfte?", answer: "Alle Einsatzkräfte verfügen über die Sachkundeprüfung nach §34a GewO, regelmäßige Schulungen in Deeskalation und Erste Hilfe sowie objektspezifische Einweisungen." },
+      { question: "Welche Qualifikationen haben Ihre Objektschutzkräfte?", answer: "Unsere Einsatzkräfte haben die IHK-Sachkundeprüfung für das Bewachungsgewerbe, werden regelmäßig in Deeskalation und Erste Hilfe geschult und vor dem ersten Einsatz objektspezifisch eingewiesen." },
       { question: "Wie schnell kann ein Objektschutz-Einsatz starten?", answer: "Bei kurzfristigem Bedarf können wir zügig einsatzbereit sein. Für planbare Einsätze erstellen wir vorab ein individuelles Konzept." },
       { question: "Bieten Sie auch Nacht- und Wochenendbewachung an?", answer: "Ja, wir bieten Objektschutz rund um die Uhr, einschließlich Nacht-, Wochenend- und Feiertagsdiensten." },
       { question: "Was ist der Unterschied zwischen Objektschutz und Werkschutz?", answer: "Werkschutz ist eine Sonderform des Objektschutzes für Industriebetriebe und Produktionsstätten – mit zusätzlichem Fokus auf Werkstor-Kontrolle, Brandwache und Schutz sensibler Anlagen." },
@@ -112,7 +112,7 @@ const sicherheitServices: ServiceData[] = [
     h1: "Baustellenbewachung, Brandwache & Nachtwache",
     metaTitle: "Baustellenbewachung & Brandwache | Sentinel Services",
     metaDescription:
-      "Baustellenbewachung in Nacht- und Wochenendlage, Brandwache nach DGUV und zuverlässige Nachtwache. §34a-geprüftes Personal, schnelle Meldekette bei Vorfällen.",
+      "Baustellenbewachung in Nacht- und Wochenendlage, Brandwache nach DGUV und zuverlässige Nachtwache. Geprüftes Sicherheitspersonal, schnelle Meldekette bei Vorfällen.",
     faqs: [
       { question: "Welche Baustellen sichern Sie?", answer: "Wir sichern Baustellen jeder Größe – vom Einfamilienhaus bis zur Großbaustelle. Der Fokus liegt auf Flächen mit hohem Materialwert oder offenem Zugang." },
       { question: "Was passiert bei einem Vorfall auf der Baustelle?", answer: "Unsere Einsatzkräfte melden jeden Vorfall sofort an den Bauleiter und dokumentieren den Sachverhalt lückenlos." },
@@ -165,12 +165,12 @@ const sicherheitServices: ServiceData[] = [
     desc: "Risikoanalyse, Maßnahmenplanung und laufende Optimierung – zugeschnitten auf Ihr Objekt.",
     points: ["Objektspezifische Risikoanalyse", "Maßnahmen- und Einsatzplanung", "Regelmäßige Konzeptüberprüfung"],
     longDesc:
-      "Ein professionelles Sicherheitskonzept ist mehr als die Summe einzelner Wachschichten: Wir analysieren Ihr Risikoprofil per strukturierter Risikoanalyse, entwickeln Maßnahmen aus einem Guss und setzen sie mit qualifiziertem Personal um. Als Bewachungsunternehmen mit §34a-Zulassung verantworten wir Konzepterstellung, Umsetzung und laufende Optimierung.",
+      "Ein gutes Sicherheitskonzept ist mehr als die Summe einzelner Wachschichten. Wir schauen uns Ihr Objekt an, bewerten Risiken strukturiert, leiten daraus konkrete Maßnahmen ab und setzen sie mit qualifiziertem Personal um. Konzept, Umsetzung und laufende Anpassung kommen aus einer Hand – als zugelassenes Bewachungsunternehmen.",
     typicalClients: "Unternehmen mit komplexen Sicherheitsanforderungen, sensible Infrastruktur, Konzernstandorte.",
     h1: "Sicherheitskonzept erstellen – Risikoanalyse & Umsetzung",
     metaTitle: "Sicherheitskonzept erstellen lassen | Sentinel Services",
     metaDescription:
-      "Sicherheitskonzept aus einer Hand: Risikoanalyse, Maßnahmenplan, Personalmodell und Reporting – durch ein zugelassenes Bewachungsunternehmen mit §34a-Erlaubnis.",
+      "Sicherheitskonzept aus einer Hand: Risikoanalyse, Maßnahmenplan, Personalmodell und Reporting – durch ein zugelassenes Bewachungsunternehmen.",
     faqs: [
       { question: "Was umfasst eine Risikoanalyse?", answer: "Wir bewerten Ihr Objekt hinsichtlich Lage, Zugänge, Betriebsabläufe, bekannter Risiken und vorhandener Schutzmaßnahmen – als Grundlage für ein passgenaues Sicherheitskonzept." },
       { question: "Wie oft wird das Sicherheitskonzept überprüft?", answer: "In der Regel vierteljährlich oder bei wesentlichen Änderungen der Rahmenbedingungen." },
@@ -408,12 +408,12 @@ export const divisions: DivisionData[] = [
     icon: Shield,
     primaryKeyword: "Sicherheitsdienst",
     intro:
-      "Sicherheitsdienst und Wachdienst mit §34a-geprüftem Personal: Objektschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangs- und Streifendienst sowie individuelle Sicherheitskonzepte – in einer Hand, mit fester Einsatzleitung.",
-    h1: "Sicherheit & Bewachung – Sicherheitsdienst mit §34a",
+      "Sicherheitsdienst und Wachdienst mit geprüftem Personal: Objektschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangs- und Streifendienst sowie individuelle Sicherheitskonzepte – aus einer Hand, mit fester Einsatzleitung.",
+    h1: "Sicherheit & Bewachung",
     metaTitle: "Sicherheitsdienst & Wachdienst | Sentinel Services",
     metaDescription:
-      "Sicherheitsdienst & Wachdienst: Objektschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangs- und Streifendienst – §34a-geprüft, bundesweit.",
-    keywords: "Sicherheitsdienst, Wachdienst, Sicherheitsfirma, Objektschutz, Werkschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangsdienst, Streifendienst, Sicherheitskonzept, §34a",
+      "Sicherheitsdienst & Wachdienst: Objektschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangs- und Streifendienst – geprüftes Personal, bundesweit.",
+    keywords: "Sicherheitsdienst, Wachdienst, Sicherheitsfirma, Objektschutz, Werkschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangsdienst, Streifendienst, Sicherheitskonzept",
     services: sicherheitServices,
   },
   {

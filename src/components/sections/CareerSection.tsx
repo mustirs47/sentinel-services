@@ -4,7 +4,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const requirements = [
   "Mindestalter 18 Jahre",
-  "Sachkundeprüfung nach §34a GewO (oder Bereitschaft zur Absolvierung)",
+  "Für Sicherheits-Einsätze: IHK-Sachkunde – oder die Bereitschaft, sie nachzuholen",
   "Einwandfreies Führungszeugnis",
   "Gute Deutschkenntnisse in Wort und Schrift",
   "Zuverlässigkeit, Pünktlichkeit, professionelles Auftreten",

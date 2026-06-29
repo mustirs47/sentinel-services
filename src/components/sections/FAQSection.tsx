@@ -17,7 +17,7 @@ interface FAQSectionProps {
 
 const defaultFaqs = [
   { question: "Kann ich mehrere Bereiche gleichzeitig beauftragen?", answer: "Ja. Sicherheit, Reinigung, Grünanlagen und Facility Management lassen sich frei kombinieren – Sie haben in jedem Fall einen festen Ansprechpartner für das gesamte Objekt." },
-  { question: "Welche Zulassungen liegen vor?", answer: "Für den Bereich Sicherheit verfügen wir über die Gewerbeerlaubnis nach § 34a GewO; alle Einsatzkräfte haben die zugehörige IHK-Sachkundeprüfung abgelegt. In den anderen Bereichen arbeiten wir mit eingewiesenem Fachpersonal." },
+  { question: "Welche Zulassungen liegen vor?", answer: "Im Bereich Sicherheit arbeiten wir mit der gesetzlich vorgeschriebenen Bewachungserlaubnis und entsprechend geprüftem Personal. In Reinigung, Grünpflege und Facility Management setzen wir auf eingearbeitete Fachkräfte mit den jeweils üblichen Qualifikationen." },
   { question: "Wie schnell bekomme ich eine Rückmeldung?", answer: "In der Regel innerhalb eines Werktags. Bei kurzfristigem Bedarf melden wir uns am selben Tag und prüfen, was sich kurzfristig realisieren lässt." },
   { question: "Sind Sie auch außerhalb von Magdeburg tätig?", answer: "Ja, wir arbeiten bundesweit. Ob und in welcher Form ein Einsatz in Ihrer Region sinnvoll ist, klären wir kurz im Vorfeld." },
   { question: "Wie wird die Leistung dokumentiert?", answer: "Jeder Einsatz wird mit standardisierten Übergabe- und Meldeprotokollen festgehalten. Sie bekommen Berichte in dem Rhythmus, den wir vorab gemeinsam festlegen." },

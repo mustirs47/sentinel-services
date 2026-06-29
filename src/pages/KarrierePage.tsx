@@ -12,7 +12,7 @@ import teamIllustration from "@/assets/illustrations/team-qualifikationen.webp";
 
 const requirements = [
   "Mindestalter 18 Jahre",
-  "Fachliche Qualifikation oder Bereitschaft zur Weiterbildung (z. B. Gebäudereinigung, Garten- und Landschaftspflege, §34a GewO für Sicherheit)",
+  "Fachliche Qualifikation oder Bereitschaft zur Weiterbildung (Reinigung, Grünpflege oder IHK-Sachkunde für den Sicherheitsdienst)",
   "Einwandfreies Führungszeugnis",
   "Gute Deutschkenntnisse in Wort und Schrift",
   "Zuverlässigkeit, Pünktlichkeit, professionelles Auftreten",
@@ -51,7 +51,7 @@ const whyUs = [
 ];
 
 const careerFaqs = [
-  { question: "Brauche ich eine bestimmte Qualifikation, um mich zu bewerben?", answer: "Je nach Bereich: In der Reinigung und Grünpflege zählt Erfahrung oder Lernbereitschaft, im Sicherheitsdienst ist die §34a-Sachkundeprüfung Voraussetzung. Wenn Sie sie noch nicht haben, aber bereit sind, sie zu absolvieren, unterstützen wir Sie dabei." },
+  { question: "Brauche ich eine bestimmte Qualifikation, um mich zu bewerben?", answer: "Das hängt vom Bereich ab. In Reinigung und Grünpflege zählen Erfahrung und Lernbereitschaft. Im Sicherheitsdienst brauchen Sie die IHK-Sachkunde – falls noch nicht vorhanden, unterstützen wir Sie beim Nachholen." },
   { question: "In welchen Regionen setzen Sie Personal ein?", answer: "Wir sind bundesweit tätig. Die konkreten Einsatzorte werden im Bewerbungsgespräch besprochen." },
   { question: "Wie läuft die Einarbeitung ab?", answer: "Jede neue Einsatzkraft erhält eine strukturierte Einarbeitung: objektspezifisches Briefing, Vorstellung der Abläufe und Meldeketten sowie Begleitung durch erfahrene Kollegen in den ersten Einsätzen." },
   { question: "Gibt es auch Teilzeit- oder Nebenjob-Möglichkeiten?", answer: "Ja, wir bieten verschiedene Arbeitszeitmodelle an – von Vollzeit über Teilzeit bis hin zu flexiblen Einsatzmodellen für Früh-, Nacht- oder Wochenenddienste." },
@@ -67,7 +67,7 @@ const KarrierePage = () => {
       <SEOHead
         title="Karriere bei Sentinel Services – Jobs bundesweit"
         description="Jobs in Reinigung, Facility Management, Grünpflege und Sicherheit. Faire Bezahlung, planbare Einsätze, Weiterbildung. Jetzt bundesweit bewerben."
-        keywords="Gebäudereiniger Job, Facility Management Job, Gärtner Job, Hausmeister Job, Security Job, §34a Job, Karriere Sentinel Services"
+        keywords="Gebäudereiniger Job, Facility Management Job, Gärtner Job, Hausmeister Job, Security Job, Sachkunde Job, Karriere Sentinel Services"
       />
       <FAQPageJsonLd faqs={careerFaqs} />
       <BreadcrumbJsonLd

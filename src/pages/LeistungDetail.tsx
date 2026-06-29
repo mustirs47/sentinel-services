@@ -20,10 +20,10 @@ interface Props {
 }
 
 const trustItems = [
-  { icon: Shield, text: "§34a GewO – geprüftes Personal" },
+  { icon: Shield, text: "Geprüftes Fachpersonal" },
   { icon: Users, text: "Feste Ansprechpartner" },
-  { icon: FileCheck, text: "Lückenlose Dokumentation" },
-  { icon: CheckCircle, text: "Individuelle Einsatzkonzepte" },
+  { icon: FileCheck, text: "Nachvollziehbare Dokumentation" },
+  { icon: CheckCircle, text: "Auf Ihr Objekt zugeschnitten" },
 ];
 
 const processSteps = [
