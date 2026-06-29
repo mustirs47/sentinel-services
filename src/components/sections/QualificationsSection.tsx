@@ -73,7 +73,7 @@ const QualificationsSection = () => {
                   </li>
                 ))}
               </ul>
-              <div className="rounded-lg p-3" style={{ background: "hsl(205 90% 55% / 0.05)" }}>
+              <div className="rounded-lg p-3" style={{ background: "hsl(var(--primary) / 0.05)" }}>
                 <p className="text-xs leading-relaxed text-muted-fg">
                   <span className="font-semibold text-primary">Relevanz für Kunden:</span> {relevance}
                 </p>

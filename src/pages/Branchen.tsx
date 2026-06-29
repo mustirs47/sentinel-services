@@ -89,7 +89,7 @@ const BranchenPage = () => {
       <section className="section-light">
         <div ref={ref} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="max-w-2xl mb-12">
-            <h2 className="text-2xl font-bold sm:text-3xl lg:text-[2rem] tracking-tight mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+            <h2 className="h-section mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
               Branchenspezifische Servicepakete
             </h2>
             <p className="prose-lead text-muted-fg">
@@ -114,7 +114,7 @@ const BranchenPage = () => {
 
                 <div className="pl-3">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h2>
@@ -142,7 +142,7 @@ const BranchenPage = () => {
                   )}
 
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2 flex items-center gap-1.5">
+                    <p className="eyebrow !mb-2 inline-flex items-center gap-1.5">
                       <CheckCircle className="h-3 w-3" /> Passende Leistungen
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -176,8 +176,8 @@ const BranchenPage = () => {
       <section className="bg-background border-t border-border/50">
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Warum Sentinel</p>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            <p className="eyebrow">Warum Sentinel</p>
+            <h2 className="h-section">
               Was uns von anderen Anbietern unterscheidet
             </h2>
           </div>
@@ -202,7 +202,7 @@ const BranchenPage = () => {
       {/* CTA Section */}
       <section className="section-light border-t" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 text-center">
-          <h2 className="text-2xl font-bold sm:text-3xl mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+          <h2 className="h-section mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
             Branchenlösung für Ihr Unternehmen
           </h2>
           <p className="text-muted-fg max-w-xl mx-auto mb-8">

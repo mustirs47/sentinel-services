@@ -92,7 +92,7 @@ const KarrierePage = () => {
       {/* 3-step application process */}
       <section className="section-light border-b" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary text-center mb-6">Bewerbungsprozess</p>
+          <p className="eyebrow text-center !mb-6">Bewerbungsprozess</p>
           <div className="grid grid-cols-3 gap-4 sm:gap-8">
             {steps.map(({ icon: Icon, title, desc }, i) => (
               <div key={title} className="text-center relative">
@@ -120,7 +120,7 @@ const KarrierePage = () => {
               style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
             >
               <div className="flex items-center gap-3 mb-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                   <Briefcase className="h-5 w-5 text-primary" />
                 </div>
                 <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>Was wir erwarten</h2>
@@ -141,7 +141,7 @@ const KarrierePage = () => {
               style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
             >
               <div className="flex items-center gap-3 mb-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                   <Gift className="h-5 w-5 text-primary" />
                 </div>
                 <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>Was wir bieten</h2>
@@ -162,7 +162,7 @@ const KarrierePage = () => {
               style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
             >
               <div className="flex items-center gap-3 mb-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
                 <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>Einsatzfelder</h2>
@@ -184,8 +184,8 @@ const KarrierePage = () => {
       <section className="bg-background border-t border-border/50">
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Warum Sentinel</p>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            <p className="eyebrow">Warum Sentinel</p>
+            <h2 className="h-section">
               Das unterscheidet uns als Arbeitgeber
             </h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
@@ -214,7 +214,7 @@ const KarrierePage = () => {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
           <div
             className="rounded-xl p-8 sm:p-10 text-center"
-            style={{ background: "hsl(205 90% 55% / 0.05)" }}
+            style={{ background: "hsl(var(--primary) / 0.05)" }}
           >
             <h2 className="text-xl font-bold mb-3 sm:text-2xl" style={{ color: "hsl(var(--section-light-fg))" }}>Interesse geweckt?</h2>
             <p className="text-sm text-muted-fg mb-6 max-w-lg mx-auto">

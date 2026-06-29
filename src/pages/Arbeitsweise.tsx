@@ -120,7 +120,7 @@ const ArbeitsweisePage = () => {
       <section className="section-light">
         <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-12">
           <div className="max-w-2xl mb-10">
-            <h2 className="text-2xl font-bold sm:text-3xl lg:text-[2rem] tracking-tight mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+            <h2 className="h-section mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
               Unsere Leitprinzipien
             </h2>
             <p className="prose-lead text-muted-fg">
@@ -134,7 +134,7 @@ const ArbeitsweisePage = () => {
                 className="rounded-xl p-6"
                 style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl mb-4" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl mb-4" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                   <PIcon className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="text-sm font-bold mb-2" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h3>
@@ -149,8 +149,8 @@ const ArbeitsweisePage = () => {
       <section className="section-light">
         <div ref={ref} className="fade-in-section reading-shell">
           <div className="text-center mb-14">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">4 Phasen</p>
-            <h2 className="text-2xl font-bold sm:text-3xl" style={{ color: "hsl(var(--section-light-fg))" }}>
+            <p className="eyebrow">4 Phasen</p>
+            <h2 className="h-section" style={{ color: "hsl(var(--section-light-fg))" }}>
               Unser strukturierter Einsatzprozess
             </h2>
           </div>
@@ -176,7 +176,7 @@ const ArbeitsweisePage = () => {
                     <p className="text-sm leading-relaxed text-muted-fg mb-3">{desc}</p>
                     <div
                       className="rounded-lg p-4 mb-3"
-                      style={{ background: "hsl(205 90% 55% / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}
+                      style={{ background: "hsl(var(--primary) / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}
                     >
                       <p className="text-sm leading-relaxed text-muted-fg">{detail}</p>
                     </div>
@@ -200,8 +200,8 @@ const ArbeitsweisePage = () => {
       <section className="bg-background border-t border-border/50">
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Unser Team</p>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            <p className="eyebrow">Unser Team</p>
+            <h2 className="h-section">
               Kompetenz, der Sie vertrauen können
             </h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">

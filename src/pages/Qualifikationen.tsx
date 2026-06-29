@@ -132,7 +132,7 @@ const QualifikationenPage = () => {
       <section className="section-light">
         <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-12">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold sm:text-3xl lg:text-[2rem] tracking-tight mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
+            <h2 className="h-section mb-4" style={{ color: "hsl(var(--section-light-fg))" }}>
               Warum Qualifikation zählt
             </h2>
             <p className="prose-lead text-muted-fg">
@@ -157,7 +157,7 @@ const QualifikationenPage = () => {
               >
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h2>
@@ -177,7 +177,7 @@ const QualifikationenPage = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="rounded-lg p-3" style={{ background: "hsl(205 90% 55% / 0.05)" }}>
+                <div className="rounded-lg p-3" style={{ background: "hsl(var(--primary) / 0.05)" }}>
                   <p className="text-xs leading-relaxed text-muted-fg">
                     <span className="font-bold text-primary">Relevanz für Sie:</span> {relevance}
                   </p>
@@ -192,8 +192,8 @@ const QualifikationenPage = () => {
       <section className="bg-background border-t border-border/50">
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Unser Qualifizierungsprozess</p>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            <p className="eyebrow">Unser Qualifizierungsprozess</p>
+            <h2 className="h-section">
               Vom Nachwuchs zur zertifizierten Einsatzkraft
             </h2>
             <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
@@ -220,7 +220,7 @@ const QualifikationenPage = () => {
       {/* Relevance for clients */}
       <section ref={ref3} className="fade-in-section section-light border-t" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
-          <div className="rounded-xl p-8 sm:p-10" style={{ background: "hsl(205 90% 55% / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}>
+          <div className="rounded-xl p-8 sm:p-10" style={{ background: "hsl(var(--primary) / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}>
             <div className="flex items-start gap-4 mb-6">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 shrink-0">
                 <Users className="h-6 w-6 text-primary" />
@@ -257,7 +257,7 @@ const QualifikationenPage = () => {
       {/* CTA Section */}
       <section className="bg-background border-t border-border/50">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 text-center">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl mb-4">
+          <h2 className="h-section mb-4">
             Überzeugt von unserer Qualifikation?
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">

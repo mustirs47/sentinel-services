@@ -142,7 +142,7 @@ const KontaktPage = () => {
       {/* Process steps row */}
       <section className="section-light border-b" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary text-center mb-5">So läuft es ab</p>
+          <p className="eyebrow text-center !mb-5">So läuft es ab</p>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {processSteps.map(({ icon: Icon, title, desc }, i) => (
               <div key={title} className="text-center relative">
@@ -189,7 +189,7 @@ const KontaktPage = () => {
               </div>
 
               {/* Guarantees */}
-              <div className="rounded-xl p-5" style={{ background: "hsl(205 90% 55% / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}>
+              <div className="rounded-xl p-5" style={{ background: "hsl(var(--primary) / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}>
                 <p className="text-xs font-bold text-primary mb-3 uppercase tracking-wider">Unsere Garantie</p>
                 <ul className="space-y-2.5">
                   {guarantees.map((g) => (
@@ -342,7 +342,7 @@ const KontaktPage = () => {
       <section className="bg-background border-t border-border/50">
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl mb-3">
+            <h2 className="h-section mb-3">
               Noch unsicher? Informieren Sie sich weiter
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">

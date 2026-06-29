@@ -103,7 +103,7 @@ const DivisionHub = ({ division: slug }: Props) => {
               <div
                 key={text}
                 className="flex items-center gap-3 rounded-xl p-4"
-                style={{ background: "hsl(205 90% 55% / 0.05)" }}
+                style={{ background: "hsl(var(--primary) / 0.05)" }}
               >
                 <Icon className="h-5 w-5 text-primary shrink-0" />
                 <span
@@ -126,7 +126,7 @@ const DivisionHub = ({ division: slug }: Props) => {
         >
           <div className="max-w-3xl mb-10">
             <h2
-              className="text-2xl font-bold sm:text-3xl mb-4"
+              className="h-section mb-4"
               style={{ color: "hsl(var(--section-light-fg))" }}
             >
               Leistungen im Bereich {division.shortLabel}
@@ -157,7 +157,7 @@ const DivisionHub = ({ division: slug }: Props) => {
                 ) : (
                   <div
                     className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl"
-                    style={{ background: "hsl(205 90% 55% / 0.1)" }}
+                    style={{ background: "hsl(var(--primary) / 0.1)" }}
                   >
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
@@ -198,7 +198,7 @@ const DivisionHub = ({ division: slug }: Props) => {
       >
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 text-center">
           <h2
-            className="text-2xl font-bold sm:text-3xl mb-4"
+            className="h-section mb-4"
             style={{ color: "hsl(var(--section-light-fg))" }}
           >
             Bedarf im Bereich {division.shortLabel}?
@@ -218,7 +218,7 @@ const DivisionHub = ({ division: slug }: Props) => {
       {/* Cross-Selling */}
       <section className="bg-background border-t border-border/50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3 text-center">
+          <p className="eyebrow text-center">
             Auch von Sentinel
           </p>
           <h2 className="text-xl font-bold text-foreground text-center mb-8">
