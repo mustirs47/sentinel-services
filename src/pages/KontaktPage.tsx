@@ -326,7 +326,7 @@ const KontaktPage = () => {
                       <Send className="ml-2 h-4 w-4" />
                     </Button>
                   </div>
-                  <p className="text-[11px] text-muted-fg leading-relaxed">
+                  <p className="text-xs text-muted-fg leading-relaxed">
                     Pflichtfelder sind mit * markiert. Wir verarbeiten Ihre Daten ausschließlich zur
                     Bearbeitung Ihrer Anfrage. Zur Zustellung nutzen wir den Dienst FormSubmit (USA);
                     Details siehe Datenschutzerklärung.
