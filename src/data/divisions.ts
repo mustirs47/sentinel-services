@@ -317,6 +317,33 @@ const gruenServices: ServiceData[] = [
 
 const facilityServices: ServiceData[] = [
   {
+    slug: "technische-objektbetreuung",
+    icon: Wrench,
+    title: "Technische Objektbetreuung",
+    context: "Laufende technische Betreuung von Gebäuden, Anlagen und Außenbereichen.",
+    desc: "Regelmäßige Sicht- und Funktionsprüfungen, Kleinreparaturen und Koordination von Fachfirmen – mit fester Ansprechperson am Objekt.",
+    points: [
+      "Sicht-, Funktions- und Sicherheitskontrollen",
+      "Kleinreparaturen und Sofortmaßnahmen",
+      "Koordination von Wartungs- und Prüffirmen",
+      "Dokumentation und Reporting an die Verwaltung",
+    ],
+    longDesc:
+      "Technische Objektbetreuung bedeutet bei uns mehr als reine Hausmeisterdienste: Wir übernehmen die laufende technische Begleitung Ihrer Liegenschaft, prüfen Anlagen regelmäßig auf Funktion und Sicherheit, beheben kleinere Schäden direkt vor Ort und koordinieren Wartungs- und Prüftermine mit Fachfirmen. Damit reduzieren Eigentümer und Verwalter den Aufwand für Betreiberpflichten spürbar – und behalten gleichzeitig den Überblick über Zustand, Termine und Kosten ihres Objekts.\n\nUnsere technischen Objektbetreuer übernehmen Sicht- und Funktionskontrollen an Heizung, Lüftung, Elektroverteilung, Beleuchtung, Brand- und Fluchtwegen, Aufzügen und Sanitärtechnik nach festen Checklisten. Auffälligkeiten werden mit Foto und Standort dokumentiert, kleinere Mängel direkt beseitigt, größere Reparaturen mit qualifizierten Fachfirmen abgestimmt und nachverfolgt. Sie erhalten regelmäßige Berichte, die für Audits, Verkehrssicherungspflicht und Nachweise gegenüber Versicherungen verwendet werden können.",
+    typicalClients: "Hausverwaltungen, Eigentümergemeinschaften, Bestandshalter, Unternehmen mit eigenen Betriebsgebäuden.",
+    h1: "Technische Objektbetreuung – Wartung, Prüfung & Reparaturkoordination",
+    metaTitle: "Technische Objektbetreuung | Sentinel Services",
+    metaDescription:
+      "Technische Objektbetreuung für Gebäude und Liegenschaften: Sicht- und Funktionsprüfungen, Kleinreparaturen, Koordination von Wartung und Prüfungen – dokumentiert.",
+    faqs: [
+      { question: "Was unterscheidet technische Objektbetreuung vom klassischen Hausmeisterdienst?", answer: "Wir arbeiten nach festen Prüf- und Wartungsplänen, dokumentieren jeden Einsatz und steuern Fachfirmen aktiv. Statt nur auf Meldungen zu reagieren, behalten wir Betreiberpflichten, Prüffristen und Anlagenzustand systematisch im Blick." },
+      { question: "Welche Anlagen werden geprüft?", answer: "Typisch sind Heizung, Lüftung und Klima, Elektroverteilung und Beleuchtung, Brandschutz- und Fluchtwegtechnik, Aufzüge, Sanitär, Schließanlagen sowie sicherheitsrelevante Außenbereiche. Den genauen Prüfumfang stimmen wir auf Ihr Objekt ab." },
+      { question: "Übernehmen Sie auch Reparaturen selbst?", answer: "Kleinreparaturen erledigen unsere Betreuer direkt am Objekt. Bei umfangreicheren Arbeiten holen wir Angebote ein, koordinieren Fachfirmen, kontrollieren die Ausführung und dokumentieren die Abnahme." },
+      { question: "Wie erfolgt die Dokumentation?", answer: "Sie erhalten regelmäßige Berichte mit erledigten Prüfungen, festgestellten Mängeln, eingeleiteten Maßnahmen und offenen Punkten. Auf Wunsch binden wir das Reporting in Ihre bestehende Verwaltungs- oder CAFM-Lösung ein." },
+      { question: "In welchen Regionen sind Sie aktiv?", answer: "Wir betreuen Objekte bundesweit. Für die laufende technische Objektbetreuung bauen wir feste regionale Teams auf, damit es eine verlässliche Ansprechperson vor Ort gibt." },
+    ],
+  },
+  {
     slug: "technisches-fm",
     icon: Wrench,
     title: "Technisches Facility Management",
