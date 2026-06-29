@@ -120,7 +120,7 @@ const KarrierePage = () => {
               style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
             >
               <div className="flex items-center gap-3 mb-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                   <Briefcase className="h-5 w-5 text-primary" />
                 </div>
                 <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>Was wir erwarten</h2>
@@ -141,7 +141,7 @@ const KarrierePage = () => {
               style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
             >
               <div className="flex items-center gap-3 mb-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                   <Gift className="h-5 w-5 text-primary" />
                 </div>
                 <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>Was wir bieten</h2>
@@ -162,7 +162,7 @@ const KarrierePage = () => {
               style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
             >
               <div className="flex items-center gap-3 mb-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
                 <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>Einsatzfelder</h2>
@@ -214,7 +214,7 @@ const KarrierePage = () => {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
           <div
             className="rounded-xl p-8 sm:p-10 text-center"
-            style={{ background: "hsl(205 90% 55% / 0.05)" }}
+            style={{ background: "hsl(var(--primary) / 0.05)" }}
           >
             <h2 className="text-xl font-bold mb-3 sm:text-2xl" style={{ color: "hsl(var(--section-light-fg))" }}>Interesse geweckt?</h2>
             <p className="text-sm text-muted-fg mb-6 max-w-lg mx-auto">

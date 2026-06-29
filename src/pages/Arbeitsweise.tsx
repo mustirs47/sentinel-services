@@ -134,7 +134,7 @@ const ArbeitsweisePage = () => {
                 className="rounded-xl p-6"
                 style={{ background: "hsl(var(--section-light-card))", border: "1px solid hsl(var(--section-light-border))" }}
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl mb-4" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl mb-4" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                   <PIcon className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="text-sm font-bold mb-2" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h3>
@@ -176,7 +176,7 @@ const ArbeitsweisePage = () => {
                     <p className="text-sm leading-relaxed text-muted-fg mb-3">{desc}</p>
                     <div
                       className="rounded-lg p-4 mb-3"
-                      style={{ background: "hsl(205 90% 55% / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}
+                      style={{ background: "hsl(var(--primary) / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}
                     >
                       <p className="text-sm leading-relaxed text-muted-fg">{detail}</p>
                     </div>

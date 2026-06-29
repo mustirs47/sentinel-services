@@ -157,7 +157,7 @@ const QualifikationenPage = () => {
               >
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h2>
@@ -177,7 +177,7 @@ const QualifikationenPage = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="rounded-lg p-3" style={{ background: "hsl(205 90% 55% / 0.05)" }}>
+                <div className="rounded-lg p-3" style={{ background: "hsl(var(--primary) / 0.05)" }}>
                   <p className="text-xs leading-relaxed text-muted-fg">
                     <span className="font-bold text-primary">Relevanz für Sie:</span> {relevance}
                   </p>
@@ -220,7 +220,7 @@ const QualifikationenPage = () => {
       {/* Relevance for clients */}
       <section ref={ref3} className="fade-in-section section-light border-t" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
-          <div className="rounded-xl p-8 sm:p-10" style={{ background: "hsl(205 90% 55% / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}>
+          <div className="rounded-xl p-8 sm:p-10" style={{ background: "hsl(var(--primary) / 0.05)", border: "1px solid hsl(var(--section-light-border))" }}>
             <div className="flex items-start gap-4 mb-6">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 shrink-0">
                 <Users className="h-6 w-6 text-primary" />

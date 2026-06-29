@@ -103,7 +103,7 @@ const DivisionHub = ({ division: slug }: Props) => {
               <div
                 key={text}
                 className="flex items-center gap-3 rounded-xl p-4"
-                style={{ background: "hsl(205 90% 55% / 0.05)" }}
+                style={{ background: "hsl(var(--primary) / 0.05)" }}
               >
                 <Icon className="h-5 w-5 text-primary shrink-0" />
                 <span
@@ -157,7 +157,7 @@ const DivisionHub = ({ division: slug }: Props) => {
                 ) : (
                   <div
                     className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl"
-                    style={{ background: "hsl(205 90% 55% / 0.1)" }}
+                    style={{ background: "hsl(var(--primary) / 0.1)" }}
                   >
                     <Icon className="h-6 w-6 text-primary" />
                   </div>

@@ -114,7 +114,7 @@ const BranchenPage = () => {
 
                 <div className="pl-3">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: "hsl(205 90% 55% / 0.1)" }}>
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.1)" }}>
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <h2 className="text-base font-bold" style={{ color: "hsl(var(--section-light-fg))" }}>{title}</h2>
