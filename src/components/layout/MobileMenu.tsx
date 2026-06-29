@@ -46,7 +46,7 @@ const MobileMenu = ({ open, onClose }: MobileMenuProps) => (
       </SheetHeader>
 
       <nav className="flex-1 overflow-y-auto pr-1">
-        <p className="px-3 mb-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+        <p className="px-3 mb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
           Bereiche
         </p>
         <div className="flex flex-col gap-1 mb-6">
@@ -81,7 +81,7 @@ const MobileMenu = ({ open, onClose }: MobileMenuProps) => (
           ))}
         </div>
 
-        <p className="px-3 mb-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+        <p className="px-3 mb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
           Mehr
         </p>
         <div className="flex flex-col gap-1">

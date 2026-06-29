@@ -43,7 +43,7 @@ const InsightsSection = () => {
             <div key={title} className="surface-card surface-card--hover flex flex-col group">
               <div className="flex items-center gap-2 mb-3">
                 <FileText className="h-4 w-4 text-primary" />
-                <span className="eyebrow !mb-0 !text-[10px]">{tag}</span>
+                <span className="eyebrow !mb-0 !text-[12px]">{tag}</span>
               </div>
               <h3 className="h-card text-foreground">{title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground flex-1">{desc}</p>

@@ -48,10 +48,10 @@ const Footer = () => (
 
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Bereiche</h4>
-          <ul className="space-y-2">
+          <ul className="space-y-1">
             {bereiche.map((item) => (
               <li key={item.href}>
-                <Link to={item.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                <Link to={item.href} className="block py-1.5 text-sm text-muted-foreground transition-colors hover:text-primary">
                   {item.label}
                 </Link>
               </li>
@@ -61,10 +61,10 @@ const Footer = () => (
 
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Unternehmen</h4>
-          <ul className="space-y-2">
+          <ul className="space-y-1">
             {unternehmenNav.map((item) => (
               <li key={item.href}>
-                <Link to={item.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                <Link to={item.href} className="block py-1.5 text-sm text-muted-foreground transition-colors hover:text-primary">
                   {item.label}
                 </Link>
               </li>
@@ -74,19 +74,19 @@ const Footer = () => (
 
         <div>
           <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Kontakt</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
+          <ul className="space-y-1 text-sm text-muted-foreground">
             <li>
-              <a href="mailto:info@sentinel-services.de" className="hover:text-primary transition-colors">
+              <a href="mailto:info@sentinel-services.de" className="block py-1.5 hover:text-primary transition-colors">
                 info@sentinel-services.de
               </a>
             </li>
           </ul>
           <div className="mt-6">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Rechtliches</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               {legalNav.map((item) => (
                 <li key={item.href}>
-                  <Link to={item.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                  <Link to={item.href} className="block py-1.5 text-sm text-muted-foreground transition-colors hover:text-primary">
                     {item.label}
                   </Link>
                 </li>
@@ -95,7 +95,7 @@ const Footer = () => (
                 <button
                   type="button"
                   onClick={reopenCookieSettings}
-                  className="text-sm text-muted-foreground transition-colors hover:text-primary text-left"
+                  className="block py-1.5 text-sm text-muted-foreground transition-colors hover:text-primary text-left"
                 >
                   Cookie-Einstellungen
                 </button>

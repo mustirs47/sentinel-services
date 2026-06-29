@@ -44,7 +44,7 @@ const ContactSection = () => {
 
             {/* Trust signals near form */}
             <div className="rounded-xl p-4" style={{ background: "hsl(205 90% 55% / 0.05)" }}>
-              <p className="eyebrow !mb-3 !text-[11px]">Darauf können Sie sich verlassen</p>
+              <p className="eyebrow !mb-3 !text-[12px]">Darauf können Sie sich verlassen</p>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2 text-xs text-muted-fg">
                   <Shield className="h-3.5 w-3.5 text-primary shrink-0" /> Geprüftes, eingewiesenes Personal

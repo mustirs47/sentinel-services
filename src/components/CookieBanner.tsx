@@ -148,7 +148,7 @@ export function CookieBanner() {
                     <div className="mb-1 flex flex-wrap items-center gap-2">
                       <Shield className="h-4 w-4 text-primary" />
                       <Label className="text-sm font-medium text-foreground">Technisch notwendig</Label>
-                      <span className="rounded bg-primary/15 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-primary">
+                      <span className="rounded bg-primary/15 px-2 py-0.5 text-xs font-medium uppercase tracking-wide text-primary">
                         Immer aktiv
                       </span>
                     </div>
