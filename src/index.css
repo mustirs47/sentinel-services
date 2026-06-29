@@ -344,7 +344,9 @@
 .section-light .eyebrow { color: hsl(var(--primary)); }
 .section-light .h-section,
 .section-light .h-card { color: hsl(var(--section-light-fg)); }
-.section-light .section-intro { color: hsl(var(--section-light-muted)); }
+.section-light .section-intro,
+.section-light .text-muted-fg,
+.section-light .text-muted-foreground { color: hsl(var(--section-light-muted)); }
 .section-light .surface-card {
   background: hsl(var(--section-light-card));
   border-color: hsl(var(--section-light-border));
