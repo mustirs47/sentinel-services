@@ -65,7 +65,7 @@ const KarrierePage = () => {
   return (
     <PageLayout>
       <SEOHead
-        title="Karriere bei Sentinel Services – Jobs in Reinigung, FM, Grünpflege & Sicherheit"
+        title="Karriere bei Sentinel Services – Jobs bundesweit"
         description="Jobs in Reinigung, Facility Management, Grünpflege und Sicherheit. Faire Bezahlung, planbare Einsätze, Weiterbildung. Jetzt bundesweit bewerben."
         keywords="Gebäudereiniger Job, Facility Management Job, Gärtner Job, Hausmeister Job, Security Job, §34a Job, Karriere Sentinel Services"
       />
