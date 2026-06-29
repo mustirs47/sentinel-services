@@ -142,7 +142,7 @@ const KontaktPage = () => {
       {/* Process steps row */}
       <section className="section-light border-b" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary text-center mb-5">So läuft es ab</p>
+          <p className="eyebrow text-center !mb-5">So läuft es ab</p>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {processSteps.map(({ icon: Icon, title, desc }, i) => (
               <div key={title} className="text-center relative">

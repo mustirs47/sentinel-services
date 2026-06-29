@@ -192,7 +192,7 @@ const QualifikationenPage = () => {
       <section className="bg-background border-t border-border/50">
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Unser Qualifizierungsprozess</p>
+            <p className="eyebrow">Unser Qualifizierungsprozess</p>
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
               Vom Nachwuchs zur zertifizierten Einsatzkraft
             </h2>

@@ -218,7 +218,7 @@ const DivisionHub = ({ division: slug }: Props) => {
       {/* Cross-Selling */}
       <section className="bg-background border-t border-border/50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3 text-center">
+          <p className="eyebrow text-center">
             Auch von Sentinel
           </p>
           <h2 className="text-xl font-bold text-foreground text-center mb-8">

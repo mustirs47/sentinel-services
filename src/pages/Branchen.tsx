@@ -142,7 +142,7 @@ const BranchenPage = () => {
                   )}
 
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-primary mb-2 flex items-center gap-1.5">
+                    <p className="eyebrow !mb-2 inline-flex items-center gap-1.5">
                       <CheckCircle className="h-3 w-3" /> Passende Leistungen
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -176,7 +176,7 @@ const BranchenPage = () => {
       <section className="bg-background border-t border-border/50">
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Warum Sentinel</p>
+            <p className="eyebrow">Warum Sentinel</p>
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
               Was uns von anderen Anbietern unterscheidet
             </h2>

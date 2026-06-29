@@ -92,7 +92,7 @@ const KarrierePage = () => {
       {/* 3-step application process */}
       <section className="section-light border-b" style={{ borderColor: "hsl(var(--section-light-border))" }}>
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary text-center mb-6">Bewerbungsprozess</p>
+          <p className="eyebrow text-center !mb-6">Bewerbungsprozess</p>
           <div className="grid grid-cols-3 gap-4 sm:gap-8">
             {steps.map(({ icon: Icon, title, desc }, i) => (
               <div key={title} className="text-center relative">
@@ -184,7 +184,7 @@ const KarrierePage = () => {
       <section className="bg-background border-t border-border/50">
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Warum Sentinel</p>
+            <p className="eyebrow">Warum Sentinel</p>
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
               Das unterscheidet uns als Arbeitgeber
             </h2>

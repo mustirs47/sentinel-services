@@ -149,7 +149,7 @@ const ArbeitsweisePage = () => {
       <section className="section-light">
         <div ref={ref} className="fade-in-section reading-shell">
           <div className="text-center mb-14">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">4 Phasen</p>
+            <p className="eyebrow">4 Phasen</p>
             <h2 className="text-2xl font-bold sm:text-3xl" style={{ color: "hsl(var(--section-light-fg))" }}>
               Unser strukturierter Einsatzprozess
             </h2>
@@ -200,7 +200,7 @@ const ArbeitsweisePage = () => {
       <section className="bg-background border-t border-border/50">
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Unser Team</p>
+            <p className="eyebrow">Unser Team</p>
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
               Kompetenz, der Sie vertrauen können
             </h2>
