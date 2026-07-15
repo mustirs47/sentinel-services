@@ -80,7 +80,7 @@ const KontaktPage = () => {
 
     setSubmitting(true);
     try {
-      const res = await fetch("https://formsubmit.co/ajax/info@sentinel-services.de", {
+      const res = await fetch("https://formsubmit.co/ajax/707d95ee3477d513c79f21196dac79a1", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
