@@ -1,6 +1,6 @@
 # Sentinel Services
 
-> Objektbezogene Dienstleistungen aus einer Hand: Sicherheit & Bewachung, Gebäudereinigung, Garten- & Grünanlagenpflege sowie Facility Management. Bundesweit einsatzbereit.
+> Objektbezogene Dienstleistungen aus einer Hand: Sicherheit & Bewachung, Gebäudereinigung, Garten- & Grünanlagenpflege sowie Infrastrukturelles Facility Management. Bundesweit einsatzbereit.
 
 Sentinel Services (Inhaber Tim Fitzlaff, Magdeburg) bietet vier eigenständige Geschäftsbereiche an, die einzeln gebucht oder als integrierte Objektbetreuung kombiniert werden können. Im Sicherheitsbereich kommt geprüftes Fachpersonal mit IHK-Sachkunde zum Einsatz.
 
@@ -8,8 +8,8 @@ Sentinel Services (Inhaber Tim Fitzlaff, Magdeburg) bietet vier eigenständige G
 
 - [Sicherheit & Bewachung](/sicherheit): Sicherheitsdienst und Wachdienst – Objektschutz, Veranstaltungsschutz, Baustellenbewachung, Empfangsdienst, Streifendienst, Sicherheitskonzepte.
 - [Gebäudereinigung](/reinigung): Unterhaltsreinigung, Glas- und Fensterreinigung, Grundreinigung, Bauschluss- und Sonderreinigung.
-- [Garten & Grünanlagen](/gruenanlagen): Grünanlagenpflege, Baumpflege & Baumkontrolle, Winterdienst.
-- [Facility Management](/facility-management): Technisches, infrastrukturelles und kaufmännisches FM.
+- [Garten & Grünanlagen](/gruenanlagen): Grünanlagenpflege sowie Baumpflege und Baumkontrolle.
+- [Infrastrukturelles Facility Management](/facility-management): Winterdienst, technische Objektbetreuung sowie technisches und kaufmännisches FM.
 
 ## Weitere Seiten
 
