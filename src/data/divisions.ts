@@ -294,11 +294,14 @@ const gruenServices: ServiceData[] = [
       { question: "Erstellen Sie Baumkataster?", answer: "Ja, auf Wunsch übernehmen wir auch die digitale Erfassung und Pflege Ihres Baumbestands." },
     ],
   },
+];
+
+const facilityServices: ServiceData[] = [
   {
     slug: "winterdienst",
     icon: Snowflake,
     title: "Winterdienst",
-    context: "Räum- und Streupflicht zuverlässig erfüllt.",
+    context: "Räum- und Streupflicht zuverlässig erfüllt – als Teil der infrastrukturellen Objektbetreuung.",
     desc: "Schneeräumung und Streudienst auf Wegen, Zufahrten und Parkflächen – rechtzeitig vor Arbeitsbeginn.",
     points: ["Schneeräumung", "Streudienst gemäß Vorgaben", "Dokumentation der Einsätze"],
     longDesc:
@@ -313,9 +316,6 @@ const gruenServices: ServiceData[] = [
       { question: "Liefern Sie auch das Streugut?", answer: "Ja, Streumittel und Geräte gehören zum Leistungsumfang." },
     ],
   },
-];
-
-const facilityServices: ServiceData[] = [
   {
     slug: "technische-objektbetreuung",
     icon: Wrench,
@@ -359,24 +359,6 @@ const facilityServices: ServiceData[] = [
       "Technisches FM: Inspektion, Wartung, Instandhaltung und Störungsmanagement für Gebäude und Anlagen. Dokumentiert, terminsicher, betreiberkonform.",
     faqs: [
       { question: "Übernehmen Sie auch Wartungsverträge?", answer: "Ja, wir steuern Wartungsverträge mit Fachfirmen oder übernehmen Leistungen selbst." },
-    ],
-  },
-  {
-    slug: "infrastrukturelles-fm",
-    icon: ClipboardList,
-    title: "Infrastrukturelles Facility Management",
-    context: "Reinigung, Sicherheit, Grünpflege und Winterdienst aus einer Hand.",
-    desc: "Bündelung aller objektbezogenen Services über einen Ansprechpartner.",
-    points: ["Reinigung & Hygiene", "Sicherheit & Empfang", "Außenanlagen & Winterdienst"],
-    longDesc:
-      "Infrastrukturelles Facility Management bündelt die operativen Services rund um Ihr Objekt: Reinigung, Sicherheit, Empfang, Grünpflege und Winterdienst – koordiniert über einen Ansprechpartner, mit einheitlichen Standards und gemeinsamer Reporting-Struktur.",
-    typicalClients: "Unternehmen mit mehreren Standorten, Hausverwaltungen, Eigentümergemeinschaften.",
-    h1: "Infrastrukturelles Facility Management",
-    metaTitle: "Infrastrukturelles Facility Management | Sentinel Services",
-    metaDescription:
-      "Reinigung, Sicherheit, Grünpflege und Winterdienst aus einer Hand – ein Ansprechpartner, einheitliche Standards, gebündeltes Reporting.",
-    faqs: [
-      { question: "Was ist der Vorteil eines Komplettanbieters?", answer: "Weniger Schnittstellen, einheitliche Standards, ein Ansprechpartner und konsolidierte Berichte." },
     ],
   },
   {
@@ -440,28 +422,28 @@ export const divisions: DivisionData[] = [
     icon: Leaf,
     primaryKeyword: "Grünanlagenpflege",
     intro:
-      "Pflege von Garten- und Grünanlagen für Gewerbe-, Wohn- und öffentliche Objekte: Rasen, Hecken, Beete, Baumpflege und Winterdienst – in festen Intervallen und nach klarem Pflegeplan.",
+      "Pflege von Garten- und Grünanlagen für Gewerbe-, Wohn- und öffentliche Objekte: Rasen, Hecken, Beete und Baumpflege – in festen Intervallen und nach klarem Pflegeplan.",
     h1: "Garten- & Grünanlagenpflege",
-    metaTitle: "Grünanlagenpflege, Baumpflege & Winterdienst | Sentinel Services",
+    metaTitle: "Grünanlagenpflege & Baumpflege | Sentinel Services",
     metaDescription:
-      "Pflege von Grünanlagen, Baumpflege nach FLL und zuverlässiger Winterdienst. Ganzjährige Pflegeverträge mit dokumentierter Leistung.",
-    keywords: "Grünanlagenpflege, Gartenpflege gewerblich, Landschaftspflege, Baumpflege, Baumkontrolle, Winterdienst",
+      "Pflege von Grünanlagen und Baumpflege nach FLL. Ganzjährige Pflegeverträge mit dokumentierter Leistung.",
+    keywords: "Grünanlagenpflege, Gartenpflege gewerblich, Landschaftspflege, Baumpflege, Baumkontrolle",
     services: gruenServices,
   },
   {
     slug: "facility-management",
-    shortLabel: "Facility Management",
-    title: "Facility Management",
-    claim: "Ein Ansprechpartner für alle objektbezogenen Services.",
+    shortLabel: "Infrastrukturelles FM",
+    title: "Infrastrukturelles Facility Management",
+    claim: "Ein Ansprechpartner für alle objektbezogenen Services – inklusive Winterdienst.",
     icon: Building2,
-    primaryKeyword: "Facility Management",
+    primaryKeyword: "Infrastrukturelles Facility Management",
     intro:
-      "Facility Management als Klammer über Sicherheit, Reinigung und Außenanlagen: technisches, infrastrukturelles und kaufmännisches FM aus einer Hand – mit einem Ansprechpartner und konsolidiertem Reporting.",
-    h1: "Facility Management – Gebäudemanagement aus einer Hand",
-    metaTitle: "Facility Management & Gebäudemanagement | Sentinel Services",
+      "Infrastrukturelles Facility Management als Klammer über Objektbetreuung, Winterdienst sowie technische und kaufmännische Steuerung – aus einer Hand, mit festem Ansprechpartner und konsolidiertem Reporting.",
+    h1: "Infrastrukturelles Facility Management – Gebäudemanagement aus einer Hand",
+    metaTitle: "Infrastrukturelles Facility Management | Sentinel Services",
     metaDescription:
-      "Facility Management aus einer Hand: technisches, infrastrukturelles & kaufmännisches FM – Reinigung, Sicherheit, Grünpflege und Vertragssteuerung.",
-    keywords: "Facility Management, Gebäudemanagement, FM Dienstleister, technisches FM, infrastrukturelles FM, kaufmännisches FM",
+      "Infrastrukturelles Facility Management aus einer Hand: Winterdienst, technische Objektbetreuung, technisches und kaufmännisches FM – ein Ansprechpartner, dokumentierte Leistung.",
+    keywords: "Infrastrukturelles Facility Management, Gebäudemanagement, FM Dienstleister, technische Objektbetreuung, Winterdienst, technisches FM, kaufmännisches FM",
     services: facilityServices,
   },
 ];
