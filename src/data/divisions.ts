@@ -15,9 +15,7 @@ import {
   Trees,
   TreePine,
   Snowflake,
-  Wrench,
   ClipboardList,
-  Calculator,
   type LucideIcon,
 } from "@/lib/icons";
 
