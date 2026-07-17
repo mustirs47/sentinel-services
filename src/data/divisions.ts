@@ -316,69 +316,6 @@ const facilityServices: ServiceData[] = [
       { question: "Liefern Sie auch das Streugut?", answer: "Ja, Streumittel und Geräte gehören zum Leistungsumfang." },
     ],
   },
-  {
-    slug: "technische-objektbetreuung",
-    icon: Wrench,
-    title: "Technische Objektbetreuung",
-    context: "Laufende technische Betreuung von Gebäuden, Anlagen und Außenbereichen.",
-    desc: "Regelmäßige Sicht- und Funktionsprüfungen, Kleinreparaturen und Koordination von Fachfirmen – mit fester Ansprechperson am Objekt.",
-    points: [
-      "Sicht-, Funktions- und Sicherheitskontrollen",
-      "Kleinreparaturen und Sofortmaßnahmen",
-      "Koordination von Wartungs- und Prüffirmen",
-      "Dokumentation und Reporting an die Verwaltung",
-    ],
-    longDesc:
-      "Technische Objektbetreuung bedeutet bei uns mehr als reine Hausmeisterdienste: Wir übernehmen die laufende technische Begleitung Ihrer Liegenschaft, prüfen Anlagen regelmäßig auf Funktion und Sicherheit, beheben kleinere Schäden direkt vor Ort und koordinieren Wartungs- und Prüftermine mit Fachfirmen. Damit reduzieren Eigentümer und Verwalter den Aufwand für Betreiberpflichten spürbar – und behalten gleichzeitig den Überblick über Zustand, Termine und Kosten ihres Objekts.\n\nUnsere technischen Objektbetreuer übernehmen Sicht- und Funktionskontrollen an Heizung, Lüftung, Elektroverteilung, Beleuchtung, Brand- und Fluchtwegen, Aufzügen und Sanitärtechnik nach festen Checklisten. Auffälligkeiten werden mit Foto und Standort dokumentiert, kleinere Mängel direkt beseitigt, größere Reparaturen mit qualifizierten Fachfirmen abgestimmt und nachverfolgt. Sie erhalten regelmäßige Berichte, die für Audits, Verkehrssicherungspflicht und Nachweise gegenüber Versicherungen verwendet werden können.",
-    typicalClients: "Hausverwaltungen, Eigentümergemeinschaften, Bestandshalter, Unternehmen mit eigenen Betriebsgebäuden.",
-    h1: "Technische Objektbetreuung – Wartung, Prüfung & Reparaturkoordination",
-    metaTitle: "Technische Objektbetreuung | Sentinel Services",
-    metaDescription:
-      "Technische Objektbetreuung für Gebäude und Liegenschaften: Sicht- und Funktionsprüfungen, Kleinreparaturen, Koordination von Wartung und Prüfungen – dokumentiert.",
-    faqs: [
-      { question: "Was unterscheidet technische Objektbetreuung vom klassischen Hausmeisterdienst?", answer: "Wir arbeiten nach festen Prüf- und Wartungsplänen, dokumentieren jeden Einsatz und steuern Fachfirmen aktiv. Statt nur auf Meldungen zu reagieren, behalten wir Betreiberpflichten, Prüffristen und Anlagenzustand systematisch im Blick." },
-      { question: "Welche Anlagen werden geprüft?", answer: "Typisch sind Heizung, Lüftung und Klima, Elektroverteilung und Beleuchtung, Brandschutz- und Fluchtwegtechnik, Aufzüge, Sanitär, Schließanlagen sowie sicherheitsrelevante Außenbereiche. Den genauen Prüfumfang stimmen wir auf Ihr Objekt ab." },
-      { question: "Übernehmen Sie auch Reparaturen selbst?", answer: "Kleinreparaturen erledigen unsere Betreuer direkt am Objekt. Bei umfangreicheren Arbeiten holen wir Angebote ein, koordinieren Fachfirmen, kontrollieren die Ausführung und dokumentieren die Abnahme." },
-      { question: "Wie erfolgt die Dokumentation?", answer: "Sie erhalten regelmäßige Berichte mit erledigten Prüfungen, festgestellten Mängeln, eingeleiteten Maßnahmen und offenen Punkten. Auf Wunsch binden wir das Reporting in Ihre bestehende Verwaltungs- oder CAFM-Lösung ein." },
-      { question: "In welchen Regionen sind Sie aktiv?", answer: "Wir betreuen Objekte bundesweit. Für die laufende technische Objektbetreuung bauen wir feste regionale Teams auf, damit es eine verlässliche Ansprechperson vor Ort gibt." },
-    ],
-  },
-  {
-    slug: "technisches-fm",
-    icon: Wrench,
-    title: "Technisches Facility Management",
-    context: "Betrieb, Wartung und Instandhaltung technischer Anlagen.",
-    desc: "Inspektion, Wartung und Störungsbeseitigung – koordiniert mit Ihren Fachfirmen oder eigenen Kräften.",
-    points: ["Inspektion & Wartung", "Störungsmanagement", "Koordination von Fachfirmen"],
-    longDesc:
-      "Technisches Facility Management für Gebäude und Anlagen: Inspektion, Wartung, Instandsetzung und Störungsbeseitigung. Wir koordinieren eigene Kräfte und Fachfirmen, dokumentieren Leistungen lückenlos und stellen Betreiberpflichten sicher.",
-    typicalClients: "Eigentümer, Verwalter, Unternehmen mit eigenen Liegenschaften.",
-    h1: "Technisches Facility Management",
-    metaTitle: "Technisches Facility Management | Sentinel Services",
-    metaDescription:
-      "Technisches FM: Inspektion, Wartung, Instandhaltung und Störungsmanagement für Gebäude und Anlagen. Dokumentiert, terminsicher, betreiberkonform.",
-    faqs: [
-      { question: "Übernehmen Sie auch Wartungsverträge?", answer: "Ja, wir steuern Wartungsverträge mit Fachfirmen oder übernehmen Leistungen selbst." },
-    ],
-  },
-  {
-    slug: "kaufmaennisches-fm",
-    icon: Calculator,
-    title: "Kaufmännisches Facility Management",
-    context: "Vertrags-, Kosten- und Dienstleistersteuerung.",
-    desc: "Transparente Steuerung von Verträgen, Kosten und externen Dienstleistern.",
-    points: ["Vertrags- und Dienstleistersteuerung", "Reporting & Controlling", "Betreiberpflichten"],
-    longDesc:
-      "Kaufmännisches Facility Management: Steuerung von Verträgen und externen Dienstleistern, Reporting und Kostencontrolling, Unterstützung bei Betreiberpflichten – die wirtschaftliche Klammer um das technische und infrastrukturelle FM.",
-    typicalClients: "Eigentümer, Investoren, Verwaltungen.",
-    h1: "Kaufmännisches Facility Management",
-    metaTitle: "Kaufmännisches Facility Management | Sentinel Services",
-    metaDescription:
-      "Kaufmännisches FM: Vertrags- und Dienstleistersteuerung, Reporting, Controlling, Betreiberpflichten – wirtschaftlich transparent und nachvollziehbar.",
-    faqs: [
-      { question: "Arbeiten Sie mit vorhandenen Dienstleistern?", answer: "Ja, wir steuern Ihre bestehenden Verträge oder bringen geprüfte Partner ein – je nach Bedarf." },
-    ],
-  },
 ];
 
 export const divisions: DivisionData[] = [
@@ -434,16 +371,16 @@ export const divisions: DivisionData[] = [
     slug: "facility-management",
     shortLabel: "Infrastrukturelles FM",
     title: "Infrastrukturelles Facility Management",
-    claim: "Ein Ansprechpartner für alle objektbezogenen Services – inklusive Winterdienst.",
+    claim: "Winterdienst und infrastrukturelle Objektbetreuung – zuverlässig und dokumentiert.",
     icon: Building2,
     primaryKeyword: "Infrastrukturelles Facility Management",
     intro:
-      "Infrastrukturelles Facility Management als Klammer über Objektbetreuung, Winterdienst sowie technische und kaufmännische Steuerung – aus einer Hand, mit festem Ansprechpartner und konsolidiertem Reporting.",
-    h1: "Infrastrukturelles Facility Management – Gebäudemanagement aus einer Hand",
+      "Infrastrukturelles Facility Management mit Fokus auf Winterdienst: Räum- und Streupflicht zuverlässig erfüllt, dokumentierte Einsätze und feste Ansprechpartner.",
+    h1: "Infrastrukturelles Facility Management – Winterdienst & Objektbetreuung",
     metaTitle: "Infrastrukturelles Facility Management | Sentinel Services",
     metaDescription:
-      "Infrastrukturelles Facility Management aus einer Hand: Winterdienst, technische Objektbetreuung, technisches und kaufmännisches FM – ein Ansprechpartner, dokumentierte Leistung.",
-    keywords: "Infrastrukturelles Facility Management, Gebäudemanagement, FM Dienstleister, technische Objektbetreuung, Winterdienst, technisches FM, kaufmännisches FM",
+      "Infrastrukturelles Facility Management: Winterdienst mit dokumentierter Erfüllung der Räum- und Streupflicht – zuverlässig, planbar und mit festem Ansprechpartner.",
+    keywords: "Infrastrukturelles Facility Management, Winterdienst, Räumdienst, Streudienst, Räum- und Streupflicht",
     services: facilityServices,
   },
 ];
