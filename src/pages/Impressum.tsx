@@ -49,7 +49,7 @@ const Impressum = () => (
           </h2>
           <p className="text-sm leading-relaxed text-muted-fg mb-6">
             Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
-            *folgt*
+            DE463626110
           </p>
 
           <h2 className="text-lg font-semibold mb-4 mt-8" style={{ color: "hsl(var(--section-light-fg))" }}>
