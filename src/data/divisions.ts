@@ -15,6 +15,8 @@ import {
   Trees,
   TreePine,
   Snowflake,
+  Wrench,
+  MapPin,
   ClipboardList,
   type LucideIcon,
 } from "@/lib/icons";
@@ -314,6 +316,78 @@ const facilityServices: ServiceData[] = [
       { question: "Liefern Sie auch das Streugut?", answer: "Ja, Streumittel und Geräte gehören zum Leistungsumfang." },
     ],
   },
+  {
+    slug: "hausmeisterdienste",
+    icon: Wrench,
+    title: "Hausmeisterdienste",
+    context: "Feste Ansprechperson vor Ort für alle wiederkehrenden Aufgaben rund um Ihr Objekt.",
+    desc: "Kleinreparaturen, Sicht- und Funktionskontrollen, Schließ- und Öffnungsdienste sowie Koordination von Handwerksfirmen.",
+    points: [
+      "Regelmäßige Objektbegehungen",
+      "Kleinreparaturen und Sofortmaßnahmen",
+      "Schließ- und Öffnungsdienste",
+      "Koordination externer Handwerker",
+    ],
+    longDesc:
+      "Unsere Hausmeisterdienste bündeln die alltäglichen Aufgaben rund um Ihr Objekt: regelmäßige Begehungen, Kleinreparaturen, Kontrolle von Gemeinschaftsflächen, Schließ- und Öffnungsdienste sowie das Weiterleiten und Begleiten größerer Handwerksaufträge. Eigentümer und Verwaltungen haben eine feste Ansprechperson – Meldungen von Mietern oder Nutzern werden strukturiert bearbeitet und dokumentiert.",
+    typicalClients: "Hausverwaltungen, Wohnungseigentümergemeinschaften, Gewerbeobjekte, Mehrmieterobjekte.",
+    h1: "Hausmeisterdienste für Wohn- und Gewerbeobjekte",
+    metaTitle: "Hausmeisterdienste & Objektbetreuung | Sentinel Services",
+    metaDescription:
+      "Zuverlässige Hausmeisterdienste: Begehungen, Kleinreparaturen, Schließdienste und Handwerkerkoordination – mit fester Ansprechperson und dokumentierter Leistung.",
+    faqs: [
+      { question: "Welche Aufgaben übernimmt der Hausmeisterdienst?", answer: "Regelmäßige Objektbegehungen, Kleinreparaturen, Kontrolle von Gemeinschaftsflächen, Schließ- und Öffnungsdienste sowie das Koordinieren externer Handwerker. Den genauen Leistungskatalog stimmen wir individuell auf Ihr Objekt ab." },
+      { question: "Gibt es eine feste Ansprechperson?", answer: "Ja. Jedes Objekt wird einer festen Kraft zugewiesen, damit sich Abläufe, Ansprechpartner und Besonderheiten schnell einspielen." },
+      { question: "Wie werden Einsätze dokumentiert?", answer: "Jede Begehung und Maßnahme wird protokolliert. Sie erhalten regelmäßige Berichte, auf Wunsch auch mit Foto-Dokumentation." },
+    ],
+  },
+  {
+    slug: "entsorgungsmanagement",
+    icon: ClipboardList,
+    title: "Entsorgungs- & Abfallmanagement",
+    context: "Sauberes Abfallhandling für Mehrmieterobjekte, Gewerbeflächen und Wohnanlagen.",
+    desc: "Bereitstellung, Kontrolle und Rückführung von Müllbehältern sowie Abstimmung mit Entsorgungsunternehmen.",
+    points: [
+      "Behälter herausstellen und zurückführen",
+      "Kontrolle von Sammelplätzen",
+      "Fehlwürfe erkennen und melden",
+      "Abstimmung mit Entsorgern",
+    ],
+    longDesc:
+      "Wir übernehmen das operative Abfallmanagement rund um Ihr Objekt: Müllbehälter werden pünktlich zur Abholung bereitgestellt und anschließend zurückgeführt, Sammelplätze regelmäßig kontrolliert und sauber gehalten. Fehlwürfe und Überfüllungen werden erkannt, dokumentiert und – wo sinnvoll – direkt mit dem Entsorger nachgesteuert. So bleiben Höfe und Stellplätze ordentlich und Beschwerden von Mietern oder Nachbarn werden vermieden.",
+    typicalClients: "Hausverwaltungen, Wohnungsunternehmen, Gewerbeobjekte, Handelsimmobilien.",
+    h1: "Entsorgungs- & Abfallmanagement für Ihre Liegenschaft",
+    metaTitle: "Entsorgungs- & Abfallmanagement | Sentinel Services",
+    metaDescription:
+      "Abfallmanagement für Wohn- und Gewerbeobjekte: Behälterbereitstellung, Kontrolle von Sammelplätzen und Abstimmung mit Entsorgern – zuverlässig und dokumentiert.",
+    faqs: [
+      { question: "Übernehmen Sie auch die Reinigung der Müllstandorte?", answer: "Ja, auf Wunsch reinigen wir Behälter und Sammelplätze regelmäßig und halten die Flächen sauber." },
+      { question: "Was passiert bei falsch befüllten Behältern?", answer: "Fehlwürfe werden dokumentiert und – abhängig von der Vereinbarung – korrigiert oder direkt mit dem Entsorger geklärt." },
+    ],
+  },
+  {
+    slug: "parkraumbewirtschaftung",
+    icon: MapPin,
+    title: "Parkraumbewirtschaftung",
+    context: "Ordnung auf Kunden-, Mitarbeiter- und Anwohnerstellplätzen.",
+    desc: "Kontrolle der Nutzungsordnung, Meldung von Falschparkern und Betreuung von Schranken- und Beschilderungsanlagen.",
+    points: [
+      "Kontrolle der Stellplatznutzung",
+      "Meldung und Dokumentation von Verstößen",
+      "Betreuung von Beschilderung und Schranken",
+    ],
+    longDesc:
+      "Wir bewirtschaften Parkflächen im Auftrag von Eigentümern und Verwaltern: geregelte Nutzung von Kunden-, Mitarbeiter- und Anwohnerstellplätzen, dokumentierte Kontrolle auf Falschparker sowie die laufende Betreuung von Beschilderung, Markierungen und Schrankenanlagen. So bleiben Zufahrten frei und die vereinbarte Ordnung wird sichtbar durchgesetzt.",
+    typicalClients: "Gewerbeobjekte, Handelsimmobilien, Wohnanlagen, Hausverwaltungen.",
+    h1: "Parkraumbewirtschaftung für Gewerbe und Wohnobjekte",
+    metaTitle: "Parkraumbewirtschaftung | Sentinel Services",
+    metaDescription:
+      "Parkraumbewirtschaftung: Kontrolle der Stellplatznutzung, Dokumentation von Verstößen und Betreuung von Beschilderung und Schrankenanlagen – zuverlässig vor Ort.",
+    faqs: [
+      { question: "Übernehmen Sie auch die Ahndung von Falschparkern?", answer: "Wir dokumentieren Verstöße und übergeben sie an den vom Eigentümer beauftragten Abschleppdienst oder Dienstleister für die Vertragsstrafe." },
+      { question: "Betreuen Sie auch Schrankenanlagen?", answer: "Ja, wir übernehmen Sicht- und Funktionskontrollen und koordinieren bei Störungen die zuständigen Fachfirmen." },
+    ],
+  },
 ];
 
 export const divisions: DivisionData[] = [
@@ -373,12 +447,12 @@ export const divisions: DivisionData[] = [
     icon: Building2,
     primaryKeyword: "Infrastrukturelles Facility Management",
     intro:
-      "Infrastrukturelles Facility Management mit Fokus auf Winterdienst: Räum- und Streupflicht zuverlässig erfüllt, dokumentierte Einsätze und feste Ansprechpartner.",
-    h1: "Infrastrukturelles Facility Management – Winterdienst & Objektbetreuung",
+      "Infrastrukturelles Facility Management für den laufenden Betrieb Ihres Objekts: Winterdienst, Hausmeisterdienste, Abfallmanagement und Parkraumbewirtschaftung – aus einer Hand, mit festem Ansprechpartner und dokumentierter Leistung.",
+    h1: "Infrastrukturelles Facility Management – Objektbetreuung aus einer Hand",
     metaTitle: "Infrastrukturelles Facility Management | Sentinel Services",
     metaDescription:
-      "Infrastrukturelles Facility Management: Winterdienst mit dokumentierter Erfüllung der Räum- und Streupflicht – zuverlässig, planbar und mit festem Ansprechpartner.",
-    keywords: "Infrastrukturelles Facility Management, Winterdienst, Räumdienst, Streudienst, Räum- und Streupflicht",
+      "Infrastrukturelles Facility Management: Winterdienst, Hausmeisterdienste, Abfallmanagement und Parkraumbewirtschaftung – zuverlässig, dokumentiert und mit festem Ansprechpartner.",
+    keywords: "Infrastrukturelles Facility Management, Winterdienst, Hausmeisterdienste, Abfallmanagement, Parkraumbewirtschaftung, Objektbetreuung",
     services: facilityServices,
   },
 ];
