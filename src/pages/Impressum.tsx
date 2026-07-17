@@ -22,7 +22,7 @@ const Impressum = () => (
             Angaben gemäß § 5 TMG
           </h2>
           <p className="text-sm leading-relaxed text-muted-fg mb-6">
-            Sentinel Service<br />
+            Sentinel Services<br />
             Inh. Tim Fitzlaff<br />
             Grusonstraße 9<br />
             39112 Magdeburg<br />
