@@ -59,6 +59,13 @@ const App = () => (
             <Route path="/leistungen/sicherheitskonzepte" element={<Navigate to="/sicherheit/sicherheitskonzepte" replace />} />
             <Route path="/leistungen/:slug" element={<Navigate to="/sicherheit" replace />} />
 
+            {/* Legacy redirects for restructured divisions */}
+            <Route path="/gruenanlagen/winterdienst" element={<Navigate to="/facility-management/winterdienst" replace />} />
+            <Route path="/facility-management/technische-objektbetreuung" element={<Navigate to="/facility-management" replace />} />
+            <Route path="/facility-management/technisches-fm" element={<Navigate to="/facility-management" replace />} />
+            <Route path="/facility-management/infrastrukturelles-fm" element={<Navigate to="/facility-management" replace />} />
+            <Route path="/facility-management/kaufmaennisches-fm" element={<Navigate to="/facility-management" replace />} />
+
             <Route path="/branchen" element={<BranchenPage />} />
             <Route path="/qualifikationen" element={<QualifikationenPage />} />
             <Route path="/arbeitsweise" element={<ArbeitsweisePage />} />
