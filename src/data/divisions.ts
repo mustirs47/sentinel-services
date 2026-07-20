@@ -112,7 +112,7 @@ const sicherheitServices: ServiceData[] = [
     h1: "Baustellenbewachung, Brandwache & Nachtwache",
     metaTitle: "Baustellenbewachung & Brandwache | Sentinel Services",
     metaDescription:
-      "Baustellenbewachung in Nacht- und Wochenendlage, Brandwache nach DGUV und zuverlässige Nachtwache. Geprüftes Sicherheitspersonal, schnelle Meldekette bei Vorfällen.",
+      "Baustellenbewachung in Nacht- und Wochenendlage, Brandwache nach DGUV und Nachtwache – geprüftes Personal, klare Meldekette bei Vorfällen.",
     faqs: [
       { question: "Welche Baustellen sichern Sie?", answer: "Wir sichern Baustellen jeder Größe – vom Einfamilienhaus bis zur Großbaustelle. Der Fokus liegt auf Flächen mit hohem Materialwert oder offenem Zugang." },
       { question: "Was passiert bei einem Vorfall auf der Baustelle?", answer: "Unsere Einsatzkräfte melden jeden Vorfall sofort an den Bauleiter und dokumentieren den Sachverhalt lückenlos." },
@@ -132,7 +132,7 @@ const sicherheitServices: ServiceData[] = [
     h1: "Empfangsdienst & Pfortendienst",
     metaTitle: "Empfangsdienst & Pfortendienst | Sentinel Services",
     metaDescription:
-      "Empfangsdienst, Pfortendienst und Doorman-Service: Besucherempfang, Schlüsselverwaltung, Telefonzentrale, Zutrittsprüfung – professionell und serviceorientiert.",
+      "Empfangs- und Pfortendienst: Besucherempfang, Schlüsselverwaltung, Telefonzentrale und Zutrittsprüfung – professionell und serviceorientiert.",
     faqs: [
       { question: "Kann Ihr Empfangspersonal auch Telefonanrufe entgegennehmen?", answer: "Ja, unser Personal übernimmt auf Wunsch die Telefonzentrale und leitet Anrufe nach Ihren Vorgaben weiter." },
       { question: "Wie wird das Empfangspersonal eingearbeitet?", answer: "Vor Einsatzbeginn erhalten unsere Kräfte eine objektspezifische Einweisung in Abläufe, Ansprechpartner und Hausordnung." },
@@ -334,7 +334,7 @@ const facilityServices: ServiceData[] = [
     h1: "Hausmeisterdienste für Wohn- und Gewerbeobjekte",
     metaTitle: "Hausmeisterdienste & Objektbetreuung | Sentinel Services",
     metaDescription:
-      "Zuverlässige Hausmeisterdienste: Begehungen, Kleinreparaturen, Schließdienste und Handwerkerkoordination – mit fester Ansprechperson und dokumentierter Leistung.",
+      "Hausmeisterdienste: Begehungen, Kleinreparaturen, Schließdienste, Handwerkerkoordination – mit fester Ansprechperson und dokumentierter Leistung.",
     faqs: [
       { question: "Welche Aufgaben übernimmt der Hausmeisterdienst?", answer: "Regelmäßige Objektbegehungen, Kleinreparaturen, Kontrolle von Gemeinschaftsflächen, Schließ- und Öffnungsdienste sowie das Koordinieren externer Handwerker. Den genauen Leistungskatalog stimmen wir individuell auf Ihr Objekt ab." },
       { question: "Gibt es eine feste Ansprechperson?", answer: "Ja. Jedes Objekt wird einer festen Kraft zugewiesen, damit sich Abläufe, Ansprechpartner und Besonderheiten schnell einspielen." },
@@ -359,7 +359,7 @@ const facilityServices: ServiceData[] = [
     h1: "Entsorgungs- & Abfallmanagement für Ihre Liegenschaft",
     metaTitle: "Entsorgungs- & Abfallmanagement | Sentinel Services",
     metaDescription:
-      "Abfallmanagement für Wohn- und Gewerbeobjekte: Behälterbereitstellung, Kontrolle von Sammelplätzen und Abstimmung mit Entsorgern – zuverlässig und dokumentiert.",
+      "Abfallmanagement für Wohn- und Gewerbeobjekte: Behälter bereitstellen, Sammelplätze kontrollieren, mit Entsorgern abstimmen – dokumentiert.",
     faqs: [
       { question: "Übernehmen Sie auch die Reinigung der Müllstandorte?", answer: "Ja, auf Wunsch reinigen wir Behälter und Sammelplätze regelmäßig und halten die Flächen sauber." },
       { question: "Was passiert bei falsch befüllten Behältern?", answer: "Fehlwürfe werden dokumentiert und – abhängig von der Vereinbarung – korrigiert oder direkt mit dem Entsorger geklärt." },
@@ -382,7 +382,7 @@ const facilityServices: ServiceData[] = [
     h1: "Parkraumbewirtschaftung für Gewerbe und Wohnobjekte",
     metaTitle: "Parkraumbewirtschaftung | Sentinel Services",
     metaDescription:
-      "Parkraumbewirtschaftung: Kontrolle der Stellplatznutzung, Dokumentation von Verstößen und Betreuung von Beschilderung und Schrankenanlagen – zuverlässig vor Ort.",
+      "Parkraumbewirtschaftung: Kontrolle der Stellplatznutzung, Dokumentation von Verstößen und Betreuung von Beschilderung und Schrankenanlagen.",
     faqs: [
       { question: "Übernehmen Sie auch die Ahndung von Falschparkern?", answer: "Wir dokumentieren Verstöße und übergeben sie an den vom Eigentümer beauftragten Abschleppdienst oder Dienstleister für die Vertragsstrafe." },
       { question: "Betreuen Sie auch Schrankenanlagen?", answer: "Ja, wir übernehmen Sicht- und Funktionskontrollen und koordinieren bei Störungen die zuständigen Fachfirmen." },
@@ -419,7 +419,7 @@ export const divisions: DivisionData[] = [
     h1: "Gebäudereinigung – Unterhalt, Glas, Grund- und Sonderreinigung",
     metaTitle: "Gebäudereinigung für Büro & Gewerbe | Sentinel Services",
     metaDescription:
-      "Gebäudereinigung aus einer Hand: Unterhaltsreinigung, Glas- & Fensterreinigung, Grundreinigung sowie Bauschluss- und Sonderreinigung – mit dokumentierter Qualität.",
+      "Gebäudereinigung aus einer Hand: Unterhalts-, Glas- & Fensterreinigung, Grund-, Bauschluss- und Sonderreinigung – mit dokumentierter Qualität.",
     keywords: "Gebäudereinigung, Unterhaltsreinigung, Fensterreinigung, Glasreinigung, Grundreinigung, Bauschlussreinigung, Sonderreinigung",
     services: reinigungServices,
   },
@@ -451,7 +451,7 @@ export const divisions: DivisionData[] = [
     h1: "Infrastrukturelles Facility Management – Objektbetreuung aus einer Hand",
     metaTitle: "Infrastrukturelles Facility Management | Sentinel Services",
     metaDescription:
-      "Infrastrukturelles Facility Management: Winterdienst, Hausmeisterdienste, Abfallmanagement und Parkraumbewirtschaftung – zuverlässig, dokumentiert und mit festem Ansprechpartner.",
+      "Infrastrukturelles Facility Management: Winterdienst, Hausmeisterdienste, Abfall- und Parkraumbewirtschaftung – mit festem Ansprechpartner.",
     keywords: "Infrastrukturelles Facility Management, Winterdienst, Hausmeisterdienste, Abfallmanagement, Parkraumbewirtschaftung, Objektbetreuung",
     services: facilityServices,
   },
