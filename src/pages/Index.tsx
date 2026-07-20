@@ -14,7 +14,7 @@ const Index = () => (
   <PageLayout>
     <SEOHead
       title="Sentinel Services – Objektbetreuung aus einer Hand"
-      description="Sicherheitsdienst, Gebäudereinigung, Grünanlagenpflege und Facility Management aus einer Hand. Geprüftes Personal, feste Ansprechpartner, dokumentierte Leistung."
+      description="Sicherheit, Gebäudereinigung, Grünanlagen und Facility Management aus einer Hand – geprüftes Personal, feste Ansprechpartner, dokumentierte Leistung."
       keywords="Sicherheitsdienst, Gebäudereinigung, Grünanlagenpflege, Facility Management, Objektbetreuung, Wachdienst, Fensterreinigung, Winterdienst, FM Dienstleister"
     />
     <LocalBusinessJsonLd />
