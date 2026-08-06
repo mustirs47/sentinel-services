@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { BASE_URL, SITE_NAME, DEFAULT_OG_IMAGE, buildCanonical } from "@/lib/seo";
@@ -23,6 +24,17 @@ const SEOHead = ({
 }: SEOHeadProps) => {
   const { pathname } = useLocation();
   const url = canonical || buildCanonical(pathname);
+
+  // Statische Fallback-Tags aus index.html erst entfernen, wenn diese Route
+  // ihre eigenen Tags gesetzt hat – so ist der Head nie leer.
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      document.head
+        .querySelectorAll("[data-static-seo]")
+        .forEach((el) => el.remove());
+    });
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   return (
     <Helmet>
