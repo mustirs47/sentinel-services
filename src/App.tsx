@@ -9,16 +9,19 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index";
 import { CookieBanner } from "@/components/CookieBanner";
 
+// Indexierbare Hauptseiten eager laden: ein leerer Suspense-Fallback führte
+// dazu, dass Crawler Seiten ohne H1, Description und OG-Tags erfassten.
+import ServiceDetail from "./pages/LeistungDetail";
+import DivisionHub from "./pages/DivisionHub";
+import LeistungenPage from "./pages/Leistungen";
+import BranchenPage from "./pages/Branchen";
+import QualifikationenPage from "./pages/Qualifikationen";
+import ArbeitsweisePage from "./pages/Arbeitsweise";
+import KarrierePage from "./pages/KarrierePage";
+import KontaktPage from "./pages/KontaktPage";
+
 const Impressum = lazy(() => import("./pages/Impressum"));
 const Datenschutz = lazy(() => import("./pages/Datenschutz"));
-const LeistungenPage = lazy(() => import("./pages/Leistungen"));
-const ServiceDetail = lazy(() => import("./pages/LeistungDetail"));
-const DivisionHub = lazy(() => import("./pages/DivisionHub"));
-const BranchenPage = lazy(() => import("./pages/Branchen"));
-const QualifikationenPage = lazy(() => import("./pages/Qualifikationen"));
-const ArbeitsweisePage = lazy(() => import("./pages/Arbeitsweise"));
-const KarrierePage = lazy(() => import("./pages/KarrierePage"));
-const KontaktPage = lazy(() => import("./pages/KontaktPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
