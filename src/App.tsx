@@ -14,6 +14,7 @@ import { CookieBanner } from "@/components/CookieBanner";
 import ServiceDetail from "./pages/LeistungDetail";
 import DivisionHub from "./pages/DivisionHub";
 import LegacyRedirect from "./pages/LegacyRedirect";
+import { legacyRoutes } from "./data/legacyRoutes";
 import BranchenPage from "./pages/Branchen";
 import QualifikationenPage from "./pages/Qualifikationen";
 import ArbeitsweisePage from "./pages/Arbeitsweise";
