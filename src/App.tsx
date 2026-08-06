@@ -13,7 +13,7 @@ import { CookieBanner } from "@/components/CookieBanner";
 // dazu, dass Crawler Seiten ohne H1, Description und OG-Tags erfassten.
 import ServiceDetail from "./pages/LeistungDetail";
 import DivisionHub from "./pages/DivisionHub";
-import LeistungenPage from "./pages/Leistungen";
+import LegacyRedirect from "./pages/LegacyRedirect";
 import BranchenPage from "./pages/Branchen";
 import QualifikationenPage from "./pages/Qualifikationen";
 import ArbeitsweisePage from "./pages/Arbeitsweise";
@@ -52,22 +52,23 @@ const App = () => (
             <Route path="/facility-management" element={<DivisionHub division="facility-management" />} />
             <Route path="/facility-management/:slug" element={<ServiceDetail division="facility-management" />} />
 
-            {/* Legacy redirects (preserve security SEO) */}
-            <Route path="/leistungen" element={<LeistungenPage />} />
-            <Route path="/leistungen/objektschutz" element={<Navigate to="/sicherheit/objektschutz" replace />} />
-            <Route path="/leistungen/veranstaltungsschutz" element={<Navigate to="/sicherheit/veranstaltungsschutz" replace />} />
-            <Route path="/leistungen/baustellenbewachung" element={<Navigate to="/sicherheit/baustellenbewachung" replace />} />
-            <Route path="/leistungen/empfangs-und-pfortendienst" element={<Navigate to="/sicherheit/empfangs-und-pfortendienst" replace />} />
-            <Route path="/leistungen/kontroll-und-streifendienst" element={<Navigate to="/sicherheit/kontroll-und-streifendienst" replace />} />
-            <Route path="/leistungen/sicherheitskonzepte" element={<Navigate to="/sicherheit/sicherheitskonzepte" replace />} />
-            <Route path="/leistungen/:slug" element={<Navigate to="/sicherheit" replace />} />
-
-            {/* Legacy redirects for restructured divisions */}
-            <Route path="/gruenanlagen/winterdienst" element={<Navigate to="/facility-management/winterdienst" replace />} />
-            <Route path="/facility-management/technische-objektbetreuung" element={<Navigate to="/facility-management" replace />} />
-            <Route path="/facility-management/technisches-fm" element={<Navigate to="/facility-management" replace />} />
-            <Route path="/facility-management/infrastrukturelles-fm" element={<Navigate to="/facility-management" replace />} />
-            <Route path="/facility-management/kaufmaennisches-fm" element={<Navigate to="/facility-management" replace />} />
+            {/* Legacy-URLs: eigene Seite mit Canonical auf das Ziel statt sofortigem Redirect,
+                damit Crawler kein Duplikat ohne Head-Tags erfassen. */}
+            {legacyRoutes.map((r) => (
+              <Route
+                key={r.path}
+                path={r.path}
+                element={
+                  <LegacyRedirect
+                    to={r.to}
+                    title={r.title}
+                    description={r.description}
+                    intro={r.intro}
+                    linkLabel={r.linkLabel}
+                  />
+                }
+              />
+            ))}
 
             <Route path="/branchen" element={<BranchenPage />} />
             <Route path="/qualifikationen" element={<QualifikationenPage />} />
