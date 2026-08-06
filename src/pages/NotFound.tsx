@@ -5,7 +5,11 @@ import SEOHead from "@/components/SEOHead";
 
 const NotFound = () => (
   <PageLayout>
-    <SEOHead title="Seite nicht gefunden | Sentinel Services" description="Die angeforderte Seite wurde nicht gefunden." />
+    <SEOHead
+      title="Seite nicht gefunden | Sentinel Services"
+      description="Die angeforderte Seite wurde nicht gefunden. Über die Navigation erreichen Sie Sicherheit, Reinigung, Grünanlagen und Facility Management."
+      noindex
+    />
     <PageHero
       title="Seite nicht gefunden"
       subtitle="Die angeforderte Seite existiert nicht oder wurde verschoben."
