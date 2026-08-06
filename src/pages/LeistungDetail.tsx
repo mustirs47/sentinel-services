@@ -14,6 +14,7 @@ import {
   type DivisionSlug,
 } from "@/data/divisions";
 import { serviceIllustrations } from "@/data/serviceIllustrations";
+import { serviceDetails } from "@/data/serviceDetails";
 
 interface Props {
   division: DivisionSlug;
@@ -48,6 +49,7 @@ const ServiceDetail = ({ division: divisionSlug }: Props) => {
   const { icon: Icon, title, h1, metaTitle, metaDescription, longDesc, typicalClients, points, context, faqs } = service;
   const detailUrl = `${BASE_URL}/${division.slug}/${slug}`;
   const siblings = division.services.filter((s) => s.slug !== slug);
+  const details = serviceDetails[slug || ""] ?? [];
 
   return (
     <PageLayout>
@@ -94,6 +96,22 @@ const ServiceDetail = ({ division: divisionSlug }: Props) => {
                   {longDesc}
                 </p>
               </div>
+
+              {details.length > 0 && (
+                <div className="space-y-6">
+                  {details.map((d) => (
+                    <div key={d.heading}>
+                      <h3
+                        className="text-base font-bold mb-2"
+                        style={{ color: "hsl(var(--section-light-fg))" }}
+                      >
+                        {d.heading}
+                      </h3>
+                      <p className="text-base leading-relaxed text-muted-fg">{d.body}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <div
                 className="card-accent rounded-xl p-6"
