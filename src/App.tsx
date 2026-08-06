@@ -70,6 +70,18 @@ const App = () => (
                 }
               />
             ))}
+            <Route
+              path="/leistungen/:slug"
+              element={
+                <LegacyRedirect
+                  to="/sicherheit"
+                  title="Sicherheit & Bewachung – neue Adresse | Sentinel Services"
+                  description="Die früheren Leistungsseiten sind im Bereich Sicherheit & Bewachung zusammengefasst: Objektschutz, Veranstaltungsschutz, Baustellenbewachung und mehr."
+                  intro="Diese Leistung finden Sie jetzt im Bereich „Sicherheit & Bewachung“. Wir leiten Sie in wenigen Sekunden automatisch weiter."
+                  linkLabel="Zu Sicherheit & Bewachung"
+                />
+              }
+            />
 
             <Route path="/branchen" element={<BranchenPage />} />
             <Route path="/qualifikationen" element={<QualifikationenPage />} />
