@@ -182,6 +182,18 @@ export const serviceDetails: Record<string, ServiceDetailBlock[]> = {
       heading: "Verkehrssicherheit im Grünbestand",
       body: "Als Eigentümer oder Verwalter haften Sie für Ihren Grünbestand. Wir achten bei jedem Einsatz auf herabhängende Äste, Sichtbehinderungen an Zufahrten und Wegen sowie überwachsene Beleuchtung und melden Auffälligkeiten schriftlich – auch dann, wenn die Behebung nicht Teil des laufenden Auftrags ist.",
     },
+    {
+      heading: "Mahdrhythmus und Rasenqualität",
+      body: "Repräsentative Rasenflächen brauchen in der Hauptwachstumszeit einen wöchentlichen Schnitt, extensive Flächen kommen mit zwei bis vier Mahdgängen im Jahr aus. Wer selten mäht und dann tief abnimmt, schwächt die Grasnarbe und züchtet sich Moos und Lücken heran. Wir stimmen den Rhythmus deshalb an der Nutzung der Fläche aus und nicht am Kalender – bei Trockenheit setzen wir Schnitte bewusst aus, statt die Fläche zu verbrennen.",
+    },
+    {
+      heading: "Schnittgut, Laub und Entsorgung",
+      body: "Rasenschnitt, Heckenschnitt und Laub nehmen wir mit und führen sie der Verwertung zu; auf Wunsch bleibt Mulchgut auf geeigneten Flächen liegen und spart Dünger. Für Objekte mit vielen Bäumen lohnt sich im Herbst ein zweiter oder dritter Laubgang – nasses Laub auf Gehwegen ist eine der häufigsten Rutschursachen und fällt unter dieselbe Verkehrssicherungspflicht wie Schnee.",
+    },
+    {
+      heading: "Was ein Angebot bestimmt",
+      body: "Preisbestimmend sind Rasenfläche in Quadratmetern, laufende Meter Hecke mit Höhe, Anzahl und Größe der Beete, die Erreichbarkeit für Maschinen sowie die Menge des anfallenden Schnittguts. Ein Vor-Ort-Termin dauert meist eine halbe Stunde und ersetzt jede Schätzung aus der Ferne. Danach erhalten Sie eine Jahrespauschale mit hinterlegtem Einsatzplan.",
+    },
   ],
   baumpflege: [
     {
