@@ -158,6 +158,14 @@ export const serviceDetails: Record<string, ServiceDetailBlock[]> = {
       heading: "Terminierung im Bauablauf",
       body: "Bautermine verschieben sich – das ist der Normalfall. Wir planen mit einem Zeitfenster statt mit einem starren Tag und stimmen den konkreten Start kurzfristig mit Bauleitung oder Objektbetreuung ab. Für Abnahmetermine unter Zeitdruck stellen wir bei Bedarf zusätzliche Kräfte.",
     },
+    {
+      heading: "Entsorgung, Wasser und Strom auf der Baustelle",
+      body: "Restmüll aus der Reinigung, Verpackungen und Schutzfolien entsorgen wir auf Wunsch mit, statt sie im Container des Bauherrn zu parken. Wichtig ist die Vorabklärung, ob Bauwasser und Baustrom zum Reinigungstermin noch anliegen – fehlt beides, brauchen wir Tanktechnik und Aggregat, was Aufwand und Preis verändert. Wir fragen das vor dem Angebot ab, damit es am Tag der Ausführung keine Überraschung gibt.",
+    },
+    {
+      heading: "Was wir vorher wissen müssen",
+      body: "Für ein belastbares Angebot brauchen wir Quadratmeter nach Nutzungsart, die Anzahl der Fenster inklusive Rahmen und Falze, den Bodenbelag, den Bauzustand und den gewünschten Abnahmetermin. Bei Sanierungen im Bestand kommt die Frage dazu, ob Flächen bewohnt oder in Betrieb bleiben. Auf dieser Grundlage kalkulieren wir Kräftezahl und Dauer – und nennen einen Festpreis statt einer Spanne.",
+    },
   ],
 
   // ---------- Grünanlagen ----------
@@ -174,6 +182,18 @@ export const serviceDetails: Record<string, ServiceDetailBlock[]> = {
       heading: "Verkehrssicherheit im Grünbestand",
       body: "Als Eigentümer oder Verwalter haften Sie für Ihren Grünbestand. Wir achten bei jedem Einsatz auf herabhängende Äste, Sichtbehinderungen an Zufahrten und Wegen sowie überwachsene Beleuchtung und melden Auffälligkeiten schriftlich – auch dann, wenn die Behebung nicht Teil des laufenden Auftrags ist.",
     },
+    {
+      heading: "Mahdrhythmus und Rasenqualität",
+      body: "Repräsentative Rasenflächen brauchen in der Hauptwachstumszeit einen wöchentlichen Schnitt, extensive Flächen kommen mit zwei bis vier Mahdgängen im Jahr aus. Wer selten mäht und dann tief abnimmt, schwächt die Grasnarbe und züchtet sich Moos und Lücken heran. Wir stimmen den Rhythmus deshalb an der Nutzung der Fläche aus und nicht am Kalender – bei Trockenheit setzen wir Schnitte bewusst aus, statt die Fläche zu verbrennen.",
+    },
+    {
+      heading: "Schnittgut, Laub und Entsorgung",
+      body: "Rasenschnitt, Heckenschnitt und Laub nehmen wir mit und führen sie der Verwertung zu; auf Wunsch bleibt Mulchgut auf geeigneten Flächen liegen und spart Dünger. Für Objekte mit vielen Bäumen lohnt sich im Herbst ein zweiter oder dritter Laubgang – nasses Laub auf Gehwegen ist eine der häufigsten Rutschursachen und fällt unter dieselbe Verkehrssicherungspflicht wie Schnee.",
+    },
+    {
+      heading: "Was ein Angebot bestimmt",
+      body: "Preisbestimmend sind Rasenfläche in Quadratmetern, laufende Meter Hecke mit Höhe, Anzahl und Größe der Beete, die Erreichbarkeit für Maschinen sowie die Menge des anfallenden Schnittguts. Ein Vor-Ort-Termin dauert meist eine halbe Stunde und ersetzt jede Schätzung aus der Ferne. Danach erhalten Sie eine Jahrespauschale mit hinterlegtem Einsatzplan.",
+    },
   ],
   baumpflege: [
     {
@@ -187,6 +207,18 @@ export const serviceDetails: Record<string, ServiceDetailBlock[]> = {
     {
       heading: "Schnitt, Fällung und gesetzliche Fristen",
       body: "Wir führen Kronenpflege, Totholzentfernung, Lichtraumprofilschnitt und Fällungen einschließlich Seilklettertechnik aus. Zwischen 1. März und 30. September sind stärkere Rückschnitte und Fällungen nach Bundesnaturschutzgesetz nur eingeschränkt zulässig; Verkehrssicherungsmaßnahmen bleiben möglich. Nötige Genehmigungen nach kommunaler Baumschutzsatzung klären wir mit.",
+    },
+    {
+      heading: "Wann eine eingehende Untersuchung nötig wird",
+      body: "Zeigt die Sichtkontrolle Auffälligkeiten – Pilzfruchtkörper am Stammfuß, Risse, einseitig lichte Krone, frühere Kappungen –, reicht der Blick von unten nicht mehr aus. Dann folgt eine eingehende Untersuchung, je nach Befund mit Kronenbegang, Schalltomografie oder Zugversuch. Das Ergebnis entscheidet, ob Kronensicherung, Einkürzung oder Fällung die richtige Maßnahme ist; wir empfehlen keine Fällung, solange der Baum mit vertretbarem Aufwand erhalten werden kann.",
+    },
+    {
+      heading: "Absicherung des Arbeitsbereichs",
+      body: "Bäume stehen selten dort, wo Platz ist. Vor Beginn klären wir Absperrungen, Halteverbote, gesperrte Stellplätze und die Abstimmung mit Anliegern; bei Arbeiten über Verkehrsflächen holen wir die verkehrsrechtliche Anordnung ein. Wo kein Hubsteiger hinkommt, arbeiten wir in Seilklettertechnik und seilen Kronenteile kontrolliert ab, statt sie fallen zu lassen.",
+    },
+    {
+      heading: "Nach der Maßnahme",
+      body: "Schnittgut wird gehäckselt und abgefahren, Stubben auf Wunsch gefräst, damit die Fläche wieder nutzbar oder bepflanzbar ist. Sie erhalten die aktualisierte Baumdokumentation mit ausgeführten Maßnahmen und dem Termin der nächsten Regelkontrolle – damit die Kette der Nachweise nicht abreißt.",
     },
   ],
 
