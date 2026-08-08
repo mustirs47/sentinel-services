@@ -338,6 +338,59 @@ const KontaktPage = () => {
         </div>
       </section>
 
+      {/* Hinweise zur Anfrage */}
+      <section
+        className="section-light border-t"
+        style={{ borderColor: "hsl(var(--section-light-border))" }}
+      >
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+          <div className="max-w-3xl mb-10">
+            <p className="eyebrow">Vor der Anfrage</p>
+            <h2 className="h-section" style={{ color: "hsl(var(--section-light-fg))" }}>
+              Was uns hilft, schnell konkret zu werden
+            </h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:gap-8">
+            {[
+              {
+                heading: "Objekt und Fläche",
+                body: "Art des Objekts, ungefähre Größe und Nutzung sagen mehr als jede Leistungsbezeichnung. Ein Bürogebäude mit Publikumsverkehr braucht andere Intervalle als eine Lagerhalle, eine Wohnanlage andere Zeiten als eine Produktion im Dreischichtbetrieb.",
+              },
+              {
+                heading: "Zeitraum und Turnus",
+                body: "Nennen Sie uns, ob es um eine einmalige Maßnahme, eine Saison oder eine dauerhafte Betreuung geht, und ab wann. Bei kurzfristigem Bedarf sagen wir Ihnen offen, ob wir die nötigen Kräfte seriös stellen können – lieber eine klare Absage als eine unbesetzte Schicht.",
+              },
+              {
+                heading: "Bestehende Verträge",
+                body: "Läuft bereits ein Vertrag mit Kündigungsfrist, planen wir den Übergang danach. Wir übernehmen Objekte auch mitten in der Saison; Einweisung, Schlüsselübergabe und Personalplanung brauchen dann etwa zwei bis drei Wochen Vorlauf.",
+              },
+              {
+                heading: "Was danach passiert",
+                body: "Nach Ihrer Anfrage melden wir uns in der Regel innerhalb eines Werktags. Bei größeren Objekten vereinbaren wir eine Begehung, sonst reicht meist ein kurzes Telefonat. Sie erhalten anschließend ein schriftliches Angebot mit Leistungsverzeichnis, Intervallen und Preisen – ohne automatische Verlängerung im Kleingedruckten.",
+              },
+              {
+                heading: "Mehrere Bereiche gleichzeitig",
+                body: "Wenn Sie Sicherheit, Reinigung, Grünpflege oder Facility Management für dasselbe Objekt brauchen, schreiben Sie das gleich mit dazu. Wir bündeln die Leistungen dann in einem Angebot und einer Objektleitung – das spart Ihnen Schnittstellen und macht Zuständigkeiten im Alltag eindeutig.",
+              },
+              {
+                heading: "Datenschutz",
+                body: "Wir verarbeiten Ihre Angaben ausschließlich zur Bearbeitung der Anfrage und geben sie nicht an Dritte weiter. Details dazu stehen in unserer Datenschutzerklärung. Wenn Sie lieber ohne Formular starten: eine kurze E-Mail mit Objekt und Bedarf genügt.",
+              },
+            ].map(({ heading, body }) => (
+              <article key={heading} className="min-w-0">
+                <h3
+                  className="text-base font-bold mb-2"
+                  style={{ color: "hsl(var(--section-light-fg))" }}
+                >
+                  {heading}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted-fg">{body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Additional CTA */}
       <section className="bg-background border-t border-border/50">
         <div ref={ref2} className="fade-in-section mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
