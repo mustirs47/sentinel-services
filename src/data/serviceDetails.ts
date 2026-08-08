@@ -208,6 +208,18 @@ export const serviceDetails: Record<string, ServiceDetailBlock[]> = {
       heading: "Schnitt, Fällung und gesetzliche Fristen",
       body: "Wir führen Kronenpflege, Totholzentfernung, Lichtraumprofilschnitt und Fällungen einschließlich Seilklettertechnik aus. Zwischen 1. März und 30. September sind stärkere Rückschnitte und Fällungen nach Bundesnaturschutzgesetz nur eingeschränkt zulässig; Verkehrssicherungsmaßnahmen bleiben möglich. Nötige Genehmigungen nach kommunaler Baumschutzsatzung klären wir mit.",
     },
+    {
+      heading: "Wann eine eingehende Untersuchung nötig wird",
+      body: "Zeigt die Sichtkontrolle Auffälligkeiten – Pilzfruchtkörper am Stammfuß, Risse, einseitig lichte Krone, frühere Kappungen –, reicht der Blick von unten nicht mehr aus. Dann folgt eine eingehende Untersuchung, je nach Befund mit Kronenbegang, Schalltomografie oder Zugversuch. Das Ergebnis entscheidet, ob Kronensicherung, Einkürzung oder Fällung die richtige Maßnahme ist; wir empfehlen keine Fällung, solange der Baum mit vertretbarem Aufwand erhalten werden kann.",
+    },
+    {
+      heading: "Absicherung des Arbeitsbereichs",
+      body: "Bäume stehen selten dort, wo Platz ist. Vor Beginn klären wir Absperrungen, Halteverbote, gesperrte Stellplätze und die Abstimmung mit Anliegern; bei Arbeiten über Verkehrsflächen holen wir die verkehrsrechtliche Anordnung ein. Wo kein Hubsteiger hinkommt, arbeiten wir in Seilklettertechnik und seilen Kronenteile kontrolliert ab, statt sie fallen zu lassen.",
+    },
+    {
+      heading: "Nach der Maßnahme",
+      body: "Schnittgut wird gehäckselt und abgefahren, Stubben auf Wunsch gefräst, damit die Fläche wieder nutzbar oder bepflanzbar ist. Sie erhalten die aktualisierte Baumdokumentation mit ausgeführten Maßnahmen und dem Termin der nächsten Regelkontrolle – damit die Kette der Nachweise nicht abreißt.",
+    },
   ],
 
   // ---------- Facility Management ----------
