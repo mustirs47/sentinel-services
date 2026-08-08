@@ -158,6 +158,14 @@ export const serviceDetails: Record<string, ServiceDetailBlock[]> = {
       heading: "Terminierung im Bauablauf",
       body: "Bautermine verschieben sich – das ist der Normalfall. Wir planen mit einem Zeitfenster statt mit einem starren Tag und stimmen den konkreten Start kurzfristig mit Bauleitung oder Objektbetreuung ab. Für Abnahmetermine unter Zeitdruck stellen wir bei Bedarf zusätzliche Kräfte.",
     },
+    {
+      heading: "Entsorgung, Wasser und Strom auf der Baustelle",
+      body: "Restmüll aus der Reinigung, Verpackungen und Schutzfolien entsorgen wir auf Wunsch mit, statt sie im Container des Bauherrn zu parken. Wichtig ist die Vorabklärung, ob Bauwasser und Baustrom zum Reinigungstermin noch anliegen – fehlt beides, brauchen wir Tanktechnik und Aggregat, was Aufwand und Preis verändert. Wir fragen das vor dem Angebot ab, damit es am Tag der Ausführung keine Überraschung gibt.",
+    },
+    {
+      heading: "Was wir vorher wissen müssen",
+      body: "Für ein belastbares Angebot brauchen wir Quadratmeter nach Nutzungsart, die Anzahl der Fenster inklusive Rahmen und Falze, den Bodenbelag, den Bauzustand und den gewünschten Abnahmetermin. Bei Sanierungen im Bestand kommt die Frage dazu, ob Flächen bewohnt oder in Betrieb bleiben. Auf dieser Grundlage kalkulieren wir Kräftezahl und Dauer – und nennen einen Festpreis statt einer Spanne.",
+    },
   ],
 
   // ---------- Grünanlagen ----------
