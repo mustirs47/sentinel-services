@@ -15,6 +15,7 @@ import {
 import { BASE_URL } from "@/lib/seo";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { divisions, getDivision, type DivisionSlug } from "@/data/divisions";
+import { divisionDetails } from "@/data/divisionDetails";
 import { serviceIllustrations } from "@/data/serviceIllustrations";
 
 interface Props {
@@ -53,6 +54,7 @@ const DivisionHub = ({ division: slug }: Props) => {
   if (!division) return null;
 
   const others = divisions.filter((d) => d.slug !== slug);
+  const details = divisionDetails[slug] ?? [];
 
   return (
     <PageLayout>
