@@ -192,6 +192,39 @@ const DivisionHub = ({ division: slug }: Props) => {
         </div>
       </section>
 
+      {/* Vertiefende Fachabschnitte */}
+      {details.length > 0 && (
+        <section
+          className="section-light border-t"
+          style={{ borderColor: "hsl(var(--section-light-border))" }}
+        >
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+            <div className="max-w-3xl mb-10">
+              <p className="eyebrow">Wie wir arbeiten</p>
+              <h2
+                className="h-section"
+                style={{ color: "hsl(var(--section-light-fg))" }}
+              >
+                {division.shortLabel} bei Sentinel Services
+              </h2>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:gap-8">
+              {details.map(({ heading, body }) => (
+                <article key={heading} className="min-w-0">
+                  <h3
+                    className="text-base font-bold mb-2"
+                    style={{ color: "hsl(var(--section-light-fg))" }}
+                  >
+                    {heading}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-muted-fg">{body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA */}
       <section
         ref={ref2}
