@@ -6,8 +6,7 @@ const Impressum = () => (
   <PageLayout>
     <SEOHead
       title="Impressum – Sentinel Services, Magdeburg"
-      description="Pflichtangaben nach § 5 TMG: Anbieter, Aufsichtsbehörde, Kontakt."
-      noindex
+      description="Impressum von Sentinel Services aus Magdeburg: Anbieterkennzeichnung nach § 5 TMG mit Inhaber, Anschrift, Kontaktdaten, Umsatzsteuer-Identifikationsnummer, zuständiger Aufsichtsbehörde und Hinweisen zur Haftung."
     />
 
     <PageHero
@@ -55,12 +54,6 @@ const Impressum = () => (
           <h2 className="text-lg font-semibold mb-4 mt-8" style={{ color: "hsl(var(--section-light-fg))" }}>
             Streitschlichtung
           </h2>
-          <p className="text-sm leading-relaxed text-muted-fg mb-4">
-            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-              https://ec.europa.eu/consumers/odr/
-            </a>
-          </p>
           <p className="text-sm leading-relaxed text-muted-fg mb-6">
             Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
             Verbraucherschlichtungsstelle teilzunehmen.
