@@ -77,7 +77,7 @@ const App = () => (
                   to="/sicherheit"
                   title="Sicherheit & Bewachung – neue Adresse | Sentinel Services"
                   description="Die früheren Leistungsseiten sind im Bereich Sicherheit & Bewachung zusammengefasst: Objektschutz, Veranstaltungsschutz, Baustellenbewachung und mehr."
-                  intro="Diese Leistung finden Sie jetzt im Bereich „Sicherheit & Bewachung“. Wir leiten Sie in wenigen Sekunden automatisch weiter."
+                  intro="Diese Leistung finden Sie jetzt im Bereich „Sicherheit & Bewachung“. Dort finden Sie alle Details zu dieser Leistung."
                   linkLabel="Zu Sicherheit & Bewachung"
                 />
               }
