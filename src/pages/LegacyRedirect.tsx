@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PageLayout from "@/components/layout/PageLayout";
 import PageHero from "@/components/layout/PageHero";
 import SEOHead from "@/components/SEOHead";
@@ -28,16 +27,10 @@ const relatedLinks = [
  * Ersetzt die früheren <Navigate>-Weiterleitungen. Ein sofortiger Client-Redirect
  * ließ Crawler die Zielinhalte unter der alten URL sehen – ohne Canonical, H1
  * oder Description. Diese Seite liefert eigene Head-Tags mit Canonical auf das
- * Ziel und leitet Besucher nach kurzer Zeit weiter.
+ * Ziel. Bewusst ohne automatische Weiterleitung: ein JS-Timer erzeugte im Crawl
+ * erneut Duplikate ohne Canonical und leere H1.
  */
 const LegacyRedirect = ({ to, title, description, intro, linkLabel }: LegacyRedirectProps) => {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const timer = window.setTimeout(() => navigate(to, { replace: true }), 2500);
-    return () => window.clearTimeout(timer);
-  }, [navigate, to]);
-
   return (
     <PageLayout>
       <SEOHead title={title} description={description} canonical={buildCanonical(to)} />
