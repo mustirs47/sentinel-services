@@ -12,7 +12,7 @@ const sec = (slug: string, name: string, desc: string): LegacyRoute => ({
   to: `/sicherheit/${slug}`,
   title: `${name} – neue Adresse | Sentinel Services`,
   description: desc,
-  intro: `Diese Seite finden Sie jetzt unter „Sicherheit & Bewachung“. Wir leiten Sie in wenigen Sekunden automatisch weiter – oder Sie klicken direkt auf den Button.`,
+  intro: `Diese Seite finden Sie jetzt unter „Sicherheit & Bewachung“. Über den Button unten kommen Sie direkt zur neuen Seite.`,
   linkLabel: `Zu ${name}`,
 });
 
@@ -24,7 +24,7 @@ export const legacyRoutes: LegacyRoute[] = [
     description:
       "Unsere Leistungen sind jetzt in vier Bereiche gegliedert: Sicherheit, Gebäudereinigung, Grünanlagenpflege und infrastrukturelles Facility Management.",
     intro:
-      "Die frühere Sammelseite „Leistungen“ ist in vier Bereiche aufgeteilt. Wir leiten Sie gleich zum Bereich Sicherheit & Bewachung weiter.",
+      "Die frühere Sammelseite „Leistungen“ ist in vier Bereiche aufgeteilt. Am nächsten kommt Ihrem Anliegen der Bereich Sicherheit & Bewachung.",
     linkLabel: "Zu Sicherheit & Bewachung",
   },
   sec("objektschutz", "Objektschutz", "Objektschutz für Gewerbe, Industrie und Wohnanlagen – die Seite finden Sie jetzt im Bereich Sicherheit & Bewachung."),
@@ -40,7 +40,7 @@ export const legacyRoutes: LegacyRoute[] = [
     description:
       "Der Winterdienst gehört jetzt zum infrastrukturellen Facility Management: Räum- und Streupflicht, Dokumentation und Bereitschaft rund um die Uhr.",
     intro:
-      "Der Winterdienst ist vom Bereich Grünanlagen in das infrastrukturelle Facility Management gewechselt. Wir leiten Sie gleich dorthin weiter.",
+      "Der Winterdienst ist vom Bereich Grünanlagen in das infrastrukturelle Facility Management gewechselt. Sie finden ihn jetzt dort.",
     linkLabel: "Zum Winterdienst",
   },
   ...[
