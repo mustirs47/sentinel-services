@@ -97,6 +97,6 @@
     "mocker": "4.1.11",
     "nanoid": "5.1.16",
     "js-yaml": "4.3.1",
-    "lodash": "4.18.1"
+    "lodash": "https://npm.aikido.io/2289d6c620da73c4144cd/lodash@4.17.21-aikido.2"
   }
 }
