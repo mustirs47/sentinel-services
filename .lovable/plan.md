@@ -1,41 +1,41 @@
-## Ziel
-Alle Ahrefs-Site-Audit-Findings aus dem PDF beheben (Health Score 40 → ~100).
+# Aikido-Findings gezielt beheben
 
-## Findings & Fixes
+Ziel: jedes gemeldete Finding einzeln adressieren – keine pauschalen "alles updaten"-Aktionen –, danach Funktion und Optik der Website prüfen und die Lock-Dateien sauber aktualisieren.
 
-### 1. Multiple meta description tags (25 URLs) + Open Graph URL not matching canonical (24) + Multiple meta description tags not indexable (7)
-**Ursache:** `index.html` enthält statische `<meta name="description">`, `og:title`, `og:description`, `og:url`, `og:image`, `twitter:title/description/image`. `react-helmet-async` dedupliziert nur eigene Tags — die statischen bleiben zusätzlich stehen. Auf jeder Route (die via `SEOHead` dieselben Tags setzt) sieht der Crawler zwei Description-, og:url-, og:title-Tags → auch og:url matcht nicht mit der Route-Canonical.
+## 1. Kritische und hohe Findings (Laufzeit-relevant)
 
-**Fix in `index.html`:** Alle Tags entfernen, die `SEOHead` pro Route ohnehin setzt (description, og:title, og:description, og:url, og:image, twitter:title/description/image). Beibehalten: `<title>` (Fallback für Nicht-JS-Crawler bleibt via `<noscript>`-Block), `og:type`, `og:site_name`, `og:locale`, `link rel=canonical` (Fallback für Root). Damit hat jede gerenderte Seite genau eine Description und ein passendes og:url.
+| Paket | Problem | Maßnahme |
+|---|---|---|
+| lodash | Code Injection (kritisch) | Override auf gepatchte Version halten/anheben, danach im Lockfile verifizieren |
+| react-router-dom / react-router / @remix-run/router | XSS + 4 weitere CVEs | Upgrade auf React Router 7.x (die App nutzt bereits die v7-Future-Flags in `App.tsx`, daher minimales Risiko) |
+| form-data | CRLF-Injection | Override auf 4.0.6 |
+| ws | DoS | Override auf 8.21.x |
+| nanoid | mehrere CVEs | Override anheben |
+| brace-expansion, glob, browserslist, js-yaml | bereits Overrides vorhanden, teils veraltet | Versionen auf die von Aikido genannten Zielstände anheben |
 
-### 2. Non-canonical page in sitemap (9)
-**Ursache:** `public/sitemap.xml` listet `/leistungen` und `/leistungen/*` — diese Routen sind in `App.tsx` `<Navigate replace>` auf `/sicherheit/*`. Ebenso ist `/impressum` als `noindex` markiert.
+## 2. Reine Build-/Test-Abhängigkeiten
 
-**Fix:** In `public/sitemap.xml` folgende Einträge entfernen:
-- `/leistungen` und alle 6 `/leistungen/<slug>`
-- Zusätzlich Noindex-Fix (siehe 3)
+flatted, tinypool, minimatch, ajv, picomatch, yaml, @humanfs/node, @tootallnate/once, rollup, mocker: kommen nur über Vitest/ESLint/Vite herein und laufen nie im Browser. Trotzdem werden sie über gezielte `overrides` auf die genannten Fix-Versionen gehoben, damit der Scanner leer wird – ohne die Major-Versionen der Tools selbst zu wechseln.
 
-### 3. Noindex page in sitemap (1)
-**Fix:** `/impressum` aus `public/sitemap.xml` entfernen (Impressum ist `noindex`). `/datenschutz` prüfen — ist derzeit indexierbar, bleibt drin.
+## 3. "Exposed secret" in `scripts/indexnow.mjs`
 
-### 4. Page has links to broken page (1)
-**Vorgehen:** Nach Deploy erneut prüfen. Wahrscheinlicher Kandidat ist ein interner Verweis auf einen alten `/leistungen/*`-Pfad oder eine entfernte FM-Sub-Route. In diesem Turn: alle internen `<Link to="...">`-Ziele gegen `App.tsx`-Routen prüfen und ggf. korrigieren.
+Der dort hinterlegte Wert ist kein Geheimnis, sondern der öffentliche IndexNow-Schlüssel, der bewusst unter `/dce3e6a4c38454d9470cb306f396c81a.txt` ausgeliefert wird. Damit der Scanner nicht weiter anschlägt, wird der Wert aus einer Umgebungsvariablen gelesen (`INDEXNOW_KEY`) und der bisherige Wert nur noch als dokumentierter Fallback aus der Datei im `public/`-Ordner ermittelt. Funktional bleibt der Push identisch.
 
-### 5. Meta description too long (6)
-**Fix:** Die betroffenen `SEOHead`-Descriptions in den Seiten identifizieren, die >160 Zeichen sind, und auf ≤155 Zeichen kürzen (Seiten: vermutlich einige `LeistungDetail`-Einträge in `src/data/divisions.ts` sowie mehrere `pages/*.tsx`). Alle Descriptions systematisch messen und die zu langen kürzen — Ton bleibt konkret, nicht generisch.
+## 4. Lock-Dateien aufräumen
 
-### 6. Slow page (Notice, 35)
-**Anmerkung:** Notice-Level, kein Fehler. Bereits mehrere Performance-Runden gelaufen (WebP, Lazy-Loading, Code-Split, deferred gtag). Kein weiterer Eingriff — Grund für die Meldung ist meist Time-to-Interactive der SPA; weitere Optimierung würde die Struktur betreffen. Wird beim nächsten Crawl teils verschwinden, wenn die HTML-Duplikate weg sind (kleinerer Head).
+Aktuell liegen drei Lockfiles parallel: `bun.lock`, `bun.lockb` und `package-lock.json`. Der Scanner liest alle drei und meldet dadurch teils längst entfernte Pakete (z. B. `recharts`, das im Projekt gar nicht mehr verwendet wird). Vorgehen:
 
-### 7. Orphan page (7, Notice)
-**Vorgehen:** Nicht ohne konkrete URL-Liste behebbar. In diesem Turn nicht anfassen — nach nächstem Crawl mit Detailliste separat adressieren.
+- veraltetes `bun.lockb` und `package-lock.json` entfernen
+- `bun install --save-text-lockfile` ausführen, sodass genau ein aktueller `bun.lock` existiert
+- prüfen, dass die verwundbaren Versionen darin nicht mehr auftauchen
 
-## Umsetzung
+## 5. Verifikation nach den Änderungen
 
-1. `index.html` bereinigen (Duplikate raus).
-2. `public/sitemap.xml` bereinigen (Leistungen-Legacy + Impressum raus, `lastmod` refreshen).
-3. Alle SEO-Descriptions durchgehen (`src/pages/*.tsx`, `src/data/divisions.ts`) und auf ≤155 Zeichen kürzen wo nötig.
-4. Interne Links auf tote Ziele prüfen (`rg "to=\""`), ggf. fixen.
-5. `scripts/indexnow.mjs` ausführen, damit Bing/Yandex den neuen Zustand ziehen.
+- TypeScript-Check und Produktions-Build
+- Vitest-Lauf
+- Playwright-Durchlauf über Startseite, alle vier Bereichs-Hubs, eine Leistungs-Unterseite, Kontakt, Impressum, Datenschutz und eine Legacy-URL: Konsole ohne Fehler, Routing/Navigation funktioniert, Cookie-Banner und Kontaktformular reagieren, Screenshots gegen den Ist-Zustand vergleichen
+- Abschließender Dependency-Scan, um zu belegen, dass die Findings verschwunden sind
 
-Google Search Console + Ahrefs-Rescan sind nach Deploy manuell durch dich anzustoßen.
+## Hinweis
+
+Der Wechsel auf React Router 7 ist der einzige Major-Sprung im Plan. Falls dabei ein Verhalten abweicht, wird stattdessen auf dem letzten sicheren 6.x-Stand geblieben und das Finding transparent als offen gemeldet, statt es stillschweigend zu ignorieren.
